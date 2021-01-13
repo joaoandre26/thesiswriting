@@ -1,0 +1,1639 @@
+
+@article{zhouDiscreteCosineTransform2013,
+  title = {On Discrete Cosine Transform},
+  volume = {7},
+  issn = {0795-5111},
+  number = {1},
+  journal = {Nig. J. Tech. Res.},
+  doi = {10.4314/njtr.v7i1.87943},
+  author = {Zhou, Jianqin},
+  month = apr,
+  year = {2013}
+}
+
+@article{heImprovedConversionDCT2008,
+  title = {Improved {{Conversion From DCT Blocks}} to {{Integer Cosine Transform Blocks}} in {{H}}.264/{{AVC}}},
+  volume = {18},
+  issn = {1051-8215},
+  abstract = {As adoption of the newly standardized H.264 becomes increasingly more widespread, efforts must be made to transcode video from earlier standards, such as MPEG-2, to the H.264 format. One aspect of transcoding is the conversion from the discrete cosine transform (DCT) used in MPEG-2 to the integer-based DCT of H.264, the integer cosine transform. By investigating the structure of the transform kernels, two efficient schemes are introduced to convert an 8 times 8 DCT block into its corresponding four 4times4 integer cosine transform block8 times 8 DCT block into its corresponding four 4times4 integer cosine transform blockss. An analysis of computational complexity shows a reduction of up to 42\% in multiplications over existing conversion schemes, while simulations of the conversion system with pre- and post-quantization show that the proposed methods yield high fidelity in terms of peak signal-to-noise ratio. Further approximation of matrix coefficients in the second proposed method yields additional conversion schemes which require no multiplications. These also provide comparable quality with fewer operations than existing schemes. Thus, the proposed transform conversion methods can potentially contribute to efficient transcoding systems.},
+  number = {6},
+  journal = {IEEE Transactions on Circuits and Systems for Video Technology},
+  doi = {10.1109/TCSVT.2008.919087},
+  author = {He, Z. and Bystrom, M.},
+  month = jun,
+  year = {2008},
+  keywords = {advanced video coding,Analytical models,Automatic voltage control,code standards,Computational complexity,Computational modeling,DCT blocks,Discrete cosine transform (DCT),discrete cosine transform conversion method,discrete cosine transforms,Discrete cosine transforms,Discrete transforms,fast cosine transform,H.264-AVC standard,H.264/AVC,integer cosine transform,integer transform,Kernel,matrix algebra,matrix coefficient,MPEG-2,PSNR,quantisation (signal),quantization method,Signal analysis,transcoding,Transcoding,transform domain conversion,transform kernel,video coding},
+  pages = {851-857},
+  file = {/home/moinocencio/Zotero/storage/IQXCQMU7/He and Bystrom - 2008 - Improved Conversion From DCT Blocks to Integer Cos.pdf;/home/moinocencio/Zotero/storage/9963LKJY/4455572.html}
+}
+
+@inproceedings{caoParametricIntegerDiscrete2017,
+  title = {4 \texttimes{} 4 Parametric Integer Discrete Cosine Transforms},
+  abstract = {One of the famous transformations is discrete cosine transform (DCT), which is always used in digital image coding standards like JPEG and MPEG. DCT has different types and all of DCTs have excellent energy compaction properties. Meanwhile, matrices of DCTs II and IV are examined by a lot of researchers. However, other types of DCTs are rarely developed. Therefore, this paper presents 4 \texttimes{} 4 parametric integer DCTs, which cannot only represent DCTs II and IV but other types of DCTs (i.e. DCT I, V, VIII). It shows an excellent performance in terms of mean square errors and transform coding gains while it is comparing with state of the art.},
+  booktitle = {2017 {{IEEE International Conference}} on {{Systems}}, {{Man}}, and {{Cybernetics}} ({{SMC}})},
+  doi = {10.1109/SMC.2017.8123167},
+  author = {Cao, W. and Zhou, Y.},
+  month = oct,
+  year = {2017},
+  keywords = {discrete cosine transforms,Discrete cosine transforms,matrix algebra,image coding,Image coding,Transform coding,4 × 4 parametric integer DCTs,4 × 4 parametric integer discrete cosine transforms,data compression,digital image coding standards,discrete cosine transforms (DCTs),Distortion,excellent energy compaction properties,Image compression,matrices,mean square error methods,Mean square error methods,mean square errors,parametric integer transform,Quantization (signal),transform coding,transform coding gains},
+  pages = {3467-3470},
+  file = {/home/moinocencio/Zotero/storage/AKR96F22/Cao and Zhou - 2017 - 4 × 4 parametric integer discrete cosine transform.pdf;/home/moinocencio/Zotero/storage/S8ZQ48RC/8123167.html}
+}
+
+@inproceedings{liuHighPrecisionFixedPointDiscrete2009,
+  title = {High-{{Precision}} and {{Fixed}}-{{Point Discrete Cosine Transform}} without {{Multiplications}}},
+  volume = {2},
+  abstract = {Discrete cosine transform (DCT) is an important tool in digital signal processing. In this paper, based on our previous work of performing DCT via linear sums of discrete moments, we have made development to eliminate multiplications in discrete cosine transforms by performing appropriate bit operations and shift in binary system, which can be implemented by integer additions of fixed points. An efficient and regular systolic array is designed to implement it, and the complexity analysis is also given. Different to other fast cosine transforms, our algorithm can deal with arbitrary length signals and get high precision. The approach is also applicable to multi-dimensional DCT and DCT inverses.},
+  booktitle = {2009 {{First International Workshop}} on {{Education Technology}} and {{Computer Science}}},
+  doi = {10.1109/ETCS.2009.487},
+  author = {Liu, Z. and Liu, J. and Wang, G.},
+  month = mar,
+  year = {2009},
+  keywords = {discrete cosine transforms,Discrete cosine transforms,Discrete transforms,complexity analysis,Computer architecture,Computer science,Computer science education,digital signal processing,discrete Cosine transform,discrete moments,Educational technology,Fast Fourier transforms,fixed point,fixed point arithmetic,fixed-point discrete cosine transform,integer additions,Laboratories,linear sums,moments,Signal processing algorithms,systolic array,systolic arrays,Systolic arrays},
+  pages = {997-1001},
+  file = {/home/moinocencio/Zotero/storage/EWRA28NB/Liu et al. - 2009 - High-Precision and Fixed-Point Discrete Cosine Tra.pdf;/home/moinocencio/Zotero/storage/TL8AHV47/4959200.html}
+}
+
+@inproceedings{masoumiPerformanceHEVCDiscrete2017,
+  title = {Performance of {{HEVC}} Discrete Cosine and Sine Transforms on {{GPU}} Using {{CUDA}}},
+  abstract = {High Efficiency Video Coding (HEVC) is the most recent video encoding standard that achieves much higher compression while maintaining the same quality as its predecessor x264. This is done by a variety of upgrades for example a more diverse transform block size while some fundamental methods remain unchanged. Discrete Cosine Transform (DCT) along with an alternate Discrete Sine Transform (DST) is used by HEVC before quantization to achieve a lossless encoding of transform blocks. Both of these transforms are implemented in HEVC encoder using CPU. In this paper we implement these transforms on GPU using CUDA and analyze their performance compared to the default implementation. Using a batched kernel call 48\% and 13\% improvement is achieved on Inverse 32\texttimes{}32 and 16\texttimes{}16 DCT transform respectively compared to SIMD while our GPU implementation outperforms other CPU implementations on every transform. We also present a benchmark software for this very purpose which we will use to measure their performance real time.},
+  booktitle = {2017 {{IEEE}} 4th {{International Conference}} on {{Knowledge}}-{{Based Engineering}} and {{Innovation}} ({{KBEI}})},
+  doi = {10.1109/KBEI.2017.8324916},
+  author = {Masoumi, M. and Ahmadifar, H.},
+  month = dec,
+  year = {2017},
+  keywords = {discrete cosine transforms,Discrete cosine transforms,Kernel,quantisation (signal),video coding,DCT,discrete cosine transform,data compression,Benchmark testing,Computed unified device architecture (CUDA),CPU implementations,CUDA,Discrete Cosine Transform,discrete sine transform,Discrete Sine Transform,DST,Encoding,GPU implementation,graphics processing units,Graphics processing units,Graphics Processor unit (GPU),HEVC encoder,high efficiency video coding,High efficiency video coding,High Efficiency Video Coding (HEVC),higher compression,lossless encoding,parallel architectures,quantization,SIMD,standards,transform block size,video encoding standard},
+  pages = {0857-0861},
+  file = {/home/moinocencio/Zotero/storage/N6FEPMSN/Masoumi and Ahmadifar - 2017 - Performance of HEVC discrete cosine and sine trans.pdf;/home/moinocencio/Zotero/storage/J4N4XSHL/8324916.html}
+}
+
+@article{soo-changpeiIntegerTransformsAnalogous2000,
+  title = {The Integer Transforms Analogous to Discrete Trigonometric Transforms},
+  volume = {48},
+  issn = {1053-587X},
+  abstract = {The integer transform (such as the Walsh transform) is the discrete transform that all the entries of the transform matrix are integer. It is much easier to implement because the real number multiplication operations can be avoided, but the performance is usually worse. On the other hand, the noninteger transform, such as the DFT and DCT, has a good performance, but real number multiplication is required. W derive the integer transforms analogous to some popular noninteger transforms. These integer transforms retain most of the performance quality of the original transform, but the implementation is much simpler. Especially, for the two-dimensional (2-D) block transform in image/video, the saving can be huge using integer operations. In 1989, Cham had derived the integer cosine transform. Here, we will derive the integer sine, Hartley, and Fourier transforms. We also introduce the general method to derive the integer transform from some noninteger transform. Besides, the integer transform derived by Cham still requires real number multiplication for the inverse transform. We modify the integer transform introduced by Cham and introduce the complete integer transform. It requires no real number multiplication operation, no matter what the forward or inverse transform. The integer transform we derive would be more efficient than the original transform. For example, for the 8-point DFT and IDFT, there are in total four real numbers and eight fixed-point multiplication operations required, but for the forward and inverse 8-point complete integer Fourier transforms, there are totally 20 fixed-point multiplication operations required. However, for the integer transform, the implementation is simpler, and many of the properties of the original transform are kept.},
+  number = {12},
+  journal = {IEEE Transactions on Signal Processing},
+  doi = {10.1109/78.886998},
+  author = {{Soo-Chang Pei} and {Jian-Juin Ding}},
+  month = dec,
+  year = {2000},
+  keywords = {discrete cosine transforms,Discrete cosine transforms,Discrete transforms,integer cosine transform,2D block transform,DCT,Decorrelation,DFT,discrete Fourier transforms,Discrete Fourier transforms,discrete Hartley transforms,discrete trigonometric transforms,fixed-point multiplication operations,Fourier transforms,Frequency domain analysis,Hardware,IDFT,image processing,image/video,integer Fourier transform,integer Hartley transform,integer sine transform,inverse problems,inverse transform,noninteger transform,performance,real number multiplication,transform matrix,Two dimensional displays,Walsh transform},
+  pages = {3345-3364},
+  file = {/home/moinocencio/Zotero/storage/A73L4376/Soo-Chang Pei and Jian-Juin Ding - 2000 - The integer transforms analogous to discrete trigo.pdf;/home/moinocencio/Zotero/storage/C8LM3XTX/886998.html}
+}
+
+@article{pastuszakHardwareArchitectures2652015,
+  title = {Hardware Architectures for the {{H}}.265/{{HEVC}} Discrete Cosine Transform},
+  volume = {9},
+  issn = {1751-9659, 1751-9667},
+  language = {en},
+  number = {6},
+  journal = {IET Image Processing},
+  doi = {10.1049/iet-ipr.2014.0277},
+  author = {Pastuszak, Grzegorz},
+  month = jun,
+  year = {2015},
+  pages = {468-477},
+  file = {/media/moinocencio/Data/Tese/Master-Thesis/Documentação/Papers/HEVC e DCT/Hardware architectures for the H265HEVC discrete.pdf}
+}
+
+@inproceedings{zhouGeneralizedDiscreteCosine2009,
+  address = {{Chengdu, China}},
+  title = {Generalized {{Discrete Cosine Transform}}},
+  isbn = {978-0-7695-3614-9},
+  booktitle = {2009 {{Pacific}}-{{Asia Conference}} on {{Circuits}}, {{Communications}} and {{Systems}}},
+  publisher = {{IEEE}},
+  doi = {10.1109/PACCS.2009.62},
+  author = {Zhou, Jianqin and Chen, Ping},
+  month = may,
+  year = {2009},
+  pages = {449-452},
+  file = {/media/moinocencio/Data/Tese/Master-Thesis/Documentação/Papers/HEVC e DCT/generalized DCT.pdf}
+}
+
+@inproceedings{srivastavaFPGAImplementationPipelined2018,
+  address = {{Pune}},
+  title = {{{FPGA Implementation}} of {{Pipelined}} 8\texttimes{}8 2-{{D DCT}} and {{IDCT Structure}} for {{H}}.264 {{Protocol}}},
+  isbn = {978-1-5386-4273-3},
+  booktitle = {2018 3rd {{International Conference}} for {{Convergence}} in {{Technology}} ({{I2CT}})},
+  publisher = {{IEEE}},
+  doi = {10.1109/I2CT.2018.8529352},
+  author = {Srivastava, Pankaj Kumar and Jakkani, Prof. Anil Kumar},
+  month = apr,
+  year = {2018},
+  pages = {1-6},
+  file = {/run/media/moinocencio/Data/Tese/Master-Thesis/Documentação/Papers/HEVC e DCT/FPGA Implementation of Pipelined 8×8 2-D DCT and IDCT Structure for H.264 Protocol.pdf}
+}
+
+@inproceedings{seifertFastCosineTransform2018,
+  address = {{Ponta Delgada}},
+  title = {Fast {{Cosine Transform}} for {{FCC Lattices}}},
+  isbn = {978-1-5386-5346-3},
+  booktitle = {2018 13th {{APCA International Conference}} on {{Control}} and {{Soft Computing}} ({{CONTROLO}})},
+  publisher = {{IEEE}},
+  doi = {10.1109/CONTROLO.2018.8514300},
+  author = {Seifert, Bastian and Huper, Knut and Uhl, Christian},
+  month = jun,
+  year = {2018},
+  pages = {207-212},
+  file = {/home/moinocencio/Zotero/storage/DRXNB9SC/Seifert et al. - 2018 - Fast Cosine Transform for FCC Lattices.pdf}
+}
+
+@inproceedings{safariEfficientImplementationDCTbased2018,
+  address = {{Budapest}},
+  title = {Efficient {{Implementation}} of {{DCT}}-Based {{MIMO Channel Estimation}} on {{FPGA}}},
+  isbn = {978-1-5386-1335-1},
+  booktitle = {2018 11th {{International Symposium}} on {{Communication Systems}}, {{Networks}} \& {{Digital Signal Processing}} ({{CSNDSP}})},
+  publisher = {{IEEE}},
+  doi = {10.1109/CSNDSP.2018.8471834},
+  author = {Safari, Nima and Maiden, Richard and Zhou, Feng and Zhang, Sunny},
+  month = jul,
+  year = {2018},
+  pages = {1-6},
+  file = {/media/moinocencio/Data/Tese/Master-Thesis/Documentação/Papers/HEVC e DCT/Efficient Implementation of DCT-based MIMO.pdf}
+}
+
+@inproceedings{keshaveniDesignImplementationInteger2009,
+  address = {{Trivandrum, Kerala}},
+  title = {Design and {{Implementation}} of {{Integer Transform}} and {{Quantization Processor}} for {{H}}.264 {{Encoder}} on {{FPGA}}},
+  isbn = {978-1-4244-5321-4},
+  booktitle = {2009 {{International Conference}} on {{Advances}} in {{Computing}}, {{Control}}, and {{Telecommunication Technologies}}},
+  publisher = {{IEEE}},
+  doi = {10.1109/ACT.2009.164},
+  author = {Keshaveni, N. and Ramachandran, S. and Gurumurthy, K.S.},
+  month = dec,
+  year = {2009},
+  pages = {646-649},
+  file = {/media/moinocencio/Data/Tese/Master-Thesis/Documentação/Papers/HEVC e DCT/Design and Implementation of Integer Transform and.pdf}
+}
+
+@inproceedings{madhukarNewPropertyDiscrete2018,
+  address = {{Chennai}},
+  title = {A {{New Property}} of the {{Discrete Cosine Transform}}-{{IV}} ({{DCT}}-{{IV}})},
+  isbn = {978-1-5386-3521-6},
+  booktitle = {2018 {{International Conference}} on {{Communication}} and {{Signal Processing}} ({{ICCSP}})},
+  publisher = {{IEEE}},
+  doi = {10.1109/ICCSP.2018.8524243},
+  author = {Madhukar, B. N and Bharathi, S. H},
+  month = apr,
+  year = {2018},
+  pages = {0144-0147},
+  file = {/media/moinocencio/Data/Tese/Master-Thesis/Documentação/Papers/HEVC e DCT/DCT-IV.pdf}
+}
+
+@inproceedings{kitsosHighSpeedFPGA2013,
+  address = {{Fira, Santorini, Greece}},
+  title = {A High Speed {{FPGA}} Implementation of the {{2D DCT}} for {{Ultra High Definition}} Video Coding},
+  isbn = {978-1-4673-5807-1},
+  booktitle = {2013 18th {{International Conference}} on {{Digital Signal Processing}} ({{DSP}})},
+  publisher = {{IEEE}},
+  doi = {10.1109/ICDSP.2013.6622742},
+  author = {Kitsos, Paris and Voros, Nikolaos S. and Dagiuklas, Tasos and Skodras, Athanassios N.},
+  month = jul,
+  year = {2013},
+  pages = {1-5},
+  file = {/media/moinocencio/Data/Tese/Master-Thesis/Documentação/Papers/HEVC e DCT/A High Speed FPGA Implementation of the 2D DCT.pdf}
+}
+
+@article{vieronAV1ImplementationPerformance2018,
+  title = {{{AV1}}: {{Implementation}}, {{Performance}} and {{Applications}}},
+  journal = {ibc365},
+  author = {Vieron, Jerome and Trow, Ian},
+  year = {2018},
+  keywords = {Block diagram},
+  file = {/home/moinocencio/Zotero/storage/PVI68SII/Vieron and Trow - 2018 - AV1 Implementation, Performance and Applications.pdf}
+}
+
+@inproceedings{akyaziComparisonCompressionEfficiency2018,
+  title = {Comparison of {{Compression Efficiency}} between {{HEVC}}/{{H}}.265, {{VP9}} and {{AV1}} Based on {{Subjective Quality Assessments}}},
+  abstract = {The growing requirements for broadcasting and streaming of high quality video continue to trigger demands for codecs with higher compression efficiency. AV1 is the most recent open and royalty free video coding specification developed by Alliance for Open Media (AOMedia) with a declared ambition of becoming the most popular next generation video coding standard. Primary alternatives to AV1 are the VP9 and the HEVC/H.265 which are currently among the most popular and widespread video codecs used in applications. VP9 is also a royalty free and open specification similar to AV1, while HEVC/H.265 requires specific licensing terms for its use in commercial products and services. In this paper, we compare AV1 to VP9 and HEVC/H.265 from rate distortion point of view in a broadcasting use case scenario. Mutual comparison is performed by means of subjective evaluations carried out in a controlled environment using HD video content with typical bitrates ranging from low to high, corresponding to very low up to completely transparent quality. We then proceed with an in-depth analysis of advantages and drawbacks of each codec for specific types of content and compare the subjective comparisons and conclusions to those obtained by others in the state of the art as well to those measured by means of objective metrics such as PSNR.},
+  booktitle = {2018 {{Tenth International Conference}} on {{Quality}} of {{Multimedia Experience}} ({{QoMEX}})},
+  doi = {10.1109/QoMEX.2018.8463294},
+  author = {Akyazi, P. and Ebrahimi, T.},
+  month = may,
+  year = {2018},
+  keywords = {video coding,Video coding,data compression,Encoding,AOMedia,AV1,Bit rate,Broadcasting,Codecs,compression efficiency,H.265,HD video content,HEVC,HEVC/H.265,high quality video,Multimedia communication,next generation video coding standard,objective metrics,open royalty free video coding specification,open specification,Streaming media,Subjective quality assessment,subjective quality assessments,video codecs,video compression,VP9,WebM},
+  pages = {1-6},
+  file = {/home/moinocencio/Zotero/storage/98HLDL29/Akyazi and Ebrahimi - 2018 - Comparison of Compression Efficiency between HEVC.pdf;/home/moinocencio/Zotero/storage/X38NMZL4/8463294.html}
+}
+
+@inproceedings{akyaziComparisonCompressionEfficiency2018a,
+  address = {{Cagliari}},
+  title = {Comparison of {{Compression Efficiency}} between {{HEVC}}/{{H}}.265, {{VP9}} and {{AV1}} Based on {{Subjective Quality Assessments}}},
+  isbn = {978-1-5386-2605-4},
+  booktitle = {2018 {{Tenth International Conference}} on {{Quality}} of {{Multimedia Experience}} ({{QoMEX}})},
+  publisher = {{IEEE}},
+  doi = {10.1109/QoMEX.2018.8463294},
+  author = {Akyazi, Pinar and Ebrahimi, Touradj},
+  month = may,
+  year = {2018},
+  pages = {1-6}
+}
+
+@book{akramullahDigitalVideoConcepts2014,
+  address = {{Berkeley, CA}},
+  title = {Digital {{Video Concepts}}, {{Methods}}, and {{Metrics}}: {{Quality}}, {{Compression}}, {{Performance}}, and {{Power Trade}}-off {{Analysis}}},
+  isbn = {978-1-4302-6712-6 978-1-4302-6713-3},
+  shorttitle = {Digital {{Video Concepts}}, {{Methods}}, and {{Metrics}}},
+  language = {en},
+  publisher = {{Apress}},
+  doi = {10.1007/978-1-4302-6713-3},
+  author = {Akramullah, Shahriar},
+  year = {2014},
+  file = {/home/moinocencio/Zotero/storage/VYE8KTRK/Akramullah - 2014 - Digital Video Concepts, Methods, and Metrics Qual.pdf}
+}
+
+@book{winklerDigitalVideoQuality2005e,
+  address = {{Chichester}},
+  title = {Digital Video Quality: Vision Models and Metrics},
+  isbn = {978-0-470-02404-1},
+  shorttitle = {Digital Video Quality},
+  language = {eng},
+  publisher = {{Wiley}},
+  author = {Winkler, Stefan},
+  year = {2005},
+  file = {/home/moinocencio/Zotero/storage/S57XYHEZ/Winkler - 2005 - Digital video quality vision models and metrics.pdf},
+  note = {OCLC: 250025363}
+}
+
+@inproceedings{groisPerformanceComparisonAV12018,
+  address = {{San Diego, United States}},
+  title = {Performance Comparison of {{AV1}}, {{JEM}}, {{VP9}}, and {{HEVC}} Encoders},
+  isbn = {978-1-5106-1249-5 978-1-5106-1250-1},
+  booktitle = {Applications of {{Digital Image Processing XL}}},
+  publisher = {{SPIE}},
+  doi = {10.1117/12.2283428},
+  author = {Grois, Dan and Nguyen, Tung and Marpe, Detlev},
+  editor = {Tescher, Andrew G.},
+  month = feb,
+  year = {2018},
+  pages = {120}
+}
+
+@inproceedings{guoCompressionPerformanceComparison2018,
+  address = {{San Francisco, CA, USA}},
+  title = {Compression {{Performance Comparison}} of X264, X265, Libvpx and Aomenc for {{On}}-{{Demand Adaptive Streaming Applications}}},
+  isbn = {978-1-5386-4160-6},
+  booktitle = {2018 {{Picture Coding Symposium}} ({{PCS}})},
+  publisher = {{IEEE}},
+  doi = {10.1109/PCS.2018.8456302},
+  author = {Guo, Liwei and De Cock, Jan and Aaron, Anne},
+  month = jun,
+  year = {2018},
+  pages = {26-30}
+}
+
+@inproceedings{laudeComparisonJEMAV12018,
+  address = {{San Francisco, CA, USA}},
+  title = {A {{Comparison}} of {{JEM}} and {{AV1}} with {{HEVC}}: {{Coding Tools}}, {{Coding Efficiency}} and {{Complexity}}},
+  isbn = {978-1-5386-4160-6},
+  shorttitle = {A {{Comparison}} of {{JEM}} and {{AV1}} with {{HEVC}}},
+  booktitle = {2018 {{Picture Coding Symposium}} ({{PCS}})},
+  publisher = {{IEEE}},
+  doi = {10.1109/PCS.2018.8456291},
+  author = {Laude, Thorsten and Adhisantoso, Yeremia Gunawan and Voges, Jan and Munderloh, Marco and Ostermann, Jorn},
+  month = jun,
+  year = {2018},
+  pages = {36-40}
+}
+
+@inproceedings{akyaziComparisonCompressionEfficiency2018b,
+  address = {{Cagliari}},
+  title = {Comparison of {{Compression Efficiency}} between {{HEVC}}/{{H}}.265, {{VP9}} and {{AV1}} Based on {{Subjective Quality Assessments}}},
+  isbn = {978-1-5386-2605-4},
+  booktitle = {2018 {{Tenth International Conference}} on {{Quality}} of {{Multimedia Experience}} ({{QoMEX}})},
+  publisher = {{IEEE}},
+  doi = {10.1109/QoMEX.2018.8463294},
+  author = {Akyazi, Pinar and Ebrahimi, Touradj},
+  month = may,
+  year = {2018},
+  pages = {1-6}
+}
+
+@inproceedings{nguyenFutureVideoCoding2018,
+  address = {{San Francisco, CA}},
+  title = {Future {{Video Coding Technologies}}: {{A Performance Evaluation}} of {{AV1}}, {{JEM}}, {{VP9}}, and {{HM}}},
+  isbn = {978-1-5386-4160-6},
+  shorttitle = {Future {{Video Coding Technologies}}},
+  booktitle = {2018 {{Picture Coding Symposium}} ({{PCS}})},
+  publisher = {{IEEE}},
+  doi = {10.1109/PCS.2018.8456289},
+  author = {Nguyen, Tung and Marpe, Detlev},
+  month = jun,
+  year = {2018},
+  pages = {31-35}
+}
+
+@inproceedings{groisCodingEfficiencyComparison2016,
+  address = {{Nuremberg, Germany}},
+  title = {Coding Efficiency Comparison of {{AV1}}/{{VP9}}, {{H}}.265/{{MPEG}}-{{HEVC}}, and {{H}}.264/{{MPEG}}-{{AVC}} Encoders},
+  isbn = {978-1-5090-5966-9},
+  booktitle = {2016 {{Picture Coding Symposium}} ({{PCS}})},
+  publisher = {{IEEE}},
+  doi = {10.1109/PCS.2016.7906321},
+  author = {Grois, Dan and Nguyen, Tung and Marpe, Detlev},
+  year = {2016},
+  pages = {1-5}
+}
+
+@misc{MPEGMovingPicture,
+  title = {{{MPEG}} | {{The Moving Picture Experts Group}} Website},
+  howpublished = {https://mpeg.chiariglione.org/},
+  file = {/home/moinocencio/Zotero/storage/XUAMYBLW/mpeg.chiariglione.org.html}
+}
+
+@article{sethuramanAnalysisEmergingAOMedia2018,
+  title = {Analysis of the {{Emerging AOMedia AV1 Video Coding Format}} for {{OTT Use}}-{{Cases}}},
+  journal = {SMPTE Motion Imaging Journal ( Volume: 127 , Issue: 5 , June 2018 )},
+  author = {Sethuraman, Sriram and Rajan, Cherma and Patankar, Kaustubh},
+  month = jun,
+  year = {2018}
+}
+
+@inproceedings{chenOverviewCoreCoding2018,
+  address = {{San Francisco, CA}},
+  title = {An {{Overview}} of {{Core Coding Tools}} in the {{AV1 Video Codec}}},
+  isbn = {978-1-5386-4160-6},
+  booktitle = {2018 {{Picture Coding Symposium}} ({{PCS}})},
+  publisher = {{IEEE}},
+  doi = {10.1109/PCS.2018.8456249},
+  author = {Chen, Yue and Murherjee, Debargha and Han, Jingning and Grange, Adrian and Xu, Yaowu and Liu, Zoe and Parker, Sarah and Chen, Cheng and Su, Hui and Joshi, Urvang and Chiang, Ching-Han and Wang, Yunqing and Wilkins, Paul and Bankoski, Jim and Trudeau, Luc and Egge, Nathan and Valin, Jean-Marc and Davies, Thomas and Midtskogen, Steinar and Norkin, Andrey and {de Rivaz}, Peter},
+  month = jun,
+  year = {2018},
+  pages = {41-45}
+}
+
+@misc{JointDevelopmentFoundation,
+  title = {Joint {{Development Foundation}}},
+  abstract = {Use our legal agreements and our 501(c)6 corporate structure to start your specification and source code projects~quickly and at no cost.~ The Joint Development Foundation provides you with a...},
+  language = {en},
+  journal = {Joint Development Foundation},
+  howpublished = {http://www.jointdevelopment.org/},
+  file = {/home/moinocencio/Zotero/storage/SFCBVNCR/www.jointdevelopment.org.html}
+}
+
+@misc{aomediaHome,
+  title = {Home},
+  abstract = {An Alliance of Global Media Innovators    Coming Soon to a Screen Near You
+ View Demos        
+Get Started with AV1
+The AV1 specification, reference code and format bindings for use},
+  language = {en-US},
+  journal = {Alliance for Open Media},
+  howpublished = {https://aomedia.org/},
+  author = {{aomedia}},
+  file = {/home/moinocencio/Zotero/storage/R3AE6B6H/aomedia.org.html}
+}
+
+@misc{march2018CodecWarsBattle,
+  title = {Codec Wars: {{The}} Battle between {{HEVC}} and {{AV1}}},
+  shorttitle = {Codec Wars},
+  abstract = {A new codec designed for delivering OTT content that is backed by the likes of Amazon, Netflix and Google, threatens to challenge the dominance of HEVC.},
+  language = {en},
+  journal = {IBC},
+  howpublished = {https://www.ibc.org/delivery/codec-wars-the-battle-between-hevc-and-av1/2710.article},
+  author = {March 2018, Adrian Pennington7},
+  file = {/home/moinocencio/Zotero/storage/SELBAM22/2710.html}
+}
+
+@article{silvaFastMultiplicationfreeQWDCT2004,
+  title = {Fast Multiplication-Free {{QWDCT}} for {{DV}} Coding Standard},
+  volume = {50},
+  issn = {0098-3063},
+  abstract = {This paper deals with fast computation of some operations included in the digital video (DV) coding standard. The proposed solution converts floating-point arithmetic operations into integer arithmetic operations, replacing highly computational demanding blocks such as discrete cosine transform (DCT), weighting (W) and quantization (Q) by fast integer calculations using only shifts and additions. The overall computational complexity was reduced by 73\% in comparison to a floating-point implementation. Our solution is suitable to be programmed into any fixed-point arithmetic processor decreasing the consumer equipment cost. This solution is still compatible with the standard in terms of the DCT precision requirements.},
+  number = {1},
+  journal = {IEEE Transactions on Consumer Electronics},
+  doi = {10.1109/TCE.2004.1277859},
+  author = {Silva, A. and Gouveia, P. and Navarro, A.},
+  month = feb,
+  year = {2004},
+  keywords = {Computational complexity,discrete cosine transforms,Discrete cosine transforms,video coding,discrete cosine transform,Video compression,transform coding,fixed point arithmetic,quantization,Digital recording,digital video coding,fast integer calculations,fixed-point arithmetic processor,floating point arithmetic,Floating-point arithmetic,floating-point arithmetic operations,IEC standards,integer arithmetic operations,Quantization,Video equipment,Video recording,Video sharing,weighting},
+  pages = {180-187},
+  file = {/home/moinocencio/Zotero/storage/IZ2KVA7B/Silva et al. - 2004 - Fast multiplication-free QWDCT for DV coding stand.pdf;/home/moinocencio/Zotero/storage/AJQSG63R/1277859.html}
+}
+
+@inproceedings{navarroMPEG4CodecPerformance2006,
+  title = {{{MPEG}}-4 {{Codec Performance}} Using a {{Fast Integer IDCT}}},
+  abstract = {Several standardized video coding algorithms use a well known discrete cosine transform (DCT) at the encoder to remove redundancy from video random processes. Its inverse, the IDCT is present at the decoder as well as at the encoder loop. The accuracy of this inverse transform, required to avoid large drift between the encoder and decoder, is defined in an IEEE standard which will be withdrawn from MPEG and ITU standardized codecs. Due to the huge number of computations required to compute the FDCT/IDCT (forward/inverse DCT) pair, reduction of their complexity is essential to speed up the video processing. In this paper, we propose a fast integer IDCT calculation method. Additionally, we insert it into the MPEG-4 (Part 2) reference software in order to validate our proposed method. The testing results using two different video sequences, at QCIF resolution, show similar PSNR average values between the reference MPEG-4 and the proposed MPEG-4 codec},
+  booktitle = {2006 {{IEEE International Symposium}} on {{Consumer Electronics}}},
+  doi = {10.1109/ISCE.2006.1689537},
+  author = {Navarro, A. and Silva, A. and Tavares, J.},
+  month = jun,
+  year = {2006},
+  keywords = {discrete cosine transforms,Discrete cosine transforms,Discrete transforms,video coding,Video coding,data compression,Codecs,video codecs,Code standards,codec,decoder,decoding,Decoding,encoder,Fast 8x8-IDCT,FDCT,forward discrete cosine transform,IDCT,IEEE standard,Image and video coding,inverse discrete cosine transform,MPEG 4 Standard,MPEG-4,MPEG-4 reference software,performance evaluation,QCIF resolution,Random processes,Testing,video coding algorithm,video processing,video sequence,Video sequences},
+  pages = {1-5},
+  file = {/home/moinocencio/Zotero/storage/N6BZEPQM/Navarro et al. - 2006 - MPEG-4 Codec Performance using a Fast Integer IDCT.pdf;/home/moinocencio/Zotero/storage/YVVSB3ZU/1689537.html}
+}
+
+@inproceedings{silvaFastIDCTImplementation2004,
+  title = {Fast {{IDCT}} Implementation on Hardware Accelerator Devices},
+  booktitle = {{{IEEE International Symposium}} on {{Consumer Electronics}}, 2004},
+  doi = {10.1109/ISCE.2004.1375992},
+  author = {Silva, A. and Nunes, O. and Aragao, C. and Navarro, A.},
+  month = sep,
+  year = {2004},
+  keywords = {Discrete cosine transforms,Hardware,Image coding,Video coding,Signal processing algorithms,Decoding,Field programmable gate arrays,Matrix converters,Polynomials,Telecommunication computing},
+  pages = {476-480},
+  file = {/home/moinocencio/Zotero/storage/LIC35R62/Silva et al. - 2004 - Fast IDCT implementation on hardware accelerator d.pdf;/home/moinocencio/Zotero/storage/IFA73QXE/1375992.html}
+}
+
+@misc{scientiamobileMobileOverviewReport,
+  title = {Mobile {{Overview Report April}} \textendash{} {{June}} 2018},
+  publisher = {{Scientiamobile}},
+  author = {Scientiamobile},
+  file = {/home/moinocencio/Zotero/storage/5TGE2TI2/MOVR-2018-Q2-final.pdf}
+}
+
+@misc{VideoEncodeDecode2016,
+  title = {Video {{Encode}} and {{Decode GPU Support Matrix}}},
+  abstract = {HW accelerated encode and decode are supported on NVIDIA GeForce, Quadro, Tesla, and GRID products with Fermi, Kepler, Maxwell and Pascal generation GPUs. Learn more about NVIDIA Video Codec SDK},
+  language = {en},
+  journal = {NVIDIA Developer},
+  howpublished = {https://developer.nvidia.com/video-encode-decode-gpu-support-matrix},
+  month = nov,
+  year = {2016},
+  keywords = {hardware,hevc,implementation},
+  file = {/home/moinocencio/Zotero/storage/Z4ZQR42T/video-encode-decode-gpu-support-matrix.html}
+}
+
+@article{lienHybridImageRestoring2009,
+  title = {A {{Hybrid Image Restoring Algorithm}} for {{Interlaced Video}}},
+  volume = {16},
+  issn = {1070-9908},
+  abstract = {In this letter, a novel image restoring technique for interlaced video is presented. We employ a motion-degree detector to determine the type of motion in the adjacent pictures efficiently and a hybrid interpolation based on spatial and/or temporal information to restore the missing pixels for each motion type. Extensive experimental results demonstrate that our method can obtain better performances in terms of both quantitative evaluation and visual quality than the state-of-the-art image restoring techniques. Since the proposed method requires low computational complexity, it is very suitable for real-time hardware implementation and can be applied to current television systems.},
+  number = {3},
+  journal = {IEEE Signal Processing Letters},
+  doi = {10.1109/LSP.2008.2011715},
+  author = {Lien, C. and Young, C. and Chen, P.},
+  month = mar,
+  year = {2009},
+  keywords = {Computational complexity,Hardware,computational complexity,Detectors,hybrid image restoring algorithm,Image de-interlacing,image motion analysis,Image quality,image restoration,Image restoration,interlaced video,interlacing,interpolation,Interpolation,Motion detection,Motion estimation,motion-degree detector,Performance evaluation,TV,video signal processing},
+  pages = {223-226},
+  file = {/home/moinocencio/Zotero/storage/GPW6I5UK/4776574.html}
+}
+
+@misc{CiscoVisualNetworking,
+  title = {Cisco {{Visual Networking Index}}: {{Forecast}} and {{Trends}}, 2017\textendash{}2022 {{White Paper}}},
+  shorttitle = {Cisco {{Visual Networking Index}}},
+  abstract = {This forecast is part of the Cisco\textregistered{} Visual Networking Index\texttrademark{} (Cisco VNI\texttrademark{}), an ongoing initiative to track and forecast the impact of visual networking applications. This document presents the details of the Cisco VNI global IP traffic forecast, key trends and the underlying methodology. For more global, regional and select country-level projections, refer to the VNI Forecast Highlights tool.},
+  language = {en},
+  journal = {Cisco},
+  howpublished = {https://www.cisco.com/c/en/us/solutions/collateral/service-provider/visual-networking-index-vni/white-paper-c11-741490.html},
+  keywords = {forecast,IP traffic},
+  file = {/home/moinocencio/Zotero/storage/NDC99GQ7/white-paper-c11-741490.html}
+}
+
+@book{shiImageVideoCompression2008,
+  address = {{Boca Raton, Fla.}},
+  edition = {2. ed},
+  series = {Image Processing Series},
+  title = {Image and Video Compression for Multimedia Engineering: Fundamentals, Algorithms, and Standards},
+  isbn = {978-0-8493-7364-0},
+  shorttitle = {Image and Video Compression for Multimedia Engineering},
+  language = {eng},
+  publisher = {{CRC Press}},
+  author = {Shi, Yun Qing and Sun, Huifang},
+  year = {2008},
+  file = {/home/moinocencio/Zotero/storage/BKVGG9UI/Shi and Sun - 2008 - Image and video compression for multimedia enginee.pdf},
+  note = {OCLC: 254564955}
+}
+
+@book{shiImageVideoCompression2008a,
+  address = {{Boca Raton, Fla.}},
+  edition = {2. ed},
+  series = {Image Processing Series},
+  title = {Image and Video Compression for Multimedia Engineering: Fundamentals, Algorithms, and Standards},
+  isbn = {978-0-8493-7364-0},
+  shorttitle = {Image and Video Compression for Multimedia Engineering},
+  language = {eng},
+  publisher = {{CRC Press}},
+  author = {Shi, Yun Qing and Sun, Huifang},
+  year = {2008},
+  file = {/home/moinocencio/Zotero/storage/3JRI42WQ/IMAGE and VIDEO COMPRESSION for MULTIMEDIA ENGINEERING Fundamentals, Algorithms, and Standards - Yun Q. Shi.pdf},
+  note = {OCLC: 254564955}
+}
+
+@inproceedings{jacobsBriefHistoryVideo,
+  title = {A {{Brief History}} of {{Video Coding}}},
+  language = {en},
+  author = {Jacobs, Marco and Probell, Jonah},
+  file = {/home/moinocencio/Zotero/storage/XXAW293G/Jacobs and Probell - A Brief History of Video Coding.pdf}
+}
+
+@misc{TelevisionUSHistory,
+  title = {Television in the {{US}}: {{History}} and {{Production}}},
+  howpublished = {http://www3.northern.edu/wild/th100/tv.htm},
+  keywords = {Motivation},
+  file = {/home/moinocencio/Zotero/storage/GKDWNWYW/tv.html}
+}
+
+@article{schubinWhatSparkedVideo2017,
+  title = {What {{Sparked Video Research}} in 1877? {{The Overlooked Role}} of the {{Siemens Artificial Eye}} [{{Scanning Our Past}}]},
+  volume = {105},
+  issn = {0018-9219, 1558-2256},
+  shorttitle = {What {{Sparked Video Research}} in 1877?},
+  number = {3},
+  journal = {Proceedings of the IEEE},
+  doi = {10.1109/JPROC.2017.2652998},
+  author = {Schubin, Mark},
+  month = mar,
+  year = {2017},
+  keywords = {Motivation,Television History},
+  pages = {568-576}
+}
+
+@inproceedings{jainArchitectureVLSIImplementation1993,
+  title = {Architecture for {{VLSI}} Implementation of Discrete Cosine Transform Processor for Video Codec},
+  volume = {1},
+  abstract = {A VLSI chip having a small number of arithmetic components to implement the Discrete Cosine Transform (DCT) in real time is desirable. In this paper various fast algorithms are taken into considerations to find the minimum necessary arithmetic components.{$<>$}},
+  booktitle = {{{IEEE Region}} 10 {{International Conference}} on {{Computers}}, {{Communications}} and {{Automation Proceedings}} of {{TENCON}} '93},
+  doi = {10.1109/TENCON.1993.319920},
+  author = {Jain, P. C.},
+  month = oct,
+  year = {1993},
+  keywords = {discrete cosine transforms,Discrete cosine transforms,Discrete transforms,Hardware,Image coding,Transform coding,Discrete Cosine Transform,Arithmetic,codecs,Computer simulation,digital signal processing chips,discrete cosine transform processor,fast algorithms,Karhunen-Loeve transforms,Very large scale integration,video codec,Video codecs,VLSI,VLSI chip,VLSI implementation},
+  pages = {28-31 vol.1},
+  file = {/home/moinocencio/Zotero/storage/ZUK373ZF/Jain - 1993 - Architecture for VLSI implementation of discrete c.pdf;/home/moinocencio/Zotero/storage/5HT9EY5V/319920.html}
+}
+
+@article{ahmedDiscreteCosineTransform1974,
+  title = {Discrete {{Cosine Transform}}},
+  volume = {C-23},
+  issn = {0018-9340},
+  abstract = {A discrete cosine transform (DCT) is defined and an algorithm to compute it using the fast Fourier transform is developed. It is shown that the discrete cosine transform can be used in the area of digital processing for the purposes of pattern recognition and Wiener filtering. Its performance is compared with that of a class of orthogonal transforms and is found to compare closely to that of the Karhunen-Lo{\`e}ve transform, which is known to be optimal. The performances of the Karhunen-Lo{\`e}ve and discrete cosine transforms are also found to compare closely with respect to the rate-distortion criterion.},
+  number = {1},
+  journal = {IEEE Transactions on Computers},
+  doi = {10.1109/T-C.1974.223784},
+  author = {Ahmed, N. and Natarajan, T. and Rao, K. R.},
+  month = jan,
+  year = {1974},
+  keywords = {Discrete cosine transform; discrete Fourier transform; feature selection; Haar transform; Karhunen-Loève transform; rate distortion; Walsh-Hadamard transform; Wiener vector and scalar filtering.},
+  pages = {90-93},
+  file = {/home/moinocencio/Zotero/storage/AFEBZHLZ/Ahmed et al. - 1974 - Discrete Cosine Transform.pdf;/home/moinocencio/Zotero/storage/MKT4YC9A/1672377.html}
+}
+
+@inproceedings{imamDesignImplementationDiscrete2016,
+  title = {Design and Implementation of Discrete Cosine Transform Algorithm on {{FPGA}} Device},
+  abstract = {Nowadays, the field of digital signal processing represents a bottleneck in computer systems design, because the applications used by computers are getting more complicated thus need more resources. FPGAs have been placed as parts on embedded systems to carry heavy loads out of the processors or microcontrollers. The main advantage of FPGAs is that they can do more than one job in parallel. The Discrete Cosine Transform (DCT) is often used in signal and image processing, especially lossy data compression, because it has a strong "energy compaction" property. The aim of this project is to solve the problem of implementing DCT algorithm on FPGA using Hardware Descriptive Languages (HDLs). The design will be optimized to decrease consumed logic cells and therefore provide maximum hardware utilization. The designed system was implemented and tested. The results were as expected; however some limitations were discovered and should be eliminated in the future.},
+  booktitle = {2016 {{Conference}} of {{Basic Sciences}} and {{Engineering Studies}} ({{SGCAC}})},
+  doi = {10.1109/SGCAC.2016.7457999},
+  author = {Imam, E. and Ahmed, M. E. M. and Abdalla, G.},
+  month = feb,
+  year = {2016},
+  keywords = {discrete cosine transforms,Discrete cosine transforms,Discrete Fourier transforms,Hardware,digital signal processing,Field programmable gate arrays,Algorithm design and analysis,Discrete Cosine Transform (DCT),discrete cosine transform algorithm,field programmable gate arrays,Field-Programmable Gate Array (FPGA),Fourier Transform (FT),FPGA device,Frequency-domain analysis,Hardware Description Language (HDL),hardware description languages,hardware descriptive languages,logic design},
+  pages = {13-18},
+  file = {/home/moinocencio/Zotero/storage/RD9MCNCB/Imam et al. - 2016 - Design and implementation of discrete cosine trans.pdf;/home/moinocencio/Zotero/storage/64M6EHYL/7457999.html}
+}
+
+@inproceedings{suzukiDesignBlockLiftingBased2009a,
+  title = {Design of {{Block Lifting}}-{{Based Discrete Cosine Transform Type}}-{{II}} and {{IV}}},
+  abstract = {This paper presents a novel lifting factorization of discrete cosine transform type-II and IV (DCT-II and IV). Although some conventional integer DCT-IIs (IntDCT-IIs) with block size 8 have been proposed, they are not generalized as arbitrary block size M. Using block lifting factorization which has an efficient structure for lossless-to-lossy image coding, we present IntDCT-IIs and IVs with arbitrary block size M that is called block lifting-based DCT-IIs and IVs (BLDCT-IIs and IVs). Finally, the validity of our method is proved by showing the results of lossless-to-lossy image coding in the most general case of the block size 8 and the extended size 16.},
+  booktitle = {2009 {{IEEE}} 13th {{Digital Signal Processing Workshop}} and 5th {{IEEE Signal Processing Education Workshop}}},
+  doi = {10.1109/DSP.2009.4785971},
+  author = {Suzuki, T. and Ikehara, M.},
+  month = jan,
+  year = {2009},
+  keywords = {discrete cosine transforms,Discrete cosine transforms,Discrete transforms,Signal analysis,Audio coding,BLDCT-II,BLDCT-IV,block lifting factorization,block lifting-based DCT-II,block lifting-based DCT-IV,discrete cosine transform,discrete cosine transform (DCT),image coding,Image coding,IntDCT-II,IntDCT-IV,integer DCT-II,integer DCT-IV,lossless-to-lossy image coding,Signal synthesis,Transform coding,Video coding,Video compression},
+  pages = {480-484},
+  file = {/home/moinocencio/Zotero/storage/PC7IR8YA/Suzuki and Ikehara - 2009 - Design of Block Lifting-Based Discrete Cosine Tran.pdf;/home/moinocencio/Zotero/storage/L55F42PR/4785971.html}
+}
+
+@inproceedings{vayalilEfficientASICDesign2016,
+  title = {An {{Efficient ASIC Design}} of {{Variable}}-{{Length Discrete Cosine Transform}} for {{HEVC}}},
+  abstract = {The latest video coding standard introduced by the joint collaborative team on video coding (JCT-VC) is known as high-efficiency video coding (HEVC) or H.265. HEVC/H.265 is mainly targeted for high-definition videos, and offer more compression than its predecessor. The discrete cosine transform (DCT) is widely used for image and video compression including HEVC. This paper proposes a variablelength DCT architecture for encoding video according to the HEVC/H.265 specifications. The architecture is optimized for most likely block sizes in ultra-high definition (UHD) video, and eliminates unnecessary complexities found in many architectures proposed. The synthesized results with Synopsys design tools show that the proposed method can encode 8K UHD videos @ 60 fps in real-time and accomplishes more than 60\% in hardware savings.},
+  booktitle = {2016 {{European Modelling Symposium}} ({{EMS}})},
+  doi = {10.1109/EMS.2016.047},
+  author = {Vayalil, N. C. and Haddrill, J. and Kong, Y.},
+  month = nov,
+  year = {2016},
+  keywords = {Discrete cosine transform (DCT),discrete cosine transforms,Discrete cosine transforms,video coding,Two dimensional displays,data compression,Computer architecture,Encoding,H.265,video compression,8K UHD video encoding,Adders,application specific integrated circuits,block size,Clocks,efficient ASIC design,HEVC/H.265 specification,high definition,high definition video,high efficiency coding (HEVC),high-efficiency video coding,image compression,integrated circuit design,JCT-VC,Joint Collaborative Team on Video Coding,Synopsys design tools,ultrahigh definition video,variable length codes,variable-length DCT architecture,variable-length discrete cosine transform,video coding standard,throughput},
+  pages = {229-233},
+  file = {/home/moinocencio/Zotero/storage/DQB725YY/Vayalil et al. - 2016 - An Efficient ASIC Design of Variable-Length Discre.pdf;/home/moinocencio/Zotero/storage/LU3MBBPF/7920256.html}
+}
+
+@article{rejuConvolutionUsingDiscrete2007,
+  title = {Convolution {{Using Discrete Sine}} and {{Cosine Transforms}}},
+  volume = {14},
+  issn = {1070-9908},
+  abstract = {In this paper, we derive a relation for the circular convolution operation in the discrete sine and cosine transform domains. The transform coefficients are either symmetric or asymmetric and hence we need to calculate only half of the total coefficients. Since fast algorithms are available for the computation of discrete sine and cosine transforms, the proposed method is an alternative to the discrete Fourier transform method for filtering applications.},
+  number = {7},
+  journal = {IEEE Signal Processing Letters},
+  doi = {10.1109/LSP.2006.891312},
+  author = {Reju, V. G. and Koh, S. N. and Soon, I. Y.},
+  month = jul,
+  year = {2007},
+  keywords = {discrete cosine transforms,Discrete cosine transforms,Discrete transforms,discrete Fourier transforms,Discrete Fourier transforms,Fourier transforms,Fast Fourier transforms,circular convolution operation,convolution,Convolution,cosine transforms,discrete Fourier transform,discrete sine transforms,Equations,filtering,Filtering algorithms,filtering applications,filtering theory},
+  pages = {445-448},
+  file = {/home/moinocencio/Zotero/storage/C4BLKWYV/Reju et al. - 2007 - Convolution Using Discrete Sine and Cosine Transfo.pdf;/home/moinocencio/Zotero/storage/FLTVAKMQ/4244493.html}
+}
+
+@article{soo-changpeiIntegerTransformsAnalogous2000a,
+  title = {The Integer Transforms Analogous to Discrete Trigonometric Transforms},
+  volume = {48},
+  issn = {1053-587X},
+  abstract = {The integer transform (such as the Walsh transform) is the discrete transform that all the entries of the transform matrix are integer. It is much easier to implement because the real number multiplication operations can be avoided, but the performance is usually worse. On the other hand, the noninteger transform, such as the DFT and DCT, has a good performance, but real number multiplication is required. W derive the integer transforms analogous to some popular noninteger transforms. These integer transforms retain most of the performance quality of the original transform, but the implementation is much simpler. Especially, for the two-dimensional (2-D) block transform in image/video, the saving can be huge using integer operations. In 1989, Cham had derived the integer cosine transform. Here, we will derive the integer sine, Hartley, and Fourier transforms. We also introduce the general method to derive the integer transform from some noninteger transform. Besides, the integer transform derived by Cham still requires real number multiplication for the inverse transform. We modify the integer transform introduced by Cham and introduce the complete integer transform. It requires no real number multiplication operation, no matter what the forward or inverse transform. The integer transform we derive would be more efficient than the original transform. For example, for the 8-point DFT and IDFT, there are in total four real numbers and eight fixed-point multiplication operations required, but for the forward and inverse 8-point complete integer Fourier transforms, there are totally 20 fixed-point multiplication operations required. However, for the integer transform, the implementation is simpler, and many of the properties of the original transform are kept.},
+  number = {12},
+  journal = {IEEE Transactions on Signal Processing},
+  doi = {10.1109/78.886998},
+  author = {{Soo-Chang Pei} and {Jian-Juin Ding}},
+  month = dec,
+  year = {2000},
+  keywords = {discrete cosine transforms,Discrete cosine transforms,Discrete transforms,integer cosine transform,2D block transform,DCT,Decorrelation,DFT,discrete Fourier transforms,Discrete Fourier transforms,discrete Hartley transforms,discrete trigonometric transforms,fixed-point multiplication operations,Fourier transforms,Frequency domain analysis,Hardware,IDFT,image processing,image/video,integer Fourier transform,integer Hartley transform,integer sine transform,inverse problems,inverse transform,noninteger transform,performance,real number multiplication,transform matrix,Two dimensional displays,Walsh transform},
+  pages = {3345-3364},
+  file = {/home/moinocencio/Zotero/storage/YF563JZ4/Soo-Chang Pei and Jian-Juin Ding - 2000 - The integer transforms analogous to discrete trigo.pdf;/home/moinocencio/Zotero/storage/8VLW5B3N/886998.html}
+}
+
+@book{szeHighEfficiencyVideo2014c,
+  address = {{Cham}},
+  series = {Integrated {{Circuits}} and {{Systems}}},
+  title = {High {{Efficiency Video Coding}} ({{HEVC}}): {{Algorithms}} and {{Architectures}}},
+  isbn = {978-3-319-06895-4 978-3-319-06894-7},
+  shorttitle = {High {{Efficiency Video Coding}} ({{HEVC}})},
+  language = {eng},
+  publisher = {{Springer}},
+  editor = {Sze, Vivienne and Budagavi, Madhukar and Sullivan, Gary J.},
+  year = {2014},
+  file = {/home/moinocencio/Zotero/storage/GS4NT7DN/Sze et al. - 2014 - High Efficiency Video Coding (HEVC) Algorithms an.pdf;/home/moinocencio/Zotero/storage/GU9MBBWN/[Integrated Circuits and Systems] Vivienne Sze, Madhukar Budagavi, Gary J. Sullivan (eds.) - High Efficiency Video Coding (HEVC)_ Algorithms and Architectures (2014, Springer International Publishing).pdf},
+  note = {OCLC: 891567081}
+}
+
+@article{wen-hsiungchenFastComputationalAlgorithm1977,
+  title = {A {{Fast Computational Algorithm}} for the {{Discrete Cosine Transform}}},
+  volume = {25},
+  issn = {0090-6778},
+  abstract = {A Fast Discrete Cosine Transform algorithm has been developed which provides a factor of six improvement in computational complexity when compared to conventional Discrete Cosine Transform algorithms using the Fast Fourier Transform. The algorithm is derived in the form of matrices and illustrated by a signal-flow graph, which may be readily translated to hardware or software implementations.},
+  number = {9},
+  journal = {IEEE Transactions on Communications},
+  doi = {10.1109/TCOM.1977.1093941},
+  author = {{Wen-Hsiung Chen} and Smith, C. and Fralick, S.},
+  month = sep,
+  year = {1977},
+  keywords = {Computational complexity,Discrete cosine transforms,Discrete transforms,Discrete Fourier transforms,Hardware,Fast Fourier transforms,Laboratories,Equations,Matrix decomposition,Software algorithms,Transforms},
+  pages = {1004-1009},
+  file = {/home/moinocencio/Zotero/storage/GVLVSCIF/Wen-Hsiung Chen et al. - 1977 - A Fast Computational Algorithm for the Discrete Co.pdf;/home/moinocencio/Zotero/storage/5E8ZTXRC/1093941.html}
+}
+
+@book{raoDiscreteCosineTransform1993,
+  address = {{Boston}},
+  title = {Discrete Cosine Transform: Algorithms, Advantanges, Applications},
+  isbn = {978-0-12-580203-1},
+  shorttitle = {Discrete Cosine Transform},
+  publisher = {{Acad. Press [u.a.]}},
+  author = {Rao, K. R. and Yip, Ping},
+  year = {1993},
+  note = {OCLC: 257347073}
+}
+
+@book{raoDiscreteCosineTransform1993a,
+  address = {{Boston}},
+  title = {Discrete Cosine Transform: Algorithms, Advantanges, Applications},
+  isbn = {978-0-12-580203-1},
+  shorttitle = {Discrete Cosine Transform},
+  publisher = {{Acad. Press [u.a.]}},
+  author = {Rao, K. R. and Yip, Ping},
+  year = {1993},
+  note = {OCLC: 257347073}
+}
+
+@book{raoDiscreteCosineTransform1993b,
+  address = {{Boston}},
+  title = {Discrete Cosine Transform: Algorithms, Advantanges, Applications},
+  isbn = {978-0-12-580203-1},
+  shorttitle = {Discrete Cosine Transform},
+  publisher = {{Acad. Press [u.a.]}},
+  author = {Rao, K. R. and Yip, Ping},
+  year = {1993},
+  note = {OCLC: 257347073}
+}
+
+@book{raoDiscreteCosineTransform1993c,
+  address = {{Boston}},
+  title = {Discrete Cosine Transform: Algorithms, Advantanges, Applications},
+  isbn = {978-0-12-580203-1},
+  shorttitle = {Discrete Cosine Transform},
+  publisher = {{Acad. Press [u.a.]}},
+  author = {Rao, K. R. and Yip, Ping},
+  year = {1993},
+  note = {OCLC: 257347073}
+}
+
+@book{raoDiscreteCosineTransform1993d,
+  address = {{Boston}},
+  title = {Discrete Cosine Transform: Algorithms, Advantanges, Applications},
+  isbn = {978-0-12-580203-1},
+  shorttitle = {Discrete Cosine Transform},
+  publisher = {{Acad. Press [u.a.]}},
+  author = {Rao, K. R. and Yip, Ping},
+  year = {1993},
+  note = {OCLC: 257347073}
+}
+
+@book{raoDiscreteCosineTransform1993e,
+  address = {{Boston}},
+  title = {Discrete Cosine Transform: Algorithms, Advantanges, Applications},
+  isbn = {978-0-12-580203-1},
+  shorttitle = {Discrete Cosine Transform},
+  publisher = {{Acad. Press [u.a.]}},
+  author = {Rao, K. R. and Yip, Ping},
+  year = {1993},
+  note = {OCLC: 257347073}
+}
+
+@book{raoDiscreteCosineTransform1993f,
+  address = {{Boston}},
+  title = {Discrete Cosine Transform: Algorithms, Advantanges, Applications},
+  isbn = {978-0-12-580203-1},
+  shorttitle = {Discrete Cosine Transform},
+  publisher = {{Acad. Press [u.a.]}},
+  author = {Rao, K. R. and Yip, Ping},
+  year = {1993},
+  note = {OCLC: 257347073}
+}
+
+@book{gonzalezDigitalImageProcessing2018,
+  address = {{New York, NY}},
+  edition = {Fourth edition},
+  title = {Digital Image Processing},
+  isbn = {978-0-13-335672-4},
+  language = {eng},
+  publisher = {{Pearson}},
+  author = {Gonzalez, Rafael C. and Woods, Richard E.},
+  year = {2018},
+  file = {/home/moinocencio/Zotero/storage/LL3CCQ89/Gonzalez and Woods - 2018 - Digital image processing.pdf},
+  note = {OCLC: 987436552}
+}
+
+@book{gonzalezDigitalImageProcessing2018a,
+  address = {{New York, NY}},
+  edition = {Fourth edition},
+  title = {Digital Image Processing},
+  isbn = {978-0-13-335672-4},
+  language = {eng},
+  publisher = {{Pearson}},
+  author = {Gonzalez, Rafael C. and Woods, Richard E.},
+  year = {2018},
+  file = {/home/moinocencio/Zotero/storage/FEDZYWSC/Digital_Image_Processing_2ndEd.pdf},
+  note = {OCLC: 987436552}
+}
+
+@book{prattDigitalImageProcessing2001,
+  address = {{New York}},
+  edition = {3. ed},
+  series = {A {{Wiley}}-{{Interscience}} Publication},
+  title = {Digital Image Processing: {{PIKS}} Inside},
+  isbn = {978-0-471-37407-7},
+  shorttitle = {Digital Image Processing},
+  language = {eng},
+  publisher = {{Wiley}},
+  author = {Pratt, William K.},
+  year = {2001},
+  file = {/home/moinocencio/Zotero/storage/RL6787N5/Pratt - 2001 - Digital image processing PIKS inside.pdf;/run/media/moinocencio/Data/Tese/Master-Thesis/Documentação/William K. Pratt - Digital Image Processing_ PIKS Inside-Wiley-Interscience (2001).pdf},
+  note = {OCLC: 248389925}
+}
+
+@article{strangDiscreteCosineTransform,
+  title = {The {{Discrete Cosine Transform}}},
+  language = {en},
+  author = {Strang, Gilbert},
+  pages = {13},
+  file = {/home/moinocencio/Zotero/storage/64SU4XFX/Strang - The Discrete Cosine Transform.pdf}
+}
+
+@book{oppenheimDiscretetimeSignalProcessing1998,
+  address = {{Upper Saddler River, NJ}},
+  edition = {2nd ed},
+  title = {Discrete-Time Signal Processing},
+  isbn = {978-0-13-754920-7},
+  language = {eng},
+  publisher = {{Prentice Hall}},
+  author = {Oppenheim, Alan V. and Schafer, Ronald W. and Buck, John R.},
+  year = {1998},
+  file = {/home/moinocencio/Downloads/Discrete-Time Signal Processing
+Alan V. Oppenheim Ronald W. Schafer
+Third Edition
+;/home/moinocencio/Zotero/storage/XWS8HEH4/[Prentice-Hall Signal Processing Series] Alan V. Oppenheim, Ronald W. Schafer, John R. Buck - Discrete-Time Signal Processing (1999, Prentice Hall).djvu}
+}
+
+@inproceedings{yipDIFAlgorithmsDCT1985,
+  title = {{{DIF Algorithms}} for {{DCT}} and {{DST}}},
+  volume = {10},
+  abstract = {Decimation-In-Frequency (DIF) algorithms for a family of discrete cosine and sine transforms (DCT) and (DST) are systematically developed, based on a radix-2 factorization of the transformation matrices. The results indicate these to be viable alternatives to existing algorithms for the calculation of these discrete transforms. The algorithms are all recursive in nature, making for a modular structure in possible hardware implementations.},
+  booktitle = {{{ICASSP}} '85. {{IEEE International Conference}} on {{Acoustics}}, {{Speech}}, and {{Signal Processing}}},
+  doi = {10.1109/ICASSP.1985.1168246},
+  author = {Yip, P. and Rao, K.},
+  month = apr,
+  year = {1985},
+  keywords = {Computational complexity,Discrete cosine transforms,Discrete transforms,Hardware,Signal processing algorithms,Arithmetic,Equations,Costs,Digital signal processing},
+  pages = {776-779},
+  file = {/home/moinocencio/Zotero/storage/6B5CZKN2/Yip and Rao - 1985 - DIF Algorithms for DCT and DST.pdf;/home/moinocencio/Zotero/storage/IV33Z79I/1168246.html}
+}
+
+@misc{DiscreteCosineTransform,
+  title = {Discrete Cosine Transform - {{MATLAB}} Dct},
+  howpublished = {https://www.mathworks.com/help/signal/ref/dct.html},
+  file = {/home/moinocencio/Zotero/storage/J75649GT/dct.html}
+}
+
+@article{jainSinusoidalFamilyUnitary1979,
+  title = {A {{Sinusoidal Family}} of {{Unitary Transforms}}},
+  volume = {PAMI-1},
+  issn = {0162-8828},
+  abstract = {A new family of unitary transforms is introduced. It is shown that the well-known discrete Fourier, cosine, sine, and the Karhunen-Loeve (KL) (for first-order stationary Markov processes) transforms are members of this family. All the member transforms of this family are sinusoidal sequences that are asymptotically equivalent. For finite-length data, these transforms provide different approximations to the KL transform of the said data. From the theory of these transforms some well-known facts about orthogonal transforms are easily explained and some widely misunderstood concepts are brought to light. For example, the near-optimal behavior of the even discrete cosine transform to the KL transform of first-order Markov processes is explained and, at the same time, it is shown that this transform is not always such a good (or near-optimal) approximation to the above-mentioned KL transform. It is also shown that each member of the sinusoidal family is the KL transform of a unique, first-order, non-stationary (in general), Markov process. Asymptotic equivalence and other interesting properties of these transforms can be studied by analyzing the underlying Markov processes.},
+  number = {4},
+  journal = {IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  doi = {10.1109/TPAMI.1979.4766944},
+  author = {Jain, A. K.},
+  month = oct,
+  year = {1979},
+  keywords = {Discrete cosine transforms,Discrete transforms,Discrete Fourier transforms,Fourier transforms,Fast Fourier transforms,Random processes,Karhunen-Loeve transforms,Covariance matrix,Fast transforms,image transforms,Karhunen-Loeve transform,Markov processes,Oceans,orthogonal transforms,unitary matrices},
+  pages = {356-365},
+  file = {/home/moinocencio/Zotero/storage/3LH6TMTJ/Jain - 1979 - A Sinusoidal Family of Unitary Transforms.pdf;/home/moinocencio/Zotero/storage/6WNMQ978/4766944.html}
+}
+
+@inproceedings{hanButterflyStructuredDesign2013,
+  address = {{San Jose, CA, USA}},
+  title = {A Butterfly Structured Design of the Hybrid Transform Coding Scheme},
+  isbn = {978-1-4799-0294-1 978-1-4799-0292-7},
+  abstract = {The hybrid transform coding scheme that alternates amongst the asymmetric discrete sine transform (ADST) and the discrete cosine transform (DCT) depending on the boundary prediction conditions, is an efficient tool for video and image compression. It optimally exploits the statistical characteristics of prediction residual, thereby achieving significant coding performance gains over the conventional DCT-based approach. A practical concern lies in the intrinsic conflict between transform kernels of ADST and DCT, which prevents a butterfly structured implementation for parallel computing. Hence the hybrid transform coding scheme has to rely on matrix multiplication, which presents a speed-up barrier due to under-utilization of the hardware, especially for larger block sizes. In this work, we devise a novel ADSTlike transform whose kernel is consistent with that of DCT, thereby enabling butterfly structured computation flow, while largely retaining the performance advantages of hybrid transform coding scheme in terms of compression efficiency. A prototype implementation of the proposed butterfly structured hybrid transform coding scheme is available in the VP9 codec repository.},
+  language = {en},
+  booktitle = {2013 {{Picture Coding Symposium}} ({{PCS}})},
+  publisher = {{IEEE}},
+  doi = {10.1109/PCS.2013.6737672},
+  author = {Han, Jingning and Xu, Yaowu and Mukherjee, Debargha},
+  month = dec,
+  year = {2013},
+  pages = {17-20},
+  file = {/home/moinocencio/Zotero/storage/AFAB4356/Han et al. - 2013 - A butterfly structured design of the hybrid transf.pdf}
+}
+
+@article{jingninghanJointlyOptimizedSpatial2012,
+  title = {Jointly {{Optimized Spatial Prediction}} and {{Block Transform}} for {{Video}} and {{Image Coding}}},
+  volume = {21},
+  issn = {1057-7149, 1941-0042},
+  number = {4},
+  journal = {IEEE Trans. on Image Process.},
+  doi = {10.1109/TIP.2011.2169976},
+  author = {{Jingning Han} and Saxena, A. and Melkote, V. and Rose, K.},
+  month = apr,
+  year = {2012},
+  pages = {1874-1884}
+}
+
+@article{vHybridApproachesImage2011,
+  title = {Hybrid {{Approaches}} to {{Image Coding}}: {{A Review}}},
+  volume = {2},
+  issn = {2156-5570},
+  shorttitle = {Hybrid {{Approaches}} to {{Image Coding}}},
+  abstract = {Now a days, the digital world is most focused on storage space and speed. With the growing demand for better bandwidth utilization, efficient image data compression techniques have emerged as an important factor for image data transmission and storage. To date, different approaches to image compression have been developed like the classical predictive coding, popular transform coding and vector quantization. Several second generation coding schemes or the segmentation based schemes are also gaining popularity. Practically efficient compression systems based on hybrid coding which combines the advantages of different traditional methods of image coding have also being developed over the years. In this paper, different hybrid approaches to image compression are discussed. Hybrid coding of images, in this context, deals with combining two or more traditional approaches to enhance the individual methods and achieve better quality reconstructed images with higher compression ratio. Literature on hybrid techniques of image coding over the past years is also reviewed. An attempt is made to highlight the neuro-wavelet approach for enhancing coding efficiency.},
+  language = {en},
+  number = {7},
+  journal = {IJACSA},
+  doi = {10.14569/IJACSA.2011.020716},
+  author = {V, Rehna and Kumar., Jeya},
+  year = {2011},
+  file = {/home/moinocencio/Zotero/storage/RWFMF8EN/V and Kumar. - 2011 - Hybrid Approaches to Image Coding A Review.pdf}
+}
+
+@book{bingNextgenerationVideoCoding2015,
+  address = {{Hoboken}},
+  title = {Next-Generation Video Coding and Streaming},
+  isbn = {978-1-119-13332-2 978-1-119-13333-9},
+  lccn = {TA1638},
+  abstract = {"This book describes next-generation video coding and streaming technologies with a comparative assessment of the strengths and weaknesses. Specific emphasis is placed on the H.265/HEVC video coding standard and adaptive bit rate video streaming"--},
+  publisher = {{Wiley}},
+  author = {Bing, Benny},
+  year = {2015},
+  keywords = {Video compression,TECHNOLOGY \& ENGINEERING / Telecommunications}
+}
+
+@article{yonghongzengIntegerDCTsFast2001,
+  title = {Integer {{DCTs}} and Fast Algorithms},
+  volume = {49},
+  issn = {1053587X},
+  number = {11},
+  journal = {IEEE Trans. Signal Process.},
+  doi = {10.1109/78.960425},
+  author = {{Yonghong Zeng} and {Lizhi Cheng} and {Guoan Bi} and Kot, A.C.},
+  year = {Nov./2001},
+  pages = {2774-2782},
+  file = {/run/media/moinocencio/Data/Tese/Master-Thesis/Documentação/yonghongzeng2001.pdf}
+}
+
+@article{chengIntegerDiscreteCosine2001,
+  title = {Integer Discrete Cosine Transform and Its Fast Algorithm},
+  volume = {37},
+  issn = {00135194},
+  language = {en},
+  number = {1},
+  journal = {Electron. Lett.},
+  doi = {10.1049/el:20010060},
+  author = {Cheng, LiZhi and Xu, Hui and Luo, Yong},
+  year = {2001},
+  pages = {64},
+  file = {/run/media/moinocencio/Data/Tese/Master-Thesis/Documentação/cheng2001.pdf}
+}
+
+@inproceedings{wolterParallelArchitecturesDiscrete1992,
+  address = {{San Diego, CA, USA}},
+  title = {Parallel Architectures for 8*8 Discrete Cosine Transforms},
+  volume = {1},
+  isbn = {978-0-7803-0593-9},
+  booktitle = {[{{Proceedings}}] 1992 {{IEEE International Symposium}} on {{Circuits}} and {{Systems}}},
+  publisher = {{IEEE}},
+  doi = {10.1109/ISCAS.1992.229992},
+  author = {Wolter, S. and Birreck, D. and Heine, M. and Laur, R.},
+  year = {1992},
+  pages = {149-152},
+  file = {/run/media/moinocencio/Data/Tese/Master-Thesis/Documentação/parallel-architectures-for-88-discrete-cosine-transforms.pdf}
+}
+
+@book{mitchellMPEGVideoCompression2007,
+  address = {{s.l.}},
+  edition = {Digit. repr.},
+  series = {Digital Multimedia Standards Series},
+  title = {{{MPEG}} Video Compression Standard},
+  isbn = {978-0-412-08771-4},
+  language = {eng},
+  publisher = {{Thomson Publ}},
+  editor = {Mitchell, Joan L.},
+  year = {2007},
+  note = {OCLC: 255654263}
+}
+
+@book{mitchellMPEGVideoCompression2007a,
+  address = {{s.l.}},
+  edition = {Digit. repr.},
+  series = {Digital Multimedia Standards Series},
+  title = {{{MPEG}} Video Compression Standard},
+  isbn = {978-0-412-08771-4},
+  language = {eng},
+  publisher = {{Thomson Publ}},
+  editor = {Mitchell, Joan L.},
+  year = {2007},
+  file = {/run/media/moinocencio/Data/Tese/Master-Thesis/Documentação/Chad Fogg_ Didier J. LeGall_ Joan L. Mitchell_ William B. Pennebaker - MPEG Video Compression Standard (Digital Multimedia Standards Series) (Digital Multimedia Standards Series)-Sprin.pdf},
+  note = {OCLC: 255654263}
+}
+
+@book{mitchellMPEGVideoCompression2005,
+  address = {{New York}},
+  title = {{{MPEG}} Video Compression Standard},
+  isbn = {978-0-306-46983-1},
+  language = {English},
+  publisher = {{Kluwer Academic}},
+  author = {Mitchell, Joan L},
+  year = {2005},
+  note = {OCLC: 757106453}
+}
+
+@article{mullenContrastSensitivityHuman1985,
+  title = {The Contrast Sensitivity of Human Color Vision to Red-Green and Blue-Yellow Chromatic Gratings},
+  volume = {359},
+  abstract = {A method of producing red-green and blue-yellow sinusoidal chromatic gratings is used which permits the correction of all chromatic aberrations. A quantitative criterion is adopted to choose the intensity match of the two colours in the stimulus: this is the intensity ratio at which contrast sensitivity for the chromatic grating differs most from the contrast sensitivity for a monochromatic luminance grating. Results show that this intensity match varies with spatial frequency and does not necessarily correspond to a luminance match between the colours. Contrast sensitivities to the chromatic gratings at the criterion intensity match are measured as a function of spatial frequency, using field sizes ranging from 2 to 23 deg. Both blue-yellow and red-green contrast sensitivity functions have similar low-pass characteristics, with no low-frequency attenuation even at low frequencies below 0.1 cycles/deg. These functions indicate that the limiting acuities based on red-green and blue-yellow colour discriminations are similar at 11 or 12 cycles/deg. Comparisons between contrast sensitivity functions for the chromatic and monochromatic gratings are made at the same mean luminances. Results show that, at low spatial frequencies below 0.5 cycles/deg, contrast sensitivity is greater to the chromatic gratings, consisting of two monochromatic gratings added in antiphase, than to either monochromatic grating alone. Above 0.5 cycles/deg, contrast sensitivity is greater to monochromatic than to chromatic gratings.},
+  journal = {The Journal of physiology},
+  doi = {10.1113/jphysiol.1985.sp015591},
+  author = {Mullen, Kathy},
+  month = mar,
+  year = {1985},
+  pages = {381-400},
+  file = {/home/moinocencio/Zotero/storage/Q97IY4CN/Mullen - 1985 - The contrast sensitivity of human color vision to .pdf}
+}
+
+@misc{SIPIImageDatabase,
+  title = {{{SIPI Image Database}} - {{Misc}}},
+  howpublished = {http://sipi.usc.edu/database/database.php?volume=misc\&image=12},
+  file = {/home/moinocencio/Zotero/storage/CUPMR3UD/database.html}
+}
+
+@misc{YUVSequences,
+  title = {{{YUV Sequences}}},
+  howpublished = {http://trace.eas.asu.edu/yuv/},
+  file = {/home/moinocencio/Zotero/storage/TC7HRSLI/yuv.html}
+}
+
+@misc{Freepik,
+  title = {Freepik},
+  abstract = {Discover millions of copyright-free vectors, photos and PSD files. Graphic resources for personal and commercial use. Thousands of new files uploaded daily.},
+  language = {en},
+  journal = {Freepik},
+  howpublished = {https://www.freepik.com},
+  file = {/home/moinocencio/Zotero/storage/LMJZLC3F/www.freepik.com.html}
+}
+
+@misc{owlcationAnatomyEyeHuman,
+  title = {Anatomy of the {{Eye}}: {{Human Eye Anatomy}}},
+  shorttitle = {Anatomy of the {{Eye}}},
+  abstract = {Human eye anatomy\textemdash{}a journey through the anatomy of the eye to understand how different structures in the eyeball work together to achieve vision.},
+  language = {en},
+  journal = {Owlcation},
+  howpublished = {https://owlcation.com/stem/Anatomy-of-the-Eye-Human-Eye-Anatomy},
+  author = {Owlcation},
+  file = {/home/moinocencio/Zotero/storage/IAKAH9S7/Anatomy-of-the-Eye-Human-Eye-Anatomy.html}
+}
+
+@misc{retinaWebvision,
+  title = {Simple Anatomy of the Retina},
+  shorttitle = {Anatomy of the Retina},
+  language = {en},
+  journal = {Webvision},
+  howpublished = {https://webvision.med.utah.edu/book/part-i-foundations/simple-anatomy-of-the-retina/},
+  author = {Helga Kolb}
+}
+
+@inproceedings{rouisPerceptualVideoContent2018,
+  title = {Perceptual {{Video Content Analysis}} and {{Application}} to {{HEVC Quantization Refinement}}},
+  doi = {10.1109/EUVIP.2018.8611749},
+  author = {Rouis, Kais and Larabi, Chaker},
+  month = nov,
+  year = {2018},
+  pages = {1-6},
+  file = {/home/moinocencio/Zotero/storage/38XKBZBP/Rouis and Larabi - 2018 - Perceptual Video Content Analysis and Application .pdf}
+}
+
+@article{watsonEfficiencyModelHuman1988,
+  title = {Efficiency of a Model Human Image Code},
+  volume = {4},
+  abstract = {Hypothetical schemes for neural representation of visual information can be expressed as explicit image codes. We may test whether a given code is sufficient, in the sense of retaining all the information that the human perceives, and necessary, in the sense of retaining only that information. The latter is a test of efficiency. Here, we explore a code modeled on the simple cells of the primate striate cortex. The Cortex transform maps a digital image into a set of subimages (layers) that are bandpass in spatial frequency and orientation. The layers are sampled so as to minimize the number of samples and still avoid aliasing. Samples are quantized in a manner that exploits the bandpass contrast-masking properties of human vision. The entropy of the samples is computed to provide a lower bound on the code size. Finally, the image is reconstructed from the code. We devise psychophysical methods for comparing the original and reconstructed images to evaluate the sufficiency of the code. When each resolution is coded at the threshold for detection artifacts, the image-code size is about 1 bit/pixel.},
+  journal = {Journal of the Optical Society of America. A, Optics and image science},
+  doi = {10.1364/JOSAA.4.002401},
+  author = {Watson, Andrew},
+  month = jan,
+  year = {1988},
+  pages = {2401-17},
+  file = {/home/moinocencio/Zotero/storage/2NX6XLIV/Watson - 1988 - Efficiency of a model human image code.pdf}
+}
+
+@misc{AV1BeatsX2642018,
+  title = {{{AV1}} Beats X264 and Libvpx-Vp9 in Practical Use Case},
+  abstract = {Improved video compression is important for delivering digital video files more quickly and with higher quality, while using less bandwidth and storage. Everything from 4K movie streaming to smartphone video chat to laptop screen sharing can be enhanced by making the video files smaller through better compression codecs. The Alliance for Open Media \textemdash{} a [...]Read More...},
+  language = {en-US},
+  author = {Facebook Engineering},
+  month = apr,
+  howpublished = {https://engineering.fb.com/video-engineering/av1-beats-x264-and-libvpx-vp9-in-practical-use-case/},
+  year = {2018},
+  keywords = {performance},
+  file = {/home/moinocencio/Zotero/storage/GBNV47EA/av1-beats-x264-and-libvpx-vp9-in-practical-use-case.html}
+}
+
+@misc{AV1BeatsVP92018,
+  title = {{{AV1 Beats VP9}} and {{HEVC}} on {{Quality}}, If {{You}}'ve {{Got Time}}, Says {{Moscow State}}},
+  abstract = {Latest codec quality comparison study finds AV1 tops on quality, but far behind on speed, and that VP9 beats out HEVC. Moscow State also launched Subjectify.us, a new service for subjectively comparing video quality.},
+  language = {en-US},
+  journal = {Streaming Media Magazine},
+  howpublished = {https://www.streamingmedia.com/Articles/ReadArticle.aspx?ArticleID=122945},
+  month = jan,
+  year = {2018},
+  keywords = {performance},
+  file = {/home/moinocencio/Zotero/storage/2YGTPAAV/AV1-Beats-VP9-and-HEVC-on-Quality-if-Youve-Got-Time-says-Moscow-State-122945.html}
+}
+
+@misc{vatolinMSUCodecComparison2019,
+  title = {{{MSU Codec Comparison}} 2018 {{Part IV}}: {{FullHD Content}}, {{High Quality Use Case}}},
+  language = {en},
+  author = {Vatolin, Dmitriy and Kulikov, Dmitriy and Erofeev, Mikhail and Zvezdakov, Sergey and Antsiferova, Anastasia and Kondranin, Denis},
+  year = {2019},
+  howpublished = {https://www.compression.ru/video/codec\_comparison/hevc\_2018/pdf/MSU\_HEVC\_AV1
+  \_comparison\_2018\_P4\_HQ\_encoders.pdf},
+  pages = {42},
+  file = {/home/moinocencio/Zotero/storage/6CQZBUDF/Vatolin et al. - 2019 - MSU Codec Comparison 2018 Part IV FullHD Content,.pdf}
+}
+
+@inproceedings{midtskogenAv1ConstrainedDirectional2018,
+  title = {The {{Av1 Constrained Directional Enhancement Filter}} ({{Cdef}})},
+  abstract = {This paper presents the constrained directional enhancement filter designed for the AV1 royalty-free video codec. The in-loop filter is based on a non-linear low-pass filter and is designed for vectorization efficiency. It takes into account the direction of edges and patterns being filtered. The filter works by identifying the direction of each block and then adaptively filtering with a high degree of control over the filter strength along the direction and across it. The proposed enhancement filter is shown to improve the quality of the Alliance for Open Media (AOM) AV1 and Thor video codecs in particular in low complexity configurations.},
+  booktitle = {2018 {{IEEE International Conference}} on {{Acoustics}}, {{Speech}} and {{Signal Processing}} ({{ICASSP}})},
+  doi = {10.1109/ICASSP.2018.8462021},
+  author = {Midtskogen, S. and Valin, J.},
+  month = apr,
+  year = {2018},
+  keywords = {Image coding,Quantization (signal),AV1,video codecs,Video codecs,adaptive filtering,adaptive filters,Alliance for Open Media AV1,Av1 constrained directional enhancement filter,AV1 royalty-free video codec,Complexity theory,Damping,directional filter,enhancement filter,in-loop filter,Indexes,low-pass filters,Media,nonlinear filters,nonlinear low-pass filter,Thor video codecs,vectorization efficiency},
+  pages = {1193-1197},
+  file = {/home/moinocencio/Zotero/storage/AC2WXSJ5/Midtskogen and Valin - 2018 - The Av1 Constrained Directional Enhancement Filter.pdf;/home/moinocencio/Zotero/storage/SM9ZTLW8/8462021.html}
+}
+
+@inproceedings{norkinFilmGrainSynthesis2018,
+  title = {Film {{Grain Synthesis}} for {{AV1 Video Codec}}},
+  abstract = {Film grain is abundant in TV and movie content. It is often part of the creative intent and needs to be preserved while encoding. However, the random nature of film grain is difficult to compress using traditional coding tools. This paper describes a film grain modeling and synthesis algorithm proposed for the AV1 video codec. At the encoder, an autoregressive model of film grain is transmitted relative to a denoised signal, and the film grain strength is modeled as a function of intensity. The corresponding renoising at the decoder is implemented using an efficient block-based approach suitable for use in consumer electronic devices. Preliminary results indicate that the approach can give significant bitrate savings (up to 50\%) on sequences with heavy film grain.},
+  booktitle = {2018 {{Data Compression Conference}}},
+  doi = {10.1109/DCC.2018.00008},
+  author = {Norkin, A. and Birkbeck, N.},
+  month = mar,
+  year = {2018},
+  keywords = {video coding,Encoding,AV1,video codecs,Decoding,autoregressive model,AV1 Video Codec,block-based approach,consumer electronic devices,consumer electronics,encoding,Estimation,film grain,film grain modeling,film grain strength,film grain synthesis,Film grain synthesis,heavy film grain,Motion pictures,movie content,signal denoising,Standards,synthesis algorithm,Table lookup,Tools},
+  pages = {3-12},
+  file = {/home/moinocencio/Zotero/storage/FEDNNPG3/8416572.html}
+}
+
+@inproceedings{trudeauPredictingChromaLuma2018,
+  title = {Predicting {{Chroma}} from {{Luma}} in {{AV1}}},
+  abstract = {Chroma from luma (CfL) prediction is a new and promising chroma-only intra predictor that models chroma pixels as a linear function of the coincident reconstructed luma pixels. In this paper, we present the CfL predictor adopted in Alliance Video 1 (AV1), a royalty-free video codec developed by the Alliance for Open Media (AOM). The proposed CfL distinguishes itself from prior art not only by reducing decoder complexity, but also by producing more accurate predictions. On average, CfL reduces the BD-rate, when measured with CIEDE2000, by 4.87\% for still images and 2.41\% for video sequences.},
+  booktitle = {2018 {{Data Compression Conference}}},
+  doi = {10.1109/DCC.2018.00046},
+  author = {Trudeau, L. and Egge, N. and Barr, D.},
+  month = mar,
+  year = {2018},
+  keywords = {video coding,AV1,video codecs,Alliance for Open Media,Alliance Video 1,cfl,CfL predictor,chroma from luma,Chroma from luma prediction,chroma pixels,chroma-only intra predictor,coincident reconstructed luma pixels,Data compression,image colour analysis,image reconstruction,image sequences,intra prediction,linear function,luma prediction,royalty-free video codec,video sequences,Voltage control},
+  pages = {374-382},
+  file = {/home/moinocencio/Zotero/storage/MLDQICJ9/Trudeau et al. - 2018 - Predicting Chroma from Luma in AV1.pdf;/home/moinocencio/Zotero/storage/BFHUFNGM/8416610.html}
+}
+
+@article{domanskiHighThroughputMultifilterInterpolation2019,
+  title = {High-{{Throughput Multifilter Interpolation Architecture}} for {{AV1 Motion Compensation}}},
+  volume = {66},
+  issn = {1549-7747},
+  abstract = {This brief presents a high-throughput hardware design for the motion compensation (MC) sub-sample interpolator of the novel AOMedia video 1 (AV1). A multifilter interpolation architecture (MFIA) is presented targeting AV1 decoders and supporting all 90 filters defined by the AV1 MC. The MFIA uses shift-adds instead of multipliers and common subexpression sharing to reduce the hardware costs, to increase the throughput, and to reduce the power dissipation. Two different versions of MC interpolators using MFIA are also presented in this brief. The MFIA and the two versions of MC interpolators were synthesized for 40-nm TSMC standard-cells. The results showed that the MC interpolators are able to process up to 4320 p videos at 30 frames/s, with a maximum power dissipation of 81.31 mW. To the best of the authors' knowledge, this is the first work presenting a hardware design for the MC of AV1.},
+  number = {5},
+  journal = {IEEE Transactions on Circuits and Systems II: Express Briefs},
+  doi = {10.1109/TCSII.2019.2909705},
+  author = {Domanski, R. and Goebel, J. and Penny, W. and Porto, M. and Palomino, D. and Zatt, B. and Agostini, L.},
+  month = may,
+  year = {2019},
+  keywords = {video coding,Hardware,Video coding,AV1,decoding,Decoding,interpolation,Interpolation,Video codecs,VLSI,field programmable gate arrays,Standards,AOMedia video 1,AV1 decoders,AV1 MC,AV1 Motion Compensation,hardware costs,Hardware design,high-throughput hardware design,high-throughput multifilter interpolation architecture,MC interpolators,MFIA,motion compensation,Motion compensation,motion compensation sub-sample interpolator,power 81.31 mW},
+  pages = {883-887},
+  file = {/home/moinocencio/Zotero/storage/6WRNS9UP/8682095.html}
+}
+
+@inproceedings{dengHardwarefriendlyInterPrediction2017,
+  title = {Hardware-Friendly Inter Prediction Techniques for {{AV1}} Video Coding},
+  abstract = {The Alliance for Open Media (AOMedia) aims at generating a new, royalty-free video codec specification named AV1 that is scheduled for completion in the 2nd half of 2017. To facilitate AV1 market acceptance and rapid deployment, attention has been paid toward development of hardware friendly coding tools. This paper presents the following techniques to facilitate hardware implementation of AV1 inter prediction: 1) a simplified motion vector prediction scheme to reduce memory footprint / bandwidth; 2) methods to limit / remove the dependency between the computation of probability context model and the reconstruction of motion vectors to improve hardware throughput. Experimental results on a wide range of test clips show negligible quality impact for 1) and minor quality impact for 2) while the motion vectors line buffer memory footprint is reduced by 50\%, motion vectors local memory is reduced by 33\%, and the throughput of the arithmetic decoder remains unchanged.},
+  booktitle = {2017 {{IEEE International Conference}} on {{Image Processing}} ({{ICIP}})},
+  doi = {10.1109/ICIP.2017.8296421},
+  author = {Deng, Z. and Moccagatta, I.},
+  month = sep,
+  year = {2017},
+  keywords = {Computational modeling,video coding,Hardware,Encoding,AOMedia,AV1,video codecs,VP9,Decoding,image motion analysis,Tools,Alliance for Open Media,AV1 interprediction,AV1 market acceptance,AV1 video coding,Context modeling,hardware friendly coding tools,hardware implementation,hardware throughput,hardware-friendly inter prediction techniques,memory footprint,motion vectors local memory,Pipelines,prediction theory,probability,probability context model,rapid deployment,reference motion vector,royalty-free video codec specification,simplified motion vector prediction scheme,vectors},
+  pages = {948-952},
+  file = {/home/moinocencio/Zotero/storage/QPRXUF7Y/8296421.html}
+}
+
+@inproceedings{correaHighThroughputHardware2019,
+  title = {A {{High Throughput Hardware Architecture Targeting}} the {{AV1 Paeth Intra Predictor}}},
+  abstract = {AV1 is an open-source and royalty-free video coding format, which was developed by the AOMedia industry consortium and released in June 2018 as the state-of-the-art in video coding. The main goal of AV1 development was to achieve substantial compression gain over high-performance codecs such as VP9 and HEVC, while keeping a practical decoding complexity, hardware feasibility and its open and free status. This paper presents a highly parallelized hardware architecture for the AV1 Paeth intra predictor supporting all 19 block sizes allowed, capable of processing UHD 4K videos at 120 frames per second. When synthesized to the TSMC 40nm cell library targeting a frequency of 315MHz, the proposed design used 247.28K gates and showed a power dissipation and an energy efficiency of 268.36mW and 179.74pJ/sample respectively.},
+  booktitle = {2019 {{IEEE}} 10th {{Latin American Symposium}} on {{Circuits Systems}} ({{LASCAS}})},
+  doi = {10.1109/LASCAS.2019.8667544},
+  author = {Corr{\^e}a, M. and Waskow, B. and Goebel, J. and Palomino, D. and Corr{\^e}a, G. and Agostini, L.},
+  month = feb,
+  year = {2019},
+  keywords = {code standards,video coding,Hardware,Video coding,data compression,Computer architecture,AV1,Codecs,HEVC,Streaming media,VP9,decoding,codecs,Transforms,image sequences,AOMedia industry consortium,AV1 development,AV1 Paeth intra predictor,energy efficiency,free status,Hardware Design,hardware feasibility,high throughput hardware architecture targeting,high-performance codecs,highly parallelized hardware architecture,Intra Prediction,open status,open-source,Paeth Mode,power aware computing,power dissipation,public domain software,royalty-free video coding format,Software,TSMC 40nm cell library,UHD 4K videos,Video Coding},
+  pages = {93-96},
+  file = {/run/media/moinocencio/Data/Tese/Master-Thesis/Documentação/Papers/AV1/A High Throughput Hardware Architecture AV1.pdf;/home/moinocencio/Zotero/storage/KJS5SDBI/8667544.html}
+}
+
+@inproceedings{chenOverviewCoreCoding2018a,
+  address = {{San Francisco, CA}},
+  title = {An {{Overview}} of {{Core Coding Tools}} in the {{AV1 Video Codec}}},
+  isbn = {978-1-5386-4160-6},
+  abstract = {AV1 is an emerging open-source and royalty-free video compression format, which is jointly developed and finalized in early 2018 by the Alliance for Open Media (AOMedia) industry consortium. The main goal of AV1 development is to achieve substantial compression gain over state-of-the-art codecs while maintaining practical decoding complexity and hardware feasibility. This paper provides a brief technical overview of key coding techniques in AV1 along with preliminary compression performance comparison against VP9 and HEVC.},
+  language = {en},
+  booktitle = {2018 {{Picture Coding Symposium}} ({{PCS}})},
+  publisher = {{IEEE}},
+  doi = {10.1109/PCS.2018.8456249},
+  author = {Chen, Yue and Murherjee, Debargha and Han, Jingning and Grange, Adrian and Xu, Yaowu and Liu, Zoe and Parker, Sarah and Chen, Cheng and Su, Hui and Joshi, Urvang and Chiang, Ching-Han and Wang, Yunqing and Wilkins, Paul and Bankoski, Jim and Trudeau, Luc and Egge, Nathan and Valin, Jean-Marc and Davies, Thomas and Midtskogen, Steinar and Norkin, Andrey and {de Rivaz}, Peter},
+  month = jun,
+  year = {2018},
+  pages = {41-45},
+  file = {/home/moinocencio/Zotero/storage/DNB2NBSE/Chen et al. - 2018 - An Overview of Core Coding Tools in the AV1 Video .pdf}
+}
+
+@misc{AV1CodecISO,
+  title = {{{AV1 Codec ISO Media File Format Binding}}},
+  howpublished = {https://aomediacodec.github.io/av1-isobmff/},
+  keywords = {Standard},
+  file = {/home/moinocencio/Zotero/storage/YEPAKIRZ/av1-isobmff.html}
+}
+
+@misc{SocionextImplementsAV12018,
+  title = {Socionext {{Implements AV1 Encoder}} on {{FPGA}} over {{Cloud Service}}},
+  abstract = {Socionext has developed a prototype implementation of video encoder functionalities of the latest video compression format AV1 onto Amazon Elastic Compute Cloud (Amazon EC2) F1 Instance.},
+  language = {en-US},
+  journal = {Socionext America},
+  howpublished = {http://socionextus.com/pressreleases/socionext-implements-av1-encoder-over-cloud-service/},
+  month = jun,
+  year = {2018},
+  keywords = {hardware},
+  file = {/home/moinocencio/Zotero/storage/NWX27MJM/socionext-implements-av1-encoder-over-cloud-service.html}
+}
+
+@misc{AllegroDVTIntroduces2019,
+  title = {Allegro {{DVT Introduces}} the {{Industry First Real}}-{{Time AV1 Video Encoder Hardware IP}} for {{4K}}/{{UHD Video Encoding Applications}}},
+  language = {en-US},
+  journal = {Allegro},
+  howpublished = {http://www.allegrodvt.com/allegro-dvt-introduces-the-industry-first-real-time-av1-video-encoder-hardware-ip-for-4kuhd-video-encoding-applications/},
+  month = apr,
+  year = {2019},
+  keywords = {hardware},
+  file = {/home/moinocencio/Zotero/storage/XVCUKKGV/allegro-dvt-introduces-the-industry-first-real-time-av1-video-encoder-hardware-ip-for-4kuhd-vid.html}
+}
+
+@misc{aomediaAOMediaMembersDemo2018,
+  title = {{{AOMedia Members Demo AV1}} at {{IBC2018}}},
+  abstract = {Demos Spotlight AV1's Royalty-Free, Ultra High Definition (UHD) Web Video Capabilities Amsterdam\textendash{} Sept. 5, 2018 \textendash{} The Alliance for Open Media (AOMedia) today announced \ldots{}},
+  language = {en-US},
+  journal = {Alliance for Open Media},
+  author = {{aomedia}},
+  month = sep,
+  year = {2018},
+  keywords = {hardware},
+  file = {/home/moinocencio/Zotero/storage/PMMI8AIQ/aomedia-members-demo-av1-at-ibc2018.html}
+}
+
+@misc{RealtekLaunchesWorldwide,
+  title = {Realtek {{Launches Worldwide First 4K UHD Set}}-Top {{Box SoC}} ({{RTD1311}}), {{Integrating AV1 Video Decoder}} and {{Multiple CAS Functions}} - {{REALTEK}}},
+  howpublished = {https://www.realtek.com/en/press-room/news-releases/item/realtek-launches-worldwide-first-4k-uhd-set-top-box-soc-rtd1311-integrating-av1-video-decoder-and-multiple-cas-functions},
+  keywords = {hardware},
+  file = {/home/moinocencio/Zotero/storage/WUNMWM92/realtek-launches-worldwide-first-4k-uhd-set-top-box-soc-rtd1311-integrating-av1-video-decoder-a.html}
+}
+
+@misc{shilovRealtekDemonstratesRTD2893,
+  title = {Realtek {{Demonstrates RTD2893}}: {{A Platform}} for {{8K Ultra HD TVs}}},
+  shorttitle = {Realtek {{Demonstrates RTD2893}}},
+  howpublished = {https://www.anandtech.com/show/14560/realtek-demonstrates-rtd2893-a-platform-for-8k-ultrahd-tvs},
+  author = {Shilov, Anton},
+  keywords = {hardware},
+  file = {/home/moinocencio/Zotero/storage/C7DBWW3Y/realtek-demonstrates-rtd2893-a-platform-for-8k-ultrahd-tvs.html}
+}
+
+@misc{Realtek8KVideo,
+  title = {Realtek {{8K Video Decoder}} and {{Processing IC}} ({{RTD2893}}) {{Wins Best Choice}} of the {{Year}} at {{COMPUTEX TAIPEI}} 2019 - {{REALTEK}}},
+  howpublished = {https://www.realtek.com/en/press-room/news-releases/item/realtek-wins-three-best-choice-awards-at-computex-taipei-2019-including-2-best-choice-golden-awards-copy},
+  keywords = {harware},
+  file = {/home/moinocencio/Zotero/storage/KFYQ3Z7W/realtek-wins-three-best-choice-awards-at-computex-taipei-2019-including-2-best-choice-golden-aw.html}
+}
+
+@misc{NewsAmphion,
+  title = {News \textendash{} {{Amphion}}},
+  language = {en-US},
+  keywords = {hardware},
+  file = {/home/moinocencio/Zotero/storage/SYNALSQC/news.html}
+}
+
+@misc{ALE210,
+  title = {{{AL}}-{{E210}}},
+  language = {en-US},
+  journal = {Allegro},
+  keywords = {harware},
+  file = {/home/moinocencio/Zotero/storage/JJKPSG3B/al-e210.html}
+}
+
+@misc{NGCodecAnnouncesAV1,
+  title = {{{NGCodec Announces AV1 Support}} and a {{2X Performance Improvement}} in {{Broadcast Quality Live Video Encoding}}},
+  abstract = {NGCodec Demonstrates the Highest Performance, Highest Quality Video Encoders for Live Streaming and a future of mobile Virtual and Augmented Reality at CES 2019. Cloud Encoded Video Unlocks Mobile, Social Streams, AR/VR, and IOT on 5G.},
+  language = {en-US},
+  journal = {NGCodec},
+  howpublished = {https://ngcodec.com/press-releases/2019-1-7-ngcodec-announces-av1-support-and-a-2x-performance-improvement-in-broadcast-quality-live-video-encoding},
+  keywords = {hardware},
+  file = {/home/moinocencio/Zotero/storage/ECLVFB2P/2019-1-7-ngcodec-announces-av1-support-and-a-2x-performance-improvement-in-broadcast-quality-li.html}
+}
+
+@article{eggeLatestTechnicalBusiness2019,
+  title = {Latest {{Technical}} and {{Business Progress}} with {{AV1}}},
+  language = {en},
+  journal = {NAB Streaming Summit},
+  author = {Egge, Nathan},
+  month = apr,
+  year = {2019},
+  pages = {59},
+  file = {/home/moinocencio/Zotero/storage/9BQ46RVI/Egge - 2018 - Presentation Latest Technical and Business Progre.pdf}
+}
+
+@misc{andreseixasdiassaverioblasiOverviewRecentVideo,
+  title = {An Overview of Recent Video Coding Developments in {{MPEG}} and {{AV1}}},
+  abstract = {This paper analyses the overall compression capabilities of these two emerging technologies with respect to HEVC, including objective and subjective performance evaluation and the associated encoding and decoding complexities.},
+  language = {en},
+  journal = {IBC},
+  howpublished = {https://www.ibc.org/manage/an-overview-of-recent-video-coding-developments-in-mpeg-and-av1/3303.article},
+  author = {{Andre Seixas Dias , Saverio Blasi} and {Fiona Rivera, Ebroul Izquierdo and Marta Mrak}},
+  file = {/home/moinocencio/Zotero/storage/2LU6WT93/Andre Seixas Dias , Saverio Blasi and Fiona Rivera, Ebroul Izquierdo and Marta Mrak - An overview of recent video coding developments in.pdf;/home/moinocencio/Zotero/storage/DEAD52UC/3303.html}
+}
+
+@misc{streamingmediaHEVCAdvancePatent2015,
+  title = {{{HEVC Advance Patent Pool Creates Confusion}}, {{Lacks Transparency}}},
+  abstract = {Details are sparse about HEVC Advance. The industry knew a second HEVC pool might form, but why do patent holders have a problem with MPEG LA?},
+  language = {en-US},
+  journal = {Streaming Media Magazine},
+  author = {{Streaming Media}},
+  month = jul,
+  year = {2015},
+  file = {/home/moinocencio/Zotero/storage/5DCYN46R/HEVC-Advance-Patent-Pool-Creates-Confusion-Lacks-Transparency-105235.html}
+}
+
+@misc{debarghamukherjeeAllThingsRTC2019Opening2019,
+  title = {{{AllThingsRTC}} 2019 - {{Opening Keynote}} - {{Past}}, {{Present}} and {{Future}} of {{AV1}}},
+  abstract = {Learn about the past, present and future of AV1 - the latest royalty-free video codec from AOM in this opening keynote led by Debargha Mukherjee, Principal Software Engineer at Google.
+
+AllThingsRTC All Sessions Playlist \textrightarrow 
+https://www.youtube.com/playlist?list...
+
+Learn more on the Agora.io Website \textrightarrow https://www.agora.io/en/},
+  author = {{Debargha Mukherjee}},
+  month = jun,
+  year = {2019}
+}
+
+@misc{MollyBaz,
+  title = {Molly {{Baz}}},
+  abstract = {Food Editor at Bon Appetit},
+  language = {en-US},
+  journal = {YouTube},
+  howpublished = {https://www.youtube.com/channel/UCaG\_WEofu8ZMhFoQY66DuNQ},
+  file = {/home/moinocencio/Zotero/storage/WVXYJJNE/watch.html}
+}
+
+@inproceedings{laudeComparisonJEMAV12018a,
+  title = {A {{Comparison}} of {{JEM}} and {{AV1}} with {{HEVC}}: {{Coding Tools}}, {{Coding Efficiency}} and {{Complexity}}},
+  shorttitle = {A {{Comparison}} of {{JEM}} and {{AV1}} with {{HEVC}}},
+  abstract = {The current state-of-the-art for standardized video codecs is High Efficiency Video Coding (HEVC) which was developed jointly by ISO/IEC and ITU-T. Recently, the development of two contenders for the next generation of standardized video codecs began: ISO/IEC and ITU-T advance the development of the Joint Exploration Model (JEM), a possible successor of HEVC, while the Alliance for Open Media pushes forward the video codec AV1. It is asserted by both groups that their codecs achieve superior coding efficiency over the state-of-the-art. In this paper, we discuss the distinguishing features of JEM and AV1 and evaluate their coding efficiency and computational complexity under well-defined and balanced test conditions. Our main findings are that JEM considerably outperforms HM and AV1 in terms of coding efficiency while AV1 cannot transform increased complexity into competitiveness in terms of coding efficiency with neither of the competitors except for the all-intra configuration.},
+  booktitle = {2018 {{Picture Coding Symposium}} ({{PCS}})},
+  doi = {10.1109/PCS.2018.8456291},
+  author = {Laude, T. and Adhisantoso, Y. G. and Voges, J. and Munderloh, M. and Ostermann, J.},
+  month = jun,
+  year = {2018},
+  keywords = {video coding,Transform coding,Encoding,high efficiency video coding,HEVC,video codecs,computational complexity,Video codecs,Transforms,Complexity theory,Tools,coding tools,ISO-IEC,ITU-T,JEM,joint exploration model,superior coding efficiency,video codec AV1},
+  pages = {36-40},
+  file = {/home/moinocencio/Zotero/storage/437JBDM8/8456291.html}
+}
+
+@article{sethuramanAnalysisEmergingAOMedia2018a,
+  title = {Analysis of the {{Emerging AOMedia AV1 Video Coding Format}} for {{OTT Use}}-{{Cases}}},
+  volume = {127},
+  issn = {1545-0279},
+  abstract = {To achieve improved quality of service and efficiencies with higher resolution, high dynamic range, and wide color gamut in online media delivery, there is a need for advanced video compression standards. Alliance for Open Media (AOM), a joint development foundation, is targeting AOMedia Video 1 (AV1) as a royalty-free video coding format that is likely to be finalized before the end of 2017. Built on top of Google's VP9 codec, AV1 has brought in new coding tools from other open source royalty-free codecs. Multiple new royalty-free coding tools have been contributed by the members of AOM. In this paper, we provide an analysis of the coding gains offered by the default and experimental tools in AV1 and the corresponding decoding complexity increase for the over-the-top adaptive bit-rate streaming delivery use-cases. Also, the coding gains are compared against the compression performance of \$\textbackslash{}times\$ 264, \$\textbackslash{}times\$ 265, and libVP9 open-source codecs to highlight the potential bit savings possible with AV1 using multiple video quality metrics such as peak signal-to-noise ratio, structure similarity, and Netflix's Video Multi-Assessment Fusion metric. These results indicate that AV1 offers competitive compression performance over H.265 without significantly increasing the decoding complexity.},
+  number = {5},
+  journal = {SMPTE Motion Imaging Journal},
+  doi = {10.5594/JMI.2018.2821419},
+  author = {Sethuraman, S. and Rajan, C. and Patankar, K.},
+  month = jun,
+  year = {2018},
+  keywords = {compression efficiency,Alliance for Open Media,decoder complexity,over-the-top video delivery,royalty-free,video coding standards},
+  pages = {44-50},
+  file = {/home/moinocencio/Zotero/storage/63UUQLTK/Sethuraman et al. - 2018 - Analysis of the Emerging AOMedia AV1 Video Coding .pdf;/home/moinocencio/Zotero/storage/VN6BDSDK/8370808.html}
+}
+
+@inproceedings{nguyenFutureVideoCoding2018a,
+  title = {Future {{Video Coding Technologies}}: {{A Performance Evaluation}} of {{AV1}}, {{JEM}}, {{VP9}}, and {{HM}}},
+  shorttitle = {Future {{Video Coding Technologies}}},
+  abstract = {This paper presents and discusses an objective performance evaluation of two lines of development for the next generation of video coding schemes: AV1 of the Alliance for Open Media (AOM) and JEM of the Joint Video Exploration Team (JVET). Their already established predecessors, as given by VP9 for AV1 and High Efficiency Video Coding (HEVC) for JEM, serve as references for this evaluation process. A large testset of 28 video sequences with different content, various resolution, and different frame rate has been used as the common data basis. For each sequence and each test candidate, four different rate points associated with varying qualities of reconstruction have been generated. When evaluated in this way relative to their corresponding predecessors, AV1 and JEM show a quite significant coding-efficiency improvement in terms of averaged Bj{\o}ntegaard-Delta (BD) bit rate of about 23\% and about 32\%, respectively. Moreover, this performance study also reveals that there exist different trade-offs between compression efficiency and computational complexity in terms of encoder run time. While the JEM encoder requires a factor of about 8.5 in run time relative to HM, the corresponding run time factor for the AV1 encoder is about 55.8 relative to VP9. When comparing the next-generation coding schemes among each other, this study reveals that AV1 requires an average BD bit-rate overhead of about 49\% at the same objective quality while consuming 2.47 times the run time of the JEM encoder.},
+  booktitle = {2018 {{Picture Coding Symposium}} ({{PCS}})},
+  doi = {10.1109/PCS.2018.8456289},
+  author = {Nguyen, T. and Marpe, D.},
+  month = jun,
+  year = {2018},
+  keywords = {video coding,data compression,Quantization (signal),Encoding,High efficiency video coding,AV1,compression efficiency,H.265,HEVC,VP9,performance evaluation,Video sequences,computational complexity,Alliance for Open Media,image sequences,video sequences,Software,JEM,AOM,AV1 encoder,averaged Bjøntegaard-Delta bit rate,coding efficiency,coding-efficiency improvement,Future Video Coding,High Efficiency Video Coding,HM,image resolution,JEM encoder,Joint Video Exploration Team,JVET,Next generation networking,next-generation coding schemes,video coding technologies},
+  pages = {31-35},
+  file = {/home/moinocencio/Zotero/storage/GTJNLECT/8456289.html}
+}
+
+@inproceedings{layekPerformanceAnalysis2642017,
+  title = {Performance Analysis of {{H}}.264, {{H}}.265, {{VP9}} and {{AV1}} Video Encoders},
+  abstract = {Videos can portray our thinking in a better way than anything can. As a result, online as well as offline videos in entertainment, health, storytelling, education and in surveillance are increasing day by day which further initiates video coding research to decrease the size while keeping satisfactory quality. Due to the ubiquitous necessity of video encoding, a fully functional, high performance and with easy licensing codec have been sought from industry and academia for a long time. In this paper, we investigate the performance of the software encoders of H.264/AVC, H.265/HEVC, VP9 and the new royalty free encoder AV1 from AOMedia for relatively small video files. To ensure fair analysis, we performed extensive experiments by varying different parameters. With default parameters, for the same video bitrates, AV1 obtains better quality as compared to other encodings. However, when we use the slowest time preset `placebo' for H.264 and H.265, AV1 goes slightly behind H.265. Among the other two, VP9 always outperforms H.264. For all schemes, as quality increases, the encoding time also increase.},
+  booktitle = {2017 19th {{Asia}}-{{Pacific Network Operations}} and {{Management Symposium}} ({{APNOMS}})},
+  doi = {10.1109/APNOMS.2017.8094162},
+  author = {Layek, M. A. and Thai, N. Q. and Hossain, M. A. and Thu, N. T. and Tuyen, L. P. and Talukder, A. and Chung, T. and Huh, E.},
+  month = sep,
+  year = {2017},
+  keywords = {H.264/AVC,video coding,Video coding,Encoding,AV1,Bit rate,Codecs,H.265,HEVC,VP9,Transforms,AV1 video encoders,AVC,encodings,fair analysis,fully functional performance,Google,H.264,H.265/HEVC,relatively small video files,royalty free encoder AV1,software encoders,ubiquitous necessity,video bitrates,video coding research,video encoding,Video Encoding},
+  pages = {322-325},
+  file = {/home/moinocencio/Zotero/storage/HUSMJ7BU/8094162.html}
+}
+
+@book{agostiniDesenvolvimentoArquiteturasAlto2007,
+  title = {Desenvolvimento de {{Arquiteturas}} de {{Alto Desempenho Dedicadas}} {\`a} {{Compress{\~a}o}} de {{V{\'i}deo Segundo}} o {{Padr{\~a}o H}}.264/{{AVC}}},
+  author = {Agostini, Luciano},
+  year = {2007},
+  file = {/run/media/moinocencio/Data/Tese/Master-Thesis/Documentação/Teses/Luciano Agostini.pdf}
+}
+
+@misc{AV1BitstreamDecoding,
+  title = {{{AV1 Bitstream}} \& {{Decoding Process Specification}}},
+  abstract = {This document defines the bitstream formats and decoding process for the Alliance for Open Media AV1 video codec.},
+  language = {en},
+  booktitle = {AOMedia},
+  year = {2019},
+  howpublished = {https://aomediacodec.github.io/av1-spec/av1-spec.pdf},
+  file = {/home/moinocencio/Zotero/storage/EWPV9EDH/AV1 Bitstream & Decoding Process Specification.pdf}
+}
+
+@inproceedings{groisPerformanceComparisonAV12018a,
+  address = {{San Diego, United States}},
+  title = {Performance Comparison of {{AV1}}, {{JEM}}, {{VP9}}, and {{HEVC}} Encoders},
+  isbn = {978-1-5106-1249-5 978-1-5106-1250-1},
+  abstract = {This work presents a performance evaluation of the current status of two distinct lines of development in future video coding technology: the so-called AV1 video codec of the industry-driven Alliance for Open Media (AOM) and the Joint Exploration Test Model (JEM), as developed and studied by the Joint Video Exploration Team (JVET) on Future Video Coding of ITU-T VCEG and ISO/IEC MPEG. As a reference, this study also includes reference encoders of the respective starting points of development, as given by the first encoder release of AV1/VP9 for the AOM-driven technology, and the HM reference encoder of the HEVC standard for the JVET activities. For a large variety of video sources ranging from UHD over HD to 360\textdegree{} content, the compression capability of the different video coding technology has been evaluated by using a Random Access setting along with the JVET common test conditions. As an outcome of this study, it was observed that the latest AV1 release achieved average bit-rate savings of \textasciitilde{}17\% relative to VP9 at the expense of a factor of \textasciitilde{}117 in encoder run time. On the other hand, the latest JEM release provides an average bit-rate saving of \textasciitilde{}30\% relative to HM with a factor of \textasciitilde{}10.5 in encoder run time. When directly comparing AV1 and JEM both for static quantization parameter settings, AV1 produces an average bit-rate overhead of more than 100\% relative to JEM at the same objective reconstruction quality and, in addition, with a factor of \textasciitilde{}2.7 in encoder run time. Even when operated in a two-pass ratecontrol mode, AV1 lags behind both the JEM and HM reference encoder with average bit-rate overheads of \textasciitilde{}55\% and \textasciitilde{}9.5\%, respectively, although the latter being configured along one-pass static quantization parameter settings.},
+  language = {en},
+  booktitle = {Applications of {{Digital Image Processing XL}}},
+  publisher = {{SPIE}},
+  doi = {10.1117/12.2283428},
+  author = {Grois, Dan and Nguyen, Tung and Marpe, Detlev},
+  editor = {Tescher, Andrew G.},
+  month = feb,
+  year = {2018},
+  pages = {120},
+  file = {/home/moinocencio/Zotero/storage/MFHKEP9G/Grois et al. - 2018 - Performance comparison of AV1, JEM, VP9, and HEVC .pdf}
+}
+
+@misc{AomGitGoogle,
+  title = {Aom - {{Git}} at {{Google}}},
+  howpublished = {https://aomedia.googlesource.com/aom/},
+  file = {/home/moinocencio/Zotero/storage/TDCHFNAZ/aom.html}
+}
+
+@misc{XiphOrgTest,
+  title = {Xiph.Org :: {{Test Media}}},
+  howpublished = {https://media.xiph.org/},
+  keywords = {videos},
+  file = {/home/moinocencio/Zotero/storage/TENLYTNM/media.xiph.org.html}
+}
+
+@misc{CRFGuideConstant,
+  title = {{{CRF Guide}} ({{Constant Rate Factor}} in X264, X265 and Libvpx)},
+  howpublished = {https://slhck.info/video/2017/02/24/crf-guide.html},
+  file = {/home/moinocencio/Zotero/storage/HGF3IBB6/crf-guide.html}
+}
+
+@misc{UnderstandingRateControl,
+  title = {Understanding {{Rate Control Modes}} (X264, X265, Vpx)},
+  howpublished = {https://slhck.info/video/2017/03/01/rate-control.html},
+  file = {/home/moinocencio/Zotero/storage/9WFW2NM6/rate-control.html}
+}
+
+@misc{GoodNewsAV12019,
+  title = {Good {{News}}: {{AV1 Encoding Times Drop}} to {{Near}}-{{Reasonable Levels}}},
+  shorttitle = {Good {{News}}},
+  abstract = {The first tests of AV1 showed glacial encoding times that seriously detracted from the codec's usability. But since then encoding times have improved enough that AV1 is almost usable-and we've got the charts to prove it.},
+  language = {en-US},
+  journal = {Streaming Media Magazine},
+  howpublished = {https://www.streamingmedia.com/Articles/ReadArticle.aspx?ArticleID=130284},
+  month = mar,
+  year = {2019},
+  file = {/home/moinocencio/Zotero/storage/JYMCYX56/ReadArticle.html}
+}
+
+@misc{AV1FirstLook2018,
+  title = {{{AV1}}: {{A First Look}}},
+  shorttitle = {{{AV1}}},
+  abstract = {FFmpeg 4.0 gives many video engineers their first chance to test the new AV1 codec against H.264, HEVC, and VP9. The results? In our tests, quality was impressive, but glacially slow encoding times make AV1 a non-starter for most publishers until hardware acceleration becomes available.},
+  language = {en-US},
+  author = {Streaming Media Magazine},
+  month = aug,
+  year = {2018},
+  howpublished = {https://www.streamingmedia.com/Articles/ReadArticle.aspx?ArticleID=127133},
+  file = {/home/moinocencio/Zotero/storage/XE5ZZ9S9/ReadArticle.html}
+}
+
+@inproceedings{subramanianVLSIImplementationFully2010,
+  title = {{{VLSI Implementation}} of Fully Pipelined Multiplierless {{2D DCT}}/{{IDCT}} Architecture for {{JPEG}}},
+  abstract = {The Discrete Cosine transform is widely used as the core of digital image compression. Discrete cosine transforms attempts to de-correlate the image data. After decor relation, each transform coefficient can be encoded independently without losing compression efficiency. In this paper we present VLSI Implementation of fully pipelined multiplierless architecture of 8 \texttimes{} 8 2D DCT/IDCT. This architecture is used as the core of JPEG compression hardware. The 2-D DCT calculation is made using the 2-D DCT separability property, such that the whole architecture is divided into two 1-D DCT calculations by using a transpose buffer. The architecture described to implement 1-D DCT is based on Binary-Lifted DCT. The 2-D DCT architecture achieves an operating frequency of 166 MHz. One input block of 8 \texttimes{} 8 samples each of 8 bits each is processed in 0.198{$\mu$}s. The pipeline latency of proposed architecture is 45 Clock cycles.},
+  booktitle = {{{IEEE}} 10th {{INTERNATIONAL CONFERENCE ON SIGNAL PROCESSING PROCEEDINGS}}},
+  doi = {10.1109/ICOSP.2010.5657181},
+  author = {Subramanian, P and Reddy, A Sagar Chaitanya},
+  month = oct,
+  year = {2010},
+  keywords = {discrete cosine transforms,Discrete cosine transforms,Hardware,discrete cosine transform,image coding,Image coding,Transform coding,data compression,Computer architecture,inverse discrete cosine transform,codecs,VLSI,Discrete Cosine Transform (DCT),Pipelines,Binary DCT (binDCT),Compression,digital image compression,frequency 166 MHz,fully pipelined 2D DCT/IDCT architecture,Inverse Discrete Cosine Transform (IDCT),inverse transforms,Joint Photographic Expert Group (JPEG),JPEG,Mean Square Error (MSE),Multiplierless,Performance,Pipeline,Two-Dimension (2-D) Quantization,butterfly},
+  pages = {401-404},
+  file = {/home/moinocencio/Zotero/storage/TRREI86Y/Subramanian and Reddy - 2010 - VLSI Implementation of fully pipelined multiplierl.pdf;/home/moinocencio/Zotero/storage/IEKWK99T/5657181.html},
+  issn = {2164-5221, 2164-523X}
+}
+
+@inproceedings{tejaVerilogImplementationFully2015,
+  title = {Verilog Implementation of Fully Pipelined and Multiplierless {{2D DCT}}/{{IDCT JPEG}} Architecture},
+  abstract = {The concept of image compression is widely used in many fields like academics, industry and commerce for the transmission of data at higher speed and to allow the storage of large amount of data in less space. In this paper the VLSI Implementation of a fully pipelined multiplier less architecture of 2D DCT/IDCT has been studied. The compression and decompression is carried out with the help of two 1D-DCT calculations and a transpose buffer. The main objective is to illustrate the improvement in the existing lossy compression design of JPEG by the introduction of pipelining and the introduction of BinDCT multiplier less architecture based on Loeffler's factorization. The design and implementation is carried out using verilog code.},
+  booktitle = {2015 {{Online International Conference}} on {{Green Engineering}} and {{Technologies}} ({{IC}}-{{GET}})},
+  doi = {10.1109/GET.2015.7453819},
+  author = {Teja, G Ravi and Sruthi, R Sri and Tomar, Kavita Singh and Sivanantham, S and Sivasankaran, K},
+  month = nov,
+  year = {2015},
+  keywords = {discrete cosine transforms,Discrete cosine transforms,DCT,Discrete Fourier transforms,image coding,Image coding,Transform coding,data compression,Computer architecture,Signal processing algorithms,IDCT,hardware description languages,image compression,inverse transforms,butterfly,1D-DCT calculations,BinDCT,BinDCT multiplierless architecture,FPGA,fully pipelined multiplierless 2D DCT-IDCT JPEG architecture,Loeffler factorization,lossy JPEG compression design,multiplierless,pipeline processing,pipelining,transpose buffer,Verilog code,Verilog implementation,VLSI Implementation},
+  pages = {1-5},
+  file = {/home/moinocencio/Zotero/storage/XUS9LRPV/Teja et al. - 2015 - Verilog implementation of fully pipelined and mult.pdf;/home/moinocencio/Zotero/storage/DFVUCPF8/7453819.html}
+}
+
+@inproceedings{srivastavaFPGAImplementationPipelined2018a,
+  title = {{{FPGA Implementation}} of {{Pipelined}} 8\texttimes{}8 2-{{D DCT}} and {{IDCT Structure}} for {{H}}.264 {{Protocol}}},
+  abstract = {Discrete Cosine Transform (DCT) is the most widely used technique for image/video compression standards. In this paper, an FPGA based 8\texttimes{}8 forward Discrete Cosine Transform (DCT) and inverse Discrete Cosine Transform (IDCT) architectures are implemented for H.264 encoder and decoder respectively. It has been implemented using the pipelined structure for computing the Integer DCT and IDCT. The design is implemented without using any multiplication operation to reduce the complexity. H.264 is one of the recent video compression standards of the ITU-T Moving Picture Experts Group and Video Coding Experts Group. A pipelined architecture is used in this design to increase the speed of operation. The proposed resource effective architectures have been implemented and synthesized on xc2vp30 device that belongs to Vertex-2 Pro family. For Integer DCT architecture implementation, the resource utilization is 14\% slices, 1\% flip-flops, 11\% LUTs, 51\% 10Bs of xc2vp30 device and reaches an operating frequency of 520.996 MHz. For Integer IDCT architecture implementation, the resource utilization is 28\% slices, 2\% flip-flops, 24\% LUTs, 37\% 10Bs of xc2vp30 device and reaches an operating frequency of 525.22 MHz. In these designs, it takes only 49 clock cycles to generate the transformed outputs thus increasing the speed of operation.},
+  booktitle = {2018 3rd {{International Conference}} for {{Convergence}} in {{Technology}} ({{I2CT}})},
+  doi = {10.1109/I2CT.2018.8529352},
+  author = {Srivastava, Pankaj Kumar and Jakkani, Prof. Anil Kumar},
+  month = apr,
+  year = {2018},
+  keywords = {discrete cosine transforms,Discrete cosine transforms,video coding,Two dimensional displays,data compression,Computer architecture,Discrete Cosine Transform,Field programmable gate arrays,field programmable gate arrays,Clocks,Standards,H.264,butterfly,2-D DCT and 2-D IDCT,flip-flops,FPGA implementation,frequency 520.996 MHz,frequency 525.22 MHz,H.264 protocol,IDCT structure,image compression standards,Integer DCT,integer DCT architecture implementation,integer IDCT architecture implementation,Inverse Integer DCT,pipelined 8×8 2D DCT,pipelined architecture,protocols,resource utilization,Vertex-2 Pro family,video compression standards,xc2vp30 device},
+  pages = {1-6},
+  file = {/home/moinocencio/Zotero/storage/B7AK2DQP/Srivastava and Jakkani - 2018 - FPGA Implementation of Pipelined 8×8 2-D DCT and I.pdf;/home/moinocencio/Zotero/storage/QZ5RGX56/8529352.html}
+}
+
+@inproceedings{songPipeliningHardwareImplementation2010,
+  title = {A {{Pipelining Hardware Implementation}} of {{H}}.264 {{Based}} on {{FPGA}}},
+  volume = {1},
+  abstract = {A two-dimensional discrete cosine transform (DCT) module for the JPEG image compression system is designed. Considering the compromise of resource and speed in the FPGA chip, two same 1D-DCT module are reused to complete the FPGA design of 2D-DCT. The pipelining levels in the module are also analyzed and optimized. Simulation and test results for the whole system based on EP1C6Q240C8 show that it can perform the integer DCT of 4 \texttimes{} 4 block in twelve clock cycles and 10\% resource consumption rate. It provides a exploring attempt and a positive reference on the JPEG encoder system IP core design and their FPGA implementation.},
+  booktitle = {2010 {{International Conference}} on {{Intelligent Computation Technology}} and {{Automation}}},
+  doi = {10.1109/ICICTA.2010.401},
+  author = {Song, Sun and Haibing, Qi},
+  month = may,
+  year = {2010},
+  keywords = {discrete cosine transforms,Discrete cosine transforms,video coding,Discrete Fourier transforms,Frequency domain analysis,Hardware,Image coding,Transform coding,Discrete Cosine Transform,Field programmable gate arrays,Algorithm design and analysis,field programmable gate arrays,H.264,JPEG,butterfly,FPGA,1D-DCT module,EP1C6Q240C8,High definition video,JPEG encoder system,JPEG image compression system,Pipeline processing,pipelining hardware implementation,Pipelining level,two-dimensional discrete cosine transform},
+  pages = {299-302},
+  file = {/home/moinocencio/Zotero/storage/XBBCHFGM/Song and Haibing - 2010 - A Pipelining Hardware Implementation of H.264 Base.pdf;/home/moinocencio/Zotero/storage/4M2VVVIL/5523292.html}
+}
+
+@misc{GenusSynthesisSolution,
+  title = {Genus {{Synthesis Solution}}},
+  abstract = {Cadence Genus Synthesis Solution is a next-generation RTL synthesis and physical synthesis tool that delivers up to 10X better RTL design productivity with up to 5X faster turnaround times.},
+  language = {en},
+  howpublished = {https://www.cadence.com/content/cadence-www/global/en\_US/home/tools/digital-design-and-signoff/synthesis/genus-synthesis-solution.html},
+  file = {/home/moinocencio/Zotero/storage/ZRMW4PL5/genus-synthesis-solution.html}
+}
+
+@misc{DesignCompilerGraphical,
+  title = {Design {{Compiler Graphical}}},
+  abstract = {Design Compiler Graphical extends DC Ultra\texttrademark{} topographical technology to produce physical guidance to the IC Compiler place-and-route solution, tightening timing and area correlation to 5\% while speeding-up IC Compiler placement by 1.5X.},
+  language = {en},
+  howpublished = {https://www.synopsys.com/implementation-and-signoff/rtl-synthesis-test/design-compiler-graphical.html},
+  file = {/home/moinocencio/Zotero/storage/SB4Q6CD7/design-compiler-graphical.html}
+}
+
+@misc{NexysArtix7FPGA,
+  title = {Nexys 4 {{Artix}}-7 {{FPGA Trainer Board}} ({{LIMITED TIME}})},
+  abstract = {Shop now for FPGA development boards, programming solutions, portable instrumentation and educational products | Digilent},
+  journal = {Digilent},
+  howpublished = {https://store.digilentinc.com/nexys-4-artix-7-fpga-trainer-board-limited-time-see-nexys4-ddr/},
+  file = {/home/moinocencio/Zotero/storage/HEGB63D6/nexys-4-artix-7-fpga-trainer-board-limited-time-see-nexys4-ddr.html}
+}
+
+@misc{vivadodesignsuiteAXIReferenceGuide,
+  title = {{{AXI Reference Guide}}},
+  howpublished = {https://www.xilinx.com/support/documentation/ip\_documentation/axi\_ref\_guide/latest/ug1037-vivado-axi-reference-guide.pdf},
+  author = {, Vivado Design Suite},
+  file = {/home/moinocencio/Zotero/storage/UY37QFTP/ug1037-vivado-axi-reference-guide.pdf}
+}
+
+@article{VivadoDesignSuite2019,
+  title = {Vivado {{Design Suite}}: {{Designing}} with {{IP Tutorial}}},
+  language = {en},
+  year = {2019},
+  pages = {69},
+  file = {/home/moinocencio/Zotero/storage/2YS84K5Z/2019 - Vivado Design Suite Designing with IP Tutorial.pdf}
+}
+
+@misc{MicroBlazeProcessorReference2019,
+  title = {{{MicroBlaze Processor Reference Guide}}},
+  language = {en},
+  year = {2019},
+  pages = {389},
+  howpublished = {https://www.xilinx.com/support/documentation/sw\_manuals/xilinx2019\_1/ug984-vivado-microblaze-ref.pdf},
+  file = {/home/moinocencio/Zotero/storage/H7AIHLKG/2019 - MicroBlaze Processor Reference Guide.pdf}
+}
+
+@misc{MicroBlazeProcessorReference2019a,
+  title = {{{MicroBlaze Processor Reference Guide}}},
+  language = {en},
+  year = {2019},
+  pages = {389},
+  howpublished = {https://www.xilinx.com/support/documentation/sw\_manuals/xilinx2019\_1/ug984-vivado-microblaze-ref.pdf},
+  file = {/home/moinocencio/Zotero/storage/FK8BFC7H/2019 - MicroBlaze Processor Reference Guide.pdf}
+}
+
+@article{meherEfficientIntegerDCT2014,
+  title = {Efficient {{Integer DCT Architectures}} for {{HEVC}}},
+  volume = {24},
+  issn = {1558-2205},
+  abstract = {In this paper, we present area- and power-efficient architectures for the implementation of integer discrete cosine transform (DCT) of different lengths to be used in High Efficiency Video Coding (HEVC). We show that an efficient constant matrix-multiplication scheme can be used to derive parallel architectures for 1-D integer DCT of different lengths. We also show that the proposed structure could be reusable for DCT of lengths 4, 8, 16, and 32 with a throughput of 32 DCT coefficients per cycle irrespective of the transform size. Moreover, the proposed architecture could be pruned to reduce the complexity of implementation substantially with only a marginal affect on the coding performance. We propose power-efficient structures for folded and full-parallel implementations of 2-D DCT. From the synthesis result, it is found that the proposed architecture involves nearly 14\% less area-delay product (ADP) and 19\% less energy per sample (EPS) compared to the direct implementation of the reference algorithm, on average, for integer DCT of lengths 4, 8, 16, and 32. Also, an additional 19\% saving in ADP and 20\% saving in EPS can be achieved by the proposed pruning algorithm with nearly the same throughput rate. The proposed architecture is found to support ultrahigh definition 7680 \texttimes{} 4320 at 60 frames/s video, which is one of the applications of HEVC.},
+  number = {1},
+  journal = {IEEE Transactions on Circuits and Systems for Video Technology},
+  doi = {10.1109/TCSVT.2013.2276862},
+  author = {Meher, Pramod Kumar and Park, Sang Yoon and Mohanty, Basant Kumar and Lim, Khoon Seong and Yeo, Chuohao},
+  month = jan,
+  year = {2014},
+  keywords = {Discrete cosine transform (DCT),discrete cosine transforms,Discrete cosine transforms,video coding,Hardware,Computer architecture,high efficiency video coding,High Efficiency Video Coding (HEVC),parallel architectures,H.265,HEVC,Algorithm design and analysis,Adders,ultrahigh definition video,Matrix decomposition,1D integer DCT,ADP,area-delay product,area-efficient architectures,constant matrix-multiplication scheme,energy per sample,integer DCT architectures,integer discrete cosine transform,integer discrete cosine transform (DCT),matrix multiplication,power-efficient architectures,power-efficient structures,pruning algorithm,reference algorithm,transform size,throughput},
+  pages = {168-178},
+  file = {/home/moinocencio/Zotero/storage/QYPGNVWD/Meher et al. - 2014 - Efficient Integer DCT Architectures for HEVC.pdf;/home/moinocencio/Zotero/storage/7QULQ5UN/6575105.html}
+}
+
+@inproceedings{m.HighPerformanceInteger2017,
+  title = {High {{Performance Integer DCT Architectures}} for {{HEVC}}},
+  abstract = {This paper proposes an efficient VLSI architecture for integer discrete cosine transform (integer DCT) that is used in real time high efficiency video coding (HEVC) applications. The proposed N-point 1D-Integer DCT architecture consists of signed configurable carry save adder tree based multiplier unit. So, the depth of the architecture falls within the bounds of O(log2 N). The proposed 1D architecture is used to perform one N-point or multiple N 2 ; N 4 ; :::2-point Integer DCTs in parallel. The proposed 1D architecture is used to design 2D folded and parallel designs. The performance results show that the proposed architecture gives better performance compared with existing architectures using 45 nm CMOS TSMC library. The proposed 3232-point parallel Integer DCT achieves 59:1\% of improvement in worst path delay compared with odd-even decomposition [3] based architecture.},
+  booktitle = {2017 30th {{International Conference}} on {{VLSI Design}} and 2017 16th {{International Conference}} on {{Embedded Systems}} ({{VLSID}})},
+  doi = {10.1109/VLSID.2017.68},
+  author = {M., Mohamed Asan Basiri and Sk, Noor Mahammad},
+  month = jan,
+  year = {2017},
+  keywords = {discrete cosine transforms,Discrete cosine transforms,video coding,DCT,Two dimensional displays,discrete cosine transform,Computer architecture,HEVC,VLSI,Adders,Integer DCT,throughput,CMOS integrated circuits,CMOS TSMC library,configurable carry save adder tree-based multiplier unit,Delays,DSP,high-performance integer DCT architecture,Microprocessors,Multiplexing,N-point 1D-integer DCT architecture,parallel integer DCT,real-time HEVC applications,real-time high efficiency video coding applications,size 45 nm,VLSI architecture},
+  pages = {121-126},
+  file = {/home/moinocencio/Zotero/storage/E2SFTLIM/M. and Sk - 2017 - High Performance Integer DCT Architectures for HEV.pdf;/home/moinocencio/Zotero/storage/8WSZQMER/7884767.html},
+  issn = {2380-6923}
+}
+
+@misc{FPGAVsASIC2016,
+  title = {{{FPGA}} vs {{ASIC}}, {{What}} to {{Choose}}?},
+  abstract = {This is a high level article for those who are debating whether to use FPGAs or ASICs and need some technical and commercial insight to help ease the decision process. Both technologies, ASICs and FPGAs are absolutely fantastic and have great benefits but it's up to you to figure out, based on your product which},
+  language = {en-US},
+  journal = {AnySilicon},
+  month = jan,
+  howpublished = {https://anysilicon.com/fpga-vs-asic-choose/},
+  year = {2016},
+  file = {/home/moinocencio/Zotero/storage/93UQRHZ4/fpga-vs-asic-choose.html}
+}
+
+@misc{NexysReferenceDigilentinc,
+  title = {Nexys 4 [{{Reference}}.{{Digilentinc}}]},
+  howpublished = {https://reference.digilentinc.com/reference/programmable-logic/nexys-4/start}
+}
+
+

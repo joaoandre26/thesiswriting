@@ -1,0 +1,191 @@
+\newacronym{HEVC}{HEVC}{High Efficiency Video Coding}
+\newacronym{TV}{TV}{Television}
+\newacronym{CMOS}{CMOS}{Complementary metal–oxide–semiconductor}
+\newacronym{UHD}{UHD}{Ultra-High-Definition}
+\newacronym{CODEC}{Codec}{Encoder-Decoder}
+\newacronym{fps}{fps}{Frames per Second}
+\newacronym[plural=Cathode Ray Televisions (CRTs)]{CRT}{CRT}{Cathode Ray Television}
+\newacronym{ic}{IC}{Integrated Circuit}
+\newacronym{gpu}{GPU}{Graphical Processing Unit}
+\newacronym{av1}{AV1}{AOM Video 1}
+\newacronym{aomedia}{AOM}{Alliance for Open Media}
+\newacronym{mpeg}{MPEG}{Motion Picture Experts Group}
+\newacronym{fft}{FFT}{Fast Fourier Transform}
+\newacronym{dft}{DFT}{Discrete Fourier Transform}
+\newacronym{dct}{DCT}{Discrete Cosine Transform}
+\newacronym{adst}{ADST}{Asymetric Discrete Sine Transform}
+\newacronym{wht}{WHT}{Walsh-Hadamard Transform}
+\newacronym{wgn}{WGN}{White Gaussian Noise}
+\newacronym{vlc}{VLC}{Variable Length Codes}
+\newacronym{cabac}{CABAC}{Context Adaptative Binary Arithmetic Coding}
+\newacronym{jvt}{JVT}{Joint Video Team}
+\newacronym{psnr}{PSNR}{Peak Signal to Noise Ratio}
+\newacronym{mm}{MM}{Matrix Multiplication}
+\newacronym[sort=mse]{ems}{$MSE$}{Mean Square Error}
+\newacronym{qp}{QP}{Quantization Parameter}
+\newacronym{cpu}{CPU}{Central Processing Unit}
+\newacronym{mcu}{MCU}{Microcontroller}
+\newacronym{risc}{RISC}{Reduced Instruction Set Computer}
+\newacronym{uart}{UART}{Universal asynchronous receiver/transmitter}
+\newacronym{sdk}{SDK}{Software Development Kit}
+\newacronym[plural=Field-Programmable Gate Arrays (FPGAs)]{fpga}{FPGA}{Field-Programmable Gate Array}
+\newacronym[plural=Application Specific Integrated Circuits (ASICs)]{asic}{ASIC}{Application Specific Integrated Circuit}
+\newacronym{vhdl}{VHDL}{Very High Speed Integrated Circuit (VHSIC) Hardware Description Language (HDL)}
+\newacronym{lut}{LUT}{Look Up Table}
+\newacronym{wns}{WNS}{Worst Negative Slack}
+\newacronym{vlsi}{VLSI}{Very Large Scale Integration}
+%\newacronym{jpeg}{JPEG}{Joint Photographic Experts Group}
+
+
+\newglossaryentry{rgb}{%
+  name={RGB},
+  description={Color space based on the addition of Red, Green and Blue components for complex color representation}
+}
+
+\newglossaryentry{codec}{
+  name={Codec},
+  description={Encoder-Decoder. Also referred to the method of compressing and decompressing a video sequence}
+}
+
+\newglossaryentry{interlacing}{
+  name={Interlaced scanning},
+  description={Technique used by televisions for broadcasting and displaying, where only odd or even numbered lines of a frame are transmitted/displayed at a time, alternately}
+}
+
+\newglossaryentry{progressive}{
+  name={Progressive scanning},
+  description={Technique used by more recent screens, where each frame is displayed as a whole, from top to bottom, and left to right}
+}
+
+\newglossaryentry{VP89}{
+  name={VP8/VP9},
+  description={Open-format video codecs developed by Google, released in 2008 and 2013, respectively}
+}
+
+\newglossaryentry{libaom}{
+  name={libaom},
+  description={Reference software for AV1, released by Google in June 2018}
+}
+
+\newglossaryentry{JPEG}{
+  name={JPEG},
+  description={Still image compression format, developed by the Joint Photographic Experts Group (JPEG)}
+}
+
+\newglossaryentry{pixel}{
+  name={Pixel},
+  description={Picture Element}
+}
+
+\newglossaryentry{h264}{
+  name={H.264/AVC},
+  description={Previous state of the art video codec from \gls{jvt}, released in 2007. As to the writing of this work, it is the most used video compression algorithm}
+}
+
+\newglossaryentry{bdrate}{
+  name={Bjontegaard-Delta rate (BD-rate)},
+  description={Objective quality metric, that evaluates the bitrate savings according to the obtained PSNR}
+}
+
+\newglossaryentry{genmap}{
+  name={Generic},
+  description={Parametric variable that allows for the easy parametrization of a design in VHDL}
+}
+
+\newglossaryentry{floorplaning}{
+  name={Floorplaning},
+  description={Synthesis and Implementation of an hardware design onto an FPGA, through the planning of logic gates and input/output attribution}
+}
+
+\newglossaryentry{tld:round}{
+  name={$\mathbf{\nint*{x}}$},
+  description={Round to the nearest integer},
+  sort=round,
+  type=nomenclature
+}
+
+\newglossaryentry{tld:floor}{
+  name={$\mathbf{\nfloor*{x}}$},
+  description={Round to the nearest integer, lower than $x$},
+  sort=floor,
+  type=nomenclature
+}
+
+\newglossaryentry{tld:ceil}{
+  name={$\mathbf{\nceil*{x}}$},
+  description={Round to the nearest integer, greater than $x$},
+  sort=ceil,
+  type=nomenclature
+}
+
+\newglossaryentry{tld:shiftl}{
+  name={$x<<K$},
+  description={Shift $x$, $k$ bits to the left},
+  sort=shiftl,
+  type=nomenclature
+}
+
+\newglossaryentry{tld:shiftr}{
+  name={$x>>K$},
+  description={Shift $x$, $k$ bits to the right},
+  sort=shiftr,
+  type=nomenclature
+}
+
+\newglossaryentry{tld:vector}{
+  name={$\vec{x}$},
+  description={$N$th dimension vector},
+  sort=vectora,
+  type=nomenclature
+}
+
+\newglossaryentry{tld:matrix}{
+  name={$\mathbf{X}$},
+  description={Matrix},
+  sort=vectoraa,
+  type=nomenclature
+}
+
+\newglossaryentry{tld:transformed}{
+  name={$\mathcal{\vec{X}}$},
+  description={Input vector $\vec{x}$ in the \emph{Transform} domain},
+  sort=vectorb,
+  type=nomenclature
+}
+
+\newglossaryentry{tld:restvector}{
+  name={$\underset{*}{\vec{x}}$},
+  description={Restored version of vector $\vec{x}$},
+  sort=vectorc,
+  type=nomenclature
+}
+
+\newglossaryentry{tld:min}{
+  name={$\min{\mathbf{X}}$},
+  description={Smallest value of matrix $\mathbf{X}$},
+  sort=min,
+  type=nomenclature
+}
+
+\newglossaryentry{tld:max}{
+  name={$\max{\mathbf{X}}$},
+  description={Largest value of matrix $\mathbf{X}$},
+  sort=max,
+  type=nomenclature
+}
+
+\newglossaryentry{tld:byte}{
+  name={$B$},
+  description={Byte (8 bits)},
+  sort=byte,
+  type=nomenclature
+}
+
+\newglossaryentry{tld:bit}{
+  name={$b$},
+  description={Bit},
+  sort=bit,
+  type=nomenclature
+}
+
+\glsaddall
