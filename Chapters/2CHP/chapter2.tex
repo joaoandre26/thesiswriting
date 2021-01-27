@@ -7,52 +7,63 @@
 \chapter{State of the Art}%\label{chap:stArt}
 %%Section To do
 \todo[inline,color=blue!40]{*1-The LPG cylinder}
-\todo[inline,color=blue!40]{*2-Measuring Methods/Tecniques}
-\todo[inline,color=yellow!40]{*3-Signals and systems}
+\todo[inline,color=yellow!40]{*2-Measuring/Stimulation Tecniques}
+\todo[inline,color=yellow!40]{*3-Signals and systems - missing images}
 \todo[inline,color=red!40]{*4-LPG cylinder Model}
-\todo[inline,color=red!40]{*5-Frequency analysis??}
+
 
 %----------------------------------------Section 1-----------------------------------
 \section{The LPG cylinder}
 %Subsections to do
 \todo[inline,color=yellow!20]{*Integrate all}
-\todo[inline,color=yellow!40]{*Missing the image}
 The LPG cylinders commonly used in house appliances, usually came in different weight types, that are change according to the cylinder construction, the supplier, his application and composition of gas that is being healed inside the container. One thing that is similar is the state of the gas under certain circumstances, for instance the boiling point of LPG is around -42ºC, which means that under ambient pressure/temperature the gas is in his gaseous state. 
 
 Usually inside a LPG cylinder, the gas is kept in a liquid and gas form, in a percentage of around 80\% and 20\%, respectively, with a constant pressure, this percentage allows, when the external temperature rises, affecting the internal temperature, for both gas and liquid to expand until a certain limit, without compromise the safety of the use of the cylinders.
-\todo[inline,color=red!40]{*Pictures missing here}
-%\begin{figure}[!htb]
-%    \centering
-%    \includegraphics[width=\textwidth]{Sections/4DevelopedArchitecture/Figures/DCTCop.png}
-%    \caption{LPG cylinder internal state composition}
-%    \label{fig:blockdes}
-%\end{figure}
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.25\textwidth]{Chapters/2CHP/Diagrams/bottleBaseliqGas.eps}
+    \caption{LPG cylinder internal state composition}
+    \label{fig:intcomplpg}
+\end{figure}
 
 When the cylinders are empty and need to be filled, there is a direct relation between the amount of pressure, needed to fill the cylinders, and the temperature of the gas, the higher the temperature of the gas the higher is the pressure needed to fill the cylinder, this process of turning the LPG in a gas form into a liquid by pressurizing it, is called liquefaction. Another relation that must be taken into consideration, is the weight of the cylinder and the amount of liquid LPG, when the cylinder valve is open and LPG gas is released, the liquid LPG is turns into gas in order to keep a balance of pressure inside the cylinder, since that for the same pressure the density of the LPG liquid is higher then the density of the LPG gas, when the amount of liquid LPG decreases the weight of the cylinder also decreases \cite{WhatAreProperties} \cite{PropaneDensitySpecific}.
 
 %%Correct about gas pressure inside the bottle
 
 %----------------------------------------Section 2-----------------------------------
-\section{Measuring Methods/Techniques}
+\section{Measuring/Stimulation Techniques}
+\subsection{Measuring Techniques}
 As the LPG cylinder content is divided in two physical states, liquid and gaseous, over the years several techniques have been used and improved in measuring the liquid level, which is how is determined the amount of LPG in the cylinder, some of the different techniques used are based on the same method. Those methods are usually split in two different categories, contact and contactless. Contact measuring methods usually include, mechanical, electrical or pressure sensing devices. In this methods the sensors are in direct contact with the liquid. In contactless, the methods used usually are more complex to process, when compared with contact methods. In this case the methods of measuring are mainly through optical, ultra-sound, vibration and weight analysis\cite{nakagawaContactlessLiquidLevelMeasurement2013a}. 
-\todo[inline,color=red!40]{*Pictures missing here}
-% \begin{figure}[h]
-%     \centering
-%     \begin{subfigure}[c]{\textwidth}
-%         \centering
-%         \includegraphics[width=\figwidth]{Sections/2AV1/Diagrams/paisagemOri.jpg}
-%         \caption{}
-%         \label{subfig:noiseOri}
-%     \end{subfigure}
-%     \begin{subfigure}[c]{\textwidth}
-%         \centering
-%         \includegraphics[width=\figwidth]{Sections/2AV1/Diagrams/paisagemNoise.jpg}
-%         \caption{}
-%         \label{subfig:noise}
-%     \end{subfigure}
-%     \caption[Example of the effect of added noise on figure]{Example of the effect of added noise on figure ((a) - Original Image \cite{Freepik}; (b) - Image with added WGN).}
-%     \label{fig:noise}
-% \end{figure}
+\todo[inline,color=yellow!40]{*format correctly}
+\begin{figure}[!htp]
+    \centering
+    \begin{subfigure}{0.15\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Chapters/2CHP/Diagrams/bottleBasefluctuator.eps}
+        \caption{}
+        %\label{subfig:g1lines}
+    \end{subfigure}
+    \begin{subfigure}{0.15\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Chapters/2CHP/Diagrams/bottleBaseelectrode.eps}
+        \caption{}
+        %\label{subfig:g2lines}
+    \end{subfigure}
+    \begin{subfigure}{0.15\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Chapters/2CHP/Diagrams/bottleBaseultrasound.eps}
+        \caption{}
+        %\label{subfig:g3lines}
+    \end{subfigure}
+    \begin{subfigure}{0.15\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Chapters/2CHP/Diagrams/bottleBaseoptical.eps}
+        \caption{}
+        %\label{subfig:g4lines}
+    \end{subfigure}
+    \caption{Different LPG cylinder to used to compare the relation between Frequency and Weight for different models\citeauthor{wuLiquidLevelDetector2014b}}
+     %\label{fig:noise}
+ \end{figure}
 Taking in consideration the fact that a LPG cylinder is opaque and isolated, some of the methods can't be used in the process, for instance, a mechanical float-type isn't a suitable solution to use inside the cylinder, or in the same way to use an electrode, as a electrical method, in these cases the device would require to be installed inside the cylinder during his fabrication process, possibly implying the substitution of the current cylinders. In the same way, in contactless methods, the use of different optical techniques and the use of of ultra-sound, would face the same problem mentioned with the contact methods, being also discard as a suitable method in this situation. 
 
 From previous research, some work has already been developed with the purpose of measuring the amount of liquid gas inside a LPG cylinder. Being the techniques used based on the methods presented above.
@@ -68,22 +79,20 @@ Several works have been developed based on this technique, since it only require
 Another method used that proved to be valid for measuring the amount of liquid inside a closed and opaque container, is based on the analysis of the vibrations. A container filled with liquid, produces different sounds for different types of liquids or their variation. As a example of an implementation based on this principles is the work of \citeauthor{jahnLevelSensorFluids2014a} or \citeauthor{wuAnalysisImplementationNoncontact2016a}, both cases evaluate the vibration of the liquid inside the LPG cylinder, but they have a different approach. In the first case the level is measured by correlate a signal with a known frequency with another obtained from direct measurement from the cylinder, the known signal is used as an indirect impulse in the cylinder, by continuously change the frequency of this signal and correlate it with the captured signal, the dominant frequency is found when the highest correlation is found. In the second case is much simpler the implementation, a device knocks on the cylinder and the measured signal is processed with a FFT. In both cases the frequency obtained corresponds to a certain level o liquid, being a downside the fact that for a different container, a recalibration is necessary\cite{jahnLevelSensorFluids2014a}\cite{wuAnalysisImplementationNoncontact2016a}. 
 
 To the purpose of this dissertation, the approach of \citeauthor{wuAnalysisImplementationNoncontact2016a} is being reproduce, by implementing it in a microcontroller, capable of process the resulting vibration caused by knocking in the LPG cylinder. 
-
-%Talk about the methods that are not suitable for this after talk about all of them individually and present some references
-
-
-%% \section{Excitation techniques}
-
+\subsection{Stimulation Techniques}
+\todo[inline,color=red!40]{Stimulation Tecniques}
 
 %----------------------------------------Section 3-----------------------------------
 
 \section{Signals and System}
-\todo[inline,color=blue!40]{*1-Vibration}
-\todo[inline,color=blue!40]{*2-Signal definition}
-\todo[inline,color=blue!40]{*3-System definition}
-\todo[inline,color=blue!40]{*4-Digitalization}
-\todo[inline,color=red!40]{*5-Vibration-measuring Instruments???}
-\todo[inline,color=red!40]{*6-Sumup??(No name for the chapter yet)}
+
+\todo[inline,color=yellow!40]{*1-Vibration}
+\todo[inline,color=yellow!40]{*2-Signal definition}
+\todo[inline,color=yellow!40]{*3-Signal and Digitalization}
+\todo[inline,color=yellow!40]{*4-System definition}
+\todo[inline,color=yellow!40]{*5-LTI Systems}
+\todo[inline,color=yellow!40]{*6-Discrete-Time Fourier-Transform}
+
 \subsection{Vibration}
 The vibration and the studies in this field are usually related with the oscillatory motion of a body and the forces associated with them. Bodies with mass and elasticity are capable of experience vibration, knowing that, for example, when a structure is design, is required to take in consideration the oscillatory behavior of the structure. There are two types of vibration, free and forced. The first takes place when a system oscillates under forces natural to the system itself and there is no action of external forces. Under free vibration the system will vibrate at one or more of its natural frequencies, stablished by the properties of the system. Forced vibration occurs when the system is under the excitation of external forces. If it oscillatory, the system will vibrate at the same frequency of the external oscillation, if this frequency matches one of its natural frequencies a resonant state is reached, which may dangerous for a structure stability.   
 
@@ -148,41 +157,13 @@ The values of the $f_{max}$ and $f_s$ depend on the application, and the Nyquist
 
 \subsection{System definition}\label{subsec:SysDef}
 There is no specific nature to a system, and there is vast example of systems all around us, they could be biological, mechanical, electrical, among others. In the signal processing context a system can be viewed as a process in which input signals are transformed by the system or cause the system to respond in some way, with the resulting in new output signals. Simplifying, a system can be described as an entity with a specific function, where the output signal is the result of the manipulation one or more input signals.
-To the types of signals mentioned, continuous and discrete, the systems usually are represented as in the [figure label here], in both cases $x$ represents input and $y$ output.
-% \begin{table}[!htpb]
-%    \centering
-%    \begin{tabular}{cc} 
-%       \begin{equation} \label{eq:systemc}
-%          y(t) = H[x(t)].
-%       \end{equation}
-%       &
-%       \begin{equation} \label{eq:system}
-%          y[n] = H[x[n]].
-%       \end{equation}
-%    \end{tabular}    
-% \end{table}
-
-
-% \begin{equation} \label{eq:system}
-%    y[n] = H[x[n]].
-% \end{equation}
-% \begin{figure}[h]
-%     \centering
-%     \begin{subfigure}[c]{\textwidth}
-%         \centering
-%         \includegraphics[width=\figwidth]{Sections/2AV1/Diagrams/paisagemOri.jpg}
-%         \caption{}
-%         \label{subfig:noiseOri}
-%     \end{subfigure}
-%     \begin{subfigure}[c]{\textwidth}
-%         \centering
-%         \includegraphics[width=\figwidth]{Sections/2AV1/Diagrams/paisagemNoise.jpg}
-%         \caption{}
-%         \label{subfig:noise}
-%     \end{subfigure}
-%     \caption[Example of the effect of added noise on figure]{Example of the effect of added noise on figure ((a) - Original Image \cite{Freepik}; (b) - Image with added WGN).}
-%     \label{fig:noise}
-% \end{figure}
+To the types of signals mentioned, continuous and discrete, the systems usually are represented as in the \ref{eq:systemeq}, in both cases $x$ represents input and $y$ output.
+\begin{equation} \label{eq:systemeq}
+    \begin{split}
+        y(t) = H[x(t)] \\
+        y[n] = H[x[n]]
+    \end{split}
+\end{equation}
 
 One of the motivations for the study/analysis of systems from various applications, thus systems from different applications, with similar behavior, can have similar mathematical descriptions. The description of a system as a mathematical function also allows to simulate the behavior in a certain application, testing the response of it with different techniques. 
 
@@ -316,7 +297,10 @@ Where the terms $X(e^{\jmath\omega})$, $H(e^{\jmath\omega})$ and $Y(e^{\jmath\om
 
 With this work in consideration, a algorithm was presented by Cooley and Tukey, the fast Fourier Transform, or simply FFT. This algorithm later proved to be suitable for a digital implementation, with its reducing time in computing the transforms by order of magnitude.\cite{oppenheimSignalsSystems1997}
 
-\section{LPG cylinder Model}
+
+
+% ---------------------------------------Section 4-------------------------------------------------
+\section{LPG cylinder Model}\label{sec:LPGModel}
 As already mentioned \ref{subsec:SysDef}, is possible to describe an LPG cylinder over a mathematical function, as a system. Being, in many cases, the description similar to other systems. The fact that the system is described as a mathematical model allows to understand what it could be the behavior of it. 
 
 The work developed by \citeauthor{wuLiquidLevelDetector2014b} proposes a model for the LPG cylinder, based on acoustic principals to perform measurements. The procedure that they implement is quite simple, by knocking on the side of the cylinder, that generates the sound, usually that sound changes according to the amount of liquid inside of the cylinder, to evaluate what is the amount of gas inside, the vibration in the cylinder wall is recorded and the frequency of the sound give is proportional to the amount of gas present inside.
@@ -330,7 +314,13 @@ Like in the previous studies, the base of the work developed by \citeauthor{wuLi
 The similarities with the Euler-Bernoulli theory and its models, with a LPG cylinder, is related with the construction of the cylinder. A common LPG cylinder used in house appliances has two welded seams, located at the bottom and the top, and those seams are considered the boundaries of the LPG. These boundaries are not considered to be free, but loose instead, with doesn't allow to immediately conclude which type of the mentioned boundaries the cylinder has. Before getting into a conclusion is necessary to understand the theory behind their work.
 
 If a hammer is used to knock the lateral surface of the LPG cylinder, this will trigger a transverse vibration, considered in this case a mechanical vibration. This vibration is similar to Euler-Bernoulli beam, assuming a distributed mass per unit of length $m$, partially loaded with a distributed mass as well $m_d$, corresponding in this situation to the liquid part of the cylinder. In [Insert reference to images] is identified the boundaries and [insert diagram] corresponds to a illustration of the model, the  equation \ref{eq:beamEqSimp} describe the vibratory model of the LPG cylinder. The liquid-gas interface corresponds to the origin, and $EI$ is a constant value corresponding to the the beam flexural rigidity
-%Insert image here
+%Mechanical model of the LPG bottle
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.45\textwidth]{Chapters/2CHP/Diagrams/mathmodelLPG.pdf}
+    \caption{The LPG cylinder filled with liquid, with the mechanical representation of the Euler-Bernoulli beam\cite{wuLiquidLevelDetector2014b}}
+    \label{fig:mechanicalmodel}
+\end{figure}
 \begin{equation} \label{eq:beamEqSimp}
     \begin{split}
         EI\frac{\partial^4y_1}{\partial x^4} + (m + m_d)\frac{\partial^2y_1}{\partial t^2} = 0,\> & \text{for $-l_w \leq x < 0$} \\
@@ -364,24 +354,43 @@ This conditions allow them to investigate the relation of the normalized frequen
 \subsection{Relation with previous studies}
 So far the model presented show very general boundaries conditions, by controlling the variables, the model can be easily compared with models mentioned. Taking that into consideration, a demonstration of this similarities was presented and is the following.
     \todo[inline,color=yellow!40]{Change the word value to another un the following subsubsections(explanation in notes)}
+    \todo[inline,color=yellow!40]{Do the changes to close this section}
     %Using value may induce to a defined value, like 0,1,2,3... which is not the case when infinite is used
     \subsubsection{Clamped-free boundaries}
-    For this condition, the values of the variables are considered to be $k_{S1}=k_{T1}\approx\infty$ and $k_{S2}=k_{T2}=0$. When \citeauthor{chanFreeVibrationCantilever1995} proposed this model to calculate the frequencies of a cantilever tube, partially filled with liquid mercury, the cantilever was clamped at the bottom and free at the top, and the transverse vibration was generated by using a hammer to knock the tube[ref to image]. 
-    %Insert image here
+    For this condition, the values of the variables are considered to be $k_{S1}=k_{T1}\approx\infty$ and $k_{S2}=k_{T2}=0$. When \citeauthor{chanFreeVibrationCantilever1995} proposed this model to calculate the frequencies of a cantilever tube, partially filled with liquid mercury, the cantilever was clamped at the bottom and free at the top, and the transverse vibration was generated by using a hammer to knock the tube\ref{fig:clampedfreemodel}. 
+    %clamped-free model
+    \begin{figure}[!htb]
+        \centering
+        \includegraphics[width=0.45\textwidth]{Chapters/2CHP/Diagrams/clampedfreemodel.pdf}
+        \caption{Clamped-Free Model \cite{chanFreeVibrationCantilever1995}}
+        \label{fig:clampedfreemodel}
+    \end{figure}
     If the values of the variables are replaced in the equation\ref{eq:beamEqSimp} the result of this setup makes the boundaries conditions at their limits, $x=-l_w$ and $x=L-l_w$, to be as shown in \ref{eq:beamEqClamFree}, when comparing the results in the boundaries conditions they verify that they were the same as in \cite{chanFreeVibrationCantilever1995}.
     \begin{equation} \label{eq:beamEqClamFree}
             y_1(-l_w,t) = y'_1(-l_w,t) = y''_2(L-l_w,t) = y'''_2(L-l_w,t)=0
     \end{equation}
     \subsubsection{Pinned-pinned boundaries}
-    For this condition, the value of the variables considered is $k_{S1}=k_{S2}\approx\infty$ and $k_{T1}=k_{T2}=0$. In this model, proposed by \citeauthor{chanFREEVIBRATIONSIMPLY1996}, the study is made in a simply supported beam partially load, with distributed mass in both cases[ref to image].
-    %Insert image here
+    For this condition, the value of the variables considered is $k_{S1}=k_{S2}\approx\infty$ and $k_{T1}=k_{T2}=0$. In this model, proposed by \citeauthor{chanFREEVIBRATIONSIMPLY1996}, the study is made in a simply supported beam partially load, with distributed mass in both cases\ref{fig:pinnedpinnedmodel}.
+    %Pinned-Pinned Model
+    \begin{figure}[!htb]
+        \centering
+        \includegraphics[width=0.45\textwidth]{Chapters/2CHP/Diagrams/pinnedpinnedmodel.pdf}
+        \caption{Pinned-Pinned Model\cite{chanFREEVIBRATIONSIMPLY1996}}
+        \label{fig:pinnedpinnedmodel}
+    \end{figure}
     Once again, if the variables in \ref{eq:beamEqSimp} are replaced with $k_{S1}$, $k_{T1}$, $k_{S2}$ and $k_{T2}$, the result in this setup will also match the boundaries condition\ref{eq:beamEqPinnedx2} at $x=-l_w$ and $x=L-l_w$, obtained in \cite{chanFREEVIBRATIONSIMPLY1996}.
     \begin{equation} \label{eq:beamEqPinnedx2}
         y_1(-l_w,t) = y''_1(-l_w,t) = y_2(L-l_w,t) = y''_2(L-l_w,t)=0
     \end{equation}
     \subsubsection{Clamped-clamped boundaries}
-    In this case, the value considered to the variables was $k_{S1}=k_{T1}=k_{S2}=k_{T2}\approx\infty$. This model, proposed by \citeauthor{jacobsContactlessLiquidDetection2005}, with a contactless method to measure the vibration of a opaque capillary tube[ref to image].
-    %Insert image here
+    In this case, the value considered to the variables was $k_{S1}=k_{T1}=k_{S2}=k_{T2}\approx\infty$. This model, proposed by \citeauthor{jacobsContactlessLiquidDetection2005}, with a contactless method to measure the vibration of a opaque capillary tube\ref{fig:clampedclampedmodel}.
+    %Clamped-Clamped Model
+    \begin{figure}[!htb]
+        \centering
+        \includegraphics[width=0.45\textwidth]{Chapters/2CHP/Diagrams/clampedclampedmodel1.pdf}
+        \caption{Clamped-Clamped Model\cite{jacobsContactlessLiquidDetection2005}}
+        \label{fig:clampedclampedmodel}
+    \end{figure}
     Following the same path of the previous two, the variables $k_{S1}$, $k_{T1}$, $k_{S2}$ and $k_{T2}$ were once again replaced in \ref{eq:beamEqSimp},and the results obtained\ref{eq:beamEqClampedx2} at their boundaries conditions matched results obtained in \cite{jacobsContactlessLiquidDetection2005}
     \begin{equation} \label{eq:beamEqClampedx2}
         y_1(-l_w,t) = y'_1(-l_w,t) = y_2(L-l_w,t) = y'_2(L-l_w,t)=0
@@ -389,14 +398,54 @@ So far the model presented show very general boundaries conditions, by controlli
 
     \subsubsection{Relation of Frequency versus Length}
     As a final comparison, the test between the relation of the frequency with the length of the liquid level was executed. For that, different values were attributed to linear and torsional spring variables, to allow the simulation of theoretical curves of the normalized frequency ratio $f_r (f_i/f_0)$ and length ratio $l_r (l_w/L)$. The values for each of the variables were chosen to be large enough to simulate the different boundaries conditions. As expected the results[reference to all images] of \citeauthor{wuLiquidLevelDetector2014b} were very similar with what was previously obtained \cite{chanFreeVibrationCantilever1995}\cite{chanFREEVIBRATIONSIMPLY1996}\cite{jacobsContactlessLiquidDetection2005}, confirming what was mention in the beginning of this section.
-    %insert the 4 images here
-    %Note that in the images [ref as imagens] the curve correspondent to each mode is the line, and in the [ref to image] the curve is the thickest line.% --- use as end of page notes 
+    %Theoretical curves
+    \begin{figure}[!htb]
+        \centering
+        \includegraphics[width=0.45\textwidth]{Chapters/2CHP/Diagrams/theoricalcurve.pdf}
+        \caption{Frequency VS Weight - Practical curve obtained by \citeauthor{wuLiquidLevelDetector2014b}}
+        \label{fig:theoCurves}
+    \end{figure}
     In this relation is important to note that, when the cylinder is almost empty $l_r = 0$ the frequency of the vibration is the highest, in the opposite cases, when the cylinder is full $l_r = 1$ then the vibration frequency is archives the minimum value. 
-\subsection{Experimental results}
+\subsection{Experimental results}\label{subsec:SOAExpRes}
 In the tests perform by \citeauthor{wuLiquidLevelDetector2014b}\cite{wuLiquidLevelDetector2014b}, their setup consisted in a hammer knocking in the lateral surface of the cylinder, that produces the transversal vibration, which is captured by a microphone,processed with a FFT algorithm. By continuously releasing gas and measure the produced vibration, and the correspondent frequency they obtained the following relation: 
-%insert image here
+%Practical curve obtained
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.45\textwidth]{Chapters/2CHP/Diagrams/weightvsfrequency.pdf}
+    \caption{Frequency VS Weight - Practical curve obtained by \citeauthor{wuLiquidLevelDetector2014b}}
+    \label{fig:practCurve}
+\end{figure}
 In the same way of their theoretical simulations, the relation between the vibration frequency and the liquid level(or the length of the liquid) is similar, the highest frequency correspond to the lowest liquid level, and the lowest frequency to the highest liquid level. One thing that is important to refer that is mentioned in their work is, this relation is constant for the different variety of LPG cylinders, but the frequency range of each also varies with the amount of gas that they can store[ref to fig], which means that the device must be adapted to the type of cylinder that is going to be used in. 
-%insert image here
+%Figures of curves from different bottles
+\begin{figure}[ht]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Chapters/2CHP/Diagrams/g1line.pdf}
+        \caption{}
+        \label{subfig:g1lines}
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Chapters/2CHP/Diagrams/g2line.pdf}
+        \caption{}
+        \label{subfig:g2lines}
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Chapters/2CHP/Diagrams/g3line.pdf}
+        \caption{}
+        \label{subfig:g3lines}
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Chapters/2CHP/Diagrams/g4line.pdf}
+        \caption{}
+        \label{subfig:g4lines}
+    \end{subfigure}
+    \caption{Different LPG cylinder to used to compare the relation between Frequency and Weight for different models\citeauthor{wuLiquidLevelDetector2014b}}
+     \label{fig:noise}
+ \end{figure}
 A couple of years latter this work was followed by \citeauthor{wuAnalysisImplementationNoncontact2016a}\cite{wuAnalysisImplementationNoncontact2016a}, were they developed a prototype with the function of measure the frequency of the vibration, and thus the returning the liquid level of the LPG cylinder. The setup used and the test conditions were very similar the the previous work.
 
 \clearpage
