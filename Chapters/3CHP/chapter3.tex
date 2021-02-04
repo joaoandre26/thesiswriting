@@ -5,31 +5,50 @@
 \todo[inline,color=yellow!40]{*3-Real Signal Analysis}
 
 \section{Introduction}
-\section{Sensors} %Change latter 
-When stimulating a system, by hitting with a hammer on his side surface, the LPG bottle will produce internal vibration, and in this case also produces a sound. For the different amounts of liquid LPG the system will produce a different response in frequency, according to what was stated in the \ref{sec:LPGModel}, this response can be measured with the two different approaches.\\
-To capture the sound, the simplest and most obvious approach is to use a microphone for that effect, proceeding with his analysis in frequency. This his one of the easiest approaches, and is going to be used in a first stage to verify the response of the system, in this case it won't be necessary to developed additional hardware, a external microphone is going to be used with this purpose\ref{sec:MIC}.\\
+%check if the last section of the previous chapter is the more appropriate to use here
+\section{Talking about the choice of sensors}%%change this section name later
+The analysis through vibration, is the chosen approach to measure the amount of liquid gas inside the LPG bottle, since the stimulation of the system is by hitting in the surface of the bottle, beside the vibration this will produce a characteristic sound as well. From this, 3 different sensors where chosen to acquire the signals when hitting the surface of the LPG bottle, they are a microphone, a piezoelectric sensor and a MEMS accelerometer.\\
+In all the cases, when hitting the surface of the bottle with a hammer, this will produce a characteristic vibration and sound, in order to characterize the response of the system to the hit of the hammer, the first analysis is made with a microphone, after this the sensors will be chosen and the design the appropriate circuit to capture the same signal.
+\subsection{Microphone}
+Before trace a curve is important to understand which one is the best point to acquire data, when hitting the surface of the bottle. For that, different point in the bottle were chosen to determine the point. After this several measurements must be conducted in order to have a reliable source of information and trace a curve for the system response.\\
+The point considered are in the side surface of the LPG bottle as illustrated in the following image:
+%%insert here a description of the points considered
+To make those measurements a setup must mounted with a microphone, to capture the sound produced and process it. The setup is quite simple, consisting in a microphone and a computer installed with MatLab. The microphone in use is from a phone and to connect it with the computer an software called \textit{WO Mic}, this allows to used the microphone of the phone in real-time. The software must be installed in both devices, in the phone the software is available for Android and IOS, is responsible to transmit what is captured from the microphone. In the computer the client application and a virtual device must be installed to use the Phone in the computer to perform any type of tasks, this connection can be made by USB, Bluetooth, Wi-Fi and Wi-Fi Direct.\\ 
+In order to save what is captured from the microphone, the software is split in three main block with different purposes, the \textit{WO Mic App} runs in the Phone, samples the input of the microphone and transmit it to the computer, the \textit{WO Mic Client}, runs in the computer, connect to the app in the phone, and receive the data from the microphone, which is transmitted to the \textit{WO Mic Virtual Device} on which a real microphone device is simulated and provides the audio to any application or program in the computer\cite{WOMicFREE}:\\
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.65\textwidth]{Chapters/3CHP/Images/WOMICDiag.png}
+    \caption{Flow of data in the components of the software\cite{WOMicFREE}}
+    \label{fig:diagramWOMIC}
+\end{figure}
+In addition to this, is also necessary to install the drivers of the phone in use, if the connection is made over USB.\\
+To save the acquired data, MatLab was used to record the data of the microphone from the desire time and saved in ".txt" files for further analysis. 
+%%Insert flux gram here for a easy explanation and perception of the flow of information
+A script in MatLab was developed in order to perform this measurements and the capture is made once at a time, but not all configurations are done over this script. To start, the phone is connected over USB to the computer, in the application at phone the transport selected must be \textbf{USB}, on the app settings and after that started the application, in the top right play shape button. 
+%%Insert here instructions
+In the computer the client software must be initialized and connected to the phone in the following order \textit{\>Connection\>Connect...} a new window will open, on which the \textbf{USB} must be selected as transport type and finalizing by pressing \textit{Connect}. In MATLAB the input correspondent to the microphone must be selected.\\
+When this is done, the script runs and starts to record data from the microphone, for the desire amount of time. When the microphone starts to record, the surface of the LPG bottle is knocked and the captured signal is saved.
+%%should I put the results of the acquired date here? 
+\subsection{Accelerometer}
+As already mentioned in \ref{sec:VibSens}, there are various types of accelerometers, however the choice of the one to use depends on various factors, for this particular application is important that the accelerometer in use has a low cost and a small size, for the future application. With this in mind the choice declines over MEMS accelerometers, that are smaller when compared with piezoelectric accelerometers.\\
+The type of MEMS accelerometers available is very wide, some of them started to be used in applications that usually uses piezoelectric accelerometers, like condition-based monitoring (CBM), structural health monitoring (SHM), asset health monitoring (AHM), vital sign monitoring (VSM) and IoT, for example. When selecting the accelerometer is important to take into consideration some parameters, which are responsible to determine the category of the accelerometer, they are the application, the bandwidth and the range. Although there is no standard for the category on each accelerometer fits in, \textit{Analog Devices} has one document where they divide their products in different categories, with the type of application used in each on of them featuring a description of the key parameters that must be taken into consideration when selecting the appropriate accelerometer.
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=1\textwidth]{Chapters/3CHP/Images/adTable.pdf}
+    \caption{Application landscape for a selection of Analog Devices MEMS accelerometers}
+    \label{fig:adtable}
+\end{figure}
+The MEMS accelerometers from \textit{Analog Devices} are divided in two families, the ADXLxxxx and the ADIS16xxxx, the last offers different advantages when compared with he first, more like a plug-and-play solution with features like factory compensation, embedded compensation and signal processing. This family obviously has one of the features that has particular interest for the application, in this case the fact that has signal processing on the accelerometer, on the other hand this comes with a price, and this family of products has a higher cost. So is necessary to define the key specifications of the accelerometer, in order to properly chose one\cite{AnalogDialogue51102017}\cite{AnalogDialogue51112017}.\\
+The final purpose is to have a cheap and portable prototype, that is capable of accurately measure the vibrations and determine the the liquid level, this implies that his bandwidth covers the spectrum of frequency on which the curve of the relation liquid level vs frequency is. With this the key specifications are the low cost, low power and his bandwidth must close to 2kHz, determine as maximum frequency for a mechanical vibrations in \ref{tab:sampRat} and latter proved in the results obtained by \citeauthor{wuLiquidLevelDetector2014b} as described in \ref{sec:LPGModel}. Considering these specification, some models where chosen, that integrate this criteria, as follows:
+\begin{table}
+    \centering
+    \includegraphics[width=1\textwidth]{Chapters/3CHP/Images/accTable.pdf}
+    \caption{Key specifications of MEMS accelerometers}
+    \label{fig:acctable}
+\end{table}
+Although is doesn't accommodate entirely the specifications but since it was already available for use, the choice fell to the ADXL335. This model offers a low power consumption of around 350$\mu$A, his bandwidth is adjustable with a single capacitor per axis, from 0.5 to 1600 Hz for X and Y axis and 0.5 to 550Hz for Z axis. Beside this the accelerometer itself is very cheap, with a price starting at 3€. To properly acquire the data from this sensor and process it, is necessary to integrate it with a amplifier circuit and a microcontroller, on which more details will be explain further ahead.
+\subsection{Piezoelectric}
 
-
-%Not that much detail about each type, specially in what concerns about the non contact. Later talk about the accelerometers, and at the end a note and refer the microphone.
-
-
-
-
-\section{Real Signal analysis}\label{sec:MIC}
-As mentioned in \ref{subsec:SOAExpRes}, for different LPG bottles, the response to a external impulse will cause different vibration and thus, a different curve in the relation between weight and frequency. So the first step, is to evaluate this relation in the set of LPG bottles available[reference to the image of the bottles], in this case was available 3 LPG bottles, one empty, another half filled and the last completely filled, according to the 80\% rule, with water inside for safety reasons. The easiest way to perform this test is using a microphone, a hammer(or another object to hit the LPG bottle) and MatLab***. To capture the sound produced by hitting the bottle, the microphone of a Phone was used in addition with MatLab to capture the signal and save it in a ".txt" file.
-    \subsection*{Signal Capture}
-    To use the microphone of the Phone in real time, a App was installed on the Phone and the PC, used to record and save the signal. In this case, the App used is \textit{WO Mic}, available for Android and IOS. In addition on the PC the client application and a virtual device must be installed to use the Phone in the computer to perform any type of tasks, this connection can be made by USB, Bluetooth, Wi-Fi and Wi-Fi Direct.\\
-    The software with three components, already mentioned, the \textit{WO Mic App} runs in the Phone, samples the input of the microphone and transmit it to the computer, the \textit{WO Mic Client}, runs in the computer, connect to the app in the phone, and receive the data from the microphone, which is transmitted to the \textit{WO Mic Virtual Device} on which a real microphone device is simulated and provides the audio to any application or program in the computer\cite{WOMicFREE}:\\
-    \begin{figure}[!htb]
-        \centering
-        \includegraphics[width=0.65\textwidth]{Chapters/3CHP/Images/WOMICDiag.png}
-        \caption{Flow of data in the components of the software\cite{WOMicFREE}}
-        \label{fig:diagramWOMIC}
-    \end{figure}
-    In addition to this, is also necessary to install the drivers of the phone in used, if the connection is made over USB.
-    \subsection*{}  
-
-\subsection{Options}
 \subsection{Amplifier circuits}
 \subsection{Coupling} 
 
