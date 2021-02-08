@@ -1,14 +1,37 @@
 \cleardoublepage
-\chapter{Implementation??} \label{chap:trans}
-\todo[inline,color=red!40]{*1-Introduction}
-\todo[inline,color=yellow!40]{*2-Measuring Sensors}
-\todo[inline,color=yellow!40]{*3-Real Signal Analysis}
+\chapter{System Architecture} \label{chap:sysArch}
+\todo[inline,color=red!40]{*Chapter Introduction}
+\todo[inline,color=yellow!40]{*1-System Elements}
+\todo[inline,color=blue!40]{     *1-The sensors/Actuator}
+\todo[inline,color=blue!40]{     *2-The processing Unit}
+\todo[inline,color=yellow!40]{     *3-Processing type}
+\todo[inline,color=red!40]{*2-Architecture proposal}
+\todo[inline,color=red!40]{*3-Approach to the problem}
+\section{System Elements}
+In order to develop a system that is able to properly measure and return an good approximation of the liquid level in the LPG bottle, is necessary to identify the elements that must be present in the system. With this information, we must be able to properly chose the components to the system, to develop a solution that fits in the purpose of the work. In \ref{chap:stArt}, several methods/techniques were presented to measure the liquid level inside a LPG bottle, from those the choice fell to the development of a system that analyses the transversal vibration in the LPG bottle, with this in consideration is easier to define the elements that should be part of the system. 
+\subsection*{Actuator}
+This element is  responsible for the stimulation of the system, is very important that the chosen actuator is capable to produce the transversal vibration in the system. For this specific case, were presented two different methods for that purpose.
+\subsection*{Sensor}
+The amount of sensors that can be used to measure the vibration, not specific to this case only, is very wide. There were presented several types of sensors already, but when choosing a specific one it must be taken into consideration aspects like is practical application, in this case, the dimensions of the sensor, his cost and the coupling with the system to be measure, as an example. Other aspects that should be taken in consideration when choosing the sensor, are specific to the sensor itself and may vary from one to another, is not relevant to specify them. 
+\subsection*{The Processing Unit}
+The selection of the processing unit is quite important, since is the "brain" of the entire system. First of, is responsible for capturing the signal from the sensors, process the signals and at the end being able to return to the user some information, relevant for the application, for this particular application must return some data that is proportional to the liquid level. The processing unit in this case must be equipped with different types of I/O ports, for the specific case, the most important are the ADC for converting the continuous time signal to a discrete signal. Beside the I/O, the system must have the computational power to perform any type of mathematical tasks needed in the signal processing, isn't necessary to have a dedicated DSP hardware, but should be able to perform those tasks in a reasonable period of time.  
+\subsection*{Processing Type}
+As a signal is converted and stored in the processing unity, the signal is decomposed in two variables, they are the dependent variable and the independent variable, the first is usually related with the amplitude of the signal and the other with the sample and overall can be seen as the output of a sensor at a certain moment of time. While this data can be used to return a visual information about the state of the sensor, is not the only way, is often used the frequency domain, to determine patterns in the response of the same sensor, that aren't clear in a time domain visualization.
 
+\section{Architecture proposal}
+
+
+
+
+%everything bellow this will later be migrated to a different chapter - Don't forget to change
 \section{Introduction}
 %check if the last section of the previous chapter is the more appropriate to use here
-\section{Talking about the choice of sensors}%%change this section name later
+%a brief sum of what is going to be presented in this chapter, i.e., first the presentation of the sensors, then the micro controller in use, them the circuits, and at the end the mounting for each case. For what is related to the accelerometer and piezo, both the setups, the simplest and with the pieces.
+\section{Hardware selection}%%change this section name later
 The analysis through vibration, is the chosen approach to measure the amount of liquid gas inside the LPG bottle, since the stimulation of the system is by hitting in the surface of the bottle, beside the vibration this will produce a characteristic sound as well. From this, 3 different sensors where chosen to acquire the signals when hitting the surface of the LPG bottle, they are a microphone, a piezoelectric sensor and a MEMS accelerometer.\\
 In all the cases, when hitting the surface of the bottle with a hammer, this will produce a characteristic vibration and sound, in order to characterize the response of the system to the hit of the hammer, the first analysis is made with a microphone, after this the sensors will be chosen and the design the appropriate circuit to capture the same signal.
+%%Incomplete, must be able to include references to the microcontroller and the circuits
+
 \subsection{Microphone}
 Before trace a curve is important to understand which one is the best point to acquire data, when hitting the surface of the bottle. For that, different point in the bottle were chosen to determine the point. After this several measurements must be conducted in order to have a reliable source of information and trace a curve for the system response.\\
 The point considered are in the side surface of the LPG bottle as illustrated in the following image:
@@ -23,12 +46,14 @@ In order to save what is captured from the microphone, the software is split in 
 \end{figure}
 In addition to this, is also necessary to install the drivers of the phone in use, if the connection is made over USB.\\
 To save the acquired data, MatLab was used to record the data of the microphone from the desire time and saved in ".txt" files for further analysis. 
+%%The following two paragraphs must go in other section
 %%Insert flux gram here for a easy explanation and perception of the flow of information
 A script in MatLab was developed in order to perform this measurements and the capture is made once at a time, but not all configurations are done over this script. To start, the phone is connected over USB to the computer, in the application at phone the transport selected must be \textbf{USB}, on the app settings and after that started the application, in the top right play shape button. 
 %%Insert here instructions
 In the computer the client software must be initialized and connected to the phone in the following order \textit{\>Connection\>Connect...} a new window will open, on which the \textbf{USB} must be selected as transport type and finalizing by pressing \textit{Connect}. In MATLAB the input correspondent to the microphone must be selected.\\
 When this is done, the script runs and starts to record data from the microphone, for the desire amount of time. When the microphone starts to record, the surface of the LPG bottle is knocked and the captured signal is saved.
-%%should I put the results of the acquired date here? 
+%%
+%%
 \subsection{Accelerometer}
 As already mentioned in \ref{sec:VibSens}, there are various types of accelerometers, however the choice of the one to use depends on various factors, for this particular application is important that the accelerometer in use has a low cost and a small size, for the future application. With this in mind the choice declines over MEMS accelerometers, that are smaller when compared with piezoelectric accelerometers.\\
 The type of MEMS accelerometers available is very wide, some of them started to be used in applications that usually uses piezoelectric accelerometers, like condition-based monitoring (CBM), structural health monitoring (SHM), asset health monitoring (AHM), vital sign monitoring (VSM) and IoT, for example. When selecting the accelerometer is important to take into consideration some parameters, which are responsible to determine the category of the accelerometer, they are the application, the bandwidth and the range. Although there is no standard for the category on each accelerometer fits in, \textit{Analog Devices} has one document where they divide their products in different categories, with the type of application used in each on of them featuring a description of the key parameters that must be taken into consideration when selecting the appropriate accelerometer.
@@ -48,7 +73,7 @@ The final purpose is to have a cheap and portable prototype, that is capable of 
 \end{table}
 Although is doesn't accommodate entirely the specifications but since it was already available for use, the choice fell to the ADXL335. This model offers a low power consumption of around 350$\mu$A, his bandwidth is adjustable with a single capacitor per axis, from 0.5 to 1600 Hz for X and Y axis and 0.5 to 550Hz for Z axis. Beside this the accelerometer itself is very cheap, with a price starting at 3€. To properly acquire the data from this sensor and process it, is necessary to integrate it with a amplifier circuit and a microcontroller, on which more details will be explain further ahead.
 \subsection{Piezoelectric}
-
+To what concerns in the choice of a piezoelectric sensor, although there are very types of this kind of transducers and there are various applications for them.  
 \subsection{Amplifier circuits}
 \subsection{Coupling} 
 
