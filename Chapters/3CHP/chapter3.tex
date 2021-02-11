@@ -75,27 +75,6 @@ In the computer the client software must be initialized and connected to the pho
 When this is done, the script runs and starts to record data from the microphone, for the desire amount of time. When the microphone starts to record, the surface of the LPG bottle is knocked and the captured signal is saved.
 %%
 %%
-\subsection{Accelerometer}
-As already mentioned in \ref{sec:VibSens}, there are various types of accelerometers, however the choice of the one to use depends on various factors, for this particular application is important that the accelerometer in use has a low cost and a small size, for the future application. With this in mind the choice declines over MEMS accelerometers, that are smaller when compared with piezoelectric accelerometers.\\
-The type of MEMS accelerometers available is very wide, some of them started to be used in applications that usually uses piezoelectric accelerometers, like condition-based monitoring (CBM), structural health monitoring (SHM), asset health monitoring (AHM), vital sign monitoring (VSM) and IoT, for example. When selecting the accelerometer is important to take into consideration some parameters, which are responsible to determine the category of the accelerometer, they are the application, the bandwidth and the range. Although there is no standard for the category on each accelerometer fits in, \textit{Analog Devices} has one document where they divide their products in different categories, with the type of application used in each on of them featuring a description of the key parameters that must be taken into consideration when selecting the appropriate accelerometer.
-\begin{figure}[!htb]
-    \centering
-    \includegraphics[width=1\textwidth]{Chapters/3CHP/Images/adTable.pdf}
-    \caption{Application landscape for a selection of Analog Devices MEMS accelerometers}
-    \label{fig:adtable}
-\end{figure}
-The MEMS accelerometers from \textit{Analog Devices} are divided in two families, the ADXLxxxx and the ADIS16xxxx, the last offers different advantages when compared with he first, more like a plug-and-play solution with features like factory compensation, embedded compensation and signal processing. This family obviously has one of the features that has particular interest for the application, in this case the fact that has signal processing on the accelerometer, on the other hand this comes with a price, and this family of products has a higher cost. So is necessary to define the key specifications of the accelerometer, in order to properly chose one\cite{AnalogDialogue51102017}\cite{AnalogDialogue51112017}.\\
-The final purpose is to have a cheap and portable prototype, that is capable of accurately measure the vibrations and determine the the liquid level, this implies that his bandwidth covers the spectrum of frequency on which the curve of the relation liquid level vs frequency is. With this the key specifications are the low cost, low power and his bandwidth must close to 2kHz, determine as maximum frequency for a mechanical vibrations in \ref{tab:sampRat} and latter proved in the results obtained by \citeauthor{wuLiquidLevelDetector2014b} as described in \ref{sec:LPGModel}. Considering these specification, some models where chosen, that integrate this criteria, as follows:
-\begin{table}
-    \centering
-    \includegraphics[width=1\textwidth]{Chapters/3CHP/Images/accTable.pdf}
-    \caption{Key specifications of MEMS accelerometers}
-    \label{fig:acctable}
-\end{table}
-Although is doesn't accommodate entirely the specifications but since it was already available for use, the choice fell to the ADXL335. This model offers a low power consumption of around 350$\mu$A, his bandwidth is adjustable with a single capacitor per axis, from 0.5 to 1600 Hz for X and Y axis and 0.5 to 550Hz for Z axis. Beside this the accelerometer itself is very cheap, with a price starting at 3€. To properly acquire the data from this sensor and process it, is necessary to integrate it with a amplifier circuit and a microcontroller, on which more details will be explain further ahead.
-\subsection{Piezoelectric}
-To what concerns in the choice of a piezoelectric sensor, although there are very types of this kind of transducers and there are various applications for them.  
-\subsection{Amplifier circuits}
 \subsection{Coupling} 
 
 % \begin{figure}[!htb]
