@@ -9,16 +9,17 @@
 \todo[inline,color=red!40]{*Latter add Section for the actuator}
 \todo[inline,color=red!40]{*Chapter Introduction}
 \todo[inline,color=red!40]{*1 - Selection}
-\todo[inline,color=red!40]{ a) Microphone}
-\todo[inline,color=red!40]{ b) Accelerometer}
-\todo[inline,color=red!40]{ c) Piezoelectric}
+\todo[inline,color=blue!40]{ a) Microphone}
+\todo[inline,color=blue!40]{ b) Accelerometer}
+\todo[inline,color=yellow!40]{ c) Piezoelectric}
 \todo[inline,color=red!40]{*2 - Design}
 \todo[inline,color=red!40]{ a) Accelerometer}
-\todo[inline,color=red!40]{ b) Piezoelectric}
+\todo[inline,color=yellow!40]{ b) Piezoelectric}
+\todo[inline,color=red!40]{ c) Solenoid}
 \todo[inline,color=red!40]{*3 - Capture/Coupling}
 \todo[inline,color=red!40]{ a) Microphone}
 \todo[inline,color=red!40]{ b) Accelerometer}
-\todo[inline,color=red!40]{ c) Piezoelectric}
+\todo[inline,color=yellow!40]{ c) Piezoelectric}
 %% Writing %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Selection}
 \subsection{Microphone}
@@ -59,15 +60,56 @@ When selecting the microcontroller, is important to have some specifications in 
     \item 32-bit Hardware-Multiplier;
     \item Two eUSCI\_A, supports UART, IrDA and SPI and one eUSCI\_B, supports SPI and I2C;
 \end{itemize}
-Beside these characteristics the microcontroller offers different low-power modes, that consume from hundreds of microAmps to a couple of hundreds of microAmps, depending on the mode of operation of the microcontroller. Another thing in consideration, when selecting, is the fact that is possible to run with a super cap. The performance in this case is not as important as it seams, is not mandatory that operation that would need to be performed must return a liquid level to the user instantly, that means that the results not being in real time won't make much of a difference, anyway if that was the case, there is also a 32-bit Hardware-Multiplier embedded that reduces the use of CPU time to perform multiplications that would be required.  
+Beside these characteristics the microcontroller offers different low-power modes, that consume from hundreds of microAmps to a couple of hundreds of microAmps, depending on the mode of operation of the microcontroller. Another thing in consideration, when selecting, is the fact that is possible to run with a super cap. The performance in this case is not as important as it seams, is not mandatory that operation that would need to be performed must return a liquid level to the user instantly, that means that the results not being in real time won't make much of a difference, anyway if that was the case, there is also a 32-bit Hardware-Multiplier embedded that reduces the use of CPU time to perform multiplications that would be required\cite{MSP430FR2433DataSheet}. Associated with this characteristics, the price of this microcontroller is very appealing, starting under 2€.
 \section{Design}
 \subsection{Accelerometer}
 \subsection{Piezoelectric}
+As mentioned, piezoelectric sensors can be used in many fields, for sensing acceleration, vibration, shock or pressure. To what is related to acceleration or vibration, the piezoelectric will output a charge that is a function of his deformation/deflection. For the application in specific, the vibration produce, although is noticeable directly at the piezoelectric output, has a small amplitude which means that needs to be amplified to allow a distinct difference between what is actually the vibration and the output of the piezoelectric itself, is important to properly design a signal conditioning amplifier circuit. Texas-Instruments has a very clear document explaining how to design charge amplifiers for piezoelectric sensors \cite{bartolomeSignalConditioningPiezoelectric2010}, on which they clearly explain different types of circuit for this application in specific, with the advantages and disadvantages. The simplest model of this type of circuit is as follows: 
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.65\textwidth]{Chapters/4CHP/Figures/singleenddedchargeamp.pdf}
+    \caption{Charge Amplifier for signal conditioning}
+    \label{fig:ChargeAmpSimp}
+\end{figure}
+Two important thins to consider is the bandwidth and the gain of the circuit. In the first case, the circuit functions as a High-Pass Filter which means that when selecting the feedback resistor and capacitance, their values must be selected to keep a low pole in the filter.
+\begin{equation}\label{eq:fhpf}
+    f_{HPF} = \frac{1}{2\pi R_{FB}C_{FB}}
+\end{equation}
+Usually the value of the resistor in use in on the order of hundred of megaohms and the capacitance should be low, the reason is due to the fact that in this circuits the gain is defined by the value of the capacitance, the lower is value, the higher the gain.
+\begin{equation}
+    Gain = \frac{1}{C_{FB}} (mV/C)
+\end{equation}
+Another factor that must be taken in consideration is the SNR, this value needs to be maximized. For this circuit in specific, one way to archive this is by increasing the value of $R_{FB}$ as much as possible. To outline this and improve the SNR value is through the use of a differential charge amplifier.
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.65\textwidth]{Chapters/4CHP/Figures/differentialchargeamp.pdf}
+    \caption{Differential Charge Amplifier for signal conditioning}
+    \label{fig:ChargeAmpDif}
+\end{figure}
+\todo[inline,color=red!40]{Verify the unitis of the gain pf the circuit - with professors}
+This circuit offer two main advantages when compared with a simple charge amplifier, the first is related with the gain, in this case has twice the gain of a single-ended input circuit, (while the noise increases only as a square-root function???). The second is due to the fact that this circuits are very sensitive, in a single-ended input one of the terminals injects current while the other is connected to the ground, this will amplify the interference. In a differential input the common-mode signals will cancel each other. 
+For the practical application, the  circuit in use will be as shown in figure \ref{fig:ChargeAmpDif}, considering the simulation that the document \cite{bartolomeSignalConditioningPiezoelectric2010} presents, mainly those related with the SNR, this seamed to be the suitable choice for the application, since noise is a key aspect when measuring the signal, this is one way of reducing the effect of it. The difference in the circuit in use will be the components, the OpAmp in use will be the MCP602 from MicroChip, as for the remaining components, if is consider the information from the document, it can be select the values of 1nF for the capacitors and 100M$\Omega$ for the resistors. With these values the pole of the High-Pass Filter will be set at 1,59Hz and the gain of the circuit 2G(mV/C).
+\begin{figure}[!htb]
+    \centering
+    %\includegraphics[width=0.65\textwidth]{Chapters/4CHP/Figures/WOMICDiag.png}
+    \caption{Differential Charge Amplifier Schematic}
+    \label{fig:ChargeAmpDifSCH}
+\end{figure}
+Note that,once again, beside being connected in differential mode, the circuit has on his positive input fixed input voltage of half the supply voltage of the OpAmp.
 \section{Capture/Coupling}
 \subsection{Microphone}
 \subsection{Accelerometer}
-\subsection{Piezoelectric}
 
+\subsection{Piezoelectric}
+When mounting piezoelectric sensors, there is some considerations to take into account, the considerations are as well related with the application of the sensor. TI provides a document with considerations for mounting a piezoelectric sensor to measure liquid level using ultrasonic waves, although is a different approach, the key aspect for mounting this type of sensors can be used as well to define how to properly mount them. What needs to be taken into account, according to the document is if the sensors is to be mounted inside or outside, at the top or at the bottom and for last the temperature range that the sensor can handles before starts to degrading the piezoelectric capability, it is quite clear the first aspect, since is suppose to be a non-invasive solution, which means that should be places at outside of the tank, the second aspect is not relevant since is being measured the vibration, not being used ultrasound to measure the liquid limit where the wave is reflected, the third aspect is also not that important since is expected to have the sensor at environment temperature unless, and this can be seen as an exception, when the gas from the tank has been release for a long period causing the outer wall of the bottle to freeze. Beside the first, which was already a requirement, none of the others will have a significant difference. For the purpose of measure trough the walls of the tank is required to have a good contact between the transducer and the mounting surface, in their application the glue the transducer directly to the surface of the tank \cite{minasiHowSelectMount2015}.\\
+Since for the application isn't ideal to have the transducer glued to the surface, the approach to have a god contact will be different, although the good results aren't guaranteed. The figure \ref{fig:coupPiezo} is the illustration of two different mounting pieces for the transducer.
+\begin{figure}[!htb]
+    \centering
+    %\includegraphics[width=0.65\textwidth]{Chapters/4CHP/Figures/singleenddedchargeamp.pdf}
+    \caption{Charge Amplifier for signal conditioning}
+    \label{fig:coupPiezo}
+\end{figure}
+Both pieces will stay held to tank with two neodymium magnets, one at the top of the piece and the other at the bottom. In figure \ref{fig:coupPiezo} [a], the transducer is embedded in the piece, there is a slot in the middle, when the entire piece vibrates, the transducer vibrates with it, in the figure \ref{fig:coupPiezo} [b], the coupling of the transducer is different when compared with the first one presented, the transducer id held glued to a sponge, and the sponge to the piece, the sponge is larger than the hole that is glued in the piece so when the entire piece is attached to the walls of the tank with the help of the neodymium magnets, it guarantees a god contact of the transducer with the wall since the sponge will press it against the wall and when there is vibration in the wall of the tank, is expected to the transducer to capture the actual vibration. 
 \section{Extras - Delete later}
 %\begin{gather}
 %    \Delta_{10} = \frac{1-0}{2^{10}} \approx 0.98\cdot10^{-3}\\
