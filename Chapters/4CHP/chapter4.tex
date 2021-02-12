@@ -8,15 +8,16 @@
 % Green - Done and approved
 \todo[inline,color=red!40]{*Latter add Section for the actuator}
 \todo[inline,color=red!40]{*Chapter Introduction}
-\todo[inline,color=red!40]{*1 - Selection}
+\todo[inline,color=blue!40]{*1 - Selection}
 \todo[inline,color=blue!40]{ a) Microphone}
 \todo[inline,color=blue!40]{ b) Accelerometer}
 \todo[inline,color=yellow!40]{ c) Piezoelectric}
-\todo[inline,color=red!40]{*2 - Design}
+\todo[inline,color=red!40]{ d) Solenoid}
+\todo[inline,color=yellow!40]{*2 - Design}
 \todo[inline,color=red!40]{ a) Accelerometer}
 \todo[inline,color=yellow!40]{ b) Piezoelectric}
 \todo[inline,color=red!40]{ c) Solenoid}
-\todo[inline,color=red!40]{*3 - Capture/Coupling}
+\todo[inline,color=yellow!40]{*3 - Capture/Coupling}
 \todo[inline,color=red!40]{ a) Microphone}
 \todo[inline,color=red!40]{ b) Accelerometer}
 \todo[inline,color=yellow!40]{ c) Piezoelectric}
@@ -99,6 +100,24 @@ Note that,once again, beside being connected in differential mode, the circuit h
 \section{Capture/Coupling}
 \subsection{Microphone}
 \subsection{Accelerometer}
+When using a accelerometer for sensing vibration, there is different methods to mount it to the surface desired to measure those vibrations. Usually in the industry the accelerometer is mounted to the surface with a screw, allowing a great contact with the surface, but in the application pretended is not possible to use that method since that would imply the change in the structure of the tank and the accelerometer in use is not ready for a screw mount, anyway there are other methods to attach the accelerometer to the tank and even though that the examples from \cite{GuidelinesMountingTest} are to accelerometers with a screw mount, their examples can easily adapted to the type of accelerometer in use without any changes in the structure.\\
+The type of mount is quite important in the frequency response of the accelerometer as well as the surface on which the accelerometer is going to be mounted at. The best results are usually obtained with a stud or screw mount, but that isn't possible since it would require structural changes to the tank, two other option are presented. One of the option is by using an adhesive, this is a possibility, but in a practical mount the surface and the sensor would require different mounting bases, to avoid damaging the sensor and allow to the sensor to be removed any time that is required, although this is practical to mount would also require that each tank had already the adhesive for the mount. When compared with the other two method to mount, this offers worse frequency response accuracy. The second option is a magnetic mount, although as a lower frequency accuracy when the first two methods, stud and screw, this method offers a convenient mount if the structure of the tank is metallic, for this case is advised that the magnet is in a separated piece, to avoid damaging the accelerometer, magnets with a high pull stregths are better in providing a god frequency response, a system with dual-rail mount is god when the surface that the sensor is mounted on, is curve, but this decreases the operational frequency range of the accelerometer.\\
+
+For the mount of the accelerometer in the LPG bottle, will be use a magnet mount, is the most practical mount for a future application. Although in a laboratory environment and for test effects it won't be the only type of mount used. The first mount method will be with a load strap, this will held firmly the sensor against the wall of the tank, as will be used for the first tests. In figure \ref{fig:mounLoadStrap} is a illustration of the sensor mount.
+\begin{figure}[!htb]
+    \centering
+    %\includegraphics[width=0.65\textwidth]{Chapters/4CHP/Figures/singleenddedchargeamp.pdf}
+    \caption{Illustration of the accelerometer mount with a load strap}
+    \label{fig:mounLoadStrap}
+\end{figure}
+For the magnet mount, there actually two proposals, if by any reason one doesn't produces any results. In figure \ref{fig:mounMagnet} [a] is the ideal option, since is the less evasive for the accelerometer, for the reason mentioned above. In this case, a piece is design to be able to mount with two neodymium magnets at the top and bottom of the piece, this will pull the piece against the wall of the tank, between the two magnets is the necessary space for held the accelerometer, a sponge will be glued to the piece on one side and the other will be glued to the accelerometer, this will be slightly thicker than the piece, that way when the magnets attached the piece against the tank wall, the sponge will be compressed and and the surface of the accelerometer is expected to be firmly held against the tank wall as well. In figure \ref{fig:mounMagnet} [b], the mount is not ideal, since the neodymium magnet will be glued to the accelerometer surface for a god contact, this may result in best results when compared with the first option, but can damage the accelerometer, when attaching or removing the accelerometer from the tank wall.
+\begin{figure}[!htb]
+    \centering
+    %\includegraphics[width=0.65\textwidth]{Chapters/4CHP/Figures/singleenddedchargeamp.pdf}
+    \caption{Illustration of the accelerometer mount with a load strap}
+    \label{fig:mounMagnet}
+\end{figure}
+%
 
 \subsection{Piezoelectric}
 When mounting piezoelectric sensors, there is some considerations to take into account, the considerations are as well related with the application of the sensor. TI provides a document with considerations for mounting a piezoelectric sensor to measure liquid level using ultrasonic waves, although is a different approach, the key aspect for mounting this type of sensors can be used as well to define how to properly mount them. What needs to be taken into account, according to the document is if the sensors is to be mounted inside or outside, at the top or at the bottom and for last the temperature range that the sensor can handles before starts to degrading the piezoelectric capability, it is quite clear the first aspect, since is suppose to be a non-invasive solution, which means that should be places at outside of the tank, the second aspect is not relevant since is being measured the vibration, not being used ultrasound to measure the liquid limit where the wave is reflected, the third aspect is also not that important since is expected to have the sensor at environment temperature unless, and this can be seen as an exception, when the gas from the tank has been release for a long period causing the outer wall of the bottle to freeze. Beside the first, which was already a requirement, none of the others will have a significant difference. For the purpose of measure trough the walls of the tank is required to have a good contact between the transducer and the mounting surface, in their application the glue the transducer directly to the surface of the tank \cite{minasiHowSelectMount2015}.\\
