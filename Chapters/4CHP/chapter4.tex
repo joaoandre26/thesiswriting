@@ -8,18 +8,22 @@
 % Green - Done and approved
 \todo[inline,color=red!40]{*Latter add Section for the actuator}
 \todo[inline,color=red!40]{*Chapter Introduction}
+
 \todo[inline,color=blue!40]{*1 - Selection}
 \todo[inline,color=blue!40]{ a) Microphone}
 \todo[inline,color=blue!40]{ b) Accelerometer}
-\todo[inline,color=yellow!40]{ c) Piezoelectric}
-\todo[inline,color=red!40]{ d) Solenoid}
+\todo[inline,color=red!40]{ c) Piezoelectric}
+\todo[inline,color=yellow!40]{ d) Microcontroller}
+\todo[inline,color=yellow!40]{ e) Solenoid}
+
 \todo[inline,color=yellow!40]{*2 - Design}
 \todo[inline,color=red!40]{ a) Accelerometer}
 \todo[inline,color=yellow!40]{ b) Piezoelectric}
-\todo[inline,color=red!40]{ c) Solenoid}
+\todo[inline,color=yellow!40]{ c) Solenoid}
 \todo[inline,color=yellow!40]{*3 - Capture/Coupling}
-\todo[inline,color=red!40]{ a) Microphone}
-\todo[inline,color=red!40]{ b) Accelerometer}
+
+\todo[inline,color=yellow!40]{ a) Microphone}
+\todo[inline,color=yellow!40]{ b) Accelerometer}
 \todo[inline,color=yellow!40]{ c) Piezoelectric}
 %% Writing %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Selection}
@@ -62,6 +66,15 @@ When selecting the microcontroller, is important to have some specifications in 
     \item Two eUSCI\_A, supports UART, IrDA and SPI and one eUSCI\_B, supports SPI and I2C;
 \end{itemize}
 Beside these characteristics the microcontroller offers different low-power modes, that consume from hundreds of microAmps to a couple of hundreds of microAmps, depending on the mode of operation of the microcontroller. Another thing in consideration, when selecting, is the fact that is possible to run with a super cap. The performance in this case is not as important as it seams, is not mandatory that operation that would need to be performed must return a liquid level to the user instantly, that means that the results not being in real time won't make much of a difference, anyway if that was the case, there is also a 32-bit Hardware-Multiplier embedded that reduces the use of CPU time to perform multiplications that would be required\cite{MSP430FR2433DataSheet}. Associated with this characteristics, the price of this microcontroller is very appealing, starting under 2€.
+\subsection{Solenoid}
+For more constant measurment is important that when hitting process is constant as well, for that one a manual hammer is substituted by a solenoid, that when powered for a short period can simulate the an impulse in the system. With that purpose was chosen the SOL01002, the reason is, first this solenoid work with tensions starting at 5V and the other reason is due the fact that is a Push type, which means that when powered the shaft will move and produce the impulse desire.
+\begin{figure}[!htb]
+    \centering
+    %\includegraphics[width=0.65\textwidth]{Chapters/4CHP/Figures/singleenddedchargeamp.pdf}
+    \caption{Solenoid used to stimulate the bottle}
+    \label{fig:solenoid}
+\end{figure}
+The downside of using this model, can be the low impact force, it may not be able to produce a strong enough hit that can be detected by the sensors.
 \section{Design}
 \subsection{Accelerometer}
 \subsection{Piezoelectric}
@@ -97,8 +110,24 @@ For the practical application, the  circuit in use will be as shown in figure \r
     \label{fig:ChargeAmpDifSCH}
 \end{figure}
 Note that,once again, beside being connected in differential mode, the circuit has on his positive input fixed input voltage of half the supply voltage of the OpAmp.
+\subsection{Solenoid}
+The circuit needed for driving a solenoid is very simple, it consists simply in a mosfet, a diode and a resistor as components. Is needed to pay attention to the used mosfet, if the solenoid is active by a microcontroller, that in a high output has 3.3V in the specified pin, is needed to be one with a threshold voltage from the gate to the source. The use of the diode in parallel with the solenoid is to forward the current when the mosfet is switched off. In figure \ref{fig:solenoidshc} is the schematic of the circuit used to driving the solenoid.
+\begin{figure}[!htb]
+    \centering
+    %\includegraphics[width=0.65\textwidth]{Chapters/4CHP/Figures/singleenddedchargeamp.pdf}
+    \caption{Circuit for driving the solenoid}
+    \label{fig:solenoidshc}
+\end{figure}
 \section{Capture/Coupling}
 \subsection{Microphone}
+To position the microphone and acquire the sound produced when hitting the tank surface, the microphone was placed perpendicular to the surface of the tank and as close as possible from it, is also recommended to place it near the hitting point. With caution not to hit the microphone while measuring. The figure \ref{fig:micmount} is a illustration of how the microphone is placed relative to the LPG bottle.
+\begin{figure}[!htb]
+    \centering
+    %\includegraphics[width=0.65\textwidth]{Chapters/4CHP/Figures/singleenddedchargeamp.pdf}
+    \caption{Illustration of the accelerometer mount with a load strap}
+    \label{fig:micmount}
+\end{figure}
+In the practical setup, since is use the microphone from the phone, the side of the phone where the microphone is, should be faced to the LPG bottle, usually is the bottom part.
 \subsection{Accelerometer}
 When using a accelerometer for sensing vibration, there is different methods to mount it to the surface desired to measure those vibrations. Usually in the industry the accelerometer is mounted to the surface with a screw, allowing a great contact with the surface, but in the application pretended is not possible to use that method since that would imply the change in the structure of the tank and the accelerometer in use is not ready for a screw mount, anyway there are other methods to attach the accelerometer to the tank and even though that the examples from \cite{GuidelinesMountingTest} are to accelerometers with a screw mount, their examples can easily adapted to the type of accelerometer in use without any changes in the structure.\\
 The type of mount is quite important in the frequency response of the accelerometer as well as the surface on which the accelerometer is going to be mounted at. The best results are usually obtained with a stud or screw mount, but that isn't possible since it would require structural changes to the tank, two other option are presented. One of the option is by using an adhesive, this is a possibility, but in a practical mount the surface and the sensor would require different mounting bases, to avoid damaging the sensor and allow to the sensor to be removed any time that is required, although this is practical to mount would also require that each tank had already the adhesive for the mount. When compared with the other two method to mount, this offers worse frequency response accuracy. The second option is a magnetic mount, although as a lower frequency accuracy when the first two methods, stud and screw, this method offers a convenient mount if the structure of the tank is metallic, for this case is advised that the magnet is in a separated piece, to avoid damaging the accelerometer, magnets with a high pull stregths are better in providing a god frequency response, a system with dual-rail mount is god when the surface that the sensor is mounted on, is curve, but this decreases the operational frequency range of the accelerometer.\\
@@ -114,7 +143,7 @@ For the magnet mount, there actually two proposals, if by any reason one doesn't
 \begin{figure}[!htb]
     \centering
     %\includegraphics[width=0.65\textwidth]{Chapters/4CHP/Figures/singleenddedchargeamp.pdf}
-    \caption{Illustration of the accelerometer mount with a load strap}
+    \caption{Illustration of the accelerometer mount with magnets}
     \label{fig:mounMagnet}
 \end{figure}
 %
