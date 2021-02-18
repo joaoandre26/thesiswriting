@@ -14,6 +14,8 @@
 
 
 %----------------------------------------Section 1-----------------------------------
+%Introduction to the chapter
+In this chapter will be presented several topics, related with the LPG cylinder, previous works, systems concepts important for the work and sensors for it. To better understand the system to which is being design a device to measure the liquid level, in necessary to understand the constitution of the LPG cylinder and what are the variables that vary in the system. After it, is important to make a background search in previous works and their approaches, to understand if it's feasible and what is the approach to be taken. When selecting the method to used for the purpose of the work and before getting into the theoretical details of it, is necessary to understand everything that is related to the system, in a engineering point of view. In the end, will be presented different sensors, that can be used according to the type of measurements pretended in future product.     
 \section{The LPG cylinder}
 %Subsections to do
 \todo[inline,color=yellow!20]{*Integrate all}
@@ -73,20 +75,29 @@ From previous research, some work has already been developed with the purpose of
 In a work from \citeauthor{baigAccurateMeasurementPressure2008b} a pressure sensing device was developed, with the final appliance to a LPG cars, but with the possibility of apply in other circumstances. The device uses the pressure variation to move a magnet and using a Hall Effect sensor, with a fixed position, this motion produces a linear change of the voltage in the sensor, giving an accurate method of measuring the amount of gas in the LPG cylinder, in this case\cite{baigAccurateMeasurementPressure2008b}. 
 %Based on the weight
 \todo[inline,color=blue!20]{*Weight device}
-A common method of evaluate the amount of gas inside a LPG cylinder, is based on the weight change of the cylinder, that decreases with the consumption of liquid gas. As an example, the work developed by \citeauthor{dasilvamedeirosSmartgasSmartPlatform2017a}, \citeauthor{shresthaIoTBasedSmart2019a} or \citeauthor{shinganSmartGasCylinder2017a} have similar approaches to measure the amount of liquid gas inside the LPG cylinder, since it's quite simple to implement, for a simply measure it only requires a load cell, a amplifier and a microcontroller to display the result. This technique is also very precise, if there isn't a huge temperature change, that would affect the density of the liquid gas\cite{dasilvamedeirosSmartgasSmartPlatform2017a}\cite{shresthaIoTBasedSmart2019a}\cite{shinganSmartGasCylinder2017a}.
-Several works have been developed based on this technique, since it only requires a load cell and a microcontroller
+A common method of evaluate the amount of gas inside a LPG cylinder, is based on the weight change of the cylinder, that decreases with the consumption of liquid gas. As an example, the work developed by \citeauthor{dasilvamedeirosSmartgasSmartPlatform2017a}, \citeauthor{shresthaIoTBasedSmart2019a} or \citeauthor{shinganSmartGasCylinder2017a} have similar approaches to measure the amount of liquid gas inside the LPG cylinder. There is various works based on this technique since is very simple to implement and very precise, it only requires a load cell, a amplifier, a microcontroller and a method to display the results, and unless there is a huge change in the external temperature, the density of the gas won't be much affected and thus not affecting the weight of the bottle \cite{dasilvamedeirosSmartgasSmartPlatform2017a}\cite{shresthaIoTBasedSmart2019a}\cite{shinganSmartGasCylinder2017a}.
 %Based on Wave analysis
-%% rewrite this parte
-\todo[inline,color=blue!20]{*Waves based device - rewrite}
-Another method used that proved to be valid for measuring the amount of liquid inside a closed and opaque container, is based on the analysis of the vibrations. A container filled with liquid, produces different sounds for different types of liquids or their variation. As a example of an implementation based on this principles is the work of \citeauthor{jahnLevelSensorFluids2014a} or \citeauthor{wuAnalysisImplementationNoncontact2016a}, both cases evaluate the in the LPG cylinder, but they have a different approach. 
+
+\todo[inline,color=blue!20]{*Waves based device}
+Another method, that proved to be valid for measuring the amount of liquid inside a closed opaque container, is based on the analysis of the resulting vibrations when the container is stimulated by a external source. Depending in the type of the stimulation, it can produce only vibration, or it can also produce a characteristic sound, for different levels. As a example of two approaches based on the same principle are the works from \citeauthor{jahnLevelSensorFluids2014a} and \citeauthor{wuAnalysisImplementationNoncontact2016a}, in both cases the vibrations are analyzed, in one case is the vibration of the tank and in the other is through the sound produced by the tank vibration\cite{jahnLevelSensorFluids2014a}\cite{wuAnalysisImplementationNoncontact2016a}. Since the approach is through the analysis of the vibration, the stimulation methods for this method will be presented ahead. 
 
 \subsection{Stimulation Techniques}
 \todo[inline,color=red!40]{Stimulation Tecniques}
-Taking into consideration, that the measurment of the liquid level is based on the vibration, it was found in previous work two tequniques to induce the vibration in the LPG bottle.
+Taking into consideration, that the measurment of the liquid level is based on the vibration, it was found in previous work two techniques to induce the vibration in the LPG bottle.
 The first example of a technique of stimulation the LPG bottle is by using a piezoelectric transducer, attached to the bottom of the container, this transducer produces transversal and longitudinal waves in the surface of the container where the transducer is attached. The frequency of the waves generated is related with the frequency of the system response to a certain level, and changes according to that. The same waves are captured with another piezoelectric transducer and processed\cite{jahnLevelSensorFluids2014a}.
-%%insert image here
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.35\textwidth]{Chapters/2CHP/Diagrams/stimPiezo.eps}
+    \caption{Stimulation and measuring system based on piezo transducer\cite{jahnLevelSensorFluids2014a}}
+    \label{fig:stimPiezo}
+\end{figure}
 Another method to produce vibration in the LPG bottle, can be archived with a hammer or a device, that hits the surface of the LPG bottle, the captured signal is the appropriated sensor is then processed and the result returns the level of liquid gas inside. In this case, not only vibration in the bottle is produced but a sound as well\cite{wuAnalysisImplementationNoncontact2016a}.
-%%Insert image here
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.45\textwidth]{Chapters/2CHP/Diagrams/stimHammer.eps}
+    \caption{Stimulation system based on a knocking device\cite{wuAnalysisImplementationNoncontact2016a}}
+    \label{fig:stimHammer}
+\end{figure}
 \subsection{Don't know yet} %% Should put in the introduction of the next chapter this????????
 To the purpose of this dissertation, the approach of \citeauthor{wuAnalysisImplementationNoncontact2016a} is being reproduce, both in the signal acquire and the stimulation technique. This approach allows to measure the vibration and the signal reproduced, which allows a previous study of the system before enter in the development of a more practical prototype.
 
@@ -111,38 +122,44 @@ To what concern in signal processing, the types of signal considered are two typ
 \subsection{Signal and Digitalization}
 A continuous-time signal can be represented in a discrete-time form by the knowledge of its values at certain points in time equally spaced. This is called sampling theorem, and if the samples are close to each other, less time between samples, the more similar the discrete signal became to the continuous. Sampling plays an important role between the continuous-time and the discrete-time.
 
-Considering a continuous-time signal $x(t)$ is measured at every $T$ seconds. The is discretized in units of the sampling interval $T$:
+Considering a continuous-time signal $x(t)$ is measured at every $T_{s}$ seconds. The is discretized in units of the sampling interval $T_{s}$:
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.45\textwidth]{Chapters/2CHP/Diagrams/sampsignal.eps}
+    \caption{Signal sampling}
+    \label{fig:signalsamp}
+\end{figure}
 \begin{center}
     $t = nT_s,\> n = 0, 1, 2, ...$
 \end{center}
-The variable $T$ is called sampling period and the inverse of the period $f_s=\frac{1}{T}$ being the sampling frequency. One of the problems of this conversion is usually related with the correct choose of the sampling period, for that the theorem clearly specifies that the sampling period must be small enough so if there are small variations in the signal, they don't get lost between samples. Therefor the theorem says that the sampling frequency $f_s$ must be chosen to be  at least twice the maximum frequency $f_{max}$. A continuous-time signal $x(t)$ is bandlimited, so its frequency spectrum is limited at maximum frequency $f_{max}$, and no frequencies above that.
+The variable $T_s$ is called sampling period and the inverse of the period $f_s=\frac{1}{T_s}$ being the sampling frequency. One of the problems of this conversion is usually related with the correct choose of the sampling period, for that the theorem clearly specifies that the sampling period must be small enough so if there are small variations in the signal, they don't get lost between samples. Therefor the theorem says that the sampling frequency $f_s$ must be chosen to be  at least twice the maximum frequency $f_{max}$. A continuous-time signal $x(t)$ is bandlimited, so its frequency spectrum is limited at maximum frequency $f_{max}$, and no frequencies above that.
 
 \begin{equation} \label{eq:sampFreq}
        f_s \geq 2f_{max}
 \end{equation}
 \begin{equation} \label{eq:sampPeriod}
-    T \leq \frac{1}{2f_{max}}
+    T_s \leq \frac{1}{2f_{max}}
 \end{equation}
 
 The minimum value of the sampling frequency allowed by the theorem, is called the Nyquist rate, and his value is $f_s = 2f_{max}$. Oppositely, for a known value of $f_s$ the maximum frequency of the signal is $f_{max}=\frac{f_s}{2}$ and is called the Nyquist frequency of folding frequency.
 
 For the representation of some signals is usually used a unit impulse as a method to build a block to represent and construct other signals. The simplest representation of a unit impulse (or unit sample), in discrete-time, is defined as follows:
 \begin{equation}
-    \delta[n] = \left\{ \begin{matrix} 
+    \delta(n) = \left\{ \begin{matrix} 
     0, n \ne 0\\
     1, n = 0\\
     \end{matrix}\right.
 \end{equation}
 Another example of a simple discrete-time signal is the unit step, defined as:
 \begin{equation}
-    u[n] = \left\{ \begin{matrix} 
+    u(n) = \left\{ \begin{matrix} 
     0, n < 0\\
     1, n \geq 0\\
     \end{matrix}\right.
 \end{equation}
 If a close analysis is made, is possible to conclude that there is a relation between a unit impulse and a unit step, a unit step can be represented as a sum of impulses
 \begin{equation}\label{eq:step}
-    u[n] = \sum_{k=0}^{\infty}\delta[n-k]
+    u(n) = \sum_{k=0}^{\infty}\delta(n-k)
 \end{equation}
 The equation \ref{eq:step} can be seen as a sum of delayed impulses and plays an important role in the sampling property.\\
 The values of the $f_{max}$ and $f_s$ depend on the application, and the Nyquist frequency usually defines the cutoff frequencies used in filters required in DSP applications. A example of the of the typical sampling rates of common DSP applications are shown in the following table:   
@@ -165,17 +182,17 @@ The values of the $f_{max}$ and $f_s$ depend on the application, and the Nyquist
 
 \subsection{System definition}\label{subsec:SysDef}
 There is no specific nature to a system, and there is vast example of systems all around us, they could be biological, mechanical, electrical, among others. In the signal processing context a system can be viewed as a process in which input signals are transformed by the system or cause the system to respond in some way, with the resulting in new output signals. Simplifying, a system can be described as an entity with a specific function, where the output signal is the result of the manipulation one or more input signals.
-To the types of signals mentioned, continuous and discrete, the systems usually are represented as in the \ref{eq:systemeq}, in both cases $x$ represents input and $y$ output.
+To the types of signals mentioned, continuous and discrete, the systems usually are represented as in the equation \ref{eq:systemeq}, in both cases $x$ represents input and $y$ output.
 \begin{equation} \label{eq:systemeq}
     \begin{split}
         y(t) = H[x(t)] \\
-        y[n] = H[x[n]]
+        y(n) = H[x(n)]
     \end{split}
 \end{equation}
 
 One of the motivations for the study/analysis of systems from various applications, thus systems from different applications, with similar behavior, can have similar mathematical descriptions. The description of a system as a mathematical function also allows to simulate the behavior in a certain application, testing the response of it with different techniques. 
 
-A system can be described with certain properties, each one having a different effect on the system output. The properties are stability, memory, causality, invertibility, time-invariance and linearity. In signal-processing context, invertibility and time-invariance have special relevance, with a profound study of linear time-invariant(LTI) systems further ahead.\cite{oppenheimSignalsSystems1997}
+A system can be described with certain properties, each one having a different effect on the system output. The properties are stability, memory, causality, invertibility, time-invariance and linearity. In signal-processing context, invertibility and time-invariance have special relevance, with a profound study of linear time-invariant(LTI) systems further ahead\cite{oppenheimSignalsSystems1997}\cite{haykin1999signals}.
 \subsubsection*{Stability}
 A system is considered stable if an input signal limited in amplitude, results in a output signal also limited in amplitude. The system operation, H, is stable if the output signal $y(t)$  satisfies the following condition
 \begin{equation}
@@ -196,11 +213,11 @@ For a discrete-time system, the conditions are similar.
 A system is considered \textit{causal} if his resulting output signal, only depends in present/past values of the input signal. Opposed to that, a \textit{noncausal} system can have is output depending on future values of the input signal.
 An example of a \textit{causal} output is the following:
 \begin{equation}
-    y[n] = \frac{1}{3}(x[n+1]+x[n]+x[n-1])
+    y(n) = \frac{1}{3}(x(n)+x(n-1)+x(n-2))
 \end{equation}
 On the other hand an example of a \textit{noncausal} is:
 \begin{equation}
-    y[n] = \frac{1}{3}(x[n]+x[n-1]+x[n-2])
+    y(n) = \frac{1}{3}(x(n+1)+x(n)+x(n-1))
 \end{equation}
 \subsubsection*{Invertibility}
 A system is considered invertible if is possible to recover the input from the output signal of the system. The operation to recover the signal may be a different system connected to the output of the first. If the operation of a system is represented with $H$ in a continuous-time domain, with $x(t)$ and $y(t)$ being the input and output, respectively. The $y(t)$ is applied to the second system, where the result is expected to be $x(t)$, as follows:
@@ -252,13 +269,13 @@ Is applied to a system $H$, where $a_1, a_2, ..., a_N$ correspond the weight fac
 \begin{equation}
     \begin{aligned}
         y(t) = H\{x(t)\}\\
-        =H\{\sum_{i=1}^{N}a_ix_i(t)\}\\
+        =H\Bigg\{\sum_{i=1}^{N}a_ix_i(t)\Bigg\}\\
     \end{aligned}
 \end{equation} 
 If the system is linear then, the weighted sum of output signals is:
 \begin{equation}
     \begin{aligned}
-        y(t) = \sum_{i=1}^{N}a_iy_i(t)\\
+        y(t) = \sum_{i=1}^{N}a_i y_i(t)\\
         y_i(t) = H\{x_i(t)\}   
     \end{aligned}
 \end{equation}
@@ -270,21 +287,21 @@ which is the equivalent mathematical representation as in a weighted sum of inpu
 
 
 \subsection{LTI Systems} \label{subsec:LTI}
-As systems can be found all around us, so does a LPG bottle can be considered as a system. If the mathematical model that represents it meet the last two properties mentioned, it can be referred as a linear time-invariance (LTI) system. These properties combined with the characteristics of the unit impulse, being able to represent common signals as a representation of combined delayed impulses, this allows to completely characterize a LTI to what referrers his impulse response.\cite{oppenheimSignalsSystems1997}
-Similar to a unit step $u[n]$, a common signal $x[n]$ can be represented by unit impulses, as follows:
+As systems can be found all around us, so does a LPG bottle can be considered as a system. If the mathematical model that represents it meet the last two properties mentioned, it can be referred as a linear time-invariance (LTI) system. These properties combined with the characteristics of the unit impulse, being able to represent common signals as a representation of combined delayed impulses, this allows to completely characterize a LTI to what referrers his impulse response\cite{oppenheimSignalsSystems1997}\cite{haykin1999signals}.
+Similar to a unit step $u(n)$, a common signal $x(n)$ can be represented by unit impulses, as follows:
 \begin{equation}
-    x[n] \sum_{k=-\infty}^{+\infty} x[k]\delta[n-k]
+    x(n) = \sum_{k=-\infty}^{+\infty} x(k)\delta(n-k)
 \end{equation}
-In this case the weights in the linear combination are $x[k]$. Another aspect to take in consideration in these types of systems, is the response of the system to a impulse $\delta[n]$, results in $h[n] = H[\delta[n]]$. With this in mind, the response of a linear system $y[n]$ to a common input signal $x[n]$, represented from a combination of shifted impulse, can be represented as:
+In this case the weights in the linear combination are $x(k)$. Another aspect to take in consideration in these types of systems, is the response of the system to a impulse $\delta(n)$, results in $h(n) = H[\delta(n)]$. With this in mind, the response of a linear system $y(n)$ to a common input signal $x(n)$, represented from a combination of shifted impulse, can be represented as:
 \begin{equation}
     \begin{matrix}
-        y[n] & = & H\big[x[n]\big] \\
-        \ & = & \sum_{k=-\infty}^{+\infty} x[k]h[n-k]
+        y(n) & = & H\big[x(n)\big] \\
+        \ & = & \sum_{k=-\infty}^{+\infty} x(k)h(n-k)
     \end{matrix}
 \end{equation}
-The result is known as the \textit{convolution sum} or \textit{superposition sum} and the operation as \textit{convolution} of the sequences $x[n]$ and $h[n]$. The operation can be represented as:
+The result is known as the \textit{convolution sum} or \textit{superposition sum} and the operation as \textit{convolution} of the sequences $x(n)$ and $h(n)$. The operation can be represented as:
 \begin{equation}
-    y[n] = x[n] * h[n]
+    y(n) = x(n) * h(n)
 \end{equation} 
 \subsection{Discrete-Time Fourier-Transform}
 For the analysis of LTI systems, one of the most powerful and used tools is the Fourier-Series and Fourier Transform. For the analysis purpose, the focus is only going to be the Discrete-Time Fourier-Transform (DTFT). The study of this type of systems offers two great advantages:
@@ -295,15 +312,15 @@ For the analysis of LTI systems, one of the most powerful and used tools is the 
 The properties are provided by a set of exponential signals, this is important because the response of a LTI system to a complex exponential input, is the same exponential with the change in amplitude. When dealing with complex exponential signals, for the domain of analysis changes, which is in this case the frequency domain. \\
 For the analysis purpose, is necessary to know the representation of a signal $x(n)$, that later is going to be represented as a input of a system. The signal is represented in the frequency domain, where $\omega$ represents the \textit{angular frequency}, and its period is $2\pi$. The signal is represented as follows:
 \begin{equation}
-    X(e^{\jmath \omega})=\sum_{n=-\infty}^{+\infty}x[n]e^{-\jmath \omega n}
+    X(e^{\jmath \omega})=\sum_{n=-\infty}^{+\infty}x(n)e^{-\jmath \omega n}
 \end{equation}
 As mentioned in \ref{subsec:LTI}, the response of a LTI system to a impulse, can be represented by the \textit{convolution} operation. This operation can be represented in the frequency domain as:
 \begin{equation}
     Y(e^{\jmath\omega})= X(e^{\jmath\omega})H(e^{\jmath\omega})
 \end{equation}
-Where the terms $X(e^{\jmath\omega})$, $H(e^{\jmath\omega})$ and $Y(e^{\jmath\omega})$ are the Fourier transforms of $x(n)$, $h(n)$ and $y(n)$, respectively. The \textit{convolution} operation in the LTI system, is easily represented using the Fourier transform with a simple algebraic operation, by multiplying the Fourier transforms. This facilitates the analysis of the signals and systems and increases the understanding in the behavior of the LTI system when a signal is applied to its input. \\
+Where the terms $X(e^{\jmath\omega})$, $H(e^{\jmath\omega})$ and $Y(e^{\jmath\omega})$ are the Fourier transforms of $x(n)$, $h(n)$ and $y(n)$, respectively. The \textit{convolution} operation in the LTI system, is easily represented using the Fourier transform with a simple algebraic operation, by multiplying the Fourier transforms. This facilitates the analysis of the signals and systems and increases the understanding in the behavior of the LTI system when a signal is applied to its input.\\
 
-With this work in consideration, a algorithm was presented by Cooley and Tukey, the fast Fourier Transform, or simply FFT. This algorithm later proved to be suitable for a digital implementation, with its reducing time in computing the transforms by order of magnitude.\cite{oppenheimSignalsSystems1997}
+With this work in consideration, a algorithm was presented by Cooley and Tukey, the fast Fourier Transform, or simply FFT. This algorithm later proved to be suitable for a digital implementation, with its reducing time in computing the transforms by order of magnitude\cite{oppenheimSignalsSystems1997}.
 
 
 
@@ -321,7 +338,7 @@ Like in the previous studies, the base of the work developed by \citeauthor{wuLi
 \subsection{Mathematical Model for LPG cylinder}
 The similarities with the Euler-Bernoulli theory and its models, with a LPG cylinder, is related with the construction of the cylinder. A common LPG cylinder used in house appliances has two welded seams, located at the bottom and the top, and those seams are considered the boundaries of the LPG. These boundaries are not considered to be free, but loose instead, with doesn't allow to immediately conclude which type of the mentioned boundaries the cylinder has. Before getting into a conclusion is necessary to understand the theory behind their work.
 
-If a hammer is used to knock the lateral surface of the LPG cylinder, this will trigger a transverse vibration, considered in this case a mechanical vibration. This vibration is similar to Euler-Bernoulli beam, assuming a distributed mass per unit of length $m$, partially loaded with a distributed mass as well $m_d$, corresponding in this situation to the liquid part of the cylinder. In [Insert reference to images] is identified the boundaries and [insert diagram] corresponds to a illustration of the model, the  equation \ref{eq:beamEqSimp} describe the vibratory model of the LPG cylinder. The liquid-gas interface corresponds to the origin, and $EI$ is a constant value corresponding to the the beam flexural rigidity
+If a hammer is used to knock the lateral surface of the LPG cylinder, this will trigger a transverse vibration, considered in this case a mechanical vibration. This vibration is similar to Euler-Bernoulli beam, assuming a distributed mass per unit of length $m$, partially loaded with a distributed mass as well $m_d$, corresponding in this situation to the liquid part of the cylinder. In \ref{fig:mechanicalmodel} is identified the boundaries and is illustrated the LPG cylinder model, the  equation \ref{eq:beamEqSimp} describe the vibratory model of the LPG cylinder. The liquid-gas interface corresponds to the origin, and $EI$ is a constant value corresponding to the the beam flexural rigidity
 %Mechanical model of the LPG bottle
 \begin{figure}[!htb]
     \centering
@@ -360,10 +377,7 @@ At the bottom a circular steel plate is attached to make the cylinder more stabl
 This conditions allow them to investigate the relation of the normalized frequency ratio $f_r=f/f_0$, considering $f_0$ as the maximum frequency when there is no liquid inside, and the length ratio $l_w/L$ in their experiments.
 
 \subsection{Relation with previous studies}
-So far the model presented show very general boundaries conditions, by controlling the variables, the model can be easily compared with models mentioned. Taking that into consideration, a demonstration of this similarities was presented and is the following.
-    \todo[inline,color=yellow!40]{Change the word value to another un the following subsubsections(explanation in notes)}
-    \todo[inline,color=yellow!40]{Do the changes to close this section}
-    %Using value may induce to a defined value, like 0,1,2,3... which is not the case when infinite is used
+So far the model presented show very general boundaries conditions, by controlling the variables, the model can be easily compared with the mentioned model. Taking that into consideration, a demonstration of this similarities was presented and is the following.
     \subsubsection{Clamped-free boundaries}
     For this condition, the values of the variables are considered to be $k_{S1}=k_{T1}\approx\infty$ and $k_{S2}=k_{T2}=0$. When \citeauthor{chanFreeVibrationCantilever1995} proposed this model to calculate the frequencies of a cantilever tube, partially filled with liquid mercury, the cantilever was clamped at the bottom and free at the top, and the transverse vibration was generated by using a hammer to knock the tube\ref{fig:clampedfreemodel}. 
     %clamped-free model
@@ -423,7 +437,7 @@ In the tests perform by \citeauthor{wuLiquidLevelDetector2014b}\cite{wuLiquidLev
     \caption{Frequency VS Weight - Practical curve obtained by \citeauthor{wuLiquidLevelDetector2014b}}
     \label{fig:practCurve}
 \end{figure}
-In the same way of their theoretical simulations, the relation between the vibration frequency and the liquid level(or the length of the liquid) is similar, the highest frequency correspond to the lowest liquid level, and the lowest frequency to the highest liquid level. One thing that is important to refer that is mentioned in their work is, this relation is constant for the different variety of LPG cylinders, but the frequency range of each also varies with the amount of gas that they can store[ref to fig], which means that the device must be adapted to the type of cylinder that is going to be used in. 
+In the same way of their theoretical simulations, the relation between the vibration frequency and the liquid level(or the length of the liquid) is similar, the highest frequency correspond to the lowest liquid level, and the lowest frequency to the highest liquid level. One thing that is important to refer that is mentioned in their work is, this relation is constant for the different variety of LPG cylinders, but the frequency range of each also varies with the amount of gas that they can store\ref{fig:practCurve}, which means that the device must be adapted to the type of cylinder that is going to be used in. 
 %Figures of curves from different bottles
 \begin{figure}[ht]
     \centering
@@ -460,16 +474,39 @@ A couple of years latter this work was followed by \citeauthor{wuAnalysisImpleme
 To acquire and measure the vibration, the sensors used must work according to the system mechanical or optical principals of vibration. There is a large variety of sensors that ca be used for that purpose, although there isn't a direct method, or sensor, to measure the vibration, they can be either mechanical or optical. The sensors can be divided in different groups, based on their behavior, they can be active or passive, the type of measurement can be either absolute or relative, and there is also some specific characteristics of the signals that differ from the type of sensor, like the frequency range, signal dynamic and the quality of the data acquired. Finally sensors are also divided in contact and non-contact measurement and subdivided in path/displacement, speed/velocity or acceleration.\\
 For contact measurements, sensors related to path/displacement can be potentiometric transmitters or Linear Variable Differential Transmitter (LVDT), to speed/velocity it can be applied the principle of electrodynamics or use a seismometer as a sensor and for acceleration the sensors can be piezoelectric, piezo-resistive, resistive or inductive. In non-contact measurements, path/displacement sensors are eddy current sensors, optical sensors and hall sensors, or can be based on the capacitive principle, for speed/velocity is used a Laser-Doppler vibrometer (LDV) and for acceleration isn't possible to measure directly, although it can be derivate from speed/velocity measurement, but induces a lot of noise in the data acquired\cite{SensorsVibrationMeasurement}\cite{VibrationMeasurementVibration2019}.\\
 To measure the vibration, usually is the contact acceleration the most common method to measure them, beside the sensors mentioned, is used as well accelerometers, this devices are used in industry to reliably measure vibration in equipment, to monitoring their health.The functioning  principles of accelerometers can differ from one to another. The basic principle of a accelerometer is similar to a seismometer, from this there are 3 main types, mechanical, capacitive and piezoelectric. The mechanical is the most similar to a seismometer, with a mass attached to a spring, every time that acceleration occurs, just like in seismometer, the mass moves and a pen attached to the mass traces the vibration captured.
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.45\textwidth]{Chapters/2CHP/Diagrams/seismometer.eps}
+    \caption{Illustration of the working principle of simple accelerometer}{}    
+    \label{fig:seismometer}
+\end{figure}
 %%Insert here a image to illustrate this
 % see in https://www.explainthatstuff.com/accelerometers.html  
 Although in the case of the accelerometer, doesn't trace with a pen in paper, instead generates a electrical or magnetic signal. A example of this, is a piezoresistive accelerometer, which has a his mass attached to a potentiometer, and the result of the vibration is a voltage change. When a magnetic variation occurs, usually a hall-effect accelerometer is used for that effect.  
 Similar to the mechanical, a capacitive accelerometer, has one of the plates attached to the mass, and measures the capacitance variation, the vibration of capacitance is related with the vibration movement. 
 %% Insert another image here
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.45\textwidth]{Chapters/2CHP/Diagrams/capacitiveacc.eps}
+    \caption{Illustration of the working principle of capacitive accelerometer}{}    
+    \label{fig:capacitiveacc}
+\end{figure}
 In piezoelectric accelerometers, the function principle is similar to the previous, the mass is attached to the piezoelectric and when it moves causes a deformation. The resulting signal from the deformation is the result of the piezoelectric effect. A piezoelectric consist in two metal plates with piezoceramic material between them, usually a quartz crystal. To produce electricity, the piezoceramic material needs to be under stress, that is, to be compressed or squeezed. This caused a voltage different the two metal plates, this is the result of the collection of charges produced in the piezoceramic material.
 %%Insert here
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.45\textwidth]{Chapters/2CHP/Diagrams/piezoresistiveacc.eps}
+    \caption{Illustration of the working principle of a piezoresistive accelerometer}{}    
+    \label{fig:piezoresistiveacc}
+\end{figure}
 All the type of accelerometers mentioned have one problem, that is the fact that they aren't practical to use in certain application, as an example a small electronic device. For that, is used the so called MEMS (Micro Electro Mechanical Systems) accelerometers, this type of accelerometer is a combination of electrical and mechanical device, mounted on a silicon chip, this is one advantage of this type of accelerometers, the can be very produced in very small sizes, to allows their application in different types of electronic devices. The functioning of this type of accelerometer can be explained quite easily, an electrode is between two other electrodes, there is a air gap between these two and a small insulation to prevent direct contact between the middle electrode and the other two, on the top and the bottom. The middle electrode is connected with a cantilever, rigid enough to hold his position, but flexible enough to allow the move when the accelerometer moves or tilts, the cantilever is connected to outside of the chip, this is used to measure the difference of capacitance between the middle electrode and the electrodes at the top and at the bottom, the capacitance changes every time the middle electrode moves or tilts.\\
  %%insert the image here as a example, get it from https://www.explainthatstuff.com/accelerometers.html
-
+ \begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.45\textwidth]{Chapters/2CHP/Diagrams/memsacc.eps}
+    \caption{Illustration of the working principle of a MEMS accelerometer}{}    
+    \label{fig:piezoresistiveacc}
+\end{figure}
 This type of accelerometers brought important advantages, being their low cost and their small size the most important of it. On the other hand, the use of this devices for condition monitoring is restricted to a small bandwidth, restricted to a few kHz, and it cannot be used to in applications that require lower noise over higher frequency ranges \cite{WhatYouNeed}\cite{HowAccelerometersWork2009}.
 
 \clearpage
