@@ -1,5 +1,13 @@
 \newacronym{IoT}{IoT}{Internet of Things}
-
+\newacronym{LPG}{LPG}{Liquefied Petroleum Gas}
+\newacronym{CCCM}{CCCM}{Consumer Controlled Cylinder Model}
+\newacronym{BCRM}{BCRM}{Branded Cylinder Recirculation Model}
+\newacronym{LTI}{LTI}{Linear Time-Invariance}
+\newacronym{DTFT}{DTFT}{ Discrete-Time Fourier-Transform}
+\newacronym{FFT}{FFT}{Fast Fourier Transform}
+\newacronym{LVDT}{LVDT}{Linear Variable Differential Transmitter}
+\newacronym{LDV}{LDV}{Laser-Doppler Vibrometer}
+\newacronym{CPU}{CPU}{Central Process Unit}
 \newacronym{MEMS}{MEMS}{Micro Electro Mechanical Systems}
 \newacronym{CBM}{CBM}{condition-based monitoring}
 \newacronym{SHM}{SHM}{structural health monitoring}
@@ -14,61 +22,6 @@
   description={Color space based on the addition of Red, Green and Blue components for complex color representation}
 }
 
-\newglossaryentry{codec}{
-  name={Codec},
-  description={Encoder-Decoder. Also referred to the method of compressing and decompressing a video sequence}
-}
-
-\newglossaryentry{interlacing}{
-  name={Interlaced scanning},
-  description={Technique used by televisions for broadcasting and displaying, where only odd or even numbered lines of a frame are transmitted/displayed at a time, alternately}
-}
-
-\newglossaryentry{progressive}{
-  name={Progressive scanning},
-  description={Technique used by more recent screens, where each frame is displayed as a whole, from top to bottom, and left to right}
-}
-
-\newglossaryentry{VP89}{
-  name={VP8/VP9},
-  description={Open-format video codecs developed by Google, released in 2008 and 2013, respectively}
-}
-
-\newglossaryentry{libaom}{
-  name={libaom},
-  description={Reference software for AV1, released by Google in June 2018}
-}
-
-\newglossaryentry{JPEG}{
-  name={JPEG},
-  description={Still image compression format, developed by the Joint Photographic Experts Group (JPEG)}
-}
-
-\newglossaryentry{pixel}{
-  name={Pixel},
-  description={Picture Element}
-}
-
-\newglossaryentry{h264}{
-  name={H.264/AVC},
-  description={Previous state of the art video codec from \gls{jvt}, released in 2007. As to the writing of this work, it is the most used video compression algorithm}
-}
-
-\newglossaryentry{bdrate}{
-  name={Bjontegaard-Delta rate (BD-rate)},
-  description={Objective quality metric, that evaluates the bitrate savings according to the obtained PSNR}
-}
-
-\newglossaryentry{genmap}{
-  name={Generic},
-  description={Parametric variable that allows for the easy parametrization of a design in VHDL}
-}
-
-\newglossaryentry{floorplaning}{
-  name={Floorplaning},
-  description={Synthesis and Implementation of an hardware design onto an FPGA, through the planning of logic gates and input/output attribution}
-}
-
 \newglossaryentry{tld:round}{
   name={$\mathbf{\nint*{x}}$},
   description={Round to the nearest integer},
@@ -76,88 +29,5 @@
   type=nomenclature
 }
 
-\newglossaryentry{tld:floor}{
-  name={$\mathbf{\nfloor*{x}}$},
-  description={Round to the nearest integer, lower than $x$},
-  sort=floor,
-  type=nomenclature
-}
-
-\newglossaryentry{tld:ceil}{
-  name={$\mathbf{\nceil*{x}}$},
-  description={Round to the nearest integer, greater than $x$},
-  sort=ceil,
-  type=nomenclature
-}
-
-\newglossaryentry{tld:shiftl}{
-  name={$x<<K$},
-  description={Shift $x$, $k$ bits to the left},
-  sort=shiftl,
-  type=nomenclature
-}
-
-\newglossaryentry{tld:shiftr}{
-  name={$x>>K$},
-  description={Shift $x$, $k$ bits to the right},
-  sort=shiftr,
-  type=nomenclature
-}
-
-\newglossaryentry{tld:vector}{
-  name={$\vec{x}$},
-  description={$N$th dimension vector},
-  sort=vectora,
-  type=nomenclature
-}
-
-\newglossaryentry{tld:matrix}{
-  name={$\mathbf{X}$},
-  description={Matrix},
-  sort=vectoraa,
-  type=nomenclature
-}
-
-\newglossaryentry{tld:transformed}{
-  name={$\mathcal{\vec{X}}$},
-  description={Input vector $\vec{x}$ in the \emph{Transform} domain},
-  sort=vectorb,
-  type=nomenclature
-}
-
-\newglossaryentry{tld:restvector}{
-  name={$\underset{*}{\vec{x}}$},
-  description={Restored version of vector $\vec{x}$},
-  sort=vectorc,
-  type=nomenclature
-}
-
-\newglossaryentry{tld:min}{
-  name={$\min{\mathbf{X}}$},
-  description={Smallest value of matrix $\mathbf{X}$},
-  sort=min,
-  type=nomenclature
-}
-
-\newglossaryentry{tld:max}{
-  name={$\max{\mathbf{X}}$},
-  description={Largest value of matrix $\mathbf{X}$},
-  sort=max,
-  type=nomenclature
-}
-
-\newglossaryentry{tld:byte}{
-  name={$B$},
-  description={Byte (8 bits)},
-  sort=byte,
-  type=nomenclature
-}
-
-\newglossaryentry{tld:bit}{
-  name={$b$},
-  description={Bit},
-  sort=bit,
-  type=nomenclature
-}
 
 \glsaddall

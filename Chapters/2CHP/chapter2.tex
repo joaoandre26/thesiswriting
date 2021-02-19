@@ -6,19 +6,18 @@
 %Green - Done and approved
 \chapter{State of the Art}\label{chap:stArt}
 %%Section To do
-\todo[inline,color=red!40]{*Order the section in this chapter}
 \todo[inline,color=blue!40]{*1-The LPG cylinder}
-\todo[inline,color=yellow!40]{*2-Measuring/Stimulation Tecniques}
-\todo[inline,color=yellow!40]{*3-Signals and systems - missing images}
-\todo[inline,color=red!40]{*4-LPG cylinder Model}
+\todo[inline,color=blue!40]{*2-Measuring/Stimulation Tecniques}
+\todo[inline,color=blue!40]{*3-Signals and systems - missing images}
+\todo[inline,color=blue!40]{*4-LPG cylinder Model}
+\todo[inline,color=blue!40]{*5-Vibration Sensors}
 
 
 %----------------------------------------Section 1-----------------------------------
 %Introduction to the chapter
-In this chapter will be presented several topics, related with the LPG cylinder, previous works, systems concepts important for the work and sensors for it. To better understand the system to which is being design a device to measure the liquid level, in necessary to understand the constitution of the LPG cylinder and what are the variables that vary in the system. After it, is important to make a background search in previous works and their approaches, to understand if it's feasible and what is the approach to be taken. When selecting the method to used for the purpose of the work and before getting into the theoretical details of it, is necessary to understand everything that is related to the system, in a engineering point of view. In the end, will be presented different sensors, that can be used according to the type of measurements pretended in future product.     
+In this chapter will be presented several topics, related with the LPG cylinder, previous works, systems concepts important for the work and sensors for it. To better understand the system to which is being design a device to measure the liquid level, in necessary to understand the constitution of the LPG cylinder and what are the variables that vary in the system. After it, is important to make a background search in previous works and their approaches, to understand if it's feasible and what is the approach to be taken. When selecting the technique to use for the purpose of the solution and before getting into the theoretical details of it, is necessary to understand everything that is related to the system, in a engineering point of view. In the end, will be presented different sensors, that can be used according to the type of measurements pretended in future product.     
 \section{The LPG cylinder}
 %Subsections to do
-\todo[inline,color=yellow!20]{*Integrate all}
 The LPG cylinders commonly used in house appliances, usually came in different weight types, that are change according to the cylinder construction, the supplier, his application and composition of gas that is being healed inside the container. One thing that is similar is the state of the gas under certain circumstances, for instance the boiling point of LPG is around -42ºC, which means that under ambient pressure/temperature the gas is in his gaseous state. 
 
 Usually inside a LPG cylinder, the gas is kept in a liquid and gas form, in a percentage of around 80\% and 20\%, respectively, with a constant pressure, this percentage allows, when the external temperature rises, affecting the internal temperature, for both gas and liquid to expand until a certain limit, without compromise the safety of the use of the cylinders.
@@ -34,10 +33,9 @@ When the cylinders are empty and need to be filled, there is a direct relation b
 %%Correct about gas pressure inside the bottle
 
 %----------------------------------------Section 2-----------------------------------
-\section{Measuring/Stimulation Techniques}
+\section{Measuring/Stimulation Techniques}\label{sec:measStim}
 \subsection{Measuring Techniques}
 As the LPG cylinder content is divided in two physical states, liquid and gaseous, over the years several techniques have been used and improved in measuring the liquid level, which is how is determined the amount of LPG in the cylinder, some of the different techniques used are based on the same method. Those methods are usually split in two different categories, contact and contactless. Contact measuring methods usually include, mechanical, electrical or pressure sensing devices. In this methods the sensors are in direct contact with the liquid. In contactless, the methods used usually are more complex to process, when compared with contact methods. In this case the methods of measuring are mainly through optical, ultra-sound, vibration and weight analysis\cite{nakagawaContactlessLiquidLevelMeasurement2013a}. 
-\todo[inline,color=yellow!40]{*format correctly}
 \begin{figure}[!htp]
     \centering
     \begin{subfigure}{0.15\textwidth}
@@ -71,18 +69,13 @@ Taking in consideration the fact that a LPG cylinder is opaque and isolated, som
 
 From previous research, some work has already been developed with the purpose of measuring the amount of liquid gas inside a LPG cylinder. Being the techniques used based on the methods presented above.
 %Based on the pressure
-\todo[inline,color=blue!20]{*Pressure based device - add the problems of this method}
 In a work from \citeauthor{baigAccurateMeasurementPressure2008b} a pressure sensing device was developed, with the final appliance to a LPG cars, but with the possibility of apply in other circumstances. The device uses the pressure variation to move a magnet and using a Hall Effect sensor, with a fixed position, this motion produces a linear change of the voltage in the sensor, giving an accurate method of measuring the amount of gas in the LPG cylinder, in this case\cite{baigAccurateMeasurementPressure2008b}. 
 %Based on the weight
-\todo[inline,color=blue!20]{*Weight device}
 A common method of evaluate the amount of gas inside a LPG cylinder, is based on the weight change of the cylinder, that decreases with the consumption of liquid gas. As an example, the work developed by \citeauthor{dasilvamedeirosSmartgasSmartPlatform2017a}, \citeauthor{shresthaIoTBasedSmart2019a} or \citeauthor{shinganSmartGasCylinder2017a} have similar approaches to measure the amount of liquid gas inside the LPG cylinder. There is various works based on this technique since is very simple to implement and very precise, it only requires a load cell, a amplifier, a microcontroller and a method to display the results, and unless there is a huge change in the external temperature, the density of the gas won't be much affected and thus not affecting the weight of the bottle \cite{dasilvamedeirosSmartgasSmartPlatform2017a}\cite{shresthaIoTBasedSmart2019a}\cite{shinganSmartGasCylinder2017a}.
 %Based on Wave analysis
-
-\todo[inline,color=blue!20]{*Waves based device}
 Another method, that proved to be valid for measuring the amount of liquid inside a closed opaque container, is based on the analysis of the resulting vibrations when the container is stimulated by a external source. Depending in the type of the stimulation, it can produce only vibration, or it can also produce a characteristic sound, for different levels. As a example of two approaches based on the same principle are the works from \citeauthor{jahnLevelSensorFluids2014a} and \citeauthor{wuAnalysisImplementationNoncontact2016a}, in both cases the vibrations are analyzed, in one case is the vibration of the tank and in the other is through the sound produced by the tank vibration\cite{jahnLevelSensorFluids2014a}\cite{wuAnalysisImplementationNoncontact2016a}. Since the approach is through the analysis of the vibration, the stimulation methods for this method will be presented ahead. 
 
 \subsection{Stimulation Techniques}
-\todo[inline,color=red!40]{Stimulation Tecniques}
 Taking into consideration, that the measurment of the liquid level is based on the vibration, it was found in previous work two techniques to induce the vibration in the LPG bottle.
 The first example of a technique of stimulation the LPG bottle is by using a piezoelectric transducer, attached to the bottom of the container, this transducer produces transversal and longitudinal waves in the surface of the container where the transducer is attached. The frequency of the waves generated is related with the frequency of the system response to a certain level, and changes according to that. The same waves are captured with another piezoelectric transducer and processed\cite{jahnLevelSensorFluids2014a}.
 \begin{figure}[!htb]
@@ -98,20 +91,10 @@ Another method to produce vibration in the LPG bottle, can be archived with a ha
     \caption{Stimulation system based on a knocking device\cite{wuAnalysisImplementationNoncontact2016a}}
     \label{fig:stimHammer}
 \end{figure}
-\subsection{Don't know yet} %% Should put in the introduction of the next chapter this????????
-To the purpose of this dissertation, the approach of \citeauthor{wuAnalysisImplementationNoncontact2016a} is being reproduce, both in the signal acquire and the stimulation technique. This approach allows to measure the vibration and the signal reproduced, which allows a previous study of the system before enter in the development of a more practical prototype.
 
 %----------------------------------------Section 3-----------------------------------
 
-\section{Signals and System}
-
-\todo[inline,color=yellow!40]{*1-Vibration}
-\todo[inline,color=yellow!40]{*2-Signal definition}
-\todo[inline,color=yellow!40]{*3-Signal and Digitalization}
-\todo[inline,color=yellow!40]{*4-System definition}
-\todo[inline,color=yellow!40]{*5-LTI Systems}
-\todo[inline,color=yellow!40]{*6-Discrete-Time Fourier-Transform}
-
+\section{Signals and System}\label{sec:sigNsys}
 \subsection{Vibration}
 The vibration and the studies in this field are usually related with the oscillatory motion of a body and the forces associated with them. Bodies with mass and elasticity are capable of experience vibration, knowing that, for example, when a structure is design, is required to take in consideration the oscillatory behavior of the structure. There are two types of vibration, free and forced. The first takes place when a system oscillates under forces natural to the system itself and there is no action of external forces. Under free vibration the system will vibrate at one or more of its natural frequencies, stablished by the properties of the system. Forced vibration occurs when the system is under the excitation of external forces. If it oscillatory, the system will vibrate at the same frequency of the external oscillation, if this frequency matches one of its natural frequencies a resonant state is reached, which may dangerous for a structure stability.   
 
@@ -476,7 +459,7 @@ In the same way of their theoretical simulations, the relation between the vibra
  \end{figure}
 A couple of years latter this work was followed by \citeauthor{wuAnalysisImplementationNoncontact2016a}\cite{wuAnalysisImplementationNoncontact2016a}, were they developed a prototype with the function of measure the frequency of the vibration, and thus the returning the liquid level of the LPG cylinder. The setup used and the test conditions were very similar the the previous work.
 
-\section{Sensors}\label{sec:VibSens}
+\section{Vibration Sensors}\label{sec:VibSens}
 To acquire and measure the vibration, the sensors used must work according to the system mechanical or optical principals of vibration. There is a large variety of sensors that ca be used for that purpose, although there isn't a direct method, or sensor, to measure the vibration, they can be either mechanical or optical. The sensors can be divided in different groups, based on their behavior, they can be active or passive, the type of measurement can be either absolute or relative, and there is also some specific characteristics of the signals that differ from the type of sensor, like the frequency range, signal dynamic and the quality of the data acquired. Finally sensors are also divided in contact and non-contact measurement and subdivided in path/displacement, speed/velocity or acceleration.\\
 For contact measurements, sensors related to path/displacement can be potentiometric transmitters or Linear Variable Differential Transmitter (LVDT), to speed/velocity it can be applied the principle of electrodynamics or use a seismometer as a sensor and for acceleration the sensors can be piezoelectric, piezo-resistive, resistive or inductive. In non-contact measurements, path/displacement sensors are eddy current sensors, optical sensors and hall sensors, or can be based on the capacitive principle, for speed/velocity is used a Laser-Doppler vibrometer (LDV) and for acceleration isn't possible to measure directly, although it can be derivate from speed/velocity measurement, but induces a lot of noise in the data acquired\cite{SensorsVibrationMeasurement}\cite{VibrationMeasurementVibration2019}.\\
 To measure the vibration, usually is the contact acceleration the most common method to measure them, beside the sensors mentioned, is used as well accelerometers, this devices are used in industry to reliably measure vibration in equipment, to monitoring their health.The functioning  principles of accelerometers can differ from one to another. The basic principle of a accelerometer is similar to a seismometer, from this there are 3 main types, mechanical, capacitive and piezoelectric. The mechanical is the most similar to a seismometer, with a mass attached to a spring, every time that acceleration occurs, just like in seismometer, the mass moves and a pen attached to the mass traces the vibration captured.
