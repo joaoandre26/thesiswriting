@@ -136,7 +136,7 @@ breaklines=true
 %%%%%%%%%%%%%%%%%%%%
 % load Glossary
 \makenoidxglossaries
-%\loadglsentries{glossary}
+\loadglsentries{glossary}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%% BEGIN DOCUMENT %%%%%%%%%%
@@ -154,23 +154,23 @@ breaklines=true
 
 \cleardoublepage
 \listoffigures
-\addcontentsline{toc}{chapter}{\listfigurename}
+%\addcontentsline{toc}{chapter}{\listfigurename}
 
 \cleardoublepage
 \listoftables
-\addcontentsline{toc}{chapter}{\listtablename}
+%\addcontentsline{toc}{chapter}{\listtablename}
 
 \cleardoublepage
-% \printnoidxglossary[type=\acronymtype]
-\addcontentsline{toc}{chapter}{\acronymname}
+\printnoidxglossary[type=\acronymtype]
+%\addcontentsline{toc}{chapter}{\acronymname}
 
-\cleardoublepage
-% \printnoidxglossary
-% \addcontentsline{toc}{chapter}{\glossaryname}
+%\cleardoublepage
+%\printnoidxglossary
+%\addcontentsline{toc}{chapter}{\glossaryname}
 
-\cleardoublepage
-% \printnoidxglossary[type=nomenclature,title=Nomenclature]
-\addcontentsline{toc}{chapter}{Nomenclature}
+%\cleardoublepage
+%\printnoidxglossary[type=nomenclature,title=Nomenclature]
+%\addcontentsline{toc}{chapter}{Nomenclature}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Introduction

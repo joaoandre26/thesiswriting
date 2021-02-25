@@ -7,44 +7,41 @@
 % Blue - Done, under approval
 % Green - Done and approved
 \todo[inline,color=red!40]{*Chapter Introduction}
-\todo[inline,color=red!40]{*1 - Microphone}
-\todo[inline,color=red!40]{ a) WOMic}
-\todo[inline,color=red!40]{ b) MatLab}
+\todo[inline,color=blue!40]{*1 - Microphone}
+\todo[inline,color=blue!40]{ a) WOMic}
 \todo[inline,color=red!40]{*2 - Accelerometer and Piezoelectric}
 \todo[inline,color=red!40]{ a) Microcontroller}
-\todo[inline,color=red!40]{ b) MatLab}
 \todo[inline,color=red!40]{ c) FFT implementation}
-%% Writing %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\todo[inline,color=red!40]{*3 - MatLab}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Writing %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Microphone}
-\subsection{WOMic}
-\subsection{MatLab}
-\section{Accelerometer and Piezoelectric}
-\subsection{Microcontroller}
-\subsection{MatLab}
-\subsection{FFT implementation}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-\subsection{Microphone}
-Before trace a curve is important to understand which one is the best point to acquire data, when hitting the surface of the bottle. For that, different point in the bottle were chosen to determine the point. After this several measurements must be conducted in order to have a reliable source of information and trace a curve for the system response.\\
-The point considered are in the side surface of the LPG bottle as illustrated in the following image:
-%%insert here a description of the points considered
-To make those measurements a setup must mounted with a microphone, to capture the sound produced and process it. The setup is quite simple, consisting in a microphone and a computer installed with MatLab. The microphone in use is from a phone and to connect it with the computer an software called \textit{WO Mic}, this allows to used the microphone of the phone in real-time. The software must be installed in both devices, in the phone the software is available for Android and IOS, is responsible to transmit what is captured from the microphone. In the computer the client application and a virtual device must be installed to use the Phone in the computer to perform any type of tasks, this connection can be made by USB, Bluetooth, Wi-Fi and Wi-Fi Direct.\\ 
-In order to save what is captured from the microphone, the software is split in three main block with different purposes, the \textit{WO Mic App} runs in the Phone, samples the input of the microphone and transmit it to the computer, the \textit{WO Mic Client}, runs in the computer, connect to the app in the phone, and receive the data from the microphone, which is transmitted to the \textit{WO Mic Virtual Device} on which a real microphone device is simulated and provides the audio to any application or program in the computer\cite{WOMicFREE}:\\
+As the first measurements will be taken recurring to a microphone, it requires a different approach to the type of interaction when compared to the future application, were will be use a different sensor for the vibration. To obtain access and record the information from the microphone and for this case in specific, since is being used the microphone from a phone, will require different pieces of software to use in the phone side and the PC, to allow the access to the second to the microphone of the first. Also, on the PC side is necessary to record the information from the microphone and store it as desire.\\
+The two components for this purpose will be the use of the WOMic software as the bridge between the phone and the computer, and MATLAB to record the information from the microphone. The second software can also be used to latter process the recorded data, helping the understand of the obtained information. 
+\subsection*{WOMic}
+The use of the application and the microphone of the phone is simple, although the installation and the configuration requires some time. For that, is required to install the software \textit{WOMic} in both devices, this allow to use the microphone of the phone in real-time. In the phone the software is available for Android and IOS and is responsible to transmit what is captured from the microphone, in the computer the client application and a virtual device must be installed to use the microphone in the PC to perform any type of tasks, this connection can be made over USB, Bluetooth, Wi-Fi and Wi-Fi Direct.\\ 
+In order to save what is captured from the microphone, the software is split in three main block with different purposes, the \textit{WOMic App} runs in the phone, samples the input of the microphone and transmit it to the computer, the \textit{WOMic Client}, runs in the PC, connect to the app in the phone, and receive the data from the microphone, which is transmitted to the \textit{WOMic Virtual Device} on which a real microphone device is simulated and provides the audio to any application or program in the PC, as illustrated in figure \ref{fig:diagramWOMIC}.\\
 \begin{figure}[!htb]
     \centering
-    \includegraphics[width=0.65\textwidth]{Chapters/3CHP/Images/WOMICDiag.png}
-    \caption{Flow of data in the components of the software\cite{WOMicFREE}}
+    \includegraphics[width=0.65\textwidth]{Chapters/5CHP/Images/WOMICDiag.png}
+    \caption{Flow of data in the components of the software}{\cite{WOMicFREE}}
     \label{fig:diagramWOMIC}
 \end{figure}
-In addition to this, is also necessary to install the drivers of the phone in use, if the connection is made over USB.\\
-To save the acquired data, MatLab was used to record the data of the microphone from the desire time and saved in ".txt" files for further analysis. 
-%%The following two paragraphs must go in other section
-%%Insert flux gram here for a easy explanation and perception of the flow of information
-A script in MatLab was developed in order to perform this measurements and the capture is made once at a time, but not all configurations are done over this script. To start, the phone is connected over USB to the computer, in the application at phone the transport selected must be \textbf{USB}, on the app settings and after that started the application, in the top right play shape button. 
-%%Insert here instructions
-In the computer the client software must be initialized and connected to the phone in the following order \textit{\>Connection\>Connect...} a new window will open, on which the \textbf{USB} must be selected as transport type and finalizing by pressing \textit{Connect}. In MATLAB the input correspondent to the microphone must be selected.\\
-When this is done, the script runs and starts to record data from the microphone, for the desire amount of time. When the microphone starts to record, the surface of the LPG bottle is knocked and the captured signal is saved.
+In addition to this, is also necessary to install the drivers of the phone in use, if the connection is made over USB. To allow the access of the microphone in the PC, the transport mode must be selected on the phone application, USB in this case, in the app settings and after that start the application. In the PC the client software must be initialized and connected to the phone in the following order \textit{\>Connection\>Connect...} a new window will open, on which the USB must be selected as transport type and finalizing by pressing \textit{Connect}. With this, the microphone of the phone is available for use in the PC\cite{WOMicFREE}.
+\section{Microcontroller}
+%Introduction
+%What is the purpose of each used element, Timer, UART, ADC, PINOUT for solenoid with timer
+%What are the config of each
+% Mainly from the ADC and how it works without having to use an additional timer
+%
+\subsection*{Timers}
+\subsection*{ADC}
+The LaunchPad in use offers ADC with a 10-bit, from the availabed pins, analog input 2 is selected. This input should be configured with the desire setting, to start is mandatory to disable the digital port of the pin to eliminate the flow of parasitic current flow, with the PySELx bits, by setting this bits HIGH it automatically enables the analog function of the port, although is still necessary to select the channel to conversion. The ADC will function in the sample and hold mode, using the timer from the ADC as the source of the sampling signal, the sample and hold period can be changed by software, to define the amount of clock cycles between each sample. 
+\subsection*{UART}
+\section{MatLab}
+\section{FFT implementation}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \section{??}
 % \begin{figure}[!htb]
 %     \centering 
