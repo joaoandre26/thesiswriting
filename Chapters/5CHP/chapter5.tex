@@ -9,9 +9,8 @@
 \todo[inline,color=red!40]{*Chapter Introduction}
 \todo[inline,color=blue!40]{*1 - Microphone}
 \todo[inline,color=blue!40]{ a) WOMic}
-\todo[inline,color=red!40]{*2 - Accelerometer and Piezoelectric}
-\todo[inline,color=red!40]{ a) Microcontroller}
-\todo[inline,color=red!40]{ c) FFT implementation}
+\todo[inline,color=yellow!40]{ a) Microcontroller}
+\todo[inline,color=yellow!40]{ c) FFT implementation}
 \todo[inline,color=red!40]{*3 - MatLab}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Writing %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Microphone}
@@ -33,12 +32,23 @@ In addition to this, is also necessary to install the drivers of the phone in us
 %What are the config of each
 % Mainly from the ADC and how it works without having to use an additional timer
 %
+
 \subsection*{Timers}
+In the configuration, two different timers were set, with the same configuration, one is used to measure the execution time of the algorithm and the other is used to set the amount of timer that the pin that triggers the solenoid is high. In this case were used Timer0\_A3 and Timer1\_A3, in both the counter mode of the timer is up, the division factor of the clock is 1 and they were set with a CCRx equal to 499, with this a interruption will occur at every 500$\mu$s.
 \subsection*{ADC}
-The LaunchPad in use offers ADC with a 10-bit, from the availabed pins, analog input 2 is selected. This input should be configured with the desire setting, to start is mandatory to disable the digital port of the pin to eliminate the flow of parasitic current flow, with the PySELx bits, by setting this bits HIGH it automatically enables the analog function of the port, although is still necessary to select the channel to conversion. The ADC will function in the sample and hold mode, using the timer from the ADC as the source of the sampling signal, the sample and hold period can be changed by software, to define the amount of clock cycles between each sample. 
-\subsection*{UART}
+The LaunchPad in use offers ADC with a 10-bit, from the available pins, analog input 2 is selected. This input should be configured with the desire setting, to start is mandatory to disable the digital port of the pin to eliminate the flow of parasitic current flow, with the PySELx bits, by setting this bits HIGH it automatically enables the analog function of the port, although is still necessary to select the channel to conversion. The ADC will function in the sample and hold mode, using the timer from the ADC as the source of the sampling signal, the sample and hold period can be changed by software, to define the amount of clock cycles between each sample. 
+\subsection*{eUSCI}
+The eUSCI is used in UART mode to transfer data between the microcontroller and the PC, is used during the tests phase to perform two types of tests, one to test the algorithm and the other to receive data end send it to the PC. Both eUSCI\_A0 and eUSCI\_A1 support UART mode, unlike the eUSCI\_B0, the selected was the first, since works over the USB connection. In Transmission and Receiving, their were both set to work by polling with 115200bps of baud-rate, 8-bit, LSB first, no parity, no address and 1 stop bit.
 \section{MatLab}
 \section{FFT implementation}
+To process the signal captured from the ADC, is used a FFT algorithm. Two algorithms were considered to use in the microcontroller in use, a Fixed-Point and a Floating-Point versions, this algorithm was discovered by Cooley and Tukey in the beginning of the computer revolution and based on the complex DFT. The implementation used are based in FFT algorithm, and analysis the Fixed-Point and the Floating-Point side by side, they are quite similar, the main difference is in the data types used in each of the implementation, the fixed point can be adapted for the different types of signed integers, from 8-bits to 64-bits and uses a look-up table with the correspondent values of Sine and Cosine, used to calculate the real and imaginary in the frequency domain, this saves processing time, since isn't necessary to calculate these values while is the algorithm is running, on the other hand this limits the size of the vector to be processed, to be in maximum the size of the look-up table, unless the algorithm is adapted, this implementation is less time consuming for the microcontroller. The Floating-Point version calculates the values of the Sine and Cosine, and since it deals with values like float or double, which will require more memory and computational resources from the microcontroller if the same is used. Both implementation can be found on a repository in~\cite{262588213843476FixFft,Dannyf00FloatingPointFFTBenchmarka}, for a implementation from scratch there is also possible to find pseudo-code for that~\cite{smith1997scientist}.
+
+The algorithms in use were adapted to fit in the purpose of the implementation for the microcontroller in use, as well as removed some option like the iFFT, which won't be necessary to use in this application.
+\todo[inline,color=red!40]{Should I make a brief explanation of how the fft is implemented?}
+\section{Fixed-Point Square Root}
+
+\section{Spectrum Calculator}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
