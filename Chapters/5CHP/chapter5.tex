@@ -1,20 +1,21 @@
 \cleardoublepage
-\chapter{Software}
+\chapter{Software}\label{chap:software}
 % To do: 
 % Color Scheme
 % Red - Not started
 % Yellow - In progress
 % Blue - Done, under approval
 % Green - Done and approved
-\todo[inline,color=red!40]{*Chapter Introduction}
+\todo[inline,color=blue!40]{*Chapter Introduction}
 \todo[inline,color=blue!40]{*1 - Microphone}
-\todo[inline,color=yellow!40]{*2 - Microcontroller}
+\todo[inline,color=blue!40]{*2 - Microcontroller}
 \todo[inline,color=blue!40]{ a) Peripherals}
 \todo[inline,color=blue!40]{ b) FFT implementation}
 \todo[inline,color=blue!40]{ c) Fixed-Point Square Root}
-\todo[inline,color=red!40]{*3 - MatLab}
+\todo[inline,color=blue!40]{*3 - MatLab}
+\todo[inline,color=blue!40]{*4 - Level Identification}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Writing %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%brief acknowledgment of what pieces are part of the developed software, add in the end a section how is intended to find the liquid level
+This chapter is dedicated to present every piece of software necessary, for the interaction between all the elements that are part of the setup used in all the stages until the implementation, with a brief explanation of how they work and what is their purpose in the setup. All the elements are not necessarily used at the same time in the setup and how they will interact with each other, will be presented in chapter~\ref{chap:Tests}.
 \section{Microphone}
 As the first measurements will be taken recurring to a microphone, it requires a different approach to the type of interaction when compared to the future application, were will be use a different sensor for the vibration. To obtain access and record the information from the microphone and for this case in specific, since is being used the microphone from a phone, will require different pieces of software to use in the phone side and the PC, to allow the access to the second to the microphone of the first. Also, on the PC side is necessary to record the information from the microphone and store it as desire.\\
 The two components for this purpose will be the use of the WOMic software as the bridge between the phone and the computer, and MATLAB to record the information from the microphone. The second software can also be used to latter process the recorded data, helping the understand of the obtained information. 
@@ -27,14 +28,15 @@ In order to save what is captured from the microphone, the software is split in 
     \caption{Flow of data in the components of the software}{\cite{WOMicFREE}}
     \label{fig:diagramWOMIC}
 \end{figure}
-In addition to this, is also necessary to install the drivers of the phone in use, if the connection is made over USB. To allow the access of the microphone in the PC, the transport mode must be selected on the phone application, USB in this case, in the app settings and after that start the application. In the PC the client software must be initialized and connected to the phone in the following order \textit{\>Connection\>Connect...} a new window will open, on which the USB must be selected as transport type and finalizing by pressing \textit{Connect}. With this, the microphone of the phone is available for use in the PC\cite{WOMicFREE}.
+In addition to this, is also necessary to install the drivers of the phone in use, if the connection is made over USB. To allow the access of the microphone in the PC, the transport mode must be selected on the phone application, USB in this case, in the app settings and after that start the application. In the PC the client software must be initialized and connected to the phone in the following order \textit{$>$Connection$>$Connect...} a new window will open, on which the USB must be selected as transport type and finalizing by pressing \textit{Connect}. With this, the microphone of the phone is available for use in the PC\cite{WOMicFREE}.
 \section{Microcontroller}
 %Introduction
 %What is the purpose of each used element, Timer, UART, ADC, PINOUT for solenoid with timer
 %What are the config of each
 % Mainly from the ADC and how it works without having to use an additional timer
 %
-\subsection{Peripherals Configurations}
+To capture the signal obtain for the sensor, for a later processing and analysis, is necessary to develop some specific pieces of software. Some are related to the microcontroller itself, needed to interact with the sensors, actuators and to communicate with the PC, beside that some algorithms were used to process the data, that are relevant for the application. A brief explanation of each piece of software used is explain, with some details of their functioning and their purpose. 
+\subsection{Peripherals}
 \subsubsection*{Timers}
 In the configuration, two different timers were set, with the same configuration, one is used to measure the execution time of the algorithm and the other is used to set the amount of timer that the pin that triggers the solenoid is high. In this case were used Timer0\_A3 and Timer1\_A3, in both the counter mode of the timer is up, the division factor of the clock is 1 and they were set with a CCRx equal to 499, with this a interruption will occur at every 500$\mu$s.
 \subsubsection*{ADC}
@@ -60,7 +62,10 @@ This computational platform has various resources, with a lot appliances. For th
 On other set of tests functions to record data from a certain audio input were used, to record the input of the microphone, each time that the LPG bottle is hit with the hammer. Beside this, the FFT function from the MATLAB is used to verify the response in frequency of the hit. 
 
 Before the final application, is also need to verify the type of signals obtain in the sensors, after captured in the microcontroller the raw data is sent via UART to, once again, process them in the FFT function of MATLAB. 
+\section{Level Identification??}
+In chapter \ref{chap:stArt}, we have seen that, when stimulated with a hammer, the frequency peak increases if the liquid level inside the LPG bottle decreases. If the conditions of the stimulation and measurement are consistent every time that they are performed, the results should be consistent for each liquid level. Considering this, should be quite easy to develop a simple algorithm to identify the liquid level, basically the only thing necessary is to identify a frequency interval, were the peaks are, to reduce the searching time. As we will se is not as simple as imagined, to determine the liquid level will be considered other factors like, the first peaks, the energy around the peaks and the one with the highest energy. In a first stage, before defining a frequency interval, all the spectrum must be considered, not only in the data captured by the sensors, but as well in the microphone. 
 
+Based on these notes, only after observe several samples of measured signals is possible to properly define what is the interval and how to should be conjugated the characteristics of the spectrum, to define the algorithm to identify the liquid level. 
 \section{??}
 % \begin{figure}[!htb]
 %     \centering 
