@@ -7,9 +7,9 @@
 % Blue - Done, under approval
 % Green - Done and approved
 \todo[inline,color=red!40]{*Chapter Introduction}
-\todo[inline,color=red!40]{*1 - Software Tests}
-\todo[inline,color=red!40]{*2 - Microphone Results}
-\todo[inline,color=red!40]{*3 - Accelerometer and PiezoElectric Results}
+\todo[inline,color=blue!40]{*1 - Algorithm Test}
+\todo[inline,color=yellow!40]{*2 - Microphone Tests}
+\todo[inline,color=red!40]{*3 - Accelerometer and PiezoElectric Tests}
 %% Writing %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Algorithm Test}
 The purpose of this test is to test the effectiveness of the algorithm implementation mentioned in~\ref{subsec:fftImp}, one way to perform this test is recurring to random signals with known frequencies, this way is possible to compare the results from the implementation in a microcontroller environment with the absolute frequency determined when generation the random signal.
@@ -79,7 +79,7 @@ Although the tests were perform in other environments, the test that is the most
 \begin{figure}[]
     \centering
     \includegraphics[width=1\textwidth]{Chapters/6CHP/Figures/uCDataProc.eps}
-    \caption{Flow of signal processing in different environments}{}
+    \caption{Flow of processing in the microcontroller}{}
     \label{fig:dataProcuC}
 \end{figure}
 \subsection{Results}
@@ -97,8 +97,113 @@ Is evident that the results from MATLAB are much better when compared with the r
     \caption{Results of the execution of the Fixed-Point implementation in the microcontroller}
     \label{tab:excTimeuC}
 \end{table}
+%% Missing memory analysis, do that latter, se in code composer studio the indirect calls of the project
+\section{Microphone Test}
+\subsection{Signal Capturing and Tests}
+%Topics to mention
+% - The physical setup
+% - How the data is captured with MatLab, also mentioned the sampling frequency
+% - section mentioning the tests in different sports of the bottle, also mention the under case although wasn't tested
+There are a few thing that should be conclude from the tests with a microphone before starting the analysis with different sensors, they are in the first place the viability of the frequency analysis, for different liquid levels, if valid which is the frequency interval that should be taken into consideration and finally which are the more practical and were the best results are obtained, for latter help the optimal point to place the sensor. 
 
-\section{Microphone Results}
+Considering this, four points were considered to made some measurements, their identified in the illustration in figure~\ref{fig:measPointMic}, the points are all in the lateral surface of the LPG bottle, the bottle in use is divided in two similar parts, by a welding joint in the middle, the lower and the top section, and the measuring points will be the bottom and the middle of each one of the sections, in other word, the points are right above the curvature and in the middle in the lower section and right above the welding joint and the middle of the top section. In some background studies made in chapter~\ref{chap:stArt}, another possibility was under the LPG bottle but this option isn't practical, to place the microphone nor to hit the LPG bottle.
+\begin{figure}[]
+    \centering
+    \includegraphics[width=0.35\textwidth]{Chapters/6CHP/Figures/measuringPointsMic.eps}
+    \caption{Measuring points in the LPG bottle}{}
+    \label{fig:measPointMic}
+\end{figure}
+In each of the points illustrated was recorded the sound produced when manual hitting the the lateral surface of the LPG bottle, for the 3 bottles available. Each of the 3 bottles contained a different level of liquid, for safety reasons the liquid was water, and they were full, half-full and empty. 
+
+To capture, record and save the sound, some of the MATLAB capabilities were used to that purpose, the signal from the microphone was captured with a sampling frequency of 4k$Hz$, according to the table~\ref{tab:sampRat}, to ensure that there was enough time between setting the PC to record and the manual hit, each saved sample is around 4 seconds, after it the signal can be processed and the resulting data analyzed.
+%add here a flux gram
+\subsection{Results}
+%add images of the signals in the time domain
+Several repetitions of the measurements were performed, to guarantee that the results obtained follow a determined pattern and won't vary much from one measurement to another. In the figure~\ref{fig:TimeRealDataMic} are present results from the different points of measurement and the different LPG bottles and in figure~\ref{fig:ProcRealDataMic} the result from processing the same signals. Although is only presented one per point and bottle the remaining results were similar to the ones presented, the main difference for the remaining results can depend on how the hammer hits the surface of the LPG bottle and thus the signal can have smaller/bigger amplitude in the signals in the time domain, or peaks with higher/lower magnitude in the frequency domain.
+
+%Time domain signals
+\begin{figure}[]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Chapters/6CHP/Figures/TimeLowBottom.eps}
+        \caption{Lower Section, Bottom Position}{}
+        \label{subfig:timeLowBotMic}
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Chapters/6CHP/Figures/TimeLowCenter.eps}
+        \caption{Lower Section, Center Position}{}
+        \label{subfig:timeLowCenMic}
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Chapters/6CHP/Figures/TimeTopBottom.eps}
+        \caption{Top Section, Bottom Position}{}
+        \label{subfig:timeTopBotMic}
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Chapters/6CHP/Figures/TimeTopCenter.eps}
+        \caption{Top Section, Center Position}{}
+        \label{subfig:timeTopCenMic}
+    \end{subfigure}
+    \caption{Captured signals in different locations in the LPG bottle}{}
+     \label{fig:TimeRealDataMic}
+\end{figure}
+
+A example of how the hitting of the hammer affects the captured signal can be observed in the figure~\ref{subfig:timeLowCenMic}, where the signal from the empty bottle has a smaller amplitude when compared with the signals captured from the full/half bottle and in the figures~\ref{subfig:timeTopBotMic}\subref{subfig:timeTopCenMic} the same doesn't happen. For this reason, is also necessary to find alternatives to avoid manual hitting in the LPG bottle, first because the results won't be constant and second because in a final application is not practical to do it manually. But for know, the manual hitting was considered.
+Even thought the time domain isn't considered to the detection of the liquid level, is interesting to observe the results obtained, beside the slight increase of the amplitude in the signal from the full bottle to the empty, the echo also increases in the same way as the amplitude, the the other difference is how long the echo/oscillation occurs, once again from the full bottle to the empty the interval of time that happens increases. 
+
+%Latter correct the reference and sub reference above
+%Frequency domain signals
+\begin{figure}[]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Chapters/6CHP/Figures/LowBot.eps}
+        \caption{Lower Section, Bottom Position}{}
+        \label{subfig:LowBotMic}
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Chapters/6CHP/Figures/LowCenter.eps}
+        \caption{Lower Section, Center Position}{}
+        \label{subfig:LowCenMic}
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Chapters/6CHP/Figures/TopBot.eps}
+        \caption{Top Section, Bottom Position}{}
+        \label{subfig:TopBotMic}
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Chapters/6CHP/Figures/TopCenter.eps}
+        \caption{Top Section, Center Position}{}
+        \label{subfig:TopCenMic}
+    \end{subfigure}
+    \caption{Processed Signals in different locations in the LPG bottle}{}
+     \label{fig:ProcRealDataMic}
+\end{figure}
+
+After processing the data from the results obtained can be observed in the figure~\ref{fig:ProcRealDataMic}, one obvious conclusion is that the signal measured ate the lower section in the bottom, in figures\ref{subfig:timeLowBotMic} and~\ref{subfig:LowBotMic} doesn't result in a signal with the same amplitude in the time domain nor the same magnitude in the frequency domain, for analysis of the results this point is discarded. From the remaining points they both show some similarities, with the best results obtained in the top section in the center\ref{subfig:TopCenMic}. Comparing the lower section in the center and the top section in the bottom, the results are slightly better in the second point mentioned, although for future measurements, the point considered will depend in the results obtained when changing the sensor in use.
+
+To reduce the amount of time used in the identification of the liquid level, is interesting to be able to determine a frequency interval to search, the limits of the interval should be determine by the response in frequency of a full LPG bottle and a empty LPG bottle. The results obtained from the points considered show that isn't identify for the full bottle any frequency in the systems response bellow the $+/-700Hz$, for the other two bottles this value increases, for the bottle half filled the value shifts to $+/-800Hz$ and for the empty bottle to $+/-900Hz$, with this in mind the lower limit for the searching interval can be set around $+/-650Hz$, to have a margin. This shift in frequency from one bottle to another can considered as a identification method, since the first peak occurs, according to the obtained results, between the $700Hz$ to $900Hz$. 
+
+From the first peak observed in the system response, is visible the increase in magnitude of the following peaks, until reaches a certain value were starts to decreases again, until starts to increase once again, when the pattern starts to repeat can be defined as the limit of searching. If observed, starts to repeat around $400Hz$ after the first peak is identified, this can be used in combination to the identification of the first peak to check if after identifying the frequency of the first, should search after those $+/-400Hz$ two peaks of frequency, verifying if the second has a higher magnitude than the first. 
+
+Another thing that is characteristic in the response to a stimulation of each bottle, is observed that the peak with the highest magnitude also shifts in frequency, in the interval of $400Hz$ this value is approximately in the middle of this interval. For instance, for the full bottle the highest peak is around $800Hz$ and for the empty bottle is around $1100Hz$. Note that this results apply only for the results obtained at the top section and this identification method is the most inconstant, probably due the fact that the hitting is manual. Although this is not as certain as the mentioned before, this peaks also shift in frequency when they have smaller magnitude than the remaining, which means that the searching for a peak in this interval is also valid for the liquid level identification, if combined with the the other characteristics identified.
+
+Another characteristic that must be taken in consideration, not specific to the identification, is the smaller peaks that may appear close to the ones registered, with smaller magnitude, but if what is near each one of the peaks as a sum of the surrounding, may help in the identification, this isn't mandatory to use in the identification but must be considered when developing the method to identify the liquid level.
+%% Is really necessary?
+To sum-up, in the development of a method to identify the liquid level should be considered the following three characteristics:
+\begin{itemize}
+    \item The interval on which the first peak will appear, between $650Hz$ and $950Hz$ approximately;
+    \item The frequency were starts the repetition pattern, around $400Hz$ after appearing the first peak;
+    \item The interval on which the peaks with the highest magnitude appears, between $800Hz$ and $1100Hz$ approximately. 
+\end{itemize}
+
 \section{Accelerometer and PiezoElectric Results}
 
 
