@@ -105,6 +105,18 @@ For more constant measurement it is important that when the hitting process is c
 \end{figure}
 The downside of using this model, can be the low impact force, it may not be able to produce a strong enough hit that can be detected by the sensors. This factor is just a assumption, along the test, is going to be verify if it happens or not.
 \section{Design}
+This section is dedicated to explain how each circuit was planned to interact with the sensors in use, for that is important to know what is the output of each signal. Before getting into details of each circuit, is going to be present the resulting signal of each sensor and the consideration to further design the circuit will be presented.
+
+%%Move later for the subsection?
+Considering first the accelerometer, since their three outputs are limited in frequency with a capacitor, the one selected was the X axis with a bandwidth of 1600Hz.
+\begin{figure}[]
+    \centering
+    \includegraphics[width=0.45\textwidth]{Chapters/4CHP/Figures/accTopView.pdf}
+    \caption{Top view of ADXL335}
+    \label{fig:topViewADXL}
+\end{figure}
+Considering the dot shown in the top view of the ADXL335, in figure \ref{fig:topViewADXL}, when mounting the accelerometer in the side surface of the \acrshort{lpg} bottle, the dot faces the surface in the same matter, on the top left
+
 \subsection{Accelerometer}
 
 \subsection{Piezoelectric}
