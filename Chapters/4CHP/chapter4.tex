@@ -17,7 +17,7 @@
 \todo[inline,color=blue!40]{ e) Solenoid}
 
 \todo[inline,color=yellow!40]{*2 - Design} % Missing review
-\todo[inline,color=red!40]{ a) Accelerometer}
+\todo[inline,color=yellow!40]{ a) Accelerometer} % missing change the images of acc output
 \todo[inline,color=blue!40]{ b) Piezoelectric}
 \todo[inline,color=blue!40]{ c) Solenoid}
 
@@ -107,7 +107,7 @@ The downside of using this model, can be the low impact force, it may not be abl
 \section{Design}
 This section is dedicated to explain how each circuit was planned to interact with the sensors in use, for that is important to know what is the output of each signal. Before getting into details of each circuit, is going to be present the resulting signal of each sensor and the consideration to further design the circuit will be presented.
 
-%%Move later for the subsection?
+\subsection{Accelerometer}
 Considering first the accelerometer, since their three outputs are limited in frequency with a capacitor, the one selected was the X axis with a bandwidth of 1600Hz.
 \begin{figure}[]
     \centering
@@ -115,9 +115,52 @@ Considering first the accelerometer, since their three outputs are limited in fr
     \caption{Top view of ADXL335}
     \label{fig:topViewADXL}
 \end{figure}
-Considering the dot shown in the top view of the ADXL335, in figure \ref{fig:topViewADXL}, when mounting the accelerometer in the side surface of the \acrshort{lpg} bottle, the dot faces the surface in the same matter, on the top left
+Considering the dot shown in the top view of the ADXL335, in figure \ref{fig:topViewADXL}, when mounting the accelerometer in the side surface of the \acrshort{lpg} bottle, the dot is in the same position relative to the surface, on the top left corner. This way the output of the X axis is around 1.25V, if the accelerometer is powered with 3.3V. Before designing the circuit to amplify the signal from the accelerometer in important to know, what should be the gain of the circuit, for that the surface of the bottle was hit with the hammer and the resulting output can be observed in figure \ref{fig:NampSigAcc}.
+\begin{figure}[]
+    \centering
+    \includegraphics[width=0.45\textwidth]{Chapters/4CHP/Figures/NAmpSigAcc.eps}
+    \caption{Signal obtained in the accelerometer after hitting with the hammer}
+    \label{fig:NampSigAcc}
+\end{figure}
+Considering that the output of the amplified signal should between the supply voltage rage, that is from 0-3.3V, being the minimum of the signal correspondent to one of the limits of the interval and the maximum to the other. If the amplifier circuit has a inverting configuration, the relation between the input and the output should be as illustrated in figure \ref{fig:inVSout}.
+\begin{figure}[]
+    \centering
+    \includegraphics[width=0.45\textwidth]{Chapters/4CHP/Figures/inOut.eps}
+    \caption{Desire relation between input and output of the amplifier circuit}
+    \label{fig:inVSout}
+\end{figure}
+The gain of the circuit is determined in the following method:
+\begin{equation*}
+   m = |\frac{\delta V_{Out}}{\delta V_{In}}| = |\frac{0-3.3}{1.36-1.2}| = 20.625
+\end{equation*}
+In the equation, $m$ corresponds to the gain of the circuit, in this case only concerns to the manual stimulation of the system, when changing to a automatic stimulation, is probable that the gain needs to be adjusted, considering the same procedure.
+%%
+A problem when design a proper circuit for this application is related with his supply voltage, usually a amplifier circuit with an \acrshort{opamp} the supply voltage is split, in other words, there is a positive and negative supply voltage, were the input and the output signals are referenced to ground. In the future, is most likely to use a battery or a super cap to power the device, with this we are limited to s single supply, with a positive voltage and ground. 
 
-\subsection{Accelerometer}
+In this situations, depending the circuit configuration, the circuit may not operate for a determinate input voltage, since both input and output are referenced to the ground, thus the circuit won't function properly. In a dual supply voltage, if the supply voltages are symmetrical, the circuit is referenced to his midpoint, which is the ground. In a single supply it can be done in the same way, the signal can be referenced to half of the supply voltage, this is the simplest way to solve the presented problem. 
+
+Although for this case, to prof of concept the circuit in use can be a solved in the simplest way, in some situations and in a future application it may be needed to developed a robust solution for this, that take into consideration the desire relation between the input and the output, for that situation \acrshort{ti} provides a document that explain all the considerations that needs to be taken into account and how to properly design the circuit for our application\cite{manciniSingleSupplyOpAmp}.
+
+As mentioned, to quickly test the a simpler approach is considered, a inverting configuration is used to the amplifier circuit and the signal is referenced to the midpoint of the single supply voltage of the \acrshort{opamp}, as for the input signal a capacitor is used in series to decouple from the DC level, this way the signal is "moved" to the midpoint between the supply voltage, as reference of this is the design from \acrshort{ti} in their document, they provide a schematic for both non-inverting and inverting configuration \cite{ACCoupledSingle2015}.
+
+In figure ~\ref{fig:accCircCom} can be observed the circuit used to amplify the signal from the accelerometer, although the output of the accelerometer is around 1.25V, using the decoupling capacitor we are able to move the signal to the midpoint of the supply voltage, the only thing necessary is to adjust the gain of the circuit according to the desire relation between the input and output signals.
+\begin{figure}[]
+    \centering
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Chapters/4CHP/Figures/AmpAccCirc.pdf}
+        \caption{}{}
+        \label{subfig:AccAmpCirc}
+    \end{subfigure}
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Chapters/4CHP/Figures/HalfSupply.pdf}
+        \caption{}{}
+        \label{subfig:VoltageDiv}
+    \end{subfigure}
+    \caption{Amplifiers circuit for accelerometer\ref{subfig:AccAmpCirc} and Midpoint supply voltage~\ref{subfig:VoltageDiv}}{}
+\label{fig:accCircCom}
+\end{figure}
 
 \subsection{Piezoelectric}
 As mentioned, piezoelectric sensors can be used in many fields, for sensing acceleration, vibration, shock or pressure. To what is related to acceleration or vibration, the piezoelectric will output a charge that is a function of his deformation/deflection. For the application in specific, the vibration produce, although is noticeable directly at the piezoelectric output, has a small amplitude which means that needs to be amplified to allow a distinct difference between what is actually the vibration and the output of the piezoelectric itself, is important to properly design a signal conditioning amplifier circuit. \acrlong{ti} has a very clear document explaining how to design charge amplifiers for piezoelectric sensors \cite{bartolomeSignalConditioningPiezoelectric2010}, on which they explain different types of circuits for this application in specific, with the advantages and disadvantages. The simplest model of this type of circuit is as follows: 
@@ -160,7 +203,7 @@ The circuit needed for driving a solenoid is very simple, it consists simply in 
     \caption{Circuit for driving the solenoid}
     \label{fig:solenoidshc}
 \end{figure}
-\section{Capture/Coupling}
+\section{Capture/Coupling}\label{sec:CaptureCoupling}
 \subsection{Microphone}
 To position the microphone and acquire the sound produced when hitting the tank surface, the microphone was placed perpendicular to the surface of the tank and as close as possible from it, is also recommended to place it near the hitting point. With caution not to hit the microphone while measuring. The figure \ref{fig:micmount} is an illustration of how the microphone is placed relative to the \acrshort{lpg} bottle.
 \begin{figure}[]

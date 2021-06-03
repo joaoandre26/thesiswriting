@@ -100,7 +100,7 @@ The results of the execution time of the algorithm can be observed in table~\ref
     \label{tab:excTimeuC}
 \end{table}
 %% Missing memory analysis, do that latter, se in code composer studio the indirect calls of the project
-\section{Microphone Test}
+\section{Microphone Test}\label{sec:MicroTests}
 \subsection{Signal Capturing and Tests}
 %Topics to mention
 % - The physical setup
@@ -207,7 +207,239 @@ To sum-up, in the development of a method to identify the liquid level should be
     \item The interval on which the peaks with the highest magnitude appears, between $800Hz$ and $1100Hz$ approximately. 
 \end{itemize}
 
-\section{Accelerometer and PiezoElectric Results}
+\section{Accelerometer and PiezoElectric Tests}
+
+In chapter ~\ref{chap:hardware}, section ~\ref{sec:CaptureCoupling} is presented several methods to mount the sensors were presented. From those, it was selected 3 different methods to mount the accelerometer in the \acrshort{lpg} and 2 for the piezoelectric. The purpose of this is to test the sensors and find the most reliable mount method, to measure the liquid level.
+
+Beside the mounting method is important to verify how the stimulation of the bottle affects the response of the system and thus the obtained results from the sensors in use. Considering this, in the performed measurements, the stimulation was always in two different ways, manually with a hammer hitting the surface of the \acrshort{lpg}, and automatically with a impulse created with a solenoid.
+
+The setups in the measurements, for the different stimulation methods, will be explained and the results obtained for each one of them will be analyzed in the continuation of this section.
+\subsection{Stimulation and Vibration Measuring}
+%Explain why only 2 stops for measurements were considered
+Even though that in section ~\ref{sec:MicroTests} of this chapter, was considered four different points to perform measurements, in this case it was considered only two of those four point, mainly due the fact that for the dual magnet mount it wasn't practical to place the printed piece in the bottle. From the measuring points presented in figure ~\ref{fig:measPointMic}, was only considered the center points in both lower and top sections of the bottle.
+
+%In both cases, manual or automatic, the software used is the same in both sensors used. 
+The configurations used to sampling the signal for the different sensors were similar, since both amplifier circuit have their output centered in half of the supply voltage. So, in each one of the sampling manners used to sampling the signals, refer to the both cases. 
+% Explain how the signal is capture when Manual
+%\subsubsection*{Manual Stimulation}
+
+% Explain how the signal is capture when automatic
+%\subsubsection*{Automatic Stimulation}
+ 
+\begin{description}
+    \item[Manual Stimulation]{- After configuring all the peripherals necessary, a externa interruption is set to be trigger with a push-button, when pressed it enables the timer to control the sampling frequency, and starts to read the value from the analog input. The read values aren't stored right away, waits until a certain input value is reached, it is set to be under/above 128 from the mid value, this value is only passed if we knock on the bottle. From this point 1024 samples are stored and then sent via \acrshort{uart} to the computer.}
+      
+    \item[Automatic Stimulation]{- Similar to the manual stimulation read, the peripherals are configured and the same external interruption is set. When pushed, the interruption will activate a timer that actuates in the solenoid, simulating the impulse desire to stimulate the system. Right after stimulation the system, the timer responsible for the sampling, is activated and the conversion starts, storing 1024 samples, which are send via \acrshort{uart} to the computer.} 
+
+\end{description}
+On the computer side, the data is received from \acrshort{uart} and stored with the use of \acrshort{matlab}. In order to analyze the data acquired with the sensors, first is used \acrshort{matlab}, that allows for a faster method to process the data and plot the results for the analysis. Before process the data in the \acrshort{fft} algorithm implemented in the microcontroller, a visual analysis must be performed to verify what are the the characteristics of the processed signals, in each configuration, to later identify what is the proper method to identify the liquid level.  
+%Draw fluxograms
+%Explain how the data will be analyzed in the matlab
+\subsection{Results}
+From the Sensors used several measurements where performed, in the different locations, configurations and stimulations. The considered aspects for the measurements, although already mentioned previously, where done as follows:
+\begin{enumerate}
+    \item The measuring Point
+    \begin{enumerate}
+        \item Center, Lower Section;
+        \item Center, Upper Section;
+    \end{enumerate}
+    \item The Stimulation Method
+    \begin{enumerate}
+        \item Manual, with a hammer;
+        \item Automatic, with a solenoid;
+    \end{enumerate}
+    \item The Sensors
+    \begin{enumerate}
+        \item Small PiezoElectric with the sponge;
+        \item PiezoElectric in a slot inside the piece;
+        \item Accelerometer with the sponge;
+        \item Accelerometer attached to the bottle with a magnet;
+        \item Accelerometer attached to the bottle with a load strap; 
+    \end{enumerate}
+\end{enumerate}
+From the combination of all this aspects, the results obtained are the following:
+%plot the results One sensor at a time with automatic and manual side by side, the first 2 the lower section, the second 2 the top section
+% LOW Manual || LOW Automatic
+% UP Manual  || UP Automatic
+%Accelerometer load strap
+\begin{figure}[]
+    \centering
+    %Low
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Chapters/6CHP/Figures/ResultsSensors/AcCiMaBot.pdf}
+        \caption{Manual Stimulation at the center of the lower section}{}
+        \label{subfig:ResAcCiMaBot}
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Chapters/6CHP/Figures/ResultsSensors/AcCiAuBot.pdf}
+        \caption{Automatic Stimulation at the center of the lower section}{}
+        \label{subfig:ResAcCiAuBot}
+    \end{subfigure}
+    %Up
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Chapters/6CHP/Figures/ResultsSensors/AcCiMaTop.pdf}
+        \caption{Manual Stimulation at the center of the upper section}{}
+        \label{subfig:ResAcCiMaTop}
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Chapters/6CHP/Figures/ResultsSensors/AcCiAuTop.pdf}
+        \caption{Automatic Stimulation at the center of the upper section}{}
+        \label{subfig:ResAcCiMaTop}
+    \end{subfigure}
+    \caption{Accelerometer attached to the bottle with a load strap}{}
+    \label{fig:AccLoadStrap}
+\end{figure}
+%Accelerometer magnet
+\begin{figure}[]
+    \centering
+    %Low
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Chapters/6CHP/Figures/ResultsSensors/AcImMaBot.pdf}
+        \caption{Manual Stimulation at the center of the lower section}{}
+        \label{subfig:ResAcImMaBot}
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Chapters/6CHP/Figures/ResultsSensors/AcImAuBot.pdf}
+        \caption{Automatic Stimulation at the center of the lower section}{}
+        \label{subfig:ResAcImAuBot}
+    \end{subfigure}
+    %Up
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Chapters/6CHP/Figures/ResultsSensors/AcImMaTop.pdf}
+        \caption{Manual Stimulation at the center of the upper section}{}
+        \label{subfig:ResAcImMaTop}
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Chapters/6CHP/Figures/ResultsSensors/AcImAuTop.pdf}
+        \caption{Automatic Stimulation at the center of the upper section}{}
+        \label{subfig:ResAcImAuTop}
+    \end{subfigure}
+    \caption{Accelerometer attached to the bottle with a magnet}{}
+    \label{fig:AccMagnet}
+\end{figure}
+%Accelerometer sponge
+\begin{figure}[]
+    \centering
+    %Low
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Chapters/6CHP/Figures/ResultsSensors/AcEsMaBot.pdf}
+        \caption{Manual Stimulation at the center of the lower section}{}
+        \label{subfig:ResAcEsMaBot}
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Chapters/6CHP/Figures/ResultsSensors/AcEsAuBot.pdf}
+        \caption{Automatic Stimulation at the center of the lower section}{}
+        \label{subfig:ResAcEsAuBot}
+    \end{subfigure}
+    %Up
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Chapters/6CHP/Figures/ResultsSensors/AcEsMaTop.pdf}
+        \caption{Manual Stimulation at the center of the upper section}{}
+        \label{subfig:ResAcEsMaTop}
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Chapters/6CHP/Figures/ResultsSensors/AcEsAuTop.pdf}
+        \caption{Accelerometer attached to the bottle with a load strap}{}
+        \label{subfig:ResAcEsAuTop}
+    \end{subfigure}
+    \caption{Accelerometer attached to the bottle with a dual mount magnet and a sponge}{}
+    \label{fig:AccSponge}
+\end{figure}
+%Piezo Big
+\begin{figure}[]
+    \centering
+    %Low
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Chapters/6CHP/Figures/ResultsSensors/PiezBMaBot.pdf}
+        \caption{Manual Stimulation at the center of the lower section}{}
+        \label{subfig:ResPiezBMaBot}
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Chapters/6CHP/Figures/ResultsSensors/PiezBAuBot.pdf}
+        \caption{Automatic Stimulation at the center of the lower section}{}
+        \label{subfig:ResPiezBAuBot}
+    \end{subfigure}
+    %Up
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Chapters/6CHP/Figures/ResultsSensors/PiezBMaTop.pdf}
+        \caption{Manual Stimulation at the center of the upper section}{}
+        \label{subfig:ResPiezBMaTop}
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Chapters/6CHP/Figures/ResultsSensors/PiezBAuTop.pdf}
+        \caption{Accelerometer attached to the bottle with a load strap}{}
+        \label{subfig:ResPiezBAuTop}
+    \end{subfigure}
+    \caption{Big PiezoElectric inserted in a slot of a dual mount magnet piece}{}
+    \label{fig:PiezB}
+\end{figure}
+%piezo small
+\begin{figure}[]
+    \centering
+    %Low
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Chapters/6CHP/Figures/ResultsSensors/PiezzMaBot.pdf}
+        \caption{Manual Stimulation at the center of the lower section}{}
+        \label{subfig:ResPiezzMaBot}
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Chapters/6CHP/Figures/ResultsSensors/PiezzAuBot.pdf}
+        \caption{Automatic Stimulation at the center of the lower section}{}
+        \label{subfig:ResPiezzAuBot}
+    \end{subfigure}
+    % Up
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Chapters/6CHP/Figures/ResultsSensors/PiezzMaTop.pdf}
+        \caption{Manual Stimulation at the center of the upper section}{}
+        \label{subfig:ResPiezzMaTop}
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Chapters/6CHP/Figures/ResultsSensors/PiezzAuTop.pdf}
+        \caption{Accelerometer attached to the bottle with a load strap}{}
+        \label{subfig:ResPiezzAuTop}
+    \end{subfigure}
+    \caption{Small PiezoElectric attached with a dual magnet mount and a sponge}{}
+    \label{fig:Piezz}
+\end{figure}
+% analyze the results
+\todo[inline,color=red!40]{*Add link to the remaining results if necessary and addapt the first paragraph that follows to lead to the results latter!}
+Note that the presented results in the images above, are only referring to one sample of each bottle in each setup. In overall were performed at least 10 measurements in each point and setups, most of the measurements repeated more than once with small adjustments, at the hardware or software. The presented ones refer to the last series of measurements. %Add reference to the folder were are the remaining results??
+
+From all the results presented for the different setups, one thing is clear, the use of the solenoid for the automatic stimulation was a complete failure, none of the presented graphics on that setup provided relevant information about the liquid level, this lead to the conclusion that the stimulation with the solenoid isn't enough to the accelerometer or the piezoelectric sensor determine the variation in vibration for the different bottles, as is going to be proved when analyzing the manual stimulation. 
+
+This may be due the fact that the impact caused with the solenoid isn't enough to produce a visible vibration of the systems that surpasses the natural oscillation of the output of the sensors, that after being amplified results in noise. Although a the noise is a problem, this could be bypassed by averaging, different spectrums of different measurements in the same conditions, this results in a decrease of the noise but without the expected results, the spectrum obtain still returned random values, without clear information.
+
+From the results obtained with the manual stimulation, the conclusions are the same as above, with two exceptions. Those were by using the accelerometer attached with a load strap and one magnet. From these two, the most clear results are in the accelerometer attached with a load strap, but is also visible a pattern between the three bottles, with the first highest peaks occurring between $+/- 700Hz$ to the $+/-900Hz$, from the full to the empty bottle. The same results are also visible with the magnet, but with the introduction of more peaks in between with smaller amplitudes, this is reduced when averaging the spectrum.
+
+Another thing that is important to mentioned is that even though several measurements with the piezoelectric were performed, none of them presented relevant information, not even when averaging the spectrum. In the different tests was never clear what was the reason why the piezoelectric haven't any valid results. 
+%conclusions
+Considering the presented setups, is only going to be used in future analysis the two setups that have show some results, that are the accelerometer with one magnet and the load strap. One final conclusion to take from all performed measurements, is how much the impact affects the response of the system and thus the acquired signal with the sensor, as well as the mounting of the sensor plays an important role in the captured vibration.
+\section{Identification algorithm Tests}
+% what signals where considered
+At this stage is important to move from the tests and analysis with \acrshort{matlab} and verify if the algorithm implemented in the microcontroller returns similar results, for this were considered the signals obtained with the microphone, the accelerometer with the load strap and the accelerometer with the magnet. The signals captures with the microphone were used because their spectrum was less noisy than the spectrum from the other sensors, if the identification didn't work with these signals, it wouldn't for sure to work with the remaining. Also, they were used as a way to define the limits of search in the identification algorithm, i.e. to define the interval in frequency to the identification of the liquid level.  
+% How the tests were performed
+
+%% add the rest tomorrow
 
 
 \clearpage
