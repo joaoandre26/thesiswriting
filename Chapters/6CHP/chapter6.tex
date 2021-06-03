@@ -438,7 +438,19 @@ Considering the presented setups, is only going to be used in future analysis th
 % what signals where considered
 At this stage is important to move from the tests and analysis with \acrshort{matlab} and verify if the algorithm implemented in the microcontroller returns similar results, for this were considered the signals obtained with the microphone, the accelerometer with the load strap and the accelerometer with the magnet. The signals captures with the microphone were used because their spectrum was less noisy than the spectrum from the other sensors, if the identification didn't work with these signals, it wouldn't for sure to work with the remaining. Also, they were used as a way to define the limits of search in the identification algorithm, i.e. to define the interval in frequency to the identification of the liquid level.  
 % How the tests were performed
+\subsection{Identification Steps??}
+The first step was to obtain the spectrum of signals from the three different bottles, to define the interval in frequency in order to reduce the amount of time in the search having more accuracy. In this case, the original signal was cropped and send to the microcontroller for processing, returning then to the computer for analysis.
+After this, a interval was determined and the identification algorithm was developed to find the liquid level. What it does is, a threshold value is determined between a relation of the average amplitude of the spectrum and the highest peak, this allow for the threshold value to vary according to the amplitude of the signal. This threshold value is what determines if is a important peak, or is just noise related. 
 
+Considering this threshold value and the limits defined, three main functions were created. The first one identifies the first peak, starts to look in the lower limit and goes until a upper limit, when find the first value above the threshold value, the function stops and returns the value.
+The second function considers a different limit, the lower is the same as in the first situation, the upper is set according to the cutoff frequency of the accelerometer, when testing with their values, otherwise is set until half of the sampling frequency. This function finds the highest peak in the spectrum, search for the intire spectrum considered and when ends returns the value of the highest one.
+The third function was developed, to try bypass one thing that was noticed in the second, most of the times the highest peaks matches with the first peak, which is due the inconsisty of the knock. When this occurs, near the frequency were it usually occurs, the spectrum has smaller peaks around it instead of a highest one, this was the way to try to find the consisty, by averaging around each peak and determine which one of them has the highest energy. The purpose of this third function is exactly this and return the value of were this happens.
+
+Considering the functions for the identification of the liquid level, the signals obtained with the microphone, and the two configurations with the accelerometer, were sent to the microcontroller for identification and processing and the results of the identification return to the computer. On the computer side is the results were plotted in order to find how well the identification functions worked. 
+
+One thing important to mentioned is, the only reason that the definition of the threshold value is this way is, since the manual hitting produces different responses, the algorithm needs to adapt to that variation, if the process was automatic this probably wouldn't be necessary, was expected to have consistence between all the signal captured to the same point.  
+\subsection{Results}
+% Add a graphics with the spectrum of the signals from the microphone obtained in the microcontroller  
 %% add the rest tomorrow
 
 
