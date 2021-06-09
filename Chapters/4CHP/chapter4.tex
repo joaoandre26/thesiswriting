@@ -1,5 +1,5 @@
 \cleardoublepage
-\chapter{Hardware}\label{chap:hardware}
+\chapter{Hardware}\label{p}
 % To do: 
 % Color Scheme
 % Red - Not started
@@ -26,8 +26,10 @@
 \todo[inline,color=blue!40]{ b) Accelerometer} % missing illustration with the magnet glued to the accelerometer
 \todo[inline,color=blue!40]{ c) Piezoelectric}
 %% Writing %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- 
+%%Chapter introduction
+Considering the proposed approach to the problem, is necessary to identify the physical components that are part of the proposed solution. This chapter will be dedicated to explain the selection of the components, with the purpose of sensing and processing the vibrations produced from the stimulation. A brief explanation of the developed hardware used in the signal conditioning of the sensors and to the stimulation of the system. Finally, is explored some techniques to attach the sensors to the system. This section presents different approaches to each problem, being analyzed reason for select or discard the options presented.  
 \section{Selection}
+This section is dedicated to explain how each physical component was selected and what is their purpose in the application. What were the criteria to select the sensors to measure the vibration,  to process the data and to stimulate the system. 
 \subsection{Microphone}
 With the interest of understanding what is the system response to an external stimulation, it is needed a simple method to record that response. The easiest way to do that is by using a microphone to capture the sound produced when hitting the side surface of the \acrshort{lpg} bottle. By the time this study started, the material needed wasn't available, for this case a microphone and a soundboard, an alternative was necessary.
 
@@ -118,7 +120,18 @@ Considering first the accelerometer, since their three outputs are limited in fr
 Considering the dot shown in the top view of the ADXL335, in figure \ref{fig:topViewADXL}, when mounting the accelerometer in the side surface of the \acrshort{lpg} bottle, the dot is in the same position relative to the surface, on the top left corner. This way the output of the X axis is around 1.25V, if the accelerometer is powered with 3.3V. Before designing the circuit to amplify the signal from the accelerometer in important to know, what should be the gain of the circuit, for that the surface of the bottle was hit with the hammer and the resulting output can be observed in figure \ref{fig:NampSigAcc}.
 \begin{figure}[]
     \centering
-    \includegraphics[width=0.45\textwidth]{Chapters/4CHP/Figures/NAmpSigAcc.eps}
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        %\includegraphics[width=\linewidth]{Chapters/4CHP/Figures/maxAccNDC.svg}
+        \caption{Signal obtained after hitting in DC level}{}
+        \label{subfig:maxAccNDC}
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        %\includegraphics[width=\linewidth]{Chapters/4CHP/Figures/maxAccN.svg}
+        \caption{Signal obtained after hitting, in AC}{}
+        \label{subfig:maxAccN}
+    \end{subfigure}
     \caption{Signal obtained in the accelerometer after hitting with the hammer}
     \label{fig:NampSigAcc}
 \end{figure}
@@ -131,7 +144,7 @@ Considering that the output of the amplified signal should between the supply vo
 \end{figure}
 The gain of the circuit is determined in the following method:
 \begin{equation*}
-   m = |\frac{\delta V_{Out}}{\delta V_{In}}| = |\frac{0-3.3}{1.36-1.2}| = 20.625
+   m = |\frac{\delta V_{Out}}{\delta V_{In}}| \approx |\frac{0-3.3}{1.3-1.2}| \approx 33
 \end{equation*}
 In the equation, $m$ corresponds to the gain of the circuit, in this case only concerns to the manual stimulation of the system, when changing to a automatic stimulation, is probable that the gain needs to be adjusted, considering the same procedure.
 %%
@@ -139,7 +152,7 @@ A problem when design a proper circuit for this application is related with his 
 
 In this situations, depending the circuit configuration, the circuit may not operate for a determinate input voltage, since both input and output are referenced to the ground, thus the circuit won't function properly. In a dual supply voltage, if the supply voltages are symmetrical, the circuit is referenced to his midpoint, which is the ground. In a single supply it can be done in the same way, the signal can be referenced to half of the supply voltage, this is the simplest way to solve the presented problem. 
 
-Although for this case, to prof of concept the circuit in use can be a solved in the simplest way, in some situations and in a future application it may be needed to developed a robust solution for this, that take into consideration the desire relation between the input and the output, for that situation \acrshort{ti} provides a document that explain all the considerations that needs to be taken into account and how to properly design the circuit for our application\cite{manciniSingleSupplyOpAmp}.
+For now, to prof of concept the circuit in use can be a solved in the simplest way, in some situations and in a future application it may be needed to developed a robust solution for this. For those situations \acrshort{ti} provides a document, that explains all the considerations that need to be taken into account and how to properly design the circuit for our application\cite{manciniSingleSupplyOpAmp}.
 
 As mentioned, to quickly test the a simpler approach is considered, a inverting configuration is used to the amplifier circuit and the signal is referenced to the midpoint of the single supply voltage of the \acrshort{opamp}, as for the input signal a capacitor is used in series to decouple from the DC level, this way the signal is "moved" to the midpoint between the supply voltage, as reference of this is the design from \acrshort{ti} in their document, they provide a schematic for both non-inverting and inverting configuration \cite{ACCoupledSingle2015}.
 
@@ -204,6 +217,7 @@ The circuit needed for driving a solenoid is very simple, it consists simply in 
     \label{fig:solenoidshc}
 \end{figure}
 \section{Capture/Coupling}\label{sec:CaptureCoupling}
+This section is dedicated to present several techniques for attaching the sensors to the bottle, the coupling of the sensor to the bottle plays a important role in how the signal is sensed, being different selected in the end different techniques to attach the sensors in use, to use in the tests chapter.
 \subsection{Microphone}
 To position the microphone and acquire the sound produced when hitting the tank surface, the microphone was placed perpendicular to the surface of the tank and as close as possible from it, is also recommended to place it near the hitting point. With caution not to hit the microphone while measuring. The figure \ref{fig:micmount} is an illustration of how the microphone is placed relative to the \acrshort{lpg} bottle.
 \begin{figure}[]

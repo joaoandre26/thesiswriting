@@ -1,13 +1,34 @@
 \cleardoublepage
-\chapter{Conclusions & Future Work}
+\chapter{Conclusions \& Future Work}\label{chap:finalremarks}
 % To do: 
 % Color Scheme
 % Red - Not started
 % Yellow - In progress
 % Blue - Done, under approval
 % Green - Done and approved
-\todo[inline,color=red!40]{*1 - Conclusions}
-\todo[inline,color=red!40]{*2 - Future Work}
+\todo[inline,color=red!40]{*1 - Conclusions}\label{sec:Conclusions}
+\todo[inline,color=red!40]{*2 - Future Work}\label{sec:FutureWork}
 \section{Conclusions}
+This work started with the purpose to develop a device, capable of measuring the amount of liquid gas inside a \acrshort{lpg} bottle, without using an evasive technique and that would allow to use it in the bottles that  are already available in the market. Beside the device to this purpose, the final solution should also be able to transmit to the distributor the measured value, so he would be able to properly plan a distribution route, that would imply to develop a device, that would have \acrshort{iot} solution implemented with that purpose. 
+
+Considering the practical objective of this work, is necessary to perform a background study, in order to analyze what type of work was already developed with similar purpose, before propose a architecture to the system. taking into account that the main focus is in the development of the device to measure the liquid level, the background study, was oriented to the research of technique to perform the measure of the liquid level and thus selecting the proper components to develop the work.
+
+The starting point, was to find information of how to acquired data relative to the liquid level, i.e. what type of techniques can be used with that purpose, a couple were presented, each one with of them returning different types of information. Some of the mentioned were measuring the weight, the vibration or using ultrasound, in the end the choice fell to the measure the vibrations. 
+
+The measure of the vibrations requires, the use of a sensor capable of measuring the small vibration produced, when stimulation the system. For that were selected two sensors capable of measuring the vibrations. From the same background study was found that there is a direct relation between the liquid level and the frequency of the vibration produced, to obtain the frequency of the vibration was necessary to process the data acquired from the sensors in a \acrshort{fft}. 
+
+Taking into consideration the requisites of the system was proposed an architecture for the system, to acquire, process and return the liquid level. This proposal considers only a potential final product, since there was no idea of the type of results, the architecture itself was divided in several smaller steps, with the purpose of create the foundations for in the future build the proposed architecture, without the need to repeat this steps. 
+
+The steps consist in a initial study of the response of the system to a stimulation, to verify if the approach is feasible and if there is in fact a relation between the liquid level and the frequency of the vibration. Followed by the test of the implementation of the \acrshort{fft} in a smaller and less powerful device. After it, testing the sensors in order to find if they are suited for the application and to determine of the same relation level vs frequency is found. And finally the development of an identification method of the liquid level, based on the conjugation of the last two steps. If there are positive results from all this steps, a setup can be develop according to the proposed architecture.
+
+The tests performed in the different stages of the practical part of this work, revealed different distinct results. The first two steps, although with different purposes, where the ones that revealed the best results. The first, that was intended to study the response of the system to a stimulation, resulting in the confirmation of the first hypothesis, that there is a relation between the liquid level and the frequency of the vibration, was proved that the lower the liquid level the higher is the frequency produced in the vibration and the inverse for the maximum liquid level in the bottle, this test was also important in the determination of the variables to considered in the analysis in frequency, that were used in the tests that followed, mainly in the last two steps.
+
+The second test, with his purpose to evaluate the accuracy of the implementation of the \acrshort{fft}, result in really precise results for the signals randomly generated, this guaranteed that the processing of the signals captured with the sensors and processed in the microcontroller, would also return viable data to determine the liquid level.
+
+The third test, that focus on the study of the resulting data from the sensors, was the test that revealed the most disappointing results. Although there were positive results in the test, that allowed the execution of the last step, these test had different variables to considered and to control, with some of them without a proper manner to bypass them. The variable that was impossible to control, in a potential application, was the stimulation, it wasn't possible to obtain any results by stimulation the system with the solenoid, the only viable results were obtained by the stimulation with the hammer, that isn't consistent enough nor practical, but was enough to the execution of the last step. Another variable that was difficult to control was related to the coupling of the sensors, by using the load strap and the magnet to mount the accelerometer, we were able to obtain acceptable results, for the mentioned tests, the other options didn't reveal any viable results, this was the most difficult variable to control, even though there were some documents related to this, none of them had a similar application, the mechanical coupling of sensors to the system which is an unknow field of studies. 
+
+The last step purpose was to evaluate if was possible, considering the the results of the processed data, to develop an algorithm capable of determine the liquid level. In this test, the results obtained for the identification algorithm weren't as good as expected, but was possible to determine it considering the first frequency peaks identified, as mentioned in the results analysis, it may be possible to obtain similar results with some changes. although there were acceptable results, this is also a step to improve.
+
+In a final overview of all the work developed and the results obtained, there was several aspects that influenced the results, most of them already explored, there were another aspects that influenced, not directly in the results, but in the development itself. Considering these factors is important to mention that, even though the final purpose of the work wasn't complete, due the several constrains, was possible to obtain positive results. This results can be used in a future work as a good starting point to the continuation in the development of the final solution, they reveled what can be explored and what can be discard in a future. From the developed work and the problems faced along it, emerged various changes and suggestions that will be explored in the following section. 
 \section{Future Work}
 %\addcontentsline{toc}{section}{References}
