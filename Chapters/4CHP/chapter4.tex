@@ -122,13 +122,13 @@ Considering the dot shown in the top view of the ADXL335, in figure \ref{fig:top
     \centering
     \begin{subfigure}{0.45\textwidth}
         \centering
-        %\includegraphics[width=\linewidth]{Chapters/4CHP/Figures/maxAccNDC.svg}
+        \includegraphics[width=\linewidth]{Chapters/4CHP/Figures/maxAccNDC.eps}
         \caption{Signal obtained after hitting in DC level}{}
         \label{subfig:maxAccNDC}
     \end{subfigure}
     \begin{subfigure}{0.45\textwidth}
         \centering
-        %\includegraphics[width=\linewidth]{Chapters/4CHP/Figures/maxAccN.svg}
+        \includegraphics[width=\linewidth]{Chapters/4CHP/Figures/maxAccN.eps}
         \caption{Signal obtained after hitting, in AC}{}
         \label{subfig:maxAccN}
     \end{subfigure}
@@ -239,11 +239,22 @@ For the mount of the accelerometer in the \acrshort{lpg} bottle, will be used a 
     \caption{Illustration of the accelerometer mount with a load strap}
     \label{fig:mounLoadStrap}
 \end{figure}
-For the magnet mount, there are actually two proposals, if by any reason one doesn't produce any results. In figure \ref{fig:mounMagnet} [a] is the ideal option, since it is less invasive for the accelerometer, for the reason mentioned above. In this case, a piece is design to be able to mount with two neodymium magnets at the top and bottom of the piece, this will pull the piece against the wall of the tank, between the two magnets is the necessary space for held the accelerometer, a sponge will be glued to the piece on one side and the other will be glued to the accelerometer, this will be slightly thicker than the piece, that way when the magnets attached the piece against the tank wall, the sponge will be compressed and and the surface of the accelerometer, is expected to be firmly held against the tank wall as well. In figure \ref{fig:mounMagnet} [b], the mount is not ideal, since the neodymium magnet will be glued to the accelerometer surface for a god contact, this may result in best results when compared with the first option, but can damage the accelerometer, when attaching or removing the accelerometer from the tank wall.
+For the magnet mount, there are actually two proposals, if by any reason one doesn't produce any results. In figure~\subref{subfig:mounMagnetDual} is the ideal option, since it is less invasive for the accelerometer, for the reason mentioned above. In this case, a piece is design to be able to mount with two neodymium magnets at the top and bottom of the piece, this will pull the piece against the wall of the tank, between the two magnets is the necessary space for held the accelerometer, a sponge will be glued to the piece on one side and the other will be glued to the accelerometer, this will be slightly thicker than the piece, that way when the magnets attached the piece against the tank wall, the sponge will be compressed and and the surface of the accelerometer, is expected to be firmly held against the tank wall as well. In figure~\subref{subfig:mounMagnetsingle}, the mount is not ideal, since the neodymium magnet will be glued to the accelerometer surface for a god contact, this may result in best results when compared with the first option, but can damage the accelerometer, when attaching or removing the accelerometer from the tank wall.
 \begin{figure}[]
     \centering
-    \includegraphics[width=0.3\textwidth]{Chapters/4CHP/Figures/AccMagnets.eps}
-    \caption{Illustration of the accelerometer mount with magnets}
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Chapters/4CHP/Figures/AccMagnets.eps}
+        \caption{Illustration of dual-rail magnets mount}{}
+        \label{subfig:mounMagnetDual}
+    \end{subfigure}
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Chapters/4CHP/Figures/AccSMagnet.eps}
+        \caption{Illustration of single magnet mount}{}
+        \label{subfig:mounMagnetsingle}
+    \end{subfigure}
+    \caption{Illustration of the accelerometer mount with magnets}{}
     \label{fig:mounMagnet}
 \end{figure}
 %
@@ -270,38 +281,6 @@ Since the application isn't ideal to have the transducer glued to the surface, t
     \label{fig:coupPiezo}
 \end{figure}
 Both pieces will stay held to the tank with two magnets, one at the top of the piece and the other at the bottom. In figure \ref{fig:coupPiezo}~\subref{subfig:piezoslot}, the transducer is embedded in the piece, there is a slot in the middle, when the entire piece vibrates, the transducer vibrates with it. In the figure \ref{fig:coupPiezo}~\subref{subfig:piezosponge}, the coupling of the transducer is different when compared with the first one presented, the transducer is held glued to a sponge, and the sponge to the piece, the sponge is larger than the hole where the piece is glued in, so when the entire piece is attached to the walls of the tank, with the help of the magnets, it guarantees a good contact of the transducer with the wall. Since the sponge will press it against the wall and when there is vibration in the wall of the tank, is expected to the transducer to capture the actual vibration. 
-\section{Extras - Delete later}
-%\begin{gather}
-%    \Delta_{10} = \frac{1-0}{2^{10}} \approx 0.98\cdot10^{-3}\\
-%    \Delta_{8} = \frac{1-0}{2^{8}} \approx 3.9\cdot10^{-3}
-%\end{gather}
-
-%\begin{equation} \label{eq:maxf}
-%    f_{Max} = \frac{1}{T-WNS} = \frac{1}{10\cdot 10^{-9} - 0.188\cdot 10^{-9}} = 101.9\,MHz
-%\end{equation}
-
-%\begin{itemize}
-%    \item \textbf{AXI4} implements a highly customizable memory mapped interface, indicated for complex applications;
-%    \item \textbf{AXI4-Lite} is a simplified version of the former, keeping the memory mapped communications;
-%    \item \textbf{AXI4-Stream} implements a streaming protocol, allowing a high throughput.
-%\end{itemize}
-
-%\begin{figure}[!htb]
-%    \centering
-%    \includegraphics[width=\textwidth]{Sections/4DevelopedArchitecture/Figures/DCTCop.png}
-%    \caption{Block design generated by \emph{} for integration of \emph{DCT Wrapper} with \emph{}.}
-%    \label{fig:blockdes}
-%\end{figure}
-
-%\begin{table}[!htpb]
-%    \centering
-%    \caption{Add Caption}
-%    \begin{tabular}{ccccc} \toprule
-%        {}&{}&{}&{}&{}\\
-%        \bottomrule
-%    \end{tabular}    
-    %\label{tab:maxfps}
-%\end{table}
 
 
 \clearpage

@@ -16,12 +16,12 @@
 
 %----------------------------------------Section 1-----------------------------------
 %Introduction to the chapter
-In this chapter will be presented several topics, related with the LPG cylinder, previous works, systems concepts important for the work and sensors for it. To better understand the system to which is being design a device to measure the liquid level, in necessary to understand the constitution of the LPG cylinder and what are the variables that vary in the system. After it, is important to make a background search in previous works and their approaches, to understand if it's feasible and what is the approach to be taken. When selecting the technique to use for the purpose of the solution and before getting into the theoretical details of it, is necessary to understand everything that is related to the system, in a engineering point of view. In the end, will be presented different sensors, that can be used according to the type of measurements pretended in future product.     
+This chapter will present several topics related to the \acrshort{lpg} cylinder, previous works, systems concepts important for the work and sensors for it. To understand how to properly measure the liquid level, is important to know how the cylinder is constituted and what can indicate the variation of the liquid level. After it, is important to make a background search in previous works and their approaches, to understand if it's feasible and what is the approach to be taken. When selecting the technique to use for the purpose of the solution and before getting into the theoretical details of it, is necessary to understand what is related to the system, in a engineering point of view. In the end, is presented different sensors, that can be used according to the type of measurements pretended in future product.     
 \section{The LPG cylinder}
 %Subsections to do
-The LPG cylinders commonly used in house appliances, usually came in different weight types, that are change according to the cylinder construction, the supplier, his application and composition of gas that is being healed inside the container. One thing that is similar is the state of the gas under certain circumstances, for instance the boiling point of LPG is around -42ºC, which means that under ambient pressure/temperature the gas is in his gaseous state. 
+The \acrshort{lpg} cylinders commonly used in house appliances, usually come in different weight types, that change according to the cylinder construction, supplier, application and composition of gas that is being held inside the container. One thing that is similar is the state of the gas under certain circumstances, for instance the boiling point of LPG is around -42ºC, this means that is in a gaseous state at ambient temperature/pressure.
 
-Usually inside a LPG cylinder, the gas is kept in a liquid and gas form, in a percentage of around 80\% and 20\%, respectively, with a constant pressure, this percentage allows, when the external temperature rises, affecting the internal temperature, for both gas and liquid to expand until a certain limit, without compromise the safety of the use of the cylinders.
+Usually when the \acrshort{lpg} is full, the gas is kept in a liquid and gas form, in a percentage of around 80\% and 20\%, respectively, with a constant pressure, this percentage allows, when the external temperature rises, affecting the internal temperature, for both gas and liquid to expand until a certain limit, without compromise the safety of the use of the cylinders.
 \begin{figure}[]
     \centering
     \includegraphics[width=0.25\textwidth]{Chapters/2CHP/Diagrams/bottleBaseliqGas.eps}
@@ -29,10 +29,11 @@ Usually inside a LPG cylinder, the gas is kept in a liquid and gas form, in a pe
     \label{fig:intcomplpg}
 \end{figure}
 
-When the cylinders are empty and need to be filled, there is a direct relation between the amount of pressure, needed to fill the cylinders, and the temperature of the gas, the higher the temperature of the gas the higher is the pressure needed to fill the cylinder, this process of turning the LPG in a gas form into a liquid by pressurizing it, is called liquefaction. Another relation that must be taken into consideration, is the weight of the cylinder and the amount of liquid LPG, when the cylinder valve is open and LPG gas is released, the liquid LPG is turns into gas in order to keep a balance of pressure inside the cylinder, since that for the same pressure the density of the LPG liquid is higher then the density of the LPG gas, when the amount of liquid LPG decreases the weight of the cylinder also decreases~\cite{WhatAreProperties,PropaneDensitySpecific}.
+When the cylinders are empty and need to be filled, there is a direct relation between the amount of pressure, needed to fill the cylinders, and the temperature of the gas, the higher the temperature of the gas the higher is the pressure needed to fill the cylinder, this process of turning the \acrshort{lpg} in a gas form into a liquid by pressurizing it, is called liquefaction. 
+Other relation that should be considered is related with the weight of the cylinder and the amount of liquid gas inside. When the valve is open, gas is released and the liquid turns into gas, to keep the pressure balance inside. Since the density of the liquid is higher than the gas and when the valve is open, the liquid turns into gas, the liquid decreases so the weight of the cylinder~\cite{WhatAreProperties,PropaneDensitySpecific}.
 
 %%Correct about gas pressure inside the bottle
-
+\todo[inline,color=blue!40]{*Por corrigir a partir daqui}
 %----------------------------------------Section 2-----------------------------------
 \section{Measuring/Stimulation Techniques}\label{sec:measStim}
 \subsection{Measuring Techniques}
@@ -96,15 +97,16 @@ Another method to produce vibration in the LPG bottle, can be archived with a ha
 %----------------------------------------Section 3-----------------------------------
 
 \section{Signals and System}\label{sec:sigNsys}
+\todo[inline,color=blue!40]{*ate aqui}
 \subsection{Vibration}
-The vibration and the studies in this field are usually related with the oscillatory motion of a body and the forces associated with them. Bodies with mass and elasticity are capable of experience vibration, knowing that, for example, when a structure is design, is required to take in consideration the oscillatory behavior of the structure. There are two types of vibration, free and forced. The first takes place when a system oscillates under forces natural to the system itself and there is no action of external forces. Under free vibration the system will vibrate at one or more of its natural frequencies, stablished by the properties of the system. Forced vibration occurs when the system is under the excitation of external forces. If it oscillatory, the system will vibrate at the same frequency of the external oscillation, if this frequency matches one of its natural frequencies a resonant state is reached, which may dangerous for a structure stability.   
+The vibration and the studies in this field are usually related with the oscillatory motion of a body and the forces associated with them. Bodies with mass and elasticity are capable of experience vibration, knowing that, for example, when a structure is designed, the oscillatory behavior of the structure must be considered. There are two types of vibration, free and forced. The first takes place when a system oscillates under forces natural to the system itself and there is no action of external forces. Under free vibration the system will vibrate at one or more of its natural frequencies, stablished by the properties of the system. Forced vibration occurs when the system is under the excitation of external forces. The system will vibrate at the same frequency of the external oscillation, if this frequency matches one of its natural frequencies a resonant state is reached.   
 
 \subsection{Signal definition}
-Signals can describe a large variety of physical phenomenon's, bringing a certain information about it, depending of the phenomenon represented. For example, the voltage variation in a capacitor, or the human voice which creates variations in acoustic pressure, captured by a microphone that senses those variations and convert them into a electrical signal. A signal can be represented mathematically as a function of one or more independent variables. 
-To what concern in signal processing, the types of signal considered are two types, continuous-time signals and discrete-time signals. In these cases, the independent variable is continuous and discrete, respectively~\cite{oppenheimSignalsSystems1997}.
+Signals can describe a large variety of physical phenomenona, bringing a certain information about it, depending of the phenomenon represented. For example, the voltage variation in a capacitor, or the human voice which creates variations in acoustic pressure, captured by a microphone that senses those variations and convert them into a electrical signal. A signal can be represented mathematically as a function of one or more independent variables. 
+To what concern in signal processing, the types of signal considered are two types, continuous-time signals and discrete-time signals. In these cases the independent variable, the time, is continuous and discrete, respectively~\cite{oppenheimSignalsSystems1997}.
 
 \subsection{Signal and Digitalization}
-A continuous-time signal can be represented in a discrete-time form by the knowledge of its values at certain points in time equally spaced. This is called sampling theorem, and if the samples are close to each other, less time between samples, the more similar the discrete signal became to the continuous. Sampling plays an important role between the continuous-time and the discrete-time.
+A continuous-time signal can be represented in a discrete-time form by the knowledge of its values at certain points in time equally spaced. This is called sampling, and if the samples are close to each other, less time between samples, the more similar the discrete signal became to the continuous. Sampling plays an important role between the continuous-time and the discrete-time.
 
 Considering a continuous-time signal $x(t)$ is measured at every $T_{s}$ seconds. The is discretized in units of the sampling interval $T_{s}$:
 \begin{figure}[]
@@ -116,7 +118,7 @@ Considering a continuous-time signal $x(t)$ is measured at every $T_{s}$ seconds
 \begin{center}
     $t = nT_s,\> n = 0, 1, 2, ...$
 \end{center}
-The variable $T_s$ is called sampling period and the inverse of the period $f_s=\frac{1}{T_s}$ being the sampling frequency. One of the problems of this conversion is usually related with the correct choose of the sampling period, for that the theorem clearly specifies that the sampling period must be small enough so if there are small variations in the signal, they don't get lost between samples. Therefor the theorem says that the sampling frequency $f_s$ must be chosen to be  at least twice the maximum frequency $f_{max}$. A continuous-time signal $x(t)$ is bandlimited, so its frequency spectrum is limited at maximum frequency $f_{max}$, and no frequencies above that.
+The variable $T_s$ is called sampling period and the inverse of the period $f_s=\frac{1}{T_s}$ is the sampling frequency. One of the problems of this conversion is usually related with the correct choose of the sampling period, that must be small enough so if there are small variations in the signal, they don't get lost between samples. Therefore the the sampling frequency $f_s$ must be chosen to be at least twice the maximum frequency $f_{max}$ measured. A continuous-time signal $x(t)$ is bandlimited, so its frequency spectrum is limited at maximum frequency $f_{max}$, and no frequencies above that.
 
 \begin{equation} \label{eq:sampFreq}
        f_s \geq 2f_{max}
@@ -125,9 +127,9 @@ The variable $T_s$ is called sampling period and the inverse of the period $f_s=
     T_s \leq \frac{1}{2f_{max}}
 \end{equation}
 
-The minimum value of the sampling frequency allowed by the theorem, is called the Nyquist rate, and his value is $f_s = 2f_{max}$. Oppositely, for a known value of $f_s$ the maximum frequency of the signal is $f_{max}=\frac{f_s}{2}$ and is called the Nyquist frequency of folding frequency.
+The minimum value of the sampling frequency allowed by the theorem, is called the Nyquist rate, and his value is $f_s = 2f_{max}$. Oppositely, for a known value of $f_s$ the maximum frequency of the signal is $f_{max}=\frac{f_s}{2}$.
 
-For the representation of some signals is usually used a unit impulse as a method to build a block to represent and construct other signals. The simplest representation of a unit impulse (or unit sample), in discrete-time, is defined as follows:
+For the representation of some signals is usually used a unit impulse as a method to build a block to represent and construct other signals. The definition of a unit impulse (or unit sample), in discrete-time, is defined as follows:
 \begin{equation}
     \delta(n) = \left\{ \begin{matrix} 
     0, n \ne 0\\
@@ -218,10 +220,10 @@ A system is considered invertible if is possible to recover the input from the o
         = H^{-1}H\{x(t)\}    
     \end{aligned}
 \end{equation} 
-As the $H^{-1}H$ denotes the identity operation. If $H^{-1}$ is the inverse operation of the $H$ then the output of the second operation is the same as the input of the first operation. This property has special relevance in the design of communications systems. 
+As the $H^{-1}H$ denotes the identity operation. If $H^{-1}$ is the inverse operation of the $H$ then the output of the second operation is the same as the input of the first operation.
 
 \subsubsection*{Time-Invariance}
-A system is considered time invariant if a time delay in the input signal, results as well in a delay of the output signal. This means that a certain system will respond in the same way, whenever a signal is applied in input, meaning that the characteristics of the system won't change with time. Considering a continuous-time system, with $x(t)$ and $y(t)$ being the input and the output, respectively. Represented as follows:
+A system is considered time invariant if a time delay in the input signal, in a delay of the same magnitude of the output signal. This means that a certain system will respond in the same way, whenever a signal is applied in input, meaning that the characteristics of the system won't change with time. Considering a continuous-time system, with $x(t)$ and $y(t)$ being the input and the output, respectively. Represented as follows:
 \begin{equation}
     y(t) = H\{x(t)\}
 \end{equation} 
@@ -278,11 +280,12 @@ which is the equivalent mathematical representation as in a weighted sum of inpu
 
 
 \subsection{LTI Systems} \label{subsec:LTI}
-As systems can be found all around us, so does a LPG bottle can be considered as a system. If the mathematical model that represents it meet the last two properties mentioned, it can be referred as a linear time-invariance (LTI) system. These properties combined with the characteristics of the unit impulse, being able to represent common signals as a representation of combined delayed impulses, this allows to completely characterize a LTI to what referrers his impulse response~\cite{oppenheimSignalsSystems1997,haykin1999signals}.
+As systems can be found all around us, so does a \acrshort{lpg} bottle can be considered as a system. If the mathematical model that represents it meet the last two properties mentioned, Time-Invariance and Linearity, it can be referred as a \acrlong{lti} system. These properties combined with the characteristics of the unit impulse, are able to represent common signals as a representation of combined delayed impulses, this allows to completely characterize a \acrshort{lti} from his impulse response~\cite{oppenheimSignalsSystems1997,haykin1999signals}.
 Similar to a unit step $u(n)$, a common signal $x(n)$ can be represented by unit impulses, as follows:
 \begin{equation}
     x(n) = \sum_{k=-\infty}^{+\infty} x(k)\delta(n-k)
 \end{equation}
+\todo[inline,color=blue!40]{*Por corrigir a partir daqui}
 In this case the weights in the linear combination are $x(k)$. Another aspect to take in consideration in these types of systems, is the response of the system to a impulse $\delta(n)$, results in $h(n) = H[\delta(n)]$. With this in mind, the response of a linear system $y(n)$ to a common input signal $x(n)$, represented from a combination of shifted impulse, can be represented as:
 \begin{equation}
     \begin{matrix}
@@ -506,5 +509,5 @@ All the type of accelerometers mentioned have one problem, that is the fact that
 This type of accelerometers brought important advantages, being their low cost and their small size the most important of it. On the other hand, the use of this devices for condition monitoring is restricted to a small bandwidth, restricted to a few kHz, and it cannot be used to in applications that require lower noise over higher frequency ranges \cite{WhatYouNeed,HowAccelerometersWork2009}.
 
 \clearpage
-\printbibliography[heading=subbibliography]
-\addcontentsline{toc}{section}{References}
+%\printbibliography[heading=subbibliography]
+%\addcontentsline{toc}{section}{References}

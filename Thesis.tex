@@ -17,7 +17,8 @@
 \usepackage{amssymb}
 \usepackage{xspace}% used by \sigla
 \usepackage{lipsum}
-\usepackage[backend=biber, refsection=chapter, sorting=none, url=false]{biblatex}
+\usepackage[backend=biber, sorting=none, url=false]{biblatex} % --Z Uncomment to put references at the end of the document
+%\usepackage[backend=biber, refsection=chapter, sorting=none, url=false]{biblatex}  %--> Uncomment to put the references at the end of chapter 
 \DeclareFieldFormat{pages}{#1}
 \AtEveryBibitem{%
   \clearfield{note}%
@@ -208,9 +209,15 @@ breaklines=true
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Bibliography
-%\cleardoublepage
+\cleardoublepage
 %  \nocite{*}
-%  \printbibliography
-%\cleardoublepage
+%\begingroup
+%\renewcommand{\bibfont}{\footnotesize}
+%\printbibliography[heading=bibliography]
+%\printbibliography[heading=bibintoc,title={References}]
+%\addcontentsline{toc}{chapter}{References}
+\printbibliography[heading=bibliography]
+
+\cleardoublepage
 
 \end{document}
