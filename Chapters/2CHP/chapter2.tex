@@ -6,7 +6,7 @@
 %Green - Done and approved
 \chapter{State of the Art}\label{chap:stArt}
 %%Section To do
-\todo[inline,color=blue!40]{Closed - v1, last review 26/02/2021}
+\todo[inline,color=yellow!40]{under review - v1.1 correcting last version}
 %\todo[inline,color=blue!40]{*1-The LPG cylinder}
 %\todo[inline,color=blue!40]{*2-Measuring/Stimulation Tecniques}
 %\todo[inline,color=blue!40]{*3-Signals and systems - missing images}
@@ -19,7 +19,7 @@
 This chapter will present several topics related to the \acrshort{lpg} cylinder, previous works, systems concepts important for the work and sensors for it. To understand how to properly measure the liquid level, is important to know how the cylinder is constituted and what can indicate the variation of the liquid level. After it, is important to make a background search in previous works and their approaches, to understand if it's feasible and what is the approach to be taken. When selecting the technique to use for the purpose of the solution and before getting into the theoretical details of it, is necessary to understand what is related to the system, in a engineering point of view. In the end, is presented different sensors, that can be used according to the type of measurements pretended in future product.     
 \section{The LPG cylinder}
 %Subsections to do
-The \acrshort{lpg} cylinders commonly used in house appliances, usually come in different weight types, that change according to the cylinder construction, supplier, application and composition of gas that is being held inside the container. One thing that is similar is the state of the gas under certain circumstances, for instance the boiling point of LPG is around -42ºC, this means that is in a gaseous state at ambient temperature/pressure.
+The \acrshort{lpg} cylinders commonly used in house appliances, usually come in different weight types, that change according to the cylinder construction, supplier, application and composition of gas that is being held inside the container. One thing that is similar is the state of the gas under certain circumstances, for instance the boiling point of \acrshort{lpg} is around -42ºC, this means that is in a gaseous state at ambient temperature/pressure.
 
 Usually when the \acrshort{lpg} is full, the gas is kept in a liquid and gas form, in a percentage of around 80\% and 20\%, respectively, with a constant pressure, this percentage allows, when the external temperature rises, affecting the internal temperature, for both gas and liquid to expand until a certain limit, without compromise the safety of the use of the cylinders.
 \begin{figure}[]
@@ -508,6 +508,11 @@ All the type of accelerometers mentioned have one problem, that is the fact that
 \end{figure}
 This type of accelerometers brought important advantages, being their low cost and their small size the most important of it. On the other hand, the use of this devices for condition monitoring is restricted to a small bandwidth, restricted to a few kHz, and it cannot be used to in applications that require lower noise over higher frequency ranges \cite{WhatYouNeed,HowAccelerometersWork2009}.
 
+\section{End of chapter considerations}
+There are several methods to measure the liquid level, this type of measurement is widely used in the different areas, with some of the methods used being presented along the chapter. From those, not all of them are suited for the intended application, since we are dealing with a closed and opaque cylinder, limiting the methods used in this application in specific.
+
+From the ones that can be used in this situation, the one that seemed more suitable for this application, is based on the analysis of the vibrations produced, when stimulating the bottle with the hammer. For this reason, along the chapter were presented several concepts that are important to the development of the solution. The next step to take is based on these concepts and his purpose is to propose an approach to the problem, which will be explored in the next chapter. 
+
 \clearpage
 %\printbibliography[heading=subbibliography]
-%\addcontentsline{toc}{section}{References}
+%\addcontentsline{toc}{section}{References} 
