@@ -1,36 +1,23 @@
 \cleardoublepage
 \chapter{Tests, Results and Analysis}\label{chap:Tests}
-% To do: 
-% Color Scheme
-% Red - Not started
-% Yellow - In progress
-% Blue - Done, under approval
-% Green - Done and approved
-\todo[inline,color=blue!40]{closed - v1.1 finished 16/07/2021, to review}
-%\todo[inline,color=red!40]{*Chapter Introduction}
-%\todo[inline,color=blue!40]{*1 - Algorithm Test}
-%\todo[inline,color=blue!40]{*2 - Microphone Tests}
-%\todo[inline,color=blue!40]{*3 - Accelerometer and PiezoElectric Tests}
-%\todo[inline,color=blue!40]{*4 - Identification algorithm Tests}
-%% Writing %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-This chapter is dedicated to explore the development of the practical tests, with the purpose to verify if the application of these techniques is valid for a future product. For that the setups, hardware and software were tested. Along the the chapter is explained how each test was performed and what was the purpose of each of them, with the final test being the one to the identification validation. 
-\section{Algorithm Test}
-The purpose of this, is to test the effectiveness of the algorithm implementation, mentioned in~\ref{subsec:fftImp}, one way to perform this test is recurring to random signals with known frequencies, this way is possible to compare the results from the implementation in a microcontroller environment with the absolute frequency determined when generation the random signal.
+This chapter explores the results of the practical tests, with the purpose of verifying if the application of these techniques is valid for a future product. For that, the setups, hardware and software were tested. Along this chapter is explained how each test was performed and the
+purpose of each of them, with the final test being the one of the identification validation.
+ 
+\section{FFT Test}
+The purpose of this section is to test the effectiveness of the FFT algorithm implementation, mentioned in~\ref{subsec:fftImp}. One way to perform this test is recurring to random signals with known frequencies. In this way, is possible to compare the results from the implementation, in a microcontroller environment with the absolute frequency determined at when the generation of the random signal.
 
 To try to perform the tests as close as possible to the type of signals that were expected to obtain, several aspects were taken into consideration, for that reason a small explanation of how the signals were generated will be given. 
 %----------------Introduction above this line--------------------------
 \subsection{Signal Generation}\label{subsec:sigGen}
-To try to synthesis a wave form as similar as possible to the one resulting from the work of~\citeauthor{wuLiquidLevelDetector2014b} in figure~\ref{fig:realsignalWu}.
+To try to synthesis a wave form as similar as possible to the one resulting from the work of~\citeauthor{wuLiquidLevelDetector2014b}\cite{wuLiquidLevelDetector2014b} in figure~\ref{fig:realsignalWu}.
 \begin{figure}[]
     \centering
     \begin{subfigure}{0.45\textwidth}
-        \centering
         \includegraphics[width=\linewidth]{Chapters/6CHP/Figures/completesignalWu.pdf}
         \caption{Complete Signal}{}
         %\label{subfig:g1lines}
     \end{subfigure}
     \begin{subfigure}{0.45\textwidth}
-        \centering
         \includegraphics[width=\linewidth]{Chapters/6CHP/Figures/fractionWu.pdf}
         \caption{Fraction of the signal}{}
         %\label{subfig:g2lines}
@@ -38,7 +25,9 @@ To try to synthesis a wave form as similar as possible to the one resulting from
     \caption{Real signal}{~\cite{wuLiquidLevelDetector2014b}}
      \label{fig:realsignalWu}
  \end{figure}
-First is randomly define a frequency to be the dominant and a regular wave was generated, to create the decay effect the resulting wave is multiplied by $\frac{1}{e^{x}}$ being $x=1$, creating the echo effect by adding the original wave multiplied by the same equation, increasing the value of $x$ and adding the wave to the original shifting N/16, with N being the original size of the wave. This procedure is repeated to generate more waves with different frequencies and smaller amplitudes, in the end random noise is added with random variance, being at maximum half of the signal generated without any noise. An example of the resulting waves can be observed in the figure~\ref{fig:synthetizedSignal}.
+First is randomly define a frequency to be the dominant and a regular wave was generated, to create the decay effect the resulting wave is multiplied by $\frac{1}{e^{x}}$ being $x=1$. To create the echo effect, the same wave is continually shifted and added, the amplitude of the wave decreases along the echo by increasing the value of $x$.
+
+This procedure is then repeated to generate more waves with different frequencies and smaller amplitudes, in the end random noise is added with random variance, being at maximum half of the signal generated without any noise. An example of the resulting waves can be observed in the figure~\ref{fig:synthetizedSignal}.
 \begin{figure}[]
     \centering
     \begin{subfigure}{0.45\textwidth}
@@ -69,16 +58,18 @@ First is randomly define a frequency to be the dominant and a regular wave was g
      \label{fig:synthetizedSignal}
  \end{figure}
 \subsection{Tests}
-To test the effectiveness of the \acrshort{fft} algorithm in use, where performed in total 1000 tests to verify the obtained error of the implementation. The tests weren't only performed to the Fixed-Point algorithm in the microcontroller, the same code used in the microcontroller was also implemented in a \acrshort{pc} and the \acrshort{fft} function of \acrshort{matlab} was used as a control test, to verify that the signal wasn't to corrupted with noise that even \acrshort{matlab} wasn't able to determine the dominant frequency correctly.
+To test the effectiveness of the \acrshort{fft} algorithm, it was performed 1000 tests to verify the error obtained by the implementation. The tests were not exclusively performed with microcontroller. The same code for the Fixed-Point algorithm was used for the laptop computer implementation and the \acrshort{fft} function developed in \acrshort{matlab}. This algorithm was used as verification test to guaranty
+that the dominant frequency of the signal was not corrupted with noise, which even \acrshort{matlab} was not able to determined.
 
-In a \acrshort{pc} environment was implemented both \acrshort{fft}s, the Fixed-Point and the Floating-Point, in the microcontroller it was only possible to perform tests with the Fixed-Point since the other version exceeded the amount of memory needed to use the implementation. In each test a random signal was generated, as mentioned in~\ref{subsec:sigGen}, 512 samples of that signal were selected and converted to values between 0 and 1023, just like if it was converted by an \acrshort{adc}. After generating the signal, the dominant frequency is saved, to compare with the results, the samples are processed in \acrshort{matlab} and a dominant frequency is obtained and saved as well. The samples used in \acrshort{matlab} environment are saved, in order to be tested in both implementations in the \acrshort{pc} environment and the obtained results are saved. To finalize the samples are sent to the microcontroller and processed and the result is sent back to the \acrshort{pc} and saved. After all the tests, the results obtained are compared with the original value used in the frequency, allowing to verify how the algorithm performs. 
+In a \acrshort{pc} environment was implemented both \acrshort{fft}s, the Fixed-Point and the Floating-Point, in the microcontroller it was only possible to perform tests with the Fixed-Point since the other version exceeded the amount of memory needed to use the implementation. In each test a random signal was generated, as mentioned in~\ref{subsec:sigGen}, 512 samples of that signal were selected and converted to values between 0 and 1023, just like if it was converted by an \acrshort{adc}. After generating the signal, the dominant frequency is saved, to compare with the results, the samples are processed in \acrshort{matlab} and a dominant frequency is obtained and saved as well. The samples used in \acrshort{matlab} environment are saved, in order to be tested in both implementations in the \acrshort{pc} environment and the obtained results are saved. To finalize the samples are sent to the microcontroller and processed and the result is sent back to the \acrshort{pc} and saved\ref{fig:dataProcuC}. After all the tests, the results obtained are compared with the original value used in the frequency, allowing to verify how the algorithm performs.
+
 \begin{figure}[]
     \centering
     \includegraphics[width=1\textwidth]{Chapters/6CHP/Figures/ProcFlow.eps}
     \caption{Flow of signal processing in different environments}{}
     \label{fig:flowProc}
 \end{figure}
-Although the tests were performed in other environments, the test that is the most important is the one in the microcontroller. In the tests performed in the microcontroller not only the validity of the implementation, but it is also necessary to know how long it takes to execute the algorithm in the microcontroller and what are the memory needs of the program. The program that executes the algorithm was built to start measuring the execution time of the \acrshort{fft} implementation right before it starts, and end it after calculated the magnitude of the resulting signal, to measure how long takes to perform these tasks it uses one of the timers that the microcontroller has. To better understand how all works, observe figure\ref{fig:dataProcuC}.
+Although the tests were performed in other environments, the test that is the most important is the one in the microcontroller. In the tests performed in the microcontroller is verified not only the viability of the implementation in this environment, but it is also necessary to know how long it takes to execute the algorithm in the microcontroller and what are the memory needs of the program. The program that executes the algorithm was built to start measuring the execution time of the \acrshort{fft} implementation right before it starts, and end it after calculating the magnitude of the resulting signal, while this occurs a variable increments in the timer each time a interruption occurs.
 \begin{figure}[]
     \centering
     \includegraphics[width=1\textwidth]{Chapters/6CHP/Figures/uCDataProc.eps}
@@ -86,16 +77,18 @@ Although the tests were performed in other environments, the test that is the mo
     \label{fig:dataProcuC}
 \end{figure}
 \subsection{Results}
-The resulting data obtained is the dominant frequency of each implementation with the \acrshort{fft}, additionally in the microcontroller option was also measured the execution time of the algorithm. In the resulting dominant frequency from all cases was then compared with the absolute frequency that was saved every time that a new signal was generated, the error obtained in each implementation can be observed in the table~\ref{tab:perfRes}.
+The resulting data obtained from these tests, is the dominant frequency of each implementation with the \acrshort{fft} and the execution time of the algorithm. In the end the resulting dominant frequency from all cases was compared with the absolute frequency that was saved every time that a new signal was generated, the error obtained in each implementation can be observed in the table~\ref{tab:perfRes}.
 \begin{table}
     \centering
     \includegraphics[width=1\textwidth]{Chapters/6CHP/Figures/performanceAlgorithm.pdf}
     \caption{Results of the execution of a synthetic signal in the different algorithms}
     \label{tab:perfRes}
 \end{table}
-Is evident that the results from \acrshort{matlab} are much better when compared with the rest and when comparing the Floating-Point with the Fixed-Point, in the \acrshort{pc} results, there is a slight difference between the two, but for the microcontroller in use wasn't possible to implement the Floating-Point, anyway the error obtained in the Fixed-Point doesn't increase significatively, with these results the use of the implementation is expected to be precise for the application. 
+It is evident that the results from \acrshort{matlab} are better compared with the obtained. Comparing the Floating-Point with the Fixed-Point, in the \acrshort{pc} implementation results, there is a slight difference between the two. For this microcontroller it was not possible to
+implement the Floating-Point algorithm. The error obtained in the Fixed-Point implementation does not increase significantly. These results show that the use of the algorithm in this dissertation practical implementation is expected to be precise for the application in question.
 
-The results of the execution time of the algorithm can be observed in table~\ref{tab:excTimeuC}, the number of ticks is due the fact that to measure the execution time, a timer was configured to generate an interruption every 500$\mu$s, incrementing a variable each time that happen, as a result, by multiplying the number of ticks by the time each interruption is generated, gives the execution time of the algorithm. Taking into consideration that microcontroller has a small processing power and the embedded Hardware Multiplier hasn't been used, around 3s to process 512 samples it is to long, but acceptable under the test circumstances, since isn't mandatory for the results to be returned in real-time.  
+The results of the execution time of the algorithm can be observed in table~\ref{tab:excTimeuC}. The number of ticks is due the fact that to measure the execution time, a timer was configured to generate an interruption every 500$\mu$s, incrementing a variable each time that happen.
+The execution time of the algorithm is the multiplication result of the number of ticks by the time each interruption takes to trigger. Taking into consideration that microcontroller has a small processing power and the embedded Hardware Multiplier has not been used, the about 3s it needs to process 512 samples it is to high, but acceptable under the test circumstances, since is not mandatory for the results processed in real-time.  
 \begin{table}
     \centering
     \includegraphics[width=1\textwidth]{Chapters/6CHP/Figures/excTimeuC.pdf}
@@ -105,23 +98,23 @@ The results of the execution time of the algorithm can be observed in table~\ref
 %% Missing memory analysis, do that latter, se in code composer studio the indirect calls of the project
 \section{Microphone Test}\label{sec:MicroTests}
 \subsection{Signal Capturing and Tests}
+The analysis of the results obtained the microphone have special importance, to help understanding the viability of the frequency analysis  for the different liquid levels. If valid which is the interval of frequencies that should be paid attention at and in which part of the bottle are obtained better results. After knowing this, is possible to perform a better analysis to the results from the sensors.
 
-There are a few things that should be conclude from the tests with a microphone before starting the analysis with different sensors, they are in the first place the viability of the frequency analysis, for different liquid levels, if valid which is the frequency interval that should be taken into consideration and finally which are the more practical and were the best results are obtained, for latter help selecting the optimal point to place the sensor. 
-
-Considering this, four points were considered to make some measurements, identified in the illustration in figure~\ref{fig:measPointMic}, the points are all in the lateral surface of the \acrshort{lpg} bottle. The bottle in use is divided in two similar parts, by a welding joint in the middle, the lower and the top section, and the measuring points will be the bottom and the middle of each one of the sections, in other words, the points are right above the curvature and in the middle in the lower section and right above the welding joint and the middle of the top section. In some background studies made in chapter~\ref{chap:stArt}, another possibility was under the \acrshort{lpg} bottle but this option isn't practical, to place the microphone nor to hit the LPG bottle.
+With this, four points were considered in the measurements identified in the illustration in figure~\ref{fig:measPointMic}. The points were all taken in the lateral surface of the \acrshort{lpg} bottle. The bottle used is divided in two similar parts, by a welding joint in the middle. The measured points were taken in the bottom and the middle of each one of the the lower and top sections, and sections. 
 \begin{figure}[]
     \centering
     \includegraphics[width=0.35\textwidth]{Chapters/6CHP/Figures/measuringPointsMic.eps}
     \caption{Measuring points in the LPG bottle}{}
     \label{fig:measPointMic}
 \end{figure}
-In each of the points illustrated was recorded the sound produced when manually hitting the lateral surface of the \acrshort{lpg} bottle, for the 3 bottles available. Each of the 3 bottles contained a different level of liquid, for safety reasons the liquid was water, and they were full, half-full and empty. 
+In each of the points illustrated, it was recorded the sound produced by manually hitting the lateral surface of the \acrshort{lpg} bottle, for each of the 3 bottles available. The 3 bottles contained each a different liquid level, one full, one half-full and another empty. For safety reasons the liquid was water.
 
-To capture, record and save the sound, some of the \acrshort{matlab} capabilities were used to that purpose, the signal from the microphone was captured with a sampling frequency of 4k$Hz$, according to the table~\ref{tab:sampRat}, to ensure that there was enough time between setting the \acrshort{pc} to record and the manual hit, each saved sample is around 4 seconds, after it the signal can be processed and the resulting data analyzed.
+To capture, record and save the sound, some of the \acrshort{matlab} capabilities were used for that purpose. The signal from the microphone was captured with a sampling frequency of 4k$Hz$, this value was set according to the considerations of section~\ref{sec:signalsNDig} and the maximum frequency from a mechanical vibration defined in table~\ref{tab:sampRat}. To ensure that there was enough time between setting the PC to record and the manual hit the bottle. Each saved sample is around 4 seconds. The signal can them be processed and the resulting data analyzed.
+
 %add here a flux gram
 \subsection{Results}
 %add images of the signals in the time domain
-Several repetitions of the measurements were performed, to guarantee that the results obtained follow a determined pattern and won't vary much from one measurement to another. In the figure~\ref{fig:TimeRealDataMic} are presented the results from the different points of measurement in the different \acrshort{lpg} bottles and in figure~\ref{fig:ProcRealDataMic} the result from processing the same signals. Although is only presented one per point and bottle the remaining results were similar to the ones presented, the main difference for the remaining results can depend on how the hammer hits the surface of the LPG bottle and thus the signal can have smaller/bigger amplitude in the signals in the time domain, or peaks with higher/lower magnitude in the frequency domain.
+Several repetitions of the measurements were performed, to guarantee that the results obtained follow a determined pattern and would not vary much from one measurement to another. In the figure~\ref{fig:TimeRealDataMic} are presented the results from the different points of measurement in the different \acrshort{lpg} bottles and in figure~\ref{fig:ProcRealDataMic} the result from processing the same signals. Although is only presented one per point and bottle the remaining results were similar to the ones presented, the main difference for the remaining results can depend on how the hammer hits the surface of the LPG bottle and thus the signal can have smaller/bigger amplitude in the signals in the time domain, or peaks with higher/lower magnitude in the frequency domain.
 
 %Time domain signals
 \begin{figure}[]
@@ -154,9 +147,9 @@ Several repetitions of the measurements were performed, to guarantee that the re
      \label{fig:TimeRealDataMic}
 \end{figure}
 
-A example of how the hitting of the hammer affects the captured signal can be observed in the figure~\ref{subfig:timeLowCenMic}, where the signal from the empty bottle has a smaller amplitude when compared with the signals captured from the full/half bottle and in the figures~\ref{subfig:timeTopBotMic}\subref{subfig:timeTopCenMic} the same doesn't happen. For this reason, it is also necessary to find alternatives to manual hitting in the \acrshort{lpg} bottle, first because the results won't be constant and second because in a final application it is not practical to do it manually. But for now, the manual hitting was considered.
+A example of how the hitting of the hammer affects the captured signal can be observed in the figure~\ref{subfig:timeLowCenMic}, where the signal from the empty bottle has a smaller amplitude when compared with the signals captured from the full/half bottle and in the figures~\ref{subfig:timeTopBotMic}\subref{subfig:timeTopCenMic} the same does not happen. For this reason, it is also necessary to find alternatives to manual hitting in the \acrshort{lpg} bottle, first because the results would not be constant and second because in a final application it is not practical to do it manually. But for now, the manual hitting was considered.
 
-Even though the time domain isn't considered to the detection of the liquid level, is interesting to observe the results obtained, beside the slight increase of the amplitude in the signal from the full bottle to the empty, the echo also increases in the same way as the amplitude, the the other difference is how long the echo/oscillation occurs, once again from the full bottle to the empty the interval of time that happens increases.
+Even though the time domain is not considered to the detection of the liquid level, is interesting to observe the results obtained, beside the slight increase of the amplitude in the signal from the full bottle to the empty, the echo also increases in the same way as the amplitude, the other difference is how long the echo/oscillation occurs, once again from the full bottle to the empty the interval of time that happens increases.
 
 %Latter correct the reference and sub reference above
 %Frequency domain signals
@@ -192,13 +185,12 @@ Even though the time domain isn't considered to the detection of the liquid leve
 
 After processing the data from the results obtained, observed in the figure~\ref{fig:ProcRealDataMic}, one obvious conclusion is that the signal measured at the lower section in the bottom, in figures\ref{subfig:timeLowBotMic} and~\ref{subfig:LowBotMic} doesn't result in a signal with the same amplitude in the time domain nor the same magnitude in the frequency domain, for analysis of the results this point was discarded. From the remaining points they both show some similarities, with the best results obtained in the top section in the center\ref{subfig:TopCenMic}. Comparing the lower section in the center and the top section in the bottom, the results are slightly better in the second point mentioned, although for future measurements, the point considered will depend on the results obtained when changing the sensor in use.
 
-To reduce the amount of time used in the identification of the liquid level, it is interesting to be able to determine a frequency interval to search, the limits of the interval should be determined by the response in frequency of a full and an empty \acrshort{lpg} bottle. The results obtained from the points considered show that, isn't identify for the full bottle any frequency in the system response below the $+/-700Hz$, for the other two bottles this value increases, for the bottle half filled the value shifts to $+/-800Hz$ and for the empty bottle to $+/-900Hz$, with this in mind the lower limit for the searching interval can be set around $+/-650Hz$, to have a margin. This shift in frequency from one bottle to another can be considered as a identification method, since the first peak occurs, according to the obtained results, between the $700Hz$ to $900Hz$.
+To reduce the amount of time used in the identification of the liquid level, it is interesting to be able to determine a frequency interval to search, the limits of the interval should be determined by the response in frequency of a full and an empty \acrshort{lpg} bottle. The results obtained from the points considered show that, is not identify for the full bottle any meaningful information in the spectrum below the $+/-700Hz$, for the other two bottles this value increases, for the bottle half filled the value shifts to $+/-800Hz$ and for the empty bottle to $+/-900Hz$, with this in mind the lower limit for the searching interval can be set around $+/-650Hz$, to have a margin. This shift in frequency from one bottle to another can be considered as a identification method, since the first peak occurs, according to the obtained results, between the $700Hz$ to $900Hz$.
 
-From the first peak observed in the system response, it is visible the increase in magnitude of the following peaks, until reaches a certain value where it starts to decrease again, where it starts to increase once again. Where the pattern starts to repeat, can be defined as the limit of searching. If observed, it starts to repeat around $400Hz$ after the first peak is identified, this can be used in combination to the identification of the first peak to check if after $+/-400Hz$, the identified peak has a higher magnitude than the previous, meaning that the pattern is repeating once again.
+From the first peak observed in the system response, the amplitude increases until it reaches the maximum amplitude when starts to decrease, this will repeat once again. Is observed in the spectrum of the tree bottles, but more clear in the spectrum obtained in the measurements at the top section~\ref{subfig:TopBotMic}\subref{subfig:TopCenMic}. Where the pattern starts to repeat, can be defined as the limit of searching. If observed, it starts to repeat around $400Hz$ after the first peak is identified, this can be used in combination to the identification of the first peak to check if after $+/-400Hz$, the identified peak has a higher magnitude than the previous, meaning that the pattern is repeating once again.
 
 Another thing that is characteristic in the response to a stimulation of each bottle, is observed that the peak with the highest magnitude also shifts in frequency, in the interval of $+/-400Hz$ this value is approximately in the middle of this interval. For instance, for the full bottle the highest peak is around $800Hz$ and for the empty bottle is around $1100Hz$. Note that these results apply only for the results obtained at the top section and this identification method is the most inconstant, probably due the fact that the hitting is manual. Although this is not as certain as the mentioned before, these peaks also shift in frequency, which means that the searching for a peak in this interval is also valid for the liquid level identification, if combined with the other characteristics identified.
 
-Another characteristic that must be taken in consideration, not specific to the identification, is the smaller peaks that may appear close to the ones registered, with smaller magnitude, but if what is near each one of the peaks as a sum of the surrounding, may help in the identification, this isn't mandatory to use in the identification but must be considered when developing the method to identify the liquid level.
 %% Is really necessary?
 To sum-up, in the development of a method to identify the liquid level should be considered the following three characteristics:
 \begin{itemize}
@@ -208,18 +200,14 @@ To sum-up, in the development of a method to identify the liquid level should be
 \end{itemize}
 
 \section{Accelerometer and PiezoElectric Tests}
-
-In chapter ~\ref{chap:hardware}, section ~\ref{sec:CaptureCoupling} several methods to mount the sensors were presented. From those, 3 different methods to mount the accelerometer in the \acrshort{lpg} and 2 for the piezoelectric. The purpose of this is to test the sensors and find the most reliable mount method, to measure the liquid level.
-
-Beside the mounting method is important to verify how the stimulation of the bottle affects the response of the system and thus the obtained results from the sensors in use. Considering this, in the performed measurements, the stimulation was always in two different ways, manually with a hammer hitting the surface of the \acrshort{lpg}, and automatically with an impulse created with a solenoid.
-
-The setups in the measurements, for the different stimulation methods, will be explained and the results obtained for each one of them will be analyzed in the continuation of this section.
+In chapter ~\ref{chap:hardware}, section ~\ref{sec:CaptureCoupling} where presented several methods to mechanical attach the sensors to the \acrshort{lpg} bottle. The purpose of this is to test the sensors in order to find the most reliable mount method, to measure the liquid level. 
+In addition to the attaching method, it is important to verify how the bottle stimulation affects the system response and consequently the results obtained with the sensors in use. Considering this, in the performed measurements, the stimulation was always in two different ways, manually with a hammer hitting the surface of the \acrshort{lpg}, and automatically with an impulse created with a solenoid. The measurements setups, for the different stimulation methods, will be explained and the results obtained for each one of them will be analyzed in the continuation of this section.
 \subsection{Stimulation and Vibration Measuring}
 %Explain why only 2 stops for measurements were considered
-Even though that in section ~\ref{sec:MicroTests} of this chapter, was considered four different points to perform measurements, in this case it was considered only two of those four point, mainly due the fact that for the dual magnet mount it wasn't practical to place the printed piece in the bottle. From the measuring points presented in figure ~\ref{fig:measPointMic}, was only considered the center points in both lower and top sections of the bottle.
+Even though in section~\ref{sec:MicroTests} of this chapter was considered four different points to perform measurements,in this case it was contemplate only two, mainly due the fact that for the dual magnet mount it was not practical to place the printed piece in the bottle. From the measuring points presented in figure~\ref{fig:measPointMic}, was only considered the center points in both lower and top sections of the bottle.
 
 %In both cases, manual or automatic, the software used is the same in both sensors used. 
-The configurations used to sampling the signal for the different sensors were similar, since both amplifier circuits have their output centered in half of the supply voltage. So, in each one of the sampling manners used to sampling the signals, refer to the both cases. 
+The configurations used to sample the signal for the different sensors were similar, since both amplifier circuits have their output centered in half of the supply voltage. So, each one of the sampling manners used to examine the signals, refers to the both cases. 
 % Explain how the signal is capture when Manual
 %\subsubsection*{Manual Stimulation}
 
@@ -227,7 +215,7 @@ The configurations used to sampling the signal for the different sensors were si
 %\subsubsection*{Automatic Stimulation}
  
 \begin{description}
-    \item[Manual Stimulation]{- After configuring all the peripherals necessary, a externa interruption is set to be triggered with a push-button, when pressed it enables the timer to control the sampling frequency, and starts to read the value from the analog input. The read values aren't stored right away, wait until a certain input value is reached, it is set to be under/above 128 from the mid value, this value is only passed if we knock on the bottle. From this point 1024 samples are stored and then sent via \acrshort{uart} to the computer.}
+    \item[Manual Stimulation]{- After configuring all the necessary peripherals, a external interruption is set to be triggered with a push-button, when pressed it enables the timer to control the sampling frequency, and starts to read the value from the analog input. The read values aren't stored right away, wait until a certain input value is reached, it is set to be under/above 128 from the mid value, this value is only passed if we knock on the bottle. From this point 1024 samples are stored and then sent via \acrshort{uart} to the computer.}
       
     \item[Automatic Stimulation]{- Similar to the manual stimulation read, the peripherals are configured and the same external interruption is set. When pushed, the interruption will activate a timer that actuates in the solenoid, simulating the impulse desire to stimulate the system. Right after stimulation the system, the timer responsible for the sampling, is activated and the conversion starts, storing 1024 samples, which are sent via \acrshort{uart} to the computer.} 
 
@@ -422,26 +410,26 @@ From the combination of all this aspects, the results obtained are the following
     \label{fig:Piezz}
 \end{figure}
 % analyze the results
-\todo[inline,color=red!40]{*Add link to the remaining results if necessary and addapt the first paragraph that follows to lead to the results latter!}
+%\todo[inline,color=red!40]{*Add link to the remaining results if necessary and addapt the first paragraph that follows to lead to the results latter!}
 Note that the presented results in the images above, are only referring to one sample of each bottle in each setup. In overall, at least 10 measurements in each point and setups were performed, most of the measurements repeated more than once with small adjustments, at the hardware or software. The presented ones refer to the last series of measurements. %Add reference to the folder were are the remaining results??
 
-From all the results presented for the different setups, one thing is clear, the use of the solenoid for the automatic stimulation was a complete failure, none of the presented graphics on that setup provided relevant information about the liquid level, this lead to the conclusion that the stimulation with the solenoid isn't enough to the accelerometer or the piezoelectric sensor determine the variation in vibration for the different bottles, as is going to be proved when analyzing the manual stimulation. 
+From all the results presented for the different setups, one thing is clear, the use of the solenoid for the automatic stimulation was a complete failure, none of the presented graphics on that setup provided relevant information about the liquid level, this lead to the conclusion that the stimulation with the solenoid is not enough to the accelerometer or the piezoelectric sensor determine the variation in vibration for the different bottles, as is going to be proved when analyzing the manual stimulation. 
 
-This may be due the fact that the impact caused with the solenoid isn't enough to produce a visible vibration of the systems that surpasses the natural oscillation of the output of the sensors, that after being amplified results in noise. Although the noise is a problem, this could be bypassed by averaging, different spectrums of different measurements in the same conditions, this results in a decrease of the noise but without the expected results, the spectrum obtained still returned random values, without clear information.
+This may be due the fact that the impact caused with the solenoid is not enough to produce a visible vibration of the systems, the output end up being manly noise. Although the noise is a problem, this could be bypassed by averaging, different spectrums of different measurements in the same conditions, this results in a decrease of the noise but without the expected results, the spectrum obtained still returned random values, without clear information.
 
-From the results obtained with the manual stimulation, the conclusions are the same as above, with two exceptions. Those were by using the accelerometer attached with a load strap and one magnet. From these two, the most clear results are in the accelerometer attached with a load strap, but is also visible a pattern between the three bottles, with the first highest peaks occurring between $+/- 700Hz$ to the $+/-900Hz$, from the full to the empty bottle. The same results are also visible with the magnet, but with the introduction of more peaks in between with smaller amplitudes, this is reduced when averaging the spectrum.
+From the results obtained with the manual stimulation, the conclusions are the same as above, with two exceptions. Those were by using the accelerometer attached with a load strap,~\ref{subfig:ResAcCiMaBot}\subref{subfig:ResAcCiMaTop}, and one magnet,~\ref{subfig:ResAcImMaBot}\subref{subfig:ResAcImMaTop}. From these two, the most clear results are in the accelerometer attached with a load strap, but is also visible a pattern between the three bottles, with the first highest peaks occurring between $+/- 700Hz$ to the $+/-900Hz$, from the full to the empty bottle, with a peak around $+/-800Hz$ for the half bottle. The same results are also visible with the magnet, but with the introduction of more peaks in between with smaller amplitudes, this is reduced when averaging the spectrum.
 
 Another thing that is important to mention is that even though several measurements with the piezoelectric were performed, none of them presented relevant information, not even when averaging the spectrum. In the different tests it was never clear what was the reason why the piezoelectric haven't any valid results. 
 %conclusions
 Considering the presented setups, is only going to be used in future analysis the two setups that have shown some results, that are the accelerometer with one magnet and the load strap. One final conclusion to take from all performed measurements, is how much the impact affects the response of the system and thus the acquired signal with the sensor, as well as the mounting of the sensor plays an important role in the captured vibration.
 \section{Identification algorithm Tests}
 % what signals where considered
-At this stage is important to move from the tests and analysis with \acrshort{matlab} and verify if the algorithm implemented in the microcontroller returns similar results, for this were considered the signals obtained with the microphone, the accelerometer with the load strap and the accelerometer with the magnet. The signals captured with the microphone were used because their spectrum was less noisy than the spectrum from the other sensors, if the identification didn't work with these signals, it wouldn't for sure to work with the remaining. Also, they were used as a way to define the limits of search in the identification algorithm, i.e. to define the interval in frequency to the identification of the liquid level.  
+At this stage is important to move from the tests and analysis with \acrshort{matlab} and verify if the algorithm implemented in the microcontroller returns similar results, for this were considered the signals obtained with the microphone, the accelerometer with the load strap and the accelerometer with the magnet. The signals captured with the microphone were used because their spectrum was less noisy in the spectrum from the other sensors, if the identification did not work with these signals, it would not work for sure with the remaining. Also, they were used as a way to define the limits of search in the identification algorithm, i.e. to define the interval in frequency to the identification of the liquid level.  
 % How the tests were performed
-\subsection{Identification Steps??}
+\subsection{Identification Steps}
 The first step was to obtain the spectrum of signals from the three different bottles, to define the interval in frequency in order to reduce the amount of time in the search having more accuracy. In this case, the original signal was cropped and sent to the microcontroller for processing, returning then to the computer for analysis.
 
-After this, an interval was determined and the identification algorithm was developed to find the liquid level. What it does is, a threshold value is determined between a relation of the average amplitude of the spectrum and the highest peak, this allows for the threshold value to vary according to the amplitude of the signal. This threshold value is what determines if it is a important peak, or is just noise related. 
+After this, an interval was determined and the identification algorithm was developed to find the liquid level. What it does is, a threshold value is determined between a relation of the average amplitude of the spectrum and the highest peak, this allows for the threshold value to vary according to the amplitude of the signal. This threshold value is what determines if it is meaningful for the level identification, or is just noise related. 
 
 Considering this threshold value and the limits defined, three main functions were created. The first one identifies the first peak, starts to look in the lower limit and goes until the upper limit, when find the first value above the threshold value, the function stops and returns the value.
 
@@ -451,9 +439,9 @@ The third function was developed, to try to bypass one thing that was noticed in
 
 Considering the functions for the identification of the liquid level, the signals obtained with the microphone, and the two configurations with the accelerometer, were sent to the microcontroller for identification and processing and the results of the identification returned to the computer. On the computer side the results were plotted in order to find how well the identification functions worked. 
 
-One thing important to mentioned is, the only reason that the definition of the threshold value is this way is, since the manual hitting produces different responses, the algorithm needs to adapt to that variation, if the process was automatic this probably wouldn't be necessary, was expected to have consistent between all the signal captured to the same point.   
+One thing important to mentioned is, the only reason that the definition of the threshold value is this way is, since the manual hitting produces different responses, the algorithm needs to adapt to that variation, if the process was automatic this probably would not be necessary, was expected to have consistent between all the signal captured to the same point.   
 \subsection{Results}
-Before getting into the results obtained from the function created for the identification, the spectrum obtained from the processing with the microcontroller was analyzed, both in the microphone and the accelerometer, in the figure ~\ref{fig:specuC} is presented the results.
+Before getting into the results obtained from the function created for the identification, the spectrum obtained from the processing with the microcontroller was analyzed, both in the microphone and the accelerometer, in the figure~\ref{fig:specuC} is presented the results.
 \begin{figure}[]
     \centering
     \begin{subfigure}{0.45\textwidth}
@@ -472,9 +460,9 @@ Before getting into the results obtained from the function created for the ident
     \label{fig:specuC}
 \end{figure}
 
-From the spectrum obtained for both cases it is visible that there are not any relevant peaks below the 600Hz, in order to reduce the amount of time searching for the characteristics of the captured signals, this frequency is the reference to start. Another thing that is visible here is that it is possible to observe a shift in frequency for the first peak of the measured signal for each bottle, this can give us with certainty on method to determine the difference between the three bottles, if the other methods aren't precise.
+From the spectrum obtained for both cases it is visible that there are not any relevant peaks below the 600Hz, in order to reduce the amount of time searching for the characteristics of the captured signals, this frequency is the reference to start. Another thing that is visible here is that it is possible to observe a shift in frequency for the first peak of the measured signal for each bottle, this can give us with certainty on method to determine the difference between the three bottles, if the other methods are not precise.
 
-In the following graphics is going to be presented the results obtained for the identification algorithms, for the cases mentioned previously. Is important to mention, that the results of the functions developed aren't the frequency of each peak, but the id in the vector of each peak, in the future is irrelevant to determine the liquid level if is an ID or a frequency.
+In the following graphics is going to be presented the results obtained for the identification algorithms, for the cases mentioned previously. Is important to mention, that the results of the functions developed are not the frequency of each peak, but the id in the vector of each peak, in the future is irrelevant to determine the liquid level if is an ID or a frequency.
 %%MIC
 \begin{figure}[]
     \centering
@@ -548,16 +536,19 @@ In the following graphics is going to be presented the results obtained for the 
     \label{fig:ACCIResAlg}
 \end{figure}
 %\todo[inline,color=red!40]{Add the graphics at resulted from the top as attachement}
-Note that the presented results were measured at the lower section at the center, the reason is that the results at the upper section were less precise when compared with the results presented. This also leads to the conclusion that the optimal point for the measurements should be at the lower section. 
+Note that the presented results, in figures~\ref{fig:MICResAlg}\ref{fig:ACCLResAlg}\ref{fig:ACCIResAlg}, were measured at the lower section at the center, the reason is that the results at the upper section were less precise when compared with the results presented. This also leads to the conclusion that the optimal point for the measurements should be at the lower section. 
 
-From the results obtained, one thing is visible in all the tested setups, the most precise results were obtained in the search of the first peak, although there are some signals that are an exception, it is possible to conclude that considering the circumstances, this could be implemented with the search of the first ID. One possible reason for the exception, may be due the value of the threshold value, be variant between samples, and the stimulation isn't constant, it is possible to stimulate the system in a constant manner and strong enough to produce results similar to this, this problem will probably be bypassed. 
+From the results obtained one thing is visible in all the tested setups, the most precise results were obtained in the search of the first peak, although there are some signals that are an exception, it is possible to conclude that considering the circumstances, this could be implemented with the search of the first ID. One possible reason for the exception, may be due the value of the threshold value, be variant between samples, and the stimulation isn't constant, it is possible to stimulate the system in a constant manner and strong enough to produce results similar to this, this problem will probably be bypassed. 
 
-Is quite satisfactory to observe that there is a pattern between the three bottles that allow us to identify each one of them. If a consistency is found, the other two functions may also result in more stable results, and the three function combined can lead to more precise results.
+Is quite satisfactory to observe that there is a pattern between the three bottles that allow us to identify each one of them, mainly in the identification of the first peak in the spectrum, this patter can be visible in figures~\ref{subfig:fIDMIC}\ref{subfig:fIDACCL}\ref{subfig:fIDACCI}.If a consistency is found, the other two functions may also result in more stable results, and the three function combined can lead to more precise results.
 % Add a graphics with the spectrum of the signals from the microphone obtained in the microcontroller  
 %% add the rest tomorrow
-From all the tests performed, in most of the cases the results obtained were satisfactory, although there are some considerations to do about them. This consideration will be explored in detail in this chapter referring to the future work~\ref{sec:FutureWork}.
+From all the tests performed, in most of the cases the results obtained were satisfactory, although there are some considerations to do about them. 
 
+\section{Concluding remarks}
+From the practical work developed and the results obtain and presented in this chapter, there is a good indicator of the path to follow in this work.
 
+With the performed tests was possible to validate all the functions of the proposed architecture, even though not all return good results. The most important contributions from the developed work are, in first place the validation of the \acrshort{fft} in the microcontroller environment. The identification algorithm, although not returning the best results, probably due the obtained signals, had a good indicator of the identification, which let us to what needs to be improved, the stimulation and the signal acquired from the systems still need to be improved. These considerations will be explored in detail in the section~\ref{sec:FutureWork}. 
 \clearpage
 %\printbibliography[heading=subbibliography]
 %\addcontentsline{toc}{section}{References}

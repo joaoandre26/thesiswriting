@@ -6,7 +6,7 @@
 %Green - Done and approved
 \chapter{State of the Art}\label{chap:stArt}
 %%Section To do
-\todo[inline,color=yellow!40]{under review - v1.1 correcting last version}
+%\todo[inline,color=yellow!40]{under review - v1.1 correcting last version}
 %\todo[inline,color=blue!40]{*1-The LPG cylinder}
 %\todo[inline,color=blue!40]{*2-Measuring/Stimulation Tecniques}
 %\todo[inline,color=blue!40]{*3-Signals and systems - missing images}
@@ -37,7 +37,7 @@ Other relation that should be considered is related with the weight of the cylin
 %----------------------------------------Section 2-----------------------------------
 \section{Measuring/Stimulation Techniques}\label{sec:measStim}
 \subsection{Measuring Techniques}
-As the LPG cylinder content is divided in two physical states, liquid and gaseous, over the years several techniques have been used and improved in measuring the liquid level, which is how is determined the amount of LPG in the cylinder, some of the different techniques used are based on the same method. Those methods are usually split in two different categories, contact and contactless. Contact measuring methods usually include, mechanical, electrical or pressure sensing devices. In this methods the sensors are in direct contact with the liquid. In contactless, the methods used usually are more complex to process, when compared with contact methods. In this case the methods of measuring are mainly through optical, ultra-sound, vibration and weight analysis~\cite{nakagawaContactlessLiquidLevelMeasurement2013a}. 
+As the LPG cylinder is divided in two physical states, liquid and gaseous and is the liquid gas what defines the amount of gas inside. Several techniques have been used to determine the liquid level, being some of those based in the same methods. Those methods are usually split in two different categories, contact and contactless. Contact measuring methods usually include mechanical, electrical or pressure sensing devices. In these methods the sensors are in direct contact with the liquid. In contactless, the methods used usually are more complex to process, when compared with contact methods. In this case the methods of measuring are mainly through optical, ultra-sound, vibration and weight analysis~\cite{nakagawaContactlessLiquidLevelMeasurement2013a}. 
 \begin{figure}[]
     \centering
     \begin{subfigure}{0.15\textwidth}
@@ -67,26 +67,30 @@ As the LPG cylinder content is divided in two physical states, liquid and gaseou
     \caption{Different LPG cylinder to used to compare the relation between Frequency and Weight for different models}{~\cite{wuLiquidLevelDetector2014b}}
      %\label{fig:noise}
  \end{figure}
-Taking in consideration the fact that a LPG cylinder is opaque and isolated, some of the methods can't be used in the process, for instance, a mechanical float-type isn't a suitable solution to use inside the cylinder, or in the same way to use an electrode, as a electrical method, in these cases the device would require to be installed inside the cylinder during his fabrication process, possibly implying the substitution of the current cylinders. In the same way, in contactless methods, the use of different optical techniques and the use of of ultra-sound, would face the same problem mentioned with the contact methods, being also discard as a suitable method in this situation. 
 
-From previous research, some work has already been developed with the purpose of measuring the amount of liquid gas inside a LPG cylinder. Being the techniques used based on the methods presented above.
+ Considering the fact that the \acrshort{lpg} is opaque and isolated, some of methods can not be used in the process. For instance mechanical float-type or an electrode are not suitable for the application, since it would require their installation during the fabrication of the cylinder, implying the substitution of the current cylinders. In the same way, in contactless methods, the use of different optical techniques and the use of of ultra-sound, would face the same problem mentioned with the contact methods, since some of them would require the installation during the fabrication process, being also discard as a suitable method in this situation. 
+
+From previous research, some work has already been developed with the purpose of measuring the amount of liquid gas inside a LPG cylinder.
 %Based on the pressure
-In a work from ~\citeauthor{baigAccurateMeasurementPressure2008b} a pressure sensing device was developed, with the final appliance to a LPG cars, but with the possibility of apply in other circumstances. The device uses the pressure variation to move a magnet and using a Hall Effect sensor, with a fixed position, this motion produces a linear change of the voltage in the sensor, giving an accurate method of measuring the amount of gas in the LPG cylinder, in this case~\cite{baigAccurateMeasurementPressure2008b}. 
+In a work from ~\citeauthor{baigAccurateMeasurementPressure2008b}\cite{baigAccurateMeasurementPressure2008b} a pressure sensing device was developed, with the final appliance to a LPG cars, but with the possibility of apply in other circumstances. The device uses the pressure variation to move a magnet and using a Hall Effect sensor, with a fixed position, this motion produces a linear change of the voltage in the sensor, giving an accurate method of measuring the amount of gas in the LPG cylinder, in this case. 
 %Based on the weight
-A common method of evaluate the amount of gas inside a LPG cylinder, is based on the weight change of the cylinder, that decreases with the consumption of liquid gas. As an example, the work developed by ~\citeauthor{dasilvamedeirosSmartgasSmartPlatform2017a}, ~\citeauthor{shresthaIoTBasedSmart2019a} or ~\citeauthor{shinganSmartGasCylinder2017a} have similar approaches to measure the amount of liquid gas inside the LPG cylinder. There is various works based on this technique since is very simple to implement and very precise, it only requires a load cell, a amplifier, a microcontroller and a method to display the results, and unless there is a huge change in the external temperature, the density of the gas won't be much affected and thus not affecting the weight of the bottle~\cite{dasilvamedeirosSmartgasSmartPlatform2017a,shresthaIoTBasedSmart2019a,shinganSmartGasCylinder2017a}.
+
+A common method of evaluate the amount of gas inside a LPG cylinder, is based on the weight change of the cylinder, that decreases with the consumption of liquid gas. As an example, the work developed by ~\citeauthor{dasilvamedeirosSmartgasSmartPlatform2017a}, ~\citeauthor{shresthaIoTBasedSmart2019a} or ~\citeauthor{shinganSmartGasCylinder2017a} have similar approaches to measure the amount of liquid gas inside the LPG cylinder. There are various works based on this technique since is very simple to implement and very precise, it only requires a load cell, an amplifier, a microcontroller and a method to display the results, and unless there is a huge change in the external temperature, the density of the gas won't be much affected and thus not affecting the weight of the bottle~\cite{dasilvamedeirosSmartgasSmartPlatform2017a,shresthaIoTBasedSmart2019a,shinganSmartGasCylinder2017a}.
 %Based on Wave analysis
-Another method, that proved to be valid for measuring the amount of liquid inside a closed opaque container, is based on the analysis of the resulting vibrations when the container is stimulated by a external source. Depending in the type of the stimulation, it can produce only vibration, or it can also produce a characteristic sound, for different levels. As a example of two approaches based on the same principle are the works from ~\citeauthor{jahnLevelSensorFluids2014a} and ~\citeauthor{wuAnalysisImplementationNoncontact2016a}, in both cases the vibrations are analyzed, in one case is the vibration of the tank and in the other is through the sound produced by the tank vibration~\cite{jahnLevelSensorFluids2014a,wuAnalysisImplementationNoncontact2016a}. Since the approach is through the analysis of the vibration, the stimulation methods for this method will be presented ahead. 
+Another method, that proved to be valid for measuring the amount of liquid inside a closed opaque container, is based on the analysis of the resulting vibrations when the container is stimulated by a external source. Depending in the type of the stimulation, it can produce only vibration, or it can also produce a characteristic sound, for different levels. As a example of two approaches based on the same principle are the works from ~\citeauthor{jahnLevelSensorFluids2014a} and ~\citeauthor{wuAnalysisImplementationNoncontact2016a}, in both cases the vibrations are analyzed, in one case is the vibration of the tank and in the other is through the sound produced by the tank vibration~\cite{jahnLevelSensorFluids2014a,wuAnalysisImplementationNoncontact2016a}. 
 
 \subsection{Stimulation Techniques}
-Taking into consideration, that the measurment of the liquid level is based on the vibration, it was found in previous work two techniques to induce the vibration in the LPG bottle.
-The first example of a technique of stimulation the LPG bottle is by using a piezoelectric transducer, attached to the bottom of the container, this transducer produces transversal and longitudinal waves in the surface of the container where the transducer is attached. The frequency of the waves generated is related with the frequency of the system response to a certain level, and changes according to that. The same waves are captured with another piezoelectric transducer and processed~\cite{jahnLevelSensorFluids2014a}.
+Taking into consideration, that the measurment of the liquid level is based on vibration, one of the methods to induce vibration is based on a piezoelectric transducer, attached to the bottom of the container. This transducer produces transversal and longitudinal waves in the surface of the container, where the transducer is attached. The frequency of the waves generated is related with the frequency of the system response to a certain liquid level, and changes according to that. The same waves are captured with another piezoelectric transducer and processed~\cite{jahnLevelSensorFluids2014a}.
+
 \begin{figure}[]
     \centering
     \includegraphics[width=0.35\textwidth]{Chapters/2CHP/Diagrams/stimPiezo.eps}
     \caption{Stimulation and measuring system based on piezo transducer}{~\cite{jahnLevelSensorFluids2014a}}
     \label{fig:stimPiezo}
 \end{figure}
-Another method to produce vibration in the LPG bottle, can be archived with a hammer or a device, that hits the surface of the LPG bottle, the captured signal is the appropriated sensor is then processed and the result returns the level of liquid gas inside. In this case, not only vibration in the bottle is produced but a sound as well~\cite{wuAnalysisImplementationNoncontact2016a}.
+
+Another method to produce vibration in the LPG bottle, that can be achieved with a hammer or a device that hits the surface of the LPG bottle. The captured signal is then processed and the result returns the level of liquid gas inside~\cite{wuAnalysisImplementationNoncontact2016a}.
+
 \begin{figure}[]
     \centering
     \includegraphics[width=0.45\textwidth]{Chapters/2CHP/Diagrams/stimHammer.eps}
@@ -105,7 +109,7 @@ The vibration and the studies in this field are usually related with the oscilla
 Signals can describe a large variety of physical phenomenona, bringing a certain information about it, depending of the phenomenon represented. For example, the voltage variation in a capacitor, or the human voice which creates variations in acoustic pressure, captured by a microphone that senses those variations and convert them into a electrical signal. A signal can be represented mathematically as a function of one or more independent variables. 
 To what concern in signal processing, the types of signal considered are two types, continuous-time signals and discrete-time signals. In these cases the independent variable, the time, is continuous and discrete, respectively~\cite{oppenheimSignalsSystems1997}.
 
-\subsection{Signal and Digitalization}
+\subsection{Signal and Digitalization}\label{sec:signalsNDig}
 A continuous-time signal can be represented in a discrete-time form by the knowledge of its values at certain points in time equally spaced. This is called sampling, and if the samples are close to each other, less time between samples, the more similar the discrete signal became to the continuous. Sampling plays an important role between the continuous-time and the discrete-time.
 
 Considering a continuous-time signal $x(t)$ is measured at every $T_{s}$ seconds. The is discretized in units of the sampling interval $T_{s}$:
@@ -300,12 +304,12 @@ The result is known as the \textit{convolution sum} or \textit{superposition sum
 \subsection{Discrete-Time Fourier-Transform}
 For the analysis of LTI systems, one of the most powerful and used tools is the Fourier-Series and Fourier Transform. For the analysis purpose, the focus is only going to be the Discrete-Time Fourier-Transform (DTFT). The study of this type of systems offers two great advantages:
 \begin{itemize}
-    \item It is possible to construct a extensive and convenient class of signals, based on a set of simpler signals.
+    \item It is possible to construct an extensive and convenient class of signals, based on a set of simpler signals.
     \item The response of the LTI signal should be simple enough, to provide a convenient representation of the response from the system to any signal based on the combination of several other basic signals. 
 \end{itemize} 
-The properties are provided by a set of exponential signals, this is important because the response of a LTI system to a complex exponential input, is the same exponential with the change in amplitude. When dealing with complex exponential signals, for the domain of analysis changes, which is in this case the frequency domain.
+The properties are provided by a set of exponential signals, this is important because the response of a LTI system to a complex exponential input is the same exponential with the change in amplitude. 
 
-For the analysis purpose, is necessary to know the representation of a signal $x(n)$, that later is going to be represented as a input of a system. The signal is represented in the frequency domain, where $\omega$ represents the \textit{angular frequency}, and its period is $2\pi$. The signal is represented as follows:
+For the analysis purpose, is necessary to know the representation of a signal $x(n)$, that later is going to be represented as an input of a system. The signal is represented in the frequency domain, where $\omega$ represents the \textit{angular frequency}, and its period is $2\pi$. The signal is represented as follows:
 \begin{equation}
     X(e^{\jmath \omega})=\sum_{n=-\infty}^{+\infty}x(n)e^{-\jmath \omega n}
 \end{equation}
@@ -321,21 +325,24 @@ With this work in consideration, a algorithm was presented by Cooley and Tukey, 
 
 % ---------------------------------------Section 4-------------------------------------------------
 \section{LPG cylinder Model}\label{sec:LPGModel}
-As already mentioned \ref{subsec:SysDef}, is possible to describe an LPG cylinder over a mathematical function, as a system. Being, in many cases, the description similar to other systems. The fact that the system is described as a mathematical model allows to understand what it could be the behavior of it. 
+As already mentioned in~\ref{subsec:SysDef}, is possible to describe an LPG cylinder through a mathematical function, as a system. In many cases their mathematical representation is similar to other systems. The fact that the system is described as a mathematical model allows to understand what it could be the behavior of it. 
 
-The work developed by \citeauthor{wuLiquidLevelDetector2014b} proposes a model for the LPG cylinder, based on acoustic principals to perform measurements. The procedure that they implement is quite simple, by knocking on the side of the cylinder, that generates the sound, usually that sound changes according to the amount of liquid inside of the cylinder, to evaluate what is the amount of gas inside, the vibration in the cylinder wall is recorded and the frequency of the sound give is proportional to the amount of gas present inside.
+The work developed by~\citeauthor{wuLiquidLevelDetector2014b}\cite{wuLiquidLevelDetector2014b} proposes a model for the LPG cylinder, based on vibrations to perform measurements. 
 
-Before them, other researches were conducted to study the transverse vibration of cylindrical tubes with variable levels of liquid inside. One of them is the work of \citeauthor{chanFreeVibrationCantilever1995} who proposed a vibration model (clamped-free model), where a tube, clamped at bottom and free at top, was used to study the relations resonant frequencies versus liquid levels. Their tests were conducted under a controlled environment, for different levels of liquid, and the experimental results obtained were in accordance with the theoretical calculations~\cite{chanFreeVibrationCantilever1995}.
+Their procedure was simple, when knocking the surface of the cylinder, this produces a sound. The sound generated changed with the liquid level inside. Considering this, they have measured and processed the sound produced. From their analysis of the results they have found a relation between the frequency of the sound and the liquid level.
 
-Their work was then extended with a different approach by \citeauthor{chanFREEVIBRATIONSIMPLY1996}, the model they proposed study the vibration of a simply supported beam with uniform mass, partially loaded, in one of the sides, with a distributed mass(pinned-pinned model). For the conducted tests, the load length added increases until reaching the the length of the beam, the results obtained in their measurements agreed with the results obtained from the previous work\cite{chanFREEVIBRATIONSIMPLY1996}. 
-A few years later \citeauthor{jacobsContactlessLiquidDetection2005} proposed a similar model to \citeauthor{chanFreeVibrationCantilever1995} model, but this time with different boundaries, clamped at bottom and top (clamped-clamped model). The tests conducted measure the resonant frequency of the tube, for different levels of liquid, and their results fitted with the results obtained in the previous mentioned tests~\cite{jacobsContactlessLiquidDetection2005}.
+Before them, other researchers studied the transverse vibration of cylindrical tubes with variable levels of liquid inside. One of them is the work of ~\citeauthor{chanFreeVibrationCantilever1995}\cite{chanFreeVibrationCantilever1995}, who proposed a vibration model (clamped-free model), where a tube  clamped at bottom and free at top, was used to study the relations resonant frequencies versus liquid levels. Their tests were conducted under a controlled environment, for different levels of liquid, and the experimental results obtained were in accordance with the theoretical calculations~\cite{chanFreeVibrationCantilever1995}.
 
-Like in the previous studies, the base of the work developed by \citeauthor{wuLiquidLevelDetector2014b} is the Euler-Bernoulli beam theory\cite{raoMechanicalVibrations2017,thomsonTheoryVibrationApplications1996}, this is used to create a model of a cylindrical tube, allowing to estimate the vibration frequencies for different liquid levels. In their work they were able to prove that this theory can be applied to the vibrations in a LPG cylinder, where the results obtain similar to the results obtained in previous works, also based in the same principal.
+Their work was then extended with a different approach by \citeauthor{chanFREEVIBRATIONSIMPLY1996}, the model they proposed study the vibration of a simply supported beam with uniform mass, partially loaded, in one of the sides, with a distributed mass(pinned-pinned model). For the conducted tests, the load length increased until reaching the length of the beam, the results obtained in their measurements agreed with the results obtained from the previous work\cite{chanFREEVIBRATIONSIMPLY1996}. 
+
+A few years later \citeauthor{jacobsContactlessLiquidDetection2005} proposed a similar model to \citeauthor{chanFreeVibrationCantilever1995} model, but this time with different boundaries, clamped at bottom and top (clamped-clamped model). The tests conducted measure the resonant frequency of the tube, for different levels of liquid, their results fitted with the results obtained in the previous mentioned tests~\cite{jacobsContactlessLiquidDetection2005}.
+
+Like in the previous studies, the base of the work developed by \citeauthor{wuLiquidLevelDetector2014b} is the Euler-Bernoulli beam theory\cite{raoMechanicalVibrations2017,thomsonTheoryVibrationApplications1996}, this is used to create a model of a cylindrical tube, allowing to estimate the vibration frequency, for different liquid levels. In their work they were able to prove that this theory can be applied to the vibrations in a LPG cylinder, where the results obtain similar to the results obtained in previous works, based in the same principal.
 
 \subsection{Mathematical Model for LPG cylinder}
-The similarities with the Euler-Bernoulli theory and its models, with a LPG cylinder, is related with the construction of the cylinder. A common LPG cylinder used in house appliances has two welded seams, located at the bottom and the top, and those seams are considered the boundaries of the LPG. These boundaries are not considered to be free, but loose instead, with doesn't allow to immediately conclude which type of the mentioned boundaries the cylinder has. Before getting into a conclusion is necessary to understand the theory behind their work.
+The similarities with the Euler-Bernoulli theory and its models, with a LPG cylinder, is related with the construction of the cylinder. A common LPG cylinder used in house appliances has two welded seams, located at the bottom and the top, and those seams are considered the boundaries of the LPG. These boundaries are not considered to be free, but loose instead, which does not allow to immediately identify the the type of boundaries of the cylinder. Before getting into a conclusion is necessary to understand the theory behind their work.
 
-If a hammer is used to knock the lateral surface of the LPG cylinder, this will trigger a transverse vibration, considered in this case a mechanical vibration. This vibration is similar to Euler-Bernoulli beam, assuming a distributed mass per unit of length $m$, partially loaded with a distributed mass as well $m_d$, corresponding in this situation to the liquid part of the cylinder. In \ref{fig:mechanicalmodel} is identified the boundaries and is illustrated the LPG cylinder model, the  equation \ref{eq:beamEqSimp} describe the vibratory model of the LPG cylinder. The liquid-gas interface corresponds to the origin, and $EI$ is a constant value corresponding to the the beam flexural rigidity
+If a hammer is used to knock the surface of the LPG cylinder, this will trigger a transverse vibration, considered in this case a mechanical vibration. The resulting change in the frequency vibration, according to the liquid level, is similar to what was observed in the Euler-Bernoulli beam theory, assuming a distributed mass per unit of length $m$, partially loaded with a distributed mass as well $m_d$, corresponds in this situation to the liquid part of the cylinder. In \ref{fig:mechanicalmodel} is identified the boundaries and is illustrated the LPG cylinder model, the  equation \ref{eq:beamEqSimp} describe the vibratory model of the LPG cylinder. The liquid-gas interface corresponds to the origin, and $EI$ is a constant value corresponding to the the beam flexural rigidity.
 %Mechanical model of the LPG bottle
 \begin{figure}[]
     \centering
@@ -350,7 +357,7 @@ If a hammer is used to knock the lateral surface of the LPG cylinder, this will 
     \end{split}
 \end{equation}
 
-The variables $y_1$ and $y_2$ correspond to the transverse vibratory displacements o f the beam. Considering that the seam welding's are not ideally clamped or pinned, and the main transverse vibration is restricted between the two boundaries, is assumed that they have small displacements, that will show flexural vibration. This way their model assumes that there is strong linear springs and torsional springs connected at the boundaries. Which obligates to the boundaries conditions to be formulated taking in consideration these factors, where $k_{S1}$, $k_{T1}$ are the linear and torsional springs constants for the lower welding, and $k_{S2}$, $k_{T2}$ are the correspondent spring constants in the upper welding.
+The variables $y_1$ and $y_2$ correspond to the transverse vibratory displacements of the beam, with $y_1$ referring to the liquid state and $y_2$ to the gaseous state. Considering that the seam welding's are not ideally clamped or pinned, and the main transverse vibration is restricted between the two boundaries, is assumed that they have small displacements, that will show flexural vibration. This way their model assumes that there is strong linear springs and torsional springs connected at the boundaries. Which obligates to the boundaries conditions to be formulated taking in consideration these factors, where $k_{S1}$, $k_{T1}$ are the linear and torsional springs constants for the lower welding, and $k_{S2}$, $k_{T2}$ are the correspondent spring constants in the upper welding.
 \begin{equation} \label{eq:beamEqEv}
     \begin{split}
         At\>x=-l_w \Rightarrow \begin{cases}
@@ -364,7 +371,7 @@ The variables $y_1$ and $y_2$ correspond to the transverse vibratory displacemen
     \end{split}
 \end{equation}
 
-At the bottom a circular steel plate is attached to make the cylinder more stable in relation with the ground, this turns it more stable the the upper part, which allow them to conclude that the value of the constants, linear and torsional springs, of the bottom is higher when compared with the upper values, i.e. $k_{S1}>k_{S2}$ and $k_{T1}>k_{T2}$. The continuity and equilibrium condition at the interface of the liquid, inside the cylinder, are:
+At the bottom a circular steel plate is attached to make the cylinder more stable in relation with the ground, this turns it more stable than the upper part, which allow them to conclude that the value of the constants, linear and torsional springs, of the bottom is higher when compared with the upper values, i.e. $k_{S1}>k_{S2}$ and $k_{T1}>k_{T2}$. The continuity and equilibrium condition at the interface of the liquid, inside the cylinder, are:
 \begin{equation} \label{eq:beamEqEquilCond}
     \begin{split}
         y_1(0,t) = y_2(0,t),\> y'_1(0,t) = y'_2(0,t) \\
@@ -376,7 +383,7 @@ This conditions allow them to investigate the relation of the normalized frequen
 \subsection{Relation with previous studies}
 So far the model presented show very general boundaries conditions, by controlling the variables, the model can be easily compared with the mentioned model. Taking that into consideration, a demonstration of this similarities was presented and is the following.
     \subsubsection{Clamped-free boundaries}
-    For this condition, the values of the variables are considered to be $k_{S1}=k_{T1}\approx\infty$ and $k_{S2}=k_{T2}=0$. When \citeauthor{chanFreeVibrationCantilever1995} proposed this model to calculate the frequencies of a cantilever tube, partially filled with liquid mercury, the cantilever was clamped at the bottom and free at the top, and the transverse vibration was generated by using a hammer to knock the tube\ref{fig:clampedfreemodel}. 
+    For this condition, the values of the variables are considered to be $k_{S1}=k_{T1}\approx\infty$ and $k_{S2}=k_{T2}=0$. When \citeauthor{chanFreeVibrationCantilever1995} proposed this model to calculate the frequencies of a cantilever tube, partially filled with liquid mercury, the cantilever was clamped at the bottom and free at the top, and the transverse vibration was generated by using a hammer to knock the tube~\ref{fig:clampedfreemodel}. 
     %clamped-free model
     \begin{figure}[]
         \centering
@@ -389,7 +396,7 @@ So far the model presented show very general boundaries conditions, by controlli
             y_1(-l_w,t) = y'_1(-l_w,t) = y''_2(L-l_w,t) = y'''_2(L-l_w,t)=0
     \end{equation}
     \subsubsection{Pinned-pinned boundaries}
-    For this condition, the value of the variables considered is $k_{S1}=k_{S2}\approx\infty$ and $k_{T1}=k_{T2}=0$. In this model, proposed by \citeauthor{chanFREEVIBRATIONSIMPLY1996}, the study is made in a simply supported beam partially load, with distributed mass in both cases\ref{fig:pinnedpinnedmodel}.
+    For this condition, the value of the variables considered is $k_{S1}=k_{S2}\approx\infty$ and $k_{T1}=k_{T2}=0$. In this model, proposed by \citeauthor{chanFREEVIBRATIONSIMPLY1996}, the study is made in a simply supported beam partially loaded, with distributed mass in both cases\ref{fig:pinnedpinnedmodel}.
     %Pinned-Pinned Model
     \begin{figure}[]
         \centering
@@ -402,7 +409,8 @@ So far the model presented show very general boundaries conditions, by controlli
         y_1(-l_w,t) = y''_1(-l_w,t) = y_2(L-l_w,t) = y''_2(L-l_w,t)=0
     \end{equation}
     \subsubsection{Clamped-clamped boundaries}
-    In this case, the value considered to the variables was $k_{S1}=k_{T1}=k_{S2}=k_{T2}\approx\infty$. This model, proposed by \citeauthor{jacobsContactlessLiquidDetection2005}, with a contactless method to measure the vibration of a opaque capillary tube\ref{fig:clampedclampedmodel}.
+    In this case, the value considered to the variables was $k_{S1}=k_{T1}=k_{S2}=k_{T2}\approx\infty$. 
+    The proposed model from \citeauthor{jacobsContactlessLiquidDetection2005}, their study was made with an opaque capillary tube~\ref{fig:clampedclampedmodel}.
     %Clamped-Clamped Model
     \begin{figure}[]
         \centering
@@ -410,13 +418,13 @@ So far the model presented show very general boundaries conditions, by controlli
         \caption{Clamped-Clamped Model}{~\cite{jacobsContactlessLiquidDetection2005}}
         \label{fig:clampedclampedmodel}
     \end{figure}
-    Following the same path of the previous two, the variables $k_{S1}$, $k_{T1}$, $k_{S2}$ and $k_{T2}$ were once again replaced in \ref{eq:beamEqSimp},and the results obtained\ref{eq:beamEqClampedx2} at their boundaries conditions matched results obtained in~\cite{jacobsContactlessLiquidDetection2005}
+    Following the same path of the previous two, the variables $k_{S1}$, $k_{T1}$, $k_{S2}$ and $k_{T2}$ were once again replaced in~\ref{eq:beamEqSimp},and the results obtained~\ref{eq:beamEqClampedx2} at their boundaries conditions matched results obtained in~\cite{jacobsContactlessLiquidDetection2005}
     \begin{equation} \label{eq:beamEqClampedx2}
         y_1(-l_w,t) = y'_1(-l_w,t) = y_2(L-l_w,t) = y'_2(L-l_w,t)=0
     \end{equation}
 
     \subsubsection{Relation of Frequency versus Length}
-    As a final comparison, the test between the relation of the frequency with the length of the liquid level was executed. For that, different values were attributed to linear and torsional spring variables, to allow the simulation of theoretical curves of the normalized frequency ratio $f_r (f_i/f_0)$ and length ratio $l_r (l_w/L)$. The values for each of the variables were chosen to be large enough to simulate the different boundaries conditions. As expected the results[reference to all images] of \citeauthor{wuLiquidLevelDetector2014b} were very similar with what was previously obtained~\cite{chanFreeVibrationCantilever1995,chanFREEVIBRATIONSIMPLY1996,jacobsContactlessLiquidDetection2005}, confirming what was mention in the beginning of this section.
+    As a final comparison, the test between the relation of the frequency with the length of the liquid level was executed. For that, different values were attributed to linear and torsional spring variables, to allow the simulation of theoretical curves of the normalized frequency ratio $f_r (f_i/f_0)$ and length ratio $l_r (l_w/L)$. The values for each of the variables were chosen to be large enough to simulate the different boundaries conditions. As expected the results~\ref{fig:theoCurves} of \citeauthor{wuLiquidLevelDetector2014b} were very similar with what was previously obtained~\cite{chanFreeVibrationCantilever1995,chanFREEVIBRATIONSIMPLY1996,jacobsContactlessLiquidDetection2005}, confirming what was mention in the beginning of this section.
     %Theoretical curves
     \begin{figure}[]
         \centering
@@ -426,7 +434,7 @@ So far the model presented show very general boundaries conditions, by controlli
     \end{figure}
     In this relation is important to note that, when the cylinder is almost empty $l_r = 0$ the frequency of the vibration is the highest, in the opposite cases, when the cylinder is full $l_r = 1$ then the vibration frequency is archives the minimum value. 
 \subsection{Experimental results}\label{subsec:SOAExpRes}
-In the tests perform by \citeauthor{wuLiquidLevelDetector2014b}, their setup consisted in a hammer knocking in the lateral surface of the cylinder, that produces the transversal vibration, which is captured by a microphone,processed with a FFT algorithm. By continuously releasing gas and measure the produced vibration, and the correspondent frequency they obtained the following relation: 
+In the tests perform by \citeauthor{wuLiquidLevelDetector2014b}, their setup consisted in a hammer knocking in the lateral surface of the cylinder, that produces the transversal vibration, which is captured by a microphone,processed with a FFT algorithm. By continuously releasing gas and measure the produced vibration, and the correspondent frequency they obtained the following relation~\ref{fig:practCurve}: 
 %Practical curve obtained
 \begin{figure}[]
     \centering
@@ -434,7 +442,7 @@ In the tests perform by \citeauthor{wuLiquidLevelDetector2014b}, their setup con
     \caption{Frequency VS Weight - Practical curve obtained by}{~\citeauthor{wuLiquidLevelDetector2014b}}
     \label{fig:practCurve}
 \end{figure}
-In the same way of their theoretical simulations, the relation between the vibration frequency and the liquid level(or the length of the liquid) is similar, the highest frequency correspond to the lowest liquid level, and the lowest frequency to the highest liquid level. One thing that is important to refer that is mentioned in their work is, this relation is constant for the different variety of LPG cylinders, but the frequency range of each also varies with the amount of gas that they can store\ref{fig:practCurve}, which means that the device must be adapted to the type of cylinder that is going to be used in. 
+In the same way of their theoretical simulations, the relation between the vibration frequency and the liquid level is similar, the highest frequency correspond to the lowest liquid level, and the lowest frequency to the highest liquid level. One thing that is important to refer that is mentioned in their work is, this relation is constant for the different variety of LPG cylinders, but the frequency range of each also varies with the amount of gas that they can store~\ref{fig:practCurve}, which means that the device must be adapted to the type of cylinder that is going to be used in. 
 %Figures of curves from different bottles
 \begin{figure}[]
     \centering
@@ -468,37 +476,36 @@ In the same way of their theoretical simulations, the relation between the vibra
 A couple of years latter this work was followed by ~\citeauthor{wuAnalysisImplementationNoncontact2016a}, were they developed a prototype with the function of measure the frequency of the vibration, and thus the returning the liquid level of the LPG cylinder. The setup used and the test conditions were very similar the the previous work.
 
 \section{Vibration Sensors}\label{sec:VibSens}
-To acquire and measure the vibration, the sensors used must work according to the system mechanical or optical principals of vibration. There is a large variety of sensors that ca be used for that purpose, although there isn't a direct method, or sensor, to measure the vibration, they can be either mechanical or optical. The sensors can be divided in different groups, based on their behavior, they can be active or passive, the type of measurement can be either absolute or relative, and there is also some specific characteristics of the signals that differ from the type of sensor, like the frequency range, signal dynamic and the quality of the data acquired. Finally sensors are also divided in contact and non-contact measurement and subdivided in path/displacement, speed/velocity or acceleration.
+To measure vibration is commonly used piezoelectric sensors or accelerometers. In the piezoelectric is possible due the small deformations produced during vibration, creating charges and thus a voltage change. In the accelerometer is usually measured the acceleration. In both cases the sensor needs to be in contact with the system, to measure the vibrations. 
 
-For contact measurements, sensors related to path/displacement can be potentiometric transmitters or Linear Variable Differential Transmitter (LVDT), to speed/velocity it can be applied the principle of electrodynamics or use a seismometer as a sensor and for acceleration the sensors can be piezoelectric, piezo-resistive, resistive or inductive. In non-contact measurements, path/displacement sensors are eddy current sensors, optical sensors and hall sensors, or can be based on the capacitive principle, for speed/velocity is used a Laser-Doppler vibrometer (LDV) and for acceleration isn't possible to measure directly, although it can be derivate from speed/velocity measurement, but induces a lot of noise in the data acquired\cite{SensorsVibrationMeasurement,VibrationMeasurementVibration2019}.
+In the piezoelectrics, the working principle of these sensors is similar, for the different constituent materials. The main difference between these types of sensor can be on their application, since the material influences in the resonant frequency of the sensors thus, limiting the frequency range of a certain application~\cite{ResonantFrequencyPiezo}. 
 
-To measure the vibration, usually is the contact acceleration the most common method to measure them, beside the sensors mentioned, is used as well accelerometers, this devices are used in industry to reliably measure vibration in equipment, to monitoring their health.The functioning  principles of accelerometers can differ from one to another. The basic principle of a accelerometer is similar to a seismometer, from this there are 3 main types, mechanical, capacitive and piezoelectric. The mechanical is the most similar to a seismometer, with a mass attached to a spring, every time that acceleration occurs, just like in seismometer, the mass moves and a pen attached to the mass traces the vibration captured.
+For the accelerometers is different, the working principle of the sensors varies. The most common, works similar to a seismometer, with a mass that moves with vibration. Attached to the mass is the component responsible to cause the voltage change, those are usually mechanical\ref{fig:wseismometer}, capacitive\ref{fig:wcapacitiveacc} or piezoelectric\ref{fig:wpiezoresistiveacc}\cite{SensorsVibrationMeasurement,VibrationMeasurementVibration2019}. The downside of this sensor is usually their size, is some cases is much bigger than the \acrshort{mems} accelerometer.
+
+%put as subfigure
 \begin{figure}[]
     \centering
     \includegraphics[width=0.45\textwidth]{Chapters/2CHP/Diagrams/seismometer.eps}
-    \caption{Illustration of the working principle of simple accelerometer}{}    
+    \caption{Illustration of the working principle of mechanical accelerometer}{}    
     \label{fig:wseismometer}
 \end{figure}
-%%Insert here a image to illustrate this
-% see in https://www.explainthatstuff.com/accelerometers.html  
-Although in the case of the accelerometer, doesn't trace with a pen in paper, instead generates a electrical or magnetic signal. A example of this, is a piezoresistive accelerometer, which has a his mass attached to a potentiometer, and the result of the vibration is a voltage change. When a magnetic variation occurs, usually a hall-effect accelerometer is used for that effect.  
-Similar to the mechanical, a capacitive accelerometer, has one of the plates attached to the mass, and measures the capacitance variation, the vibration of capacitance is related with the vibration movement. 
-%% Insert another image here
 \begin{figure}[]
     \centering
     \includegraphics[width=0.45\textwidth]{Chapters/2CHP/Diagrams/capacitiveacc.eps}
     \caption{Illustration of the working principle of capacitive accelerometer}{}    
     \label{fig:wcapacitiveacc}
 \end{figure}
-In piezoelectric accelerometers, the function principle is similar to the previous, the mass is attached to the piezoelectric and when it moves causes a deformation. The resulting signal from the deformation is the result of the piezoelectric effect. A piezoelectric consist in two metal plates with piezoceramic material between them, usually a quartz crystal. To produce electricity, the piezoceramic material needs to be under stress, that is, to be compressed or squeezed. This caused a voltage different the two metal plates, this is the result of the collection of charges produced in the piezoceramic material.
-%%Insert here
 \begin{figure}[]
     \centering
     \includegraphics[width=0.45\textwidth]{Chapters/2CHP/Diagrams/piezoresistiveacc.eps}
     \caption{Illustration of the working principle of a piezoresistive accelerometer}{}    
     \label{fig:wpiezoresistiveacc}
 \end{figure}
-All the type of accelerometers mentioned have one problem, that is the fact that they aren't practical to use in certain application, as an example a small electronic device. For that, is used the so called MEMS (Micro Electro Mechanical Systems) accelerometers, this type of accelerometer is a combination of electrical and mechanical device, mounted on a silicon chip, this is one advantage of this type of accelerometers, the can be very produced in very small sizes, to allows their application in different types of electronic devices. The functioning of this type of accelerometer can be explained quite easily, an electrode is between two other electrodes, there is a air gap between these two and a small insulation to prevent direct contact between the middle electrode and the other two, on the top and the bottom. The middle electrode is connected with a cantilever, rigid enough to hold his position, but flexible enough to allow the move when the accelerometer moves or tilts, the cantilever is connected to outside of the chip, this is used to measure the difference of capacitance between the middle electrode and the electrodes at the top and at the bottom, the capacitance changes every time the middle electrode moves or tilts.
+
+The use of this type of accelerometer is very wide and commonly used in electronic devices, due their small sizes. They are a combination of a electrical and mechanical device, mounted in a silicon chip, which allows to be produced in small sizes. 
+
+The functioning of the accelerometer is simple, an electrode is between two other electrodes, with a air gap between them and insulation to prevent direct contact. The electrode in the middle is connected to a cantilever rigid enough to hold its position, but flexible enough to allow movement when the device tilts, the cantilever is used to measure the variance in capacitance with the other two electrodes. An illustration of their working principle is shown in figure~\ref{fig:wmemsacc}.
+
  %%insert the image here as a example, get it from https://www.explainthatstuff.com/accelerometers.html
  \begin{figure}[]
     \centering
@@ -508,7 +515,22 @@ All the type of accelerometers mentioned have one problem, that is the fact that
 \end{figure}
 This type of accelerometers brought important advantages, being their low cost and their small size the most important of it. On the other hand, the use of this devices for condition monitoring is restricted to a small bandwidth, restricted to a few kHz, and it cannot be used to in applications that require lower noise over higher frequency ranges \cite{WhatYouNeed,HowAccelerometersWork2009}.
 
-\section{End of chapter considerations}
+%%Old version below
+%To acquire and measure the vibration, the sensors used must work according to the system mechanical or optical principals of vibration. There is a large variety of sensors that ca be used for that purpose, although there isn't a direct method, or sensor, to measure the vibration, they can be either mechanical or optical. The sensors can be divided in different groups, based on their behavior, they can be active or passive, the type of measurement can be either absolute or relative, and there is also some specific characteristics of the signals that differ from the type of sensor, like the frequency range, signal dynamic and the quality of the data acquired. Finally sensors are also divided in contact and non-contact measurement and subdivided in path/displacement, speed/velocity or acceleration.
+
+%For contact measurements, sensors related to path/displacement can be potentiometric transmitters or Linear Variable Differential Transmitter (LVDT), to speed/velocity it can be applied the principle of electrodynamics or use a seismometer as a sensor and for acceleration the sensors can be piezoelectric, piezo-resistive, resistive or inductive. In non-contact measurements, path/displacement sensors are eddy current sensors, optical sensors and hall sensors, or can be based on the capacitive principle, for speed/velocity is used a Laser-Doppler vibrometer (LDV) and for acceleration isn't possible to measure directly, although it can be derivate from speed/velocity measurement, but induces a lot of noise in the data acquired.
+
+%To measure the vibration, usually is the contact acceleration the most common method to measure them, beside the sensors mentioned, is used as well accelerometers, this devices are used in industry to reliably measure vibration in equipment, to monitoring their health.The functioning  principles of accelerometers can differ from one to another. The basic principle of a accelerometer is similar to a seismometer, from this there are 3 main types, mechanical, capacitive and piezoelectric. The mechanical is the most similar to a seismometer, with a mass attached to a spring, every time that acceleration occurs, just like in seismometer, the mass moves and a pen attached to the mass traces the vibration captured.
+
+%Although in the case of the accelerometer, doesn't trace with a pen in paper, instead generates a electrical or magnetic signal. A example of this, is a piezoresistive accelerometer, which has a his mass attached to a potentiometer, and the result of the vibration is a voltage change. When a magnetic variation occurs, usually a hall-effect accelerometer is used for that effect.  
+%Similar to the mechanical, a capacitive accelerometer, has one of the plates attached to the mass, and measures the capacitance variation, the vibration of capacitance is related with the vibration movement.
+
+%In piezoelectric accelerometers, the function principle is similar to the previous, the mass is attached to the piezoelectric and when it moves causes a deformation. The resulting signal from the deformation is the result of the piezoelectric effect. A piezoelectric consist in two metal plates with piezoceramic material between them, usually a quartz crystal. To produce electricity, the piezoceramic material needs to be under stress, that is, to be compressed or squeezed. This caused a voltage different the two metal plates, this is the result of the collection of charges produced in the piezoceramic material.
+
+%All the type of accelerometers mentioned have one problem, that is the fact that they aren't practical to use in certain application, as an example a small electronic device. For that, is used the so called MEMS (Micro Electro Mechanical Systems) accelerometers, this type of accelerometer is a combination of electrical and mechanical device, mounted on a silicon chip, this is one advantage of this type of accelerometers, the can be very produced in very small sizes, to allows their application in different types of electronic devices. The functioning of this type of accelerometer can be explained quite easily, an electrode is between two other electrodes, there is a air gap between these two and a small insulation to prevent direct contact between the middle electrode and the other two, on the top and the bottom. The middle electrode is connected with a cantilever, rigid enough to hold his position, but flexible enough to allow the move when the accelerometer moves or tilts, the cantilever is connected to outside of the chip, this is used to measure the difference of capacitance between the middle electrode and the electrodes at the top and at the bottom, the capacitance changes every time the middle electrode moves or tilts.
+
+
+\section{Concluding Remarks}
 There are several methods to measure the liquid level, this type of measurement is widely used in the different areas, with some of the methods used being presented along the chapter. From those, not all of them are suited for the intended application, since we are dealing with a closed and opaque cylinder, limiting the methods used in this application in specific.
 
 From the ones that can be used in this situation, the one that seemed more suitable for this application, is based on the analysis of the vibrations produced, when stimulating the bottle with the hammer. For this reason, along the chapter were presented several concepts that are important to the development of the solution. The next step to take is based on these concepts and his purpose is to propose an approach to the problem, which will be explored in the next chapter. 
